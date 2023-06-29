@@ -34,6 +34,7 @@ Debemos tener en cuenta sus necesidades y preferencias. Ofreceremos productos co
   https://www.tradeinn.com/xtremeinn/es -> Elegimos tradeinn, por un motivo similar al anterior. Este de todas formas, involucra mayor diseño visual, como imagenes de por medio, o implementación de tarjetas como prendas de ropa.
 
   https://www.mountainwarehouse.com/es/ -> Elegimos mountainwarehouse siguiendo la linea anterior comentada. En este caso, el diseño nos pareció, mucho mas relevante y a seguir para un diseño. La distribución de los elementos es bastante lógico, para un diseño coherente de UX-UI.
+  
   https://www.thenorthface.com.ar/ -> Elegimos thenorthface, para complemetar un diseño mas innovador a la hora de presentar las prendas a vender. Teniendo una paleta de colores simple y minimalista.
 
   https://www.decathlon.cl/ -> Elegimos decathlon, siguiendo la idea de thenorthface, siendo este tambien un diseño simple, y minimalista, como los elementos bien distribuidos a la hora de ingresar a la app web.
