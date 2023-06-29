@@ -1,14 +1,25 @@
 # Blamsh
 ## _¿Qué productos o servicios brindará nuestro sitio?_
 
-BLAMSH ofrecerá una amplia gama de productos relacionados con el deporte extremo para adultos. Nuestro market place ofrece una amplia selección de prendas y accesorios diseñados para satisfacer las exigentes necesidades de los apasionados por los deportes extremos. Desde bicicletas, maquinas trotadoras, prendas como camisetas, pantalones de senderismo, botas de montañas, zapatillas, chaquetas impermeables, calcetines especializados, mochilas, guantes, gafas de sol, gorras hasta otros tipos de accesorios de protección. Tenemos todo lo que necesitas para llevar tus aventuras al límite y así garantizar que estés preparado y seguro en cada movimiento.
+Hola! somos BLAMSH,  una pagina que ofrece una amplia variedad de productos y servicios relacionados con el motocross, como:
+Ropa de motocross para hombres y mujeres: Camisetas, pantalones, conjuntos de jersey y pantalón, trajes completos, ropa de protección, ropa impermeable, etc.
+Accesorios de motocross: Cascos, guantes, gafas, botas, rodilleras, coderas, protecciones, etc.
+Equipamiento y repuestos: Aceites, filtros de aire, cadenas, neumáticos, herramientas, etc...
 
 ## _¿Quién será nuestra audiencia objetivo?_
-Serán los adultos apasionados por la práctica de los deportes extremos como el senderismo, el montañismo, el surf, el skateboarding, el paracaidismo, el ciclismo de montaña, entre otros. En BLAMSH, estamos comprometidos a satisfacer sus necesidades y acompañarlos en cada paso de sus emocionantes viajes ####(aventuras ).
+Nuestro objetivo es acompañarlos/as en su nueva aventura ayudandolos/as a realizar sus sueños como:
+- Motociclistas de motocross aficionados y profesionales.
+- Hombres y mujeres adultos que practican o están interesados en el motocross.
+- Personas que buscan ropa y accesorios de calidad para su seguridad y rendimiento en el motocross y
+- Todos los interesados en el rubro .
+
 
 
 ## _¿Cómo ajustaremos nuestra oferta a ese público?_
-Debemos tener en cuenta sus necesidades y preferencias. Ofreceremos productos con características técnicas y tecnologías de alta calidad, así como su durabilidad y resistencia que mejoren el rendimiento y la seguridad durante la práctica de deportes extremos, buscando siempre la confiabilidad del cliente en nuestros productos.##### que tal si ponemos la.  confiabilidad y el compromiso.
+Nosotros vamos asergurarnos de ofrecer una amplia variedad de productos de motocross para hombres y mujeres, adaptados a diferentes estilos y necesidades.
+La calidad y el rendimiento son destacados en BLASMH su satifacción será nuestro orgullo, por eso vamos a disponer de muchas opciones adecuadas tanto para las mujeres como los hombres, considerando las diferencias anatómicas y preferencias de ajuste;
+y brindaremos opciones de personalización en ciertos productos, como gráficos personalizados en camisetas o cascos.Tambien pondremos a su disposición contenidos informativos, guías de compra y asesoramiento para ayudarles a tomar buenas decisiones .Estamos a su disposición para responder a cualquier duda o inquietud. BLAMSH , es una página confiable y segura hazla tuya . unete a BLAMSH!
+ 
 
 ## _Integrantes del Equipo_
 - Hola! mi nombre es **Luis Hernández**, soy venezolano pero resido en Chile, tengo 34 años. Actualmente estoy trabajando como analista en una mesa de servicios TI y mi propósito es adentrarme en el mundo de la programación y poder dedicarme a ello. ¡Me encanta jugar al fútbol!
@@ -34,7 +45,7 @@ Debemos tener en cuenta sus necesidades y preferencias. Ofreceremos productos co
   https://www.tradeinn.com/xtremeinn/es -> Elegimos tradeinn, por un motivo similar al anterior. Este de todas formas, involucra mayor diseño visual, como imagenes de por medio, o implementación de tarjetas como prendas de ropa.
 
   https://www.mountainwarehouse.com/es/ -> Elegimos mountainwarehouse siguiendo la linea anterior comentada. En este caso, el diseño nos pareció, mucho mas relevante y a seguir para un diseño. La distribución de los elementos es bastante lógico, para un diseño coherente de UX-UI.
-  
+
   https://www.thenorthface.com.ar/ -> Elegimos thenorthface, para complemetar un diseño mas innovador a la hora de presentar las prendas a vender. Teniendo una paleta de colores simple y minimalista.
 
   https://www.decathlon.cl/ -> Elegimos decathlon, siguiendo la idea de thenorthface, siendo este tambien un diseño simple, y minimalista, como los elementos bien distribuidos a la hora de ingresar a la app web.
