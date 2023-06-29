@@ -10,8 +10,7 @@ Equipamiento y repuestos: Aceites, filtros de aire, cadenas, neumáticos, herram
 Nuestro objetivo es acompañarlos/as en su nueva aventura ayudandolos/as a realizar sus sueños como:
 - Motociclistas de motocross aficionados y profesionales.
 - Hombres y mujeres adultos que practican o están interesados en el motocross.
-- Personas que buscan ropa y accesorios de calidad para su seguridad y rendimiento en el motocross y
-- Todos los interesados en el rubro .
+- Personas que buscan ropa y accesorios de calidad para su seguridad y rendimiento en el motocross y todos los interesados en el rubro .
 
 
 
