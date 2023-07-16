@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CARRUSEL */
+
+#contenedor-carrusel {
+    height: 360px;
+    overflow: hidden;
+}
+
+
+.carrusel {
+    height: 100%;
+    position: relative;
+    transition-duration: 900ms;
+}
+
+
+.item {
+
+    background-color: bisque;
+    height: 100%;
+}
+
+.flechas {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+
+i {
+    color: rgb(96, 92, 92);
+}
+
+
+.puntos {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.puntos a {
+    font-size: 1.5em;
+    font-style: none;
+    color: rgb(96, 92, 92);
+    border-radius: 10%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* DETALLE DEL PRODUCTO */
+
+.contenedor-detalle {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+
+.titulo-precio {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.titulo {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+.precio {
+    font-weight: bold;
+    color: red;
+    font-size: 1.5em;
+}
+
+
+.descripcion-producto {
+    font-size: 14px;
+}
+
+
+.talla-medidas {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.tallas ul {
+    padding: 0;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+.talla-medidas a {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.tallas li {
+    display: inline;
+}
+
+
+.tallas ul a {
+    color: black;
+    border: 1px solid rgb(160, 153, 153);
+    padding: 6px 14px;
+
+}
+
+
+.input-group label {
+    display: flex;
+}
+
+
+.input-group,
+.input-group input {
+
+    background-color: #7cb63d;
+    color: white;
+    padding: 2%;
+    text-transform: uppercase;
+    border: none;
+    justify-content: center;
+    display: flex;
+    width: auto;
+
+}
+
+
+
+@media (min-width: 769px) {
+    .slide {
+        flex: 0 0 50%;
+    }
+}
