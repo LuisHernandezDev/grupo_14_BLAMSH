@@ -49,34 +49,90 @@
 
     
     <main>
-        
-
-        <section class="main_car">
+        <div class="main_car tit width_car">
+            <div class="flex  border-c">
+              <div class="grid-1of3 text-4xl font-bold">Shopping Cart</div>
+              <div class="grid-1of6 font-bold text-center">Price</div>
+              <div class="grid-1of6 font-bold text-center">Quantity</div>
+              <div class="grid-1of6"></div>
+              <div class="grid-1of6 font-bold text-center">Total</div>
+            </div>  
+            <ul class="flex flex-col">
+              <li class="flex border-solid border-b py-4">
+                <div class="grid-1of3 flex">
+                  <div class="grid-1of3">
+                  <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/065/501/products/181-8bfefbc80c6639bc3e16723321716371-320-0.webp">
+                  </div>  
+                  <div class="grid-2of3">
+                    <div class="font-serif">Dingo Dog Bones</div>
+                    <div class="leading-normal mt-2">
+                      The best dog bones of all time.
+                      Holy crap. Your dog will be begging for these things!
+                      I got curious once and ate one myself. I'm a fan.
+                    </div>
+                  </div>  
+                </div>
+                <div class="grid-1of6 text-center">$12.99</div>
+                <div class="grid-1of6 text-center">
+                   <input type="number" value="2" min="1" class="w-8">
+                </div>
+                <div class="grid-1of6 text-center">
+                 <button class="px-2 py-1 bg-red text-white rounded">
+                    Remove
+                  </button>
+                 </div>
+                <div class="grid-1of6 text-center">$25.98</div>
+              </li>
+              <li id="Second Item" class="flex border-solid border-b py-4">
+                <div class="grid-1of3 flex">
+                  <div class="grid-1of3">
+                    <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/065/501/products/img_088811-76dd197f25981e633416146959713745-320-0.png">
+                  </div>
+                  <div class="grid-2of3">
+                    <div class="font-serif">Nutro Adult Lamb and Rice Dog Food</div>
+                    <div class="leading-normal mt-2">
+                      Who doesn't like lamb and rice?
+                      We've all hit the halal cart at
+                      3am while quasi-blackout after a
+                      night if binge drinking in Manhattan.
+                      Now it's your dog's turn!
+                    </div>
+                  </div>   
+                </div>
+                 
+                <div class="grid-1of6 text-center">$45.99</div>
+                <div class="grid-1of6 text-center">
+                   <input type="number" value="1" min="1" class="w-8">
+                </div>
+                <div class="grid-1of6 text-center">
+                  <button class="px-2 py-1 bg-red text-white rounded">
+                    Remove
+                  </button>
+                </div>    
+                <div class="grid-1of6 text-center">$45.99</div>
+              </li>
+            </ul>
+            <div class="flex justify-end py-2">
+              <!--<div class="grid-1of3"></div>-->
+              <div class="grid-1of6">
+                <div class="mt-3 text-right font-bold">Subtotal</div>                
+                <div class="mt-3 text-right font-bold">Total</div>
+              </div>
+              <div class="grid-1of6"></div>
+              <div class="grid-1of6">
+                <div class="mt-3 text-center">$71.97</div>                
+                <div class="mt-3 text-center">$90.57</div>
+              </div>
+              </div>
+              <div class="flex justify-end pt-6">
+<!--
+                <button class="px-4 py-2 bg-green text-white rounded text-3xl">-->
+                  <button >                
+                  Checkout
+                </button>  
+              </div>  
             
-            <div class="tabla">
-                <div class="fila">
-                    <div class="columna">Celda 1</div>
-                    <div class="columna">Celda 2</div>
-                    <div class="columna">Celda 3</div>
-                </div>
-                <div class="fila">
-                    <div class="columna">Celda 4</div>
-                    <div class="columna">Celda 5</div>
-                    <div class="columna">Celda 6</div>
-                </div>
-                <div class="fila">
-                    <div class="columna">Celda 7</div>
-                    <div class="columna">Celda 8</div>
-                    <div class="columna">Celda 9</div>
-                </div>
-                <div class="fila">
-                    <div class="columna">Celda 10</div>
-                    <div class="columna">Celda 11</div>
-                    <div class="columna">Celda 12</div>
-                </div>
             </div>
-
-        </section>
     </main>
     <footer>
         <h3>BLAMSH</h3>
