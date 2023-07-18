@@ -126,8 +126,8 @@ nav{
         order:2;
    }
 
-   .nav__opciones span,input{
-        display: none;
+   .nav__opciones span,.opciones__lupa input{
+    display: none;
    }
 
    .nav__generos{
