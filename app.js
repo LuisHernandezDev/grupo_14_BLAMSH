@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
     res.sendFile(ruta);
 });
 
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/carrito.html'));
+});
+
+
 
 // Hacemos que nuestro servidor escuche requests en el puerto 3000
 app.listen(3000, () => {
