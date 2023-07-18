@@ -61,5 +61,8 @@ https://coolors.co/palette/00f59b-7014f2
 7014F2
 ![Color Palette](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/b727f351-1375-4e82-bd8e-5f0d16d91ba8)
 
+## _Logo Marca_
+![LOGO-BLAMSH](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/01a49479-0636-411a-8dbd-a22972d98cd2)
+
 
 
