@@ -166,6 +166,15 @@ img {
 }
 
 
+
+.input-group:hover,
+.input-group input:hover {
+    background-color: #98bc72;
+}
+
+
+
+
 .segundo-contenedor .titulo-precio,
 .segundo-contenedor .descripcion-producto,
 .segundo-contenedor .talla-medidas,
@@ -191,6 +200,7 @@ img {
 .opinion {
     display: none;
 }
+
 
 
 @media (min-width: 720px) {
@@ -276,6 +286,7 @@ img {
 
     }
 
+
     .estrellas {
         margin-left: 4%;
     }
@@ -284,6 +295,8 @@ img {
     .fa-star,
     .fa-star-half-stroke {
         color: rgb(204, 199, 199);
+        margin-left: 3%;
+
     }
 
     .fa-comment-dots {
@@ -333,6 +346,7 @@ img {
         display: block;
     }
 
-    main {}
+
+
 
 }
