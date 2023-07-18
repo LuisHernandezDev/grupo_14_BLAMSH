@@ -51,3 +51,15 @@ y brindaremos opciones de personalización en ciertos productos, como gráficos 
 
   https://www.siroko.com/ ->
   https://www.ridemax.com.ar/-> Elegimos siroko y ridemax, siendo este el ejemplo ideal que tomaremos a seguir, dado que a nuestra perspectiva, cumple con lo que demanda el cliente, ya que tiene un diseño atractivo, es de fácil navegación, tiene un enfoque a productos destacados, las imágenes son de alta calidad, se detalla muy bien el producto, entre otros.
+
+## _Tipografía Utilizada_
+Roboto Regular
+
+## _Paleta de Colores utilizada_
+https://coolors.co/palette/00f59b-7014f2
+00F59B
+7014F2
+![Color Palette](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/b727f351-1375-4e82-bd8e-5f0d16d91ba8)
+
+
+
