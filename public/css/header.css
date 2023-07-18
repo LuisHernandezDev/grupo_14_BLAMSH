@@ -263,7 +263,7 @@ nav{
     }
 
     .nav__opciones a:hover ,.nav__logo-burger a p:hover{
-        background: rgb(123, 94, 123);
+        background: #7014F2;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
