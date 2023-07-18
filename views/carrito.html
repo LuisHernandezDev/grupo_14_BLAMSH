@@ -65,11 +65,11 @@
       <div class="flex  border-c">
         <div class="grid-1of3 text-4xl font-bold">Producto</div>
         <div class="grid-1of6 font-bold text-center oculto">Price</div>
-        <div class="desc_precio"></div>
+        <div class="desc_precio oculto720"></div>
         <div class="grid-1of6 font-bold text-center ">Cantidad</div>
         <div class="grid-1of6 oculto"></div>
 
-        <div class="grid-1of6 font-bold text-center oculto">Total</div>
+        <div class="grid-1of6 font-bold text-center oculto">Subtotal</div>
       </div>
       <ul class="flex flex-col">
         <li class="flex border-solid border-b py-4">
@@ -92,7 +92,8 @@
             <input type='button' value='-' class='qtyminus minus visible' field='quantity' />
             <input type='text' name='quantity ' value='0' class='qty visible' />
             <input type='button' value='+' class='qtyplus plus visible' field='quantity' />
-
+          </div>
+          <div class="grid-1of6 oculto centro">$12.99</div>
 
         </li>
         <li class="flex border-solid border-b py-4">
@@ -113,12 +114,12 @@
           </div>
           <div class="cantidad">
             <input type='button' value='-' class='qtyminus minus visible' field='quantity' />
-            <input type='text' name='quantity' value='0' class='qty visible' />
+            <input type='text' name='quantity ' value='0' class='qty visible' />
             <input type='button' value='+' class='qtyplus plus visible' field='quantity' />
-
+          </div>
+          <div class="grid-1of6 oculto centro">$12.99</div>
 
         </li>
-
       </ul>
       <div class="flex justify-end py-2">
         <!--<div class="grid-1of3"></div>-->
@@ -126,19 +127,20 @@
           <div class="mt-3 text-right font-bold">Subtotal</div>
           <div class="mt-3 text-right font-bold">Total</div>
         </div>
-        <div class="grid-1of6"></div>
+        <div class="grid-1of6 oculto720"></div>
         <div class="grid-1of6">
           <div class="mt-3 text-center">$71.97</div>
           <div class="mt-3 text-center">$90.57</div>
         </div>
       </div>
-      <div class="flex justify-end pt-6">
-        <!--
-                <button class="px-4 py-2 bg-green text-white rounded text-3xl">-->
+      <div class="oculto">
+      <div class="flex justify-end pt-6 pb-2 ">
+        
+                <button class="grid-1of6 px-4 py-2 bg-green text-white rounded text-3xl bot-comprar">Comprar</button>
       </div>
-
     </div>
-    <div class="content-boton">
+    </div>
+  <div class="content-boton oculto720">
     <button class="bot-comprar">
       Comprar
     </button>

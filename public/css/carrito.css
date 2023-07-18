@@ -175,8 +175,45 @@ input.qtyminus { width:25px; height:25px;}
 .colorIcon{
   color:black;
 }
-@media(min-width:761px) {
+@media(min-width:720px) {
   .width_car {
     width: 70%;
 }
+.oculto{
+    display: inline;
+}
+.grid-1of3 {
+    flex: 0 0 33.333333%;
+}
+.grid-1of6 {
+    flex: 0 0 16.666667%;
+}
+.oculto720{
+    display: none;
+}
+.desc_precio{
+    flex:0 0 16.666667%;
+    justify-content: center;
+    align-items: center;
+}
+.cantidad{
+justify-content:center;
+}
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pb-2{
+    padding-bottom: 2rem;
+}
+.bot-comprar{
+    background-color: #000;
+    border: 0;
+    color:white;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
