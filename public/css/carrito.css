@@ -22,37 +22,11 @@ body {
     padding-bottom: 1rem;
 }
 
-element.style {
-}
 .grid-1of3 {
     flex: 0 0 33.333333%;
 }
 .flex {
     display: flex;
-}
-*, ::after, ::before {
-    --tw-ring-inset: var(--tw-empty, );
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgba(59, 130, 246, 0.5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-}
-*, ::after, ::before {
-    --tw-shadow: 0 0 #0000;
-}
-*, ::after, ::before {
-    --tw-border-opacity: 1;
-    border-color: rgba(229,231,235,var(--tw-border-opacity));
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
 }
 user agent stylesheet
 div {
