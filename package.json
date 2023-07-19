@@ -1,0 +1,24 @@
+{
+  "name": "grupo_14_blamsh",
+  "version": "1.0.0",
+  "description": "Hola! somos BLAMSH,  una pagina que ofrece una amplia variedad de productos y servicios relacionados con el motocross, como: Ropa de motocross para hombres y mujeres: Camisetas, pantalones, conjuntos de jersey y pantalón, trajes completos, ropa de protección, ropa impermeable, etc. Accesorios de motocross: Cascos, guantes, gafas, botas, rodilleras, coderas, protecciones, etc. Equipamiento y repuestos: Aceites, filtros de aire, cadenas, neumáticos, herramientas, etc...",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx nodemon app",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisHernandezDev/grupo_14_BLAMSH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisHernandezDev/grupo_14_BLAMSH/issues"
+  },
+  "homepage": "https://github.com/LuisHernandezDev/grupo_14_BLAMSH#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}

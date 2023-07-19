@@ -1,0 +1,267 @@
+
+main{
+   
+   
+    width: 100%;
+    background-color: rgb(46, 45, 45);
+    display: flex;
+    box-sizing: border-box;
+  
+
+}
+
+form input{
+    display: block
+    
+}
+
+@media(min-width:300px){
+    
+    main{
+        background: url('../../public/images/img-register/register__main-background.jpg');
+        background-repeat: no-repeat;
+        background-size: 400px 950px;
+        align-items: center;
+        flex-direction: column;
+        height: 900px;
+        color: rgb(40, 38, 32);
+       
+    }
+
+    .main__section-photo{
+        display: none;
+    }
+
+    .main__section-register, .main__section-register ul, .main__section-register ul li, .section-register__titulos h2, .section-register__titulos h3, .section__form-register{
+        display: flex;
+    }
+
+    .section-register__grid{
+        background-color: rgb(233, 233, 231);
+       
+    }
+
+    .main__section-register{
+        padding-top: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+        width: 95%;
+    
+        
+    }
+    
+    .section-register__titulos{
+        display: flex;
+        flex-wrap: wrap;
+        height: 150px;
+        padding: 20px;
+        justify-content: center;    
+    }
+
+    .section-register__titulos h2, .section-register__titulos h3{
+       
+        align-items: center;
+    }
+
+    .section-register__titulos h2{
+        font-size: 18px;
+        height: 33%;
+    }
+
+    .section-register__titulos h3{
+        font-size: 15px;
+        height: 33%;
+    }
+
+    .main__section-register ul {
+        flex-direction: column;
+        height: auto;
+        width: 99%;
+        gap:30px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+       
+       
+    }
+
+    .main__section-register ul li{
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+       
+       
+    }
+
+    .main__section-register ul li p{
+        color: black;
+        font-size: 10px;
+        width: 70%;
+        
+    }
+
+    .section__form-register{
+        height: 300px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-register__form{
+        display: flex;
+     
+        flex-wrap: wrap;
+        gap:20px;
+    }
+
+    .form-register__form input{
+        width: 100%;
+        height: 30px;
+        border: 1px solid rgba(32, 31, 31, 0.182);
+        text-indent: 20px;
+      
+    }
+
+    .form__checkbox-container{
+        display: flex;
+        width: 100%;
+        align-items: center;
+       
+    }
+
+    .form__checkbox-container input{
+        height:10px;
+        width: 7%;
+    }
+    .form__checkbox-container label{
+        color: rgb(195, 193, 204);
+        
+    }
+   
+     
+
+}
+
+@media(min-width: 720px){
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-image: none;
+      
+        
+    }
+
+    .main__section-photo{
+        display: flex;
+        width: 50%; 
+        height: 100%;
+    }
+    .main__section-photo img{
+        width: 100%;
+        
+    }
+    .main__section-register{
+        width:50%;
+        height: auto;
+        flex-wrap: wrap; 
+       flex-direction: column;
+        padding-top:0px;  
+        background-color: rgb(233, 233, 231);
+        justify-content: start;
+    }
+
+    .section-register__titulos{
+        display: flex;
+        flex-direction: column;
+        height:120px;
+        padding: 0px;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .main__section-register ul{
+        width: 100%;
+      
+        
+    }
+
+    .main__section-register ul li{
+        
+        gap:40px;
+    }
+
+    .main__section-register ul li p{
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        width: 80%;
+        
+    }
+
+    .section__form-register{
+        
+        height: 440px;
+        
+        
+    }
+    
+    .form-register__form{
+        justify-content: center;
+        width: 90%;
+        gap:20px;
+      
+       
+    }
+
+    .section__form-register input{
+        width:100%;
+        color: black;
+      
+    }
+
+    
+
+    .section__form-register input:nth-of-type(6){
+        background-color: rgb(37, 29, 173);
+       
+        margin-left: auto;
+        border-radius: 10px;
+        height: 50px;
+        width: 30%;
+        color: rgb(213, 213, 213);
+        filter:brightness(0.5);
+        transition: 0.2s;
+        text-indent:0;
+      
+     
+}
+
+    .form__checkbox-container{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        
+    }
+
+    .form__checkbox-container input{
+        height: 10px;
+        width: 10%;
+    }
+    .form__checkbox-container label{
+        color:black;
+        font-size: 12px;
+
+
+    }
+
+.section__form-register input:nth-of-type(6):hover{
+    filter:brightness(1);
+    transition: 0.2s;
+}
+}
+
