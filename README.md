@@ -66,4 +66,5 @@ https://coolors.co/palette/00f59b-7014f2
 ![LOGO-BLAMSH](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/01a49479-0636-411a-8dbd-a22972d98cd2)
 
 
-
+## _Link al tablero de trabajo_
+https://trello.com/b/RqMZZRcZ/blamsh
