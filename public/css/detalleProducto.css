@@ -222,8 +222,8 @@ img {
 
 
     .imgmin-720:hover {
-        transform: scale(1.2);
-        transition-duration: 800ms;
+        filter: brightness(0.6);
+        transition: 1s;
     }
 
 
