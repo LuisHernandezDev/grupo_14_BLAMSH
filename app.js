@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static('public'));
 
 //require mainrouter 
-const mainRouter = require('../routes/mainRouter');
+const mainRouter = require('../routes/mainRouters');
 
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);

@@ -4,24 +4,24 @@ const path = require('path');
 const controller = {
     home: (req, res) => {
         // Respondemos a este request con este string, mediante res.send
-        const ruta = path.join(__dirname, '../views/home.html');
+        const ruta = path.resolve(__dirname, '../views/home.html');
         res.sendFile(ruta);
     },
 
     register: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/register.html'));
+        res.sendFile(path.resolve(__dirname, '../views/register.html'));
     },
 
     detalleDelProducto: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/detalleProducto.html'));
+        res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
     },
 
     carrito: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/carrito.html'));
+        res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
     },
 
     login: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/login.html'));
+        res.sendFile(path.resolve(__dirname, '../views/login.html'));
     }
 
 
