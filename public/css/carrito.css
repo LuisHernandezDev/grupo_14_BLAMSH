@@ -25,6 +25,9 @@ body {
 .visible{
   display: inline;
 }
+.visible{
+  display: inline;
+}
 
 .content-boton{
   width: 100%;
