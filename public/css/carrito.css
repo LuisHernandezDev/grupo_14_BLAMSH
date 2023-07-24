@@ -25,7 +25,23 @@ body {
 .visible{
   display: inline;
 }
+.visible{
+  display: inline;
+}
 
+.content-boton{
+  width: 100%;
+  height:6rem;
+  align-items: center;
+}
+.bot-comprar{
+  width: 100%;
+  background-color: #000;
+  border: 0;
+  color:white;
+  height: 4rem;
+  font-size: 1rem;
+  font-weight: bold;
 .content-boton{
   width: 100%;
   height:6rem;
@@ -179,4 +195,62 @@ input.qtyminus { width:25px; height:25px;}
   .width_car {
     width: 70%;
 }
+}
+.qty {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+.cantidad{
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.colorIcon{
+  color:black;
+}
+@media(min-width:720px) {
+  .width_car {
+    width: 70%;
+}
+.oculto{
+    display: inline;
+}
+.grid-1of3 {
+    flex: 0 0 33.333333%;
+}
+.grid-1of6 {
+    flex: 0 0 16.666667%;
+}
+.oculto720{
+    display: none;
+}
+.desc_precio{
+    flex:0 0 16.666667%;
+    justify-content: center;
+    align-items: center;
+}
+.cantidad{
+justify-content:center;
+}
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pb-2{
+    padding-bottom: 2rem;
+}
+.bot-comprar{
+    background-color: #000;
+    border: 0;
+    color:white;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }

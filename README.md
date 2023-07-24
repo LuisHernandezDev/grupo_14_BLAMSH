@@ -10,8 +10,7 @@ Equipamiento y repuestos: Aceites, filtros de aire, cadenas, neumáticos, herram
 Nuestro objetivo es acompañarlos/as en su nueva aventura ayudandolos/as a realizar sus sueños como:
 - Motociclistas de motocross aficionados y profesionales.
 - Hombres y mujeres adultos que practican o están interesados en el motocross.
-- Personas que buscan ropa y accesorios de calidad para su seguridad y rendimiento en el motocross y
-- Todos los interesados en el rubro .
+- Personas que buscan ropa y accesorios de calidad para su seguridad y rendimiento en el motocross y todos los interesados en el rubro .
 
 
 
@@ -52,3 +51,20 @@ y brindaremos opciones de personalización en ciertos productos, como gráficos 
 
   https://www.siroko.com/ ->
   https://www.ridemax.com.ar/-> Elegimos siroko y ridemax, siendo este el ejemplo ideal que tomaremos a seguir, dado que a nuestra perspectiva, cumple con lo que demanda el cliente, ya que tiene un diseño atractivo, es de fácil navegación, tiene un enfoque a productos destacados, las imágenes son de alta calidad, se detalla muy bien el producto, entre otros.
+
+## _Tipografía Utilizada_
+Roboto Regular
+
+## _Paleta de Colores utilizada_
+https://coolors.co/palette/00f59b-7014f2
+00F59B
+7014F2
+![Color Palette II](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/7750b1ac-7ea5-4d69-a808-edcc049021c3)
+
+
+## _Logo Marca_
+![LOGO-BLAMSH](https://github.com/LuisHernandezDev/grupo_14_BLAMSH/assets/136033755/01a49479-0636-411a-8dbd-a22972d98cd2)
+
+
+## _Link al tablero de trabajo_
+https://trello.com/b/RqMZZRcZ/blamsh

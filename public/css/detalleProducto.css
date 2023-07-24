@@ -144,6 +144,10 @@ img {
 
 }
 
+.tallas a:hover {
+    background-color: rgb(91, 88, 88);
+}
+
 
 .input-group label {
     display: flex;
@@ -164,6 +168,15 @@ img {
     font-weight: bold;
 
 }
+
+
+
+.input-group:hover,
+.input-group input:hover {
+    background-color: #98bc72;
+}
+
+
 
 
 .segundo-contenedor .titulo-precio,
@@ -193,6 +206,7 @@ img {
 }
 
 
+
 @media (min-width: 720px) {
 
 
@@ -212,8 +226,8 @@ img {
 
 
     .imgmin-720:hover {
-        transform: scale(1.2);
-        transition-duration: 800ms;
+        filter: brightness(0.6);
+        transition: 1s;
     }
 
 
@@ -276,6 +290,7 @@ img {
 
     }
 
+
     .estrellas {
         margin-left: 4%;
     }
@@ -284,6 +299,8 @@ img {
     .fa-star,
     .fa-star-half-stroke {
         color: rgb(204, 199, 199);
+        margin-left: 3%;
+
     }
 
     .fa-comment-dots {
@@ -333,6 +350,7 @@ img {
         display: block;
     }
 
-    main {}
+
+
 
 }
