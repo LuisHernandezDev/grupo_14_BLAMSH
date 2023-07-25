@@ -1,14 +1,17 @@
 
+style {
+    display: inline;
+}       
+
 main{
-   
-   
     width: 100%;
-    background-color: rgb(46, 45, 45);
+    background-color:#7014F2;
     display: flex;
     box-sizing: border-box;
+    font-family: 'roboto';
   
-
 }
+
 
 form input{
     display: block
@@ -227,17 +230,15 @@ form input{
     
 
     .section__form-register input:nth-of-type(6){
-        background-color: rgb(37, 29, 173);
-       
+        background-color: #7014F2;
         margin-left: auto;
         border-radius: 10px;
         height: 50px;
         width: 30%;
         color: rgb(213, 213, 213);
-        filter:brightness(0.5);
+        filter:brightness(0.7);
         transition: 0.2s;
-        text-indent:0;
-      
+        text-indent:0;     
      
 }
 

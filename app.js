@@ -16,7 +16,7 @@ app.use('/', mainRouter);
 
 
 app.listen(process.env.PORT, () => {
-    console.log('Servidor escuchando en el puerto 3000');
+    console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT +' http://localhost:3000/');
 });
 
 // Escuchamos los GET request a "/"

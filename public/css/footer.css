@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'roboto';
 }
 
 footer {
@@ -25,29 +26,31 @@ footer {
 
     footer h3 {
         text-align: center;
-        font-family: 'Fira Sans', sans-serif;
+        font-family: 'Roboto';
         letter-spacing: 3px;
         display: block;
         width: 100%;
         background-color: rgb(41, 40, 40);
     }
 
-    .footer__ayuda {
+    ul.footer__ayuda{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        
     }
 
     .footer__ayuda li a,
     .avisos-condiciones__opciones a {
-        color: grey;
+        color: #00f59b;
         font-size: 12px;
     }
 
     .footer__redes {
         height: 10%;
         width: 100%;
+
     }
 
     .footer__redes ul {
@@ -81,6 +84,8 @@ footer {
         height: 10%;
         align-items: center;
         justify-content: center;
+        font-family: 'roboto-thin';
+        
     }
 
     .avisos-condiciones__opciones {
@@ -89,6 +94,7 @@ footer {
         gap: 10px;
         align-items: center;
         justify-content: center;
+
     }
 
 }
@@ -131,7 +137,7 @@ footer {
     }
 
     .redes__li {
-        width: 5%;
+        width: 7%;
     }
 
     .redes__li .redesli__a {
