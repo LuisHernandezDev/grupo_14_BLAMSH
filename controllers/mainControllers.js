@@ -12,7 +12,7 @@ const controller = {
         res.sendFile(path.resolve(__dirname, '../views/register.html'));
     },
 
-    detalleDelProducto: (req, res) => {
+    detalleProducto: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
     },
 
