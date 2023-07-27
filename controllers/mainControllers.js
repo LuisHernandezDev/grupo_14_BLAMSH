@@ -8,7 +8,7 @@ const controller = {
         res.sendFile(ruta);
     },
 
-    register: (req, res) => { 
+    register: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/register.html'));
     },
 
@@ -19,10 +19,10 @@ const controller = {
     carrito: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
     },
-
     login: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/login.html'));
     },
+
 
     editionProduct: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));

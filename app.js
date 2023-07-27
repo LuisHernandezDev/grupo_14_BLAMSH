@@ -11,12 +11,17 @@ app.use(express.static('public'));
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
 
+const userRouter = require('./routes/userRouters');
+
+
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);
 
+app.use('/', userRouter);
+
 
 app.listen(process.env.PORT, () => {
-    console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT +' http://localhost:3000/');
+    console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3000/');
 });
 
 // Escuchamos los GET request a "/"
