@@ -19,13 +19,16 @@ const controller = {
     carrito: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
     },
-
     login: (req, res) => {
         res.sendFile(path.resolve(__dirname, '../views/login.html'));
+    },
+
+
+    editionProduct: (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));
     }
-
-
 };
+
 // exportar el controlador 
 module.exports = controller;
 
