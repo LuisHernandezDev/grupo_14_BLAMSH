@@ -13,11 +13,15 @@ const mainRouter = require('./routes/mainRouters');
 
 const userRouter = require('./routes/userRouters');
 
+const productRouter = require('./routes/productRouters');
+
 
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);
 
 app.use('/', userRouter);
+
+app.use('/', productRouter);
 
 
 app.listen(process.env.PORT, () => {
