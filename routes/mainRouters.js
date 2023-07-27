@@ -11,6 +11,7 @@ router.get('/register', maincontroller.register);
 router.get('/detalleProducto', maincontroller.detalleProducto);
 router.get('/carrito', maincontroller.carrito);
 router.get('/login', maincontroller.login);
+router.get('/editionProduct', maincontroller.editionProduct);
 
 // traer a  la funcion router
 module.exports = router;

@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+main{
+    width: 100%;
+    background-color: rgb(41, 40, 40);
+    display: flex;
+    box-sizing: border-box;
+    font-family:'roboto-thin';
+    padding-top: 5%;
+    flex-direction: column;
+}
+
+
+div.section-edition_titulo {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto-thin';
+    padding: 2%;
+    color: #7014F2 ;
+}
+
+div.section-form-edition {
+display: flex;
+box-sizing: border-box;
+padding: 5%;
+justify-content: space-around;
+align-items: flex-end;
+}
