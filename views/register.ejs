@@ -31,12 +31,12 @@
 
             <div class="nav__generos">
                 <ul class="generos__genders">
-                  <li class='genders' id="genero-hombre"><a class="genders__a" href="#">Hombre <i
-                        class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
-                  <li class='genders' id="genero-mujer"><a class="genders__a" href="#">Mujer <i
-                        class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
+                    <li class='genders' id="genero-hombre"><a class="genders__a" href="#">Hombre <i
+                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
+                    <li class='genders' id="genero-mujer"><a class="genders__a" href="#">Mujer <i
+                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
                 </ul>
-              </div>
+            </div>
 
             <div class="nav__opciones">
                 <div class="opciones__lupa"><input type="text"><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
@@ -90,7 +90,7 @@
                     <li><i class="fa fa-light fa-circle-user fa-xl" style="color: #a09b9b;"></i>
                         <p> Recordá registrarte con la misma dirección de email que usaste durante tu/s compra/s</p>
                     </li>
-            
+
                 </ul>
             </div>
             </div>
@@ -98,41 +98,47 @@
 
             <div class="section__form-register">
 
-            <div class="section__form-register">
+<<<<<<< HEAD:views/register.ejs
+                <div class="section__form-register">
+
+=======
+>>>>>>> 3a77912cc01e4c40ffd2d301ff0aa10c11b2e12a:views/register.html
+
+                    <form action="/enviar" method="post" class="form-register__form">
 
 
-                <form action="/enviar" method="post" class="form-register__form">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
 
 
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
+                        <input type="email" id="email" name="email" required placeholder="Correo electronico">
 
 
-                    <input type="email" id="email" name="email" required placeholder="Correo electronico">
+                        <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono">
 
 
-                    <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono">
-
-
-                    <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
-                <form action="/enviar" method="post" class="form-register__form">
+                        <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
+                        <form action="/enviar" method="post" class="form-register__form">
 
 
 
-                    <input type="repeat-password" name="repeat-password" id="repeat-password"
-                        placeholder="Ingresar nueva contraseña">
+                            <input type="repeat-password" name="repeat-password" id="repeat-password"
+                                placeholder="Ingresar nueva contraseña">
 
-                    <div class="form__checkbox-container">
-                        <input type="checkbox" id="opcion1" name="opcion1" value="opcion1" class="form__checkbox">
-                        <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los Términos
-                            de Uso de Blamsh.</label>
+                            <div class="form__checkbox-container">
+                                <input type="checkbox" id="opcion1" name="opcion1" value="opcion1"
+                                    class="form__checkbox">
+                                <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los
+                                    Términos
+                                    de Uso de Blamsh.</label>
 
-                    </div>
-                    <div class="form__checkbox-container">
-                        <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
-                        <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de Blamsh</label>
-                    </div>
-                    <input type="submit" value="Unite a BLAMSH" class="form__enviar">
-                </form>
+                            </div>
+                            <div class="form__checkbox-container">
+                                <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
+                                <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de
+                                    Blamsh</label>
+                            </div>
+                            <input type="submit" value="Unite a BLAMSH" class="form__enviar">
+                        </form>
 
         </section>
     </main>

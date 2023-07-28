@@ -59,46 +59,39 @@
 
 
 
-
-
   <main>
-    <form action="/registrar" method="get" class="register-form">
-      <div class="input-group">
-        <label for="nombre">Ingresa tu Usuari@</label>
-        <input type="text" name="nombre" id="nombre">
-      </div>
 
-      <div class="input-group">
-        <label for="contraseña">Ingresa tu contraseña</label>
-        <input type="password" name="contraseña">
-      </div>
+    <div class="input-grup-login">
+      <form action="/enviar" method="post" class="form-register__form">
 
-      <div class="input-group">
-        <label for="olvido">Recordar contraseña</label>
-        <input type="checkbox" name="olvido" id="olvido">
-      </div>
+        <input type="email" id="email" name="email" required placeholder="Correo electronico">
+        <br>
 
-      <div class="input-group">
-        <label></label>
-        <input class="ingresar" type="submit" value="Ingresá">
-      </div>
 
-      <div>
-        <a href="">¿Olvidaste tu contraseña?</a>
-      </div>
+        <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
+        <form action="/enviar" method="post" class="form-register__form">
+          <br>
 
-      <div class="registrarse">
-        <p>¿No tenés cuenta de Blamsh?</p>
-        <a href="/register">Únete a Blamsh</a>
-      </div>
 
-    </form>
+          <input type="submit" value="Enviar" class="form__enviar">
+        </form>
+
+        <section class="main__section-photo">
+          <img src="images/img-register/register__main-background.jpg" alt="none">
+
+        </section>
+      </form>
+
+    </div>
+    <div class="registrarse">
+      <p>¿No tenés cuenta de Blamsh?</p>
+      <a href="/register">Únete a Blamsh</a>
+    </div>
+
+
+
+
   </main>
-
-
-
-
-
 
   <footer>
     <h3>BLAMSH</h3>

@@ -61,39 +61,25 @@
         </header>
 
         <main>
-            <section class="main__section-edition">
-                <div class="section-edicion">
-                    <div class="section-edition_titulo">
-                        <h2>CARGA DE PRODUCTOS</h2>
-                    </div>
-                </div>
-    
-                <div class="section-form-edition">    
-    
-    
-                    <form action="/enviar" method="post" class="form-edition__form">
-    
-    
-                        <input type="text" id="nombre-producto" name="nombre-producto" placeholder="Nombre del producto">
-    
-    
-                        <input type="number" id="precio" name="precio" required placeholder="precio del producto">
-    
-    
-                        <input type="text" name="categoria" id="categoria" placeholder="categoría del producto">
-    
-
-                        <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
+            
+            <section class="product-edit">
+                <form action="post" method="post" class="edit-form">
+                <h2 class="title">CARGA DE PRODUCTOS</h2>
+                <input class="items" type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required>
+                <input class="items" type="number" name="precio" id="precio" placeholder="Precio de producto" required>
+                <input class="items" type="text" name="categoria" id="categoria" placeholder="Categoria de producto">
+                <input class="items" type="text" name="talle" id="talle" placeholder="Talle producto">
+                <input class="items-desc" type="text" name="descripcion" id="descripcion" placeholder="Descripción producto">
+                <p class="Importar"> <a href="#"> Importar imagenes</a></p><br>
+                <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
+               
+                </form>
+            </section>      
 
 
-                    <form action="/enviar" method="post" class="form-register__form">
 
-                        <button> Publicar producto </button>
-
-                    </form>
-    
-            </section>
         </main>
+
 
         <footer>
             <h3>BLAMSH</h3>
