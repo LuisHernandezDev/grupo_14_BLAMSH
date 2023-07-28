@@ -32,7 +32,7 @@ app.use('/', userRouter);
 app.use('/', productRouter);
 
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT||3000 , () => {
     console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3000/');
 });
 
