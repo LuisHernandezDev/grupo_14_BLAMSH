@@ -5,16 +5,19 @@ const controller = {
 
 
     detalleProducto: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
+        // res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
+        res.render('detalleProducto');
     },
 
     carrito: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
+        // res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
+        res.render('carrito');
     },
 
 
     editionProduct: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));
+        // res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));
+        res.render('editionProduct');
     }
 };
 
