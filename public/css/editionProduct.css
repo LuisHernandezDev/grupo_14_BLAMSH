@@ -1,31 +1,65 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-
-main{
-    width: 100%;
-    background-color: rgb(41, 40, 40);
-    display: flex;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family:'roboto-thin';
-    padding-top: 5%;
-    flex-direction: column;
 }
 
+.product-edit h2{
+    margin-bottom: 5%;
+}       
 
-div.section-edition_titulo {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    font-family: 'roboto-thin';
-    padding: 2%;
+.product-edit{
+    width: 40vw;
+    background-color: rgb(41, 40, 40);
+    padding: 6%;
+    margin: auto;
+    margin-top: auto;
+    border-radius: 5%;
+    font-family: 'roboto';
     color: #7014F2 ;
 }
 
-div.section-form-edition {
-display: flex;
-box-sizing: border-box;
-padding: 5%;
-justify-content: space-around;
-align-items: flex-end;
+.items{
+    width: 100%;
+    background-color:rgb(213, 213, 213) ;
+    padding: 5%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    border: 1px solid #00f59b;
+    font-family: 'roboto';
+    font-size: 1rem;
+
 }
+
+.items-desc{
+    width: 100%;
+    background-color:rgb(213, 213, 213) ;
+    padding: 20%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    border: 1px solid #00f59b;
+    font-family: 'roboto';  
+    font-size: 1rem;
+}
+
+.product-edit a:hover{
+color:#7014F2;
+text-decoration: underline;
+}
+
+.product-edit #publicar{
+    width: 100%;
+    border:#00f59b;
+    background-color: #7014F2;
+    padding: 5%;
+    color: aliceblue;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: 0.5;
+}
+
+.product-edit #publicar:hover{
+font-weight: bold;
+box-shadow: 0 0 10px #7014F2;
+}
+
