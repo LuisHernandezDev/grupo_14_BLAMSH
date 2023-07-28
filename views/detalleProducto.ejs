@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAMSH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/detalleProducto.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav__logo-burger" id="burger-div">
+                <a href=""></a><i class="fa-solid fa-bars fa-lg" id="burger-menu" style="color: #64676d;"></i> </a>
+                <a href="/">
+                    <p>BLAMSH</p>
+                </a>
+            </div>
+
+            <div class="nav__generos">
+                <ul class="generos__genders">
+                    <li class='genders' id="genero-hombre"><a class="genders__a" href="#">Hombre <i
+                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
+                    <li class='genders' id="genero-mujer"><a class="genders__a" href="#">Mujer <i
+                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="nav__opciones">
+                <div class="opciones__lupa"><input type="text"><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
+                            style="color: #eaeaeb;"></i></a></div>
+                <div class="opciones__carrito"><a href="/carrito"><span>Carrito</span><i
+                            class="fa-sharp fa-solid fa-basket-shopping fa-l" style="color: #eaeaeb;"></i></a></div>
+                <div class="opciones__user"><a href="/login"><span>Iniciar Sesion</span><i
+                            class="fa-regular fa-circle-user fa-l"></i></a></div>
+            </div>
+
+            <div class="hidden-catalog" id="hidden-catalog">
+                <div class="inner-catalog">
+                    <ul>
+                        <li><a href="">Todos los productos</a></li>
+                        <li><a href="">Remeras</a></li>
+                        <li><a href="">Camisas</a></li>
+                        <li><a href="">Outdoors</a></li>
+                        <li><a href="">Buzos y sweaters</a></li>
+                        <li><a href="">Calzado</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-item">
+            <div class="primer-contenedor">
+                <section class="contenedor-carrusel">
+                    <div class="carrusel" id="carrusel-1">
+                        <article class="item" id="item-1">
+                            <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
+                        </article>
+                        <div class="flechas">
+                            <a href="#carrusel-4">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="#carrusel-2">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carrusel" id="carrusel-2">
+                        <article class="item" id="item-2">
+                            <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="jersey2">
+                        </article>
+                        <div class="flechas">
+                            <a href="#carrusel-1">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="#carrusel-3">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carrusel" id="carrusel-3">
+                        <article class="item" id="item-3">
+                            <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="pantalon">
+                        </article>
+                        <div class="flechas">
+                            <a href="#carrusel-2">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="#carrusel-4">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carrusel" id="carrusel-4">
+                        <article class="item" id="item-4">
+                            <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="moto">
+                        </article>
+                        <div class="flechas">
+                            <a href="#carrusel-3">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="#carrusel-1">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <div class="puntos">
+                    <a href="#carrusel-1">■</a>
+                    <a href="#carrusel-2">■</a>
+                    <a href="#carrusel-3">■</a>
+                    <a href="#carrusel-4">■ </a>
+                </div>
+            </div>
+            <div class="segundo-contenedor">
+                <div class="contenedor-detalle">
+                    <div class="titulo-precio">
+                        <div>
+                            <p class="titulo">TRAJE MTC</p>
+                        </div>
+                        <div>
+                            <p class="precio">$Precio</p>
+                        </div>
+                    </div>
+                    <div class="descripcion-producto">
+                        <h6><strong>TRAJE DE MANGA LARGA MOTOCROSS HOMBRE</strong></h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo
+                            sint
+                            animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
+                            accusantium,
+                            amet
+                            voluptate tempora molestiae.</p>
+                    </div>
+                    <div class="talla-medidas">
+                        <div>
+                            <p>Elige tu talla</p>
+                        </div>
+                        <div>
+                            <a href="images/guiaMedidas.png">Guía de medidas</a>
+                        </div>
+                    </div>
+                    <div class="tallas">
+                        <ul>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">XL</a></li>
+                            <li><a href="#">XXL</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form action="">
+                            <div class="input-group">
+                                <label></label>
+                                <input class="my-input" type="submit" value="Comprar Ahora">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="mas-detalles">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="contenedor-720">
+            <div class="contenedor-720-img">
+                <div class="img-superior">
+                    <div class="imgmin-720">
+                        <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
+                    </div>
+                    <div class="imgmin-720">
+                        <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="jersey2">
+                    </div>
+                </div>
+
+                <div class="img-inferior">
+                    <div class="imgmin-720">
+                        <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="pantalon">
+                    </div class="min-720">
+                    <div class="imgmin-720">
+                        <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="moto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor-720-detalle">
+                <div class="detalle-720">
+                    <div class="titulo-precio">
+                        <div>
+                            <p class="titulo">TRAJE MTC</p>
+                        </div>
+                        <div>
+                            <p class="precio">$Precio</p>
+                        </div>
+                    </div>
+
+                    <div class="descripcion-producto">
+                        <h6><strong>TRAJE DE MANGA LARGA MOTOCROSS HOMBRE</strong></h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo
+                            sint
+                            animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
+                            accusantium,
+                            amet
+                            voluptate tempora molestiae.</p>
+                    </div>
+                    <div class="talla-medidas">
+                        <div>
+                            <p>Elige tu talla</p>
+                        </div>
+                        <div>
+                            <a href="images/guiaMedidas.png">Guía de medidas</a>
+                        </div>
+                    </div>
+                    <div class="tallas">
+                        <ul>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">XL</a></li>
+                            <li><a href="#">XXL</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form action="">
+                            <div class="input-group">
+                                <label></label>
+                                <input class="my-input" type="submit" value="Comprar Ahora">
+                            </div>
+                        </form>
+                    </div>
+                </div><br>
+                <div class="mas-detalles-720">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.</p><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="comentarios">
+                    <i class="fa-regular fa-comment-dots"></i>
+
+                    <a href="#opinion"><i class="fa-solid fa-star"></i></a>
+                    <a href="#opinion"><i class="fa-solid fa-star"></i></a>
+                    <a href="#opinion"><i class="fa-solid fa-star"></i></a>
+                    <a href="#opinion"><i class="fa-solid fa-star"></i></a>
+                    <a href="#opinion"><i class="fa-regular fa-star-half-stroke"></i></a>
+
+                </div>
+                <div class="descripcion-amplia"><br>
+                    <p>Lorem ipsum dolor</p>
+                </div>
+                <div class="completo">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, debitis necessitatibus assumenda
+                        facilis consectetur suscipit illum, minus accusantium incidunt aut, autem nihil distinctio? Odit
+                        fugit, magni at suscipit delectus vero!
+                        Nostrum, possimus. Sequi unde doloremque odio sit? Quos, corporis? Consectetur beatae asperiores
+                        cupiditate suscipit corporis quia ea atque perspiciatis repellendus omnis! Explicabo, ratione!
+                        Officiis ipsum velit nihil quia ad vel?
+                        Necessitatibus officia animi itaque modi deserunt perspiciatis, velit saepe vero, atque quia
+                        mollitia repellendus laudantium praesentium esse quidem aperiam dicta provident optio asperiores
+                        eaque aliquid suscipit odit ducimus. Aliquid, id?
+                    </p>
+                </div>
+
+                <form class="opinion" action="/contacto" method="get">
+                    <div>
+                        <div>
+                            <label for="opinion">Escribe tu opinión sobre el producto:</label>
+                            <textarea name="opinion" id="opinion"></textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <h3>BLAMSH</h3>
+        <ul class="footer__ayuda">
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Ayuda</a></li>
+            <li><a href="">Devoluciones</a></li>
+            <li><a href="">Seguimiento</a></li>
+            <li><a href="">Contacto</a></li>
+        </ul>
+
+        <div class="footer__redes">
+            <ul>
+                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-facebook fa-xl"
+                            style="color: #3e3f41;"></i></a></li>
+                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-instagram  fa-xl"
+                            style="color: #3e3f41;"></i></a></li>
+                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-twitter fa-xl"
+                            style="color: #3e3f41;"></i></a></li>
+                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-youtube fa-xl"
+                            style="color: #3e3f41;"></i></a></li>
+            </ul>
+        </div>
+
+        <div class='footer__avisos-condiciones'>
+            <ul class="avisos-condiciones__opciones">
+                <li><a href=""> 2023 Blamsh |</a></li>
+                <li><a href="">Aviso legal |</a></li>
+                <li><a href="">Coockies |</a></li>
+                <li><a href="">Terminos y condiciones |</a></li>
+                <li><a href="">Mapa web</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
