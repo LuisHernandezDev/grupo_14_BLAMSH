@@ -21,50 +21,8 @@
 
 <body>
     <header>
-        <nav>
-            <div class="nav__logo-burger" id="burger-div">
-                <a href=""></a><i class="fa-solid fa-bars fa-lg" id="burger-menu" style="color: #64676d;"></i> </a>
-                <a href="/">
-                    <p>BLAMSH</p>
-                </a>
-            </div>
-
-            <div class="nav__generos">
-                <ul class="generos__genders">
-                    <li class='genders' id="genero-hombre"><a class="genders__a" href="#">Hombre <i
-                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
-                    <li class='genders' id="genero-mujer"><a class="genders__a" href="#">Mujer <i
-                                class="fa-solid fa-caret-down fa-s" style="color: #ababab;"></i></a></li>
-                </ul>
-            </div>
-
-            <div class="nav__opciones">
-                <div class="opciones__lupa"><input type="text"><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
-                            style="color: #eaeaeb;"></i></a></div>
-                <div class="opciones__carrito"><a href="/carrito"><span>Carrito</span><i
-                            class="fa-sharp fa-solid fa-basket-shopping fa-l" style="color: #eaeaeb;"></i></a></div>
-                <div class="opciones__user"><a href="/login"><span>Iniciar Sesion</span><i
-                            class="fa-regular fa-circle-user fa-l"></i></a></div>
-            </div>
-
-
-            <div class="hidden-catalog" id="hidden-catalog">
-                <div class="inner-catalog">
-                    <ul>
-                        <li><a href="">Todos los productos</a></li>
-                        <li><a href="">Remeras</a></li>
-                        <li><a href="">Camisas</a></li>
-                        <li><a href="">Outdoors</a></li>
-                        <li><a href="">Buzos y sweaters</a></li>
-                        <li><a href="">Calzado</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-
-
+        <%-include ('./partials/navbar')%>
+     </header>
     <main>
         <section class="main__section-photo">
             <img src="images/img-register/register__main-background.jpg" alt="none">
@@ -97,12 +55,6 @@
             </div>
 
             <div class="section__form-register">
-
-<<<<<<< HEAD:views/register.ejs
-                <div class="section__form-register">
-
-=======
->>>>>>> 3a77912cc01e4c40ffd2d301ff0aa10c11b2e12a:views/register.html
 
                     <form action="/enviar" method="post" class="form-register__form">
 
@@ -143,42 +95,7 @@
         </section>
     </main>
     <footer>
-        <h3>BLAMSH</h3>
-        <ul class="footer__ayuda">
-            <li><a href="">Nosotros</a></li>
-            <li><a href="">Ayuda</a></li>
-            <li><a href="">Devoluciones</a></li>
-            <li><a href="">Seguimiento</a></li>
-            <li><a href="">Contacto</a></li>
-        </ul>
-
-        <div class="footer__redes">
-            <ul>
-                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-facebook fa-xl"
-                            style="color: #3e3f41;"></i></a></li>
-                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-instagram  fa-xl"
-                            style="color: #3e3f41;"></i></a></li>
-                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-twitter fa-xl"
-                            style="color: #3e3f41;"></i></a></li>
-                <li class="redes__li"><a class="redesli__a" href=""><i class="fa-brands fa-youtube fa-xl"
-                            style="color: #3e3f41;"></i></a></li>
-
-            </ul>
-        </div>
-
-        </div>
-
-        <div class='footer__avisos-condiciones'>
-            <ul class="avisos-condiciones__opciones">
-                <li><a href=""> 2023 Blamsh |</a></li>
-                <li><a href="">Aviso legal |</a></li>
-                <li><a href="">Coockies |</a></li>
-                <li><a href="">Terminos y condiciones |</a></li>
-                <li><a href="">Mapa web</a></li>
-            </ul>
-            </ul>
-        </div>
-
+        <%-include ('./partials/footer')%>
     </footer>
     <script src="public/js/catalog.js"></script>
 </body>
