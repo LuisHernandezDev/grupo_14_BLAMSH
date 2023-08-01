@@ -1,55 +1,62 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/editionProduct.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="css/footer.css">
-        <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-        </style>
-    
-    
-        <title>Creación - Edición productos</title>
-    </head>
-    <body>
-        <header>
-            <%-include ('./partials/navbar')%>
-        </header>
-    
+<html lang="en">
 
-        <main>
-            
-            <section class="product-edit">
-                <form action="post" method="post" class="edit-form">
+</html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/editionProduct.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+    </style>
+
+
+    <title>Creación - Edición productos</title>
+</head>
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+
+
+    <main>
+
+        <section class="product-edit">
+            <form action="post" method="post" class="edit-form">
                 <h2 class="title">CARGA DE PRODUCTOS</h2>
                 <input class="items" type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required>
                 <input class="items" type="number" name="precio" id="precio" placeholder="Precio de producto" required>
                 <input class="items" type="text" name="categoria" id="categoria" placeholder="Categoria de producto">
                 <input class="items" type="text" name="talle" id="talle" placeholder="Talle producto">
-                <input class="items-desc" type="text" name="descripcion" id="descripcion" placeholder="Descripción de producto">
+                <input class="items-desc" type="text" name="descripcion" id="descripcion"
+                    placeholder="Descripción de producto">
                 <p class="Importar"> <a href="#"> Importar imagenes</a></p><br>
                 <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
-                </form>
-            </section>     
-            <section class="product-image">
-                <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
-                <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto">  
-            </section> 
+            </form>
+        </section>
+        <section class="product-image">
+            <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
+            <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto">
+        </section>
 
 
 
-        </main>
+    </main>
 
 
-        <footer>
-            <%-include ('./partials/footer')%>
-        </footer>
-    
 
-    </body>
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+
+
+</body>
+
 </html>
