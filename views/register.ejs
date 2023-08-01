@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="css/footer.css">
     <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>BLAMSH</title>
 </head>
 
 
 <body>
     <header>
         <%-include ('./partials/navbar')%>
-     </header>
+    </header>
     <main>
         <section class="main__section-photo">
             <img src="images/img-register/register__main-background.jpg" alt="none">
@@ -52,48 +52,50 @@
 
             <div class="section__form-register">
 
+                <form action="/enviar" method="post" class="form-register__form">
+
+
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
+
+
+                    <input type="email" id="email" name="email" required placeholder="Correo electronico">
+
+
+                    <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono">
+
+
+                    <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
                     <form action="/enviar" method="post" class="form-register__form">
 
 
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
 
+                        <input type="repeat-password" name="repeat-password" id="repeat-password"
+                            placeholder="Ingresar nueva contraseña">
 
-                        <input type="email" id="email" name="email" required placeholder="Correo electronico">
+                        <div class="form__checkbox-container">
+                            <input type="checkbox" id="opcion1" name="opcion1" value="opcion1" class="form__checkbox">
+                            <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los
+                                Términos
+                                de Uso de Blamsh.</label>
 
-
-                        <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono">
-
-
-                        <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
-                        <form action="/enviar" method="post" class="form-register__form">
-
-
-
-                            <input type="repeat-password" name="repeat-password" id="repeat-password"
-                                placeholder="Ingresar nueva contraseña">
-
-                            <div class="form__checkbox-container">
-                                <input type="checkbox" id="opcion1" name="opcion1" value="opcion1"
-                                    class="form__checkbox">
-                                <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los
-                                    Términos
-                                    de Uso de Blamsh.</label>
-
-                            </div>
-                            <div class="form__checkbox-container">
-                                <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
-                                <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de
-                                    Blamsh</label>
-                            </div>
-                            <input type="submit" value="Unite a BLAMSH" class="form__enviar">
-                        </form>
+                        </div>
+                        <div class="form__checkbox-container">
+                            <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
+                            <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de
+                                Blamsh</label>
+                        </div>
+                        <input type="submit" value="Unite a BLAMSH" class="form__enviar">
+                    </form>
 
         </section>
     </main>
+
+
+
     <footer>
         <%-include ('./partials/footer')%>
     </footer>
-    <script src="public/js/catalog.js"></script>
+    <script src="js/catalog.js"></script>
 </body>
 
 
