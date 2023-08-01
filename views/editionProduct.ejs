@@ -9,12 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="css/footer.css">
         <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-        </style>
     
     
-        <title>Creación - Edición productos</title>
+        <title> Carga / Edición productos</title>
     </head>
     <body>
         <header>
@@ -26,15 +23,20 @@
             
             <section class="product-edit">
                 <form action="post" method="post" class="edit-form">
-                <h2 class="title">CARGA DE PRODUCTOS</h2>
+                <h3 class="title">Carga/ edición de productos</h3> 
                 <input class="items" type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required>
                 <input class="items" type="number" name="precio" id="precio" placeholder="Precio de producto" required>
                 <input class="items" type="text" name="categoria" id="categoria" placeholder="Categoria de producto">
                 <input class="items" type="text" name="talle" id="talle" placeholder="Talle producto">
                 <input class="items-desc" type="text" name="descripcion" id="descripcion" placeholder="Descripción de producto">
-                <p class="Importar"> <a href="#"> Importar imagenes</a></p><br>
+                <input class="importar" type="file" name="importar" id="importar" value="Importar imagenes">
+
+                <span>
+                    <i id= 'icon' class="fa-solid fa-trash-can" style="color: #000000;"></i>
+                </span>
+                <a href="#"><input class="button" type="submit" name="eliminar" id="eliminar" value="Eliminar"></a>
                 <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
-                </form>
+             </form>
             </section>     
             <section class="product-image">
                 <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
