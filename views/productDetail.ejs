@@ -12,7 +12,7 @@
     </h1>
     <article>
         <h1>
-            <%= product.tittle %>
+            <%= product.title %>
         </h1>
         <h3>
             $<%= product.price %>
@@ -20,7 +20,7 @@
         <a href="/products/ <%= product.id %>/edit">
             <button>Editar producto</button>
         </a>
-        <form action="/products/ <%= product.id %> /delete?_method=DELETE" method="post">
+        <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
             <input type="submit" value="Eliminar producto">
         </form>
 

@@ -33,5 +33,7 @@ router.get('/products/:id/edit', productControllers.getEdit);
 // @DELETE - /products/:id/delete
 router.delete('/products/:id/delete', productControllers.deleteProduct);
 
+router.put('/products/:id/edit', productControllers.updateProduct);
+
 // traer a  la funcion router
 module.exports = router;

@@ -25,6 +25,7 @@ const modelo = {
         const lastProductId = products[products.length - 1].id; // Acá tomamos el id del último producto. 
 
         const newProduct = {
+
             id: lastProductId + 1, // Y acá le sumamos 1 al último id.
             ...bodyData // Usamos el spread operator de bodyData para hacer una copia exacta de lo que envía el usuario en el navegador
         };
@@ -45,6 +46,25 @@ const modelo = {
 
         const jsonProducts = JSON.stringify(products);
         fs.writeFileSync(modelo.fileRoute, jsonProducts, 'utf-8')
+    },
+
+    updateProduct: (updatedProduct) => {
+        // Buscar array de productos ya existentes.
+        let products = modelo.findAll();
+
+        // Conseguir en que índice de ese array, está guardado el producto del id en cuestión.
+        const prodIndex = products.findIndex(productoActual => productoActual.id === updatedProduct.id);
+
+        // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro.
+        products[prodIndex] = updatedProduct;
+
+        // Convertir este nuevo array en JSON.
+        const productsJson = JSON.stringify(products);
+
+        // Guardar todo al JSON.
+        fs.writeFileSync(modelo.fileRoute, productsJson, 'utf-8');
+
+
     }
 
 };

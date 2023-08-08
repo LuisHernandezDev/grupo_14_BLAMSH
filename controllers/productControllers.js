@@ -49,7 +49,7 @@ const controller = {
         console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body // body es el objeto que createProduct necesita.
 
         const newProduct = {
-            tittle: req.body.tittle,
+            title: req.body.title,
             price: req.body.price
         }
 
@@ -65,13 +65,39 @@ const controller = {
     },
 
     getEdit: (req, res) => {
-        res.render('editProduct');
+        const product = productModels.findById(Number(req.params.id));
+
+        res.render('editProduct', { product });
+
     },
 
     deleteProduct: (req, res) => {
-        productModels.destroy(parseInt(req.params.id));
+        productModels.destroy(Number(req.params.id));
 
-        res.send('Se esta eliminando el producto ' + req.params.id);
+        res.redirect('/products');
+    },
+
+    updateProduct: (req, res) => {
+
+        // Una forma de hacerlo pero que el id quede de primero.
+        let updatedProduct = {
+            id: Number(req.params.id),
+        };
+        updatedProduct = {
+            ...updatedProduct,
+            ...req.body
+        };
+
+        // Otra forma de hacerlo pero el id queda de último.
+        /*
+        const updatedProduct = req.body; // Lo que el usuario ingrese en el formulaio, llegará acá mediante el body
+
+        updatedProduct.id = Number(req.params.id); // Acá agregamos el id a lo que el usuario envia pero queda de último.
+        */
+
+        productModels.updateProduct(updatedProduct);
+
+        res.redirect('/products/' + updatedProduct.id + '/detail');
     }
 
 };
