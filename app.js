@@ -25,7 +25,7 @@ app.set('views', [
 
 // Le decimos a la aplicación que todo lo que llegue desde un formulario, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json);
+app.use(express.json());
 
 
 // avisar al servido que tiene que usar mainrouter 
