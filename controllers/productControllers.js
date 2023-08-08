@@ -53,9 +53,15 @@ const controller = {
             price: req.body.price
         }
 
-        productModels.createProduct(newProduct);
+        const createdProduct = productModels.createProduct(newProduct);
 
-        res.send('Se esta creando el producto...'); // Para que se ejecute esta linea de código, se tiene que ejecutar este controller (postProduct) Para que se ejecute dicho controllers, se tiene que ejecutar su ruta, y para que se ejecute la ruta, el usuario tiene que hacer un post request a /products "router.post('/products', productControllers.postProduct);"
+        console.log('El nuevo producto tiene como id: ' + createdProduct.id);
+        res.redirect('/products/' + createdProduct.id + '/detail');
+
+        // Desde los POST no renderizamos vistas, solo redireccionamos.
+        // res.redirect('/products'); 
+
+        // Para que se ejecute esta linea de código, se tiene que ejecutar este controller (postProduct) Para que se ejecute dicho controllers, se tiene que ejecutar su ruta, y para que se ejecute la ruta, el usuario tiene que hacer un post request a /products "router.post('/products', productControllers.postProduct);"
     }
 };
 

@@ -27,13 +27,15 @@ const modelo = {
         const newProduct = {
             id: lastProductId + 1, // Y acá le sumamos 1 al último id.
             ...bodyData // Usamos el spread operator de bodyData para hacer una copia exacta de lo que envía el usuario en el navegador
-        }
+        };
 
         products.push(newProduct);
 
         const jsonData = JSON.stringify(products); // Convertimos de JS a JSON para que se pueda guardar en la BD.
 
         fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); // Guardamos en el JSON. Usando writeFileSync pasando como primer parámetro en donde queremos escribir, segundo parámetro, pasamos la data que queremos guardar y como tercer parámetro el idioma utf-8.
+
+        return newProduct;
     }
 
 };
