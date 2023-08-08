@@ -219,7 +219,7 @@ img {
     .imgmin-720 {
         display: flex;
         flex-direction: column;
-        width: 25vw;
+        width: 22vw;
         display: block;
         padding: 5px;
     }

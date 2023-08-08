@@ -23,6 +23,10 @@ app.set('views', [
 
 ]);
 
+// Le decimos a la aplicación que todo lo que llegue desde un formulario, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json);
+
 
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);
@@ -31,8 +35,15 @@ app.use('/', userRouter);
 
 app.use('/', productRouter);
 
+/* 
+Vistas - Son la parte visual, es donde mostramos la info al usuario.
+Controllers - Son quienes responden a los pedidos, y también pueden renderizar vistas.
+Modelos - Son quienes comunican a los controlles con el archivo JSON o BD. Juntos nos dan funciones para manipular la data del mismo.
+JSON - Es el archivo donde guardamos data para que se mantenga.
+*/
 
-app.listen(process.env.PORT||3000 , () => {
+
+app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3000/');
 });
 

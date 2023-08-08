@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "tittle": "Licuadora",
+        "price": 120
+    },
+    {
+        "id": 2,
+        "tittle": "PC",
+        "price": 158
+    },
+    {
+        "id": 3,
+        "tittle": "Cocina",
+        "price": 200
+    },
+    {
+        "id": 4,
+        "tittle": "Nevera",
+        "price": 350
+    },
+    {
+        "id": 5,
+        "tittle": "Cama",
+        "price": 160
+    },
+    {
+        "id": 9,
+        "tittle": "Secadora",
+        "price": 320
+    }
+]
