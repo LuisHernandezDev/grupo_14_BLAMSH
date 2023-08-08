@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "title": "TRAJE MTC",
+        "price": 69999.99,
+        "img-1" : "images/img-main/prendas/main__prenda--remera.jpg",
+        "img-2": "images/img-main/prendas/main__prendas-borcegos.jpg",
+        "description_h6": "TRAJE DE MANGA LARGA MOTOCROSS HOMBRE",
+        "description_p": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo sint animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum, accusantium, amet voluptate tempora molestiae.",
+        "descripcion_amplia": "Lorem ipsum dolor",
+        "mas_detalle" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "descripcion_completa" : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, debitis necessitatibus assumenda facilis consectetur suscipit illum, minus accusantium incidunt aut, autem nihil distinctio? Odit fugit, magni at suscipit delectus vero! Nostrum, possimus. Sequi unde doloremque odio sit? Quos, corporis? Consectetur beatae asperiores cupiditate suscipit corporis quia ea atque perspiciatis repellendus omnis! Explicabo, ratione! Officiis ipsum velit nihil quia ad vel? Necessitatibus officia animi itaque modi deserunt perspiciatis, velit saepe vero, atque quia mollitia repellendus laudantium praesentium esse quidem aperiam dicta provident optio asperiores eaque aliquid suscipit odit ducimus. Aliquid, id?"
+  
+    }
+]

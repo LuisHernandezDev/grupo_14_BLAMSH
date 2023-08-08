@@ -91,10 +91,10 @@
                 <div class="contenedor-detalle">
                     <div class="titulo-precio">
                         <div>
-                            <p class="titulo">TRAJE MTC</p>
+                            <p class="titulo"><%= product.title %></p>
                         </div>
                         <div>
-                            <p class="precio">$Precio</p>
+                            <p class="precio">$ <%= product.price %></p>
                         </div>
                     </div>
                     <div class="descripcion-producto">
@@ -151,7 +151,7 @@
             <div class="contenedor-720-img">
                 <div class="img-superior">
                     <div class="imgmin-720">
-                        <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
+                        <img src="../public/images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
                     </div>
                     <div class="imgmin-720">
                         <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="jersey2">
@@ -172,21 +172,16 @@
                 <div class="detalle-720">
                     <div class="titulo-precio">
                         <div>
-                            <p class="titulo">TRAJE MTC</p>
+                            <p class="titulo"><%=product.title%></p>
                         </div>
                         <div>
-                            <p class="precio">$Precio</p>
+                            <p class="precio">$<%= product.price%></p>
                         </div>
                     </div>
 
                     <div class="descripcion-producto">
-                        <h6><strong>TRAJE DE MANGA LARGA MOTOCROSS HOMBRE</strong></h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo
-                            sint
-                            animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
-                            accusantium,
-                            amet
-                            voluptate tempora molestiae.</p>
+                        <h6><strong><%=product.description_h6%></strong></h6>
+                        <p><%=product.description_p%></p>
                     </div>
                     <div class="talla-medidas">
                         <div>
@@ -215,10 +210,9 @@
                     </div>
                 </div><br>
                 <div class="mas-detalles-720">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit.</p><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><%=product.mas_detalle%></p><br>
+                    <p><%=product.mas_detalle%></p><br>
+                    <p><%=product.mas_detalle%></p>
                 </div>
                 <div class="comentarios">
                     <i class="fa-regular fa-comment-dots"></i>
@@ -231,18 +225,10 @@
 
                 </div>
                 <div class="descripcion-amplia"><br>
-                    <p>Lorem ipsum dolor</p>
+                   <p> <%= product.descripcion_amplia %></p>
                 </div>
                 <div class="completo">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, debitis necessitatibus assumenda
-                        facilis consectetur suscipit illum, minus accusantium incidunt aut, autem nihil distinctio? Odit
-                        fugit, magni at suscipit delectus vero!
-                        Nostrum, possimus. Sequi unde doloremque odio sit? Quos, corporis? Consectetur beatae asperiores
-                        cupiditate suscipit corporis quia ea atque perspiciatis repellendus omnis! Explicabo, ratione!
-                        Officiis ipsum velit nihil quia ad vel?
-                        Necessitatibus officia animi itaque modi deserunt perspiciatis, velit saepe vero, atque quia
-                        mollitia repellendus laudantium praesentium esse quidem aperiam dicta provident optio asperiores
-                        eaque aliquid suscipit odit ducimus. Aliquid, id?
+                    <p> <%= product.descripcion_completa %>
                     </p>
                 </div>
 
@@ -259,7 +245,7 @@
         </div>
     </main>
 
-    <script src="js/catalog.js"></script>
+
 
     <footer>
         <%-include ('./partials/footer')%>

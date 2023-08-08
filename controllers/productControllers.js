@@ -1,12 +1,14 @@
 //require path
 const path = require('path');
+const productModel = require('../model/productModel');
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
 
 
     detalleProducto: (req, res) => {
         // res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
-        res.render('detalleProducto');
+        const product = productModel.getDataProductById(Number(req.params.id)); 
+        res.render('detalleProducto',{product});
     },
 
     carrito: (req, res) => {

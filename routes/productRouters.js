@@ -7,7 +7,7 @@ const maincontroller = require('../controllers/productControllers');
 // solo los principios de las routas y 
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
 
-router.get('/detalleProducto', maincontroller.detalleProducto);
+router.get('/:id/detalleProducto', maincontroller.detalleProducto);
 
 router.get('/carrito', maincontroller.carrito);
 
