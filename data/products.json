@@ -1,1 +1,52 @@
-[{"id":1,"tittle":"Licuadora","price":120},{"id":2,"tittle":"PC","price":158},{"id":3,"tittle":"Cocina","price":200},{"id":4,"tittle":"Nevera","price":350},{"id":5,"tittle":"Cama","price":160},{"id":6,"tittle":"Prueba2","price":"4"},{"id":7,"tittle":"Prueba4","price":"321"},{"id":8,"tittle":"PruebaNueva","price":"567"},{"id":9,"tittle":"Meson para cocina","price":"123456"},{"id":10,"tittle":"prueba 12","price":"345"},{"id":11,"tittle":"prueba 12","price":"345"}]
+[
+    {
+        "id": 2,
+        "tittle": "PC",
+        "price": 158
+    },
+    {
+        "id": 3,
+        "tittle": "Cocina",
+        "price": 200
+    },
+    {
+        "id": 4,
+        "tittle": "Nevera",
+        "price": 350
+    },
+    {
+        "id": 5,
+        "tittle": "Cama",
+        "price": 160
+    },
+    {
+        "id": 6,
+        "tittle": "Prueba2",
+        "price": "4"
+    },
+    {
+        "id": 7,
+        "tittle": "Prueba4",
+        "price": "321"
+    },
+    {
+        "id": 8,
+        "tittle": "PruebaNueva",
+        "price": "567"
+    },
+    {
+        "id": 9,
+        "tittle": "Meson para cocina",
+        "price": "123456"
+    },
+    {
+        "id": 10,
+        "tittle": "prueba 12",
+        "price": "345"
+    },
+    {
+        "id": 11,
+        "tittle": "prueba 12",
+        "price": "345"
+    }
+]

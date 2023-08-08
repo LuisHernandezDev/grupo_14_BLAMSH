@@ -1,12 +1,13 @@
 // Requerimos express para para usarlo
 const express = require('express');
+//Requerimos methodOverride para usar put y delete
+const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
 
 // Iniciamos un servidor, y lo guardamos dentro de app
 const app = express();
 
-app.use(express.static('public'));
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -23,9 +24,14 @@ app.set('views', [
 
 ]);
 
+// Usa los recursos estaticos de la carpeta public
+app.use(express.static('public'));
+
 // Le decimos a la aplicación que todo lo que llegue desde un formulario, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 
 // avisar al servido que tiene que usar mainrouter 

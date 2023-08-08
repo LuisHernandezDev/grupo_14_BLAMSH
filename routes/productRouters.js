@@ -27,5 +27,11 @@ router.get('/products/create', productControllers.getCreate);
 // @POST - /
 router.post('/products', productControllers.postProduct);
 
+// @GET - /products/:id/edit
+router.get('/products/:id/edit', productControllers.getEdit);
+
+// @DELETE - /products/:id/delete
+router.delete('/products/:id/delete', productControllers.deleteProduct);
+
 // traer a  la funcion router
 module.exports = router;

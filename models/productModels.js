@@ -36,6 +36,15 @@ const modelo = {
         fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); // Guardamos en el JSON. Usando writeFileSync pasando como primer parámetro en donde queremos escribir, segundo parámetro, pasamos la data que queremos guardar y como tercer parámetro el idioma utf-8.
 
         return newProduct;
+    },
+
+    destroy: (id) => { // Se pasa por parámetro el campo requerido, en este caso "id" porque es un valor único de los productos.
+        let products = modelo.findAll();
+
+        products = products.filter(productoActual => productoActual.id !== id); // Acá filtramos por el id que no es igual para poder eliminar el producto seleccionado
+
+        const jsonProducts = JSON.stringify(products);
+        fs.writeFileSync(modelo.fileRoute, jsonProducts, 'utf-8')
     }
 
 };

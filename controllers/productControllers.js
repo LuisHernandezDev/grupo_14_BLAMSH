@@ -62,7 +62,18 @@ const controller = {
         // res.redirect('/products'); 
 
         // Para que se ejecute esta linea de código, se tiene que ejecutar este controller (postProduct) Para que se ejecute dicho controllers, se tiene que ejecutar su ruta, y para que se ejecute la ruta, el usuario tiene que hacer un post request a /products "router.post('/products', productControllers.postProduct);"
+    },
+
+    getEdit: (req, res) => {
+        res.render('editProduct');
+    },
+
+    deleteProduct: (req, res) => {
+        productModels.destroy(parseInt(req.params.id));
+
+        res.send('Se esta eliminando el producto ' + req.params.id);
     }
+
 };
 
 // exportar el controlador 
