@@ -46,9 +46,10 @@ const controller = {
     },
 
     postProduct: (req, res) => {
-        console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body
+        // console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body
 
-        productModels.createProduct({ id: 9, tittle: 'Secadora', price: 320 })
+        productModels.createProduct({ id: 9, tittle: 'Secadora', price: 320 });
+
         res.send('Se esta creando el producto...'); // Para que se ejecute esta linea de código, se tiene que ejecutar este controller (postProduct) Para que se ejecute dicho controllers, se tiene que ejecutar su ruta, y para que se ejecute la ruta, el usuario tiene que hacer un post request a /products "router.post('/products', productControllers.postProduct);"
     }
 };
