@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <form action="/products" method="post">
+    <form action="/products" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="Titulo" id="">
         <input type="number" name="price" placeholder="999" id="">
-        <input type="file" name="img">
+        <input type="file" name="img" multiple>
         <input type="submit" name="" id="" value="Registrar producto">
     </form>
 </body>

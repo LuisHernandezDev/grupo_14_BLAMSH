@@ -16,6 +16,8 @@ const userRouter = require('./routes/userRouters');
 
 const productRouter = require('./routes/productRouters');
 
+const logMiddleware = require('./middlewares/logMiddleware');
+
 
 app.set('view engine', 'ejs');
 
@@ -23,6 +25,8 @@ app.set('views', [
     path.join(__dirname, './views'),
 
 ]);
+
+app.use(logMiddleware);
 
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
@@ -36,10 +40,12 @@ app.use(methodOverride('_method'));
 
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);
-
 app.use('/', userRouter);
-
 app.use('/', productRouter);
+
+app.use((req, res) => {
+    res.send ('Error 404 - Not found')
+})
 
 /* 
 Vistas - Son la parte visual, es donde mostramos la info al usuario.
@@ -52,6 +58,13 @@ JSON - Es el archivo donde guardamos data para que se mantenga.
 app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3000/');
 });
+
+
+
+
+
+
+
 
 // Escuchamos los GET request a "/"
 /* app.get('/', (req, res) => {

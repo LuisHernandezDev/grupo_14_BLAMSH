@@ -48,9 +48,12 @@ const controller = {
     postProduct: (req, res) => {
         console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body // body es el objeto que createProduct necesita.
 
+        // (req.file) - Trae la información o detalle de la imagen y también los datos de donde se guardó.
+
         const newProduct = {
             title: req.body.title,
-            price: req.body.price
+            price: req.body.price,
+            img: req.file.filename
         }
 
         const createdProduct = productModels.createProduct(newProduct);

@@ -7,8 +7,16 @@ const productControllers = require('../controllers/productControllers');
 //Requerimos Multer
 const multer = require('multer');
 
+// Requerimos el método body de express-validator
+const {body} = require('express-validator');
+
+// Requerimos el middleware
+const createProductMiddleware = require('../middlewares/createProductMiddleware');
+
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
+
+// Validaciones:
 
 
 /*
@@ -24,7 +32,8 @@ const storage = multer.diskStorage({
     },
 
     filename: (req, file, cb) => { // Acá indicamos el nombre con que se guardará el archivo
-        cb(null);
+        console.log(file);
+        cb(null, Date.now() + "-" + file.originalname);
     }
 });
 
@@ -51,7 +60,7 @@ router.get('/products/:id/detail', productControllers.getDetail);
 router.get('/products/create', productControllers.getCreate);
 
 // @POST - /
-router.post('/products', upload.single('img'), productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+router.post('/products', createProductMiddleware, upload.single('img'), productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
 router.get('/products/:id/edit', productControllers.getEdit);
