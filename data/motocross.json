@@ -22,7 +22,7 @@
     {
       "id": 3,
       "name": "Conjunto Jersey y Pantalón",
-      "description": "Conjunto de alta calidad para competir en motocross.",
+      "description": "Conjunto de alta calidad para tus competiciones.",
       "image": "conjunto-motocross.jpg",
       "category": "Ropa",
       "colors": ["Azul/Rojo", "Verde/Negro", "Naranja/Azul"],
@@ -164,7 +164,7 @@
       "name": "Gafas de Protección",
       "description": "Gafas de protección para motocross con lente anti-rayaduras.",
       "image": "gafas-proteccion.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Negro", "Transparente", "Ámbar"],
       "talle": ["Único"],
       "price": 16.99
@@ -184,7 +184,7 @@
       "name": "Kit de Pegatinas",
       "description": "Kit de pegatinas de alta calidad para personalizar la moto.",
       "image": "kit-pegatinas.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Variados"],
       "talle": ["Único"],
       "price": 14.99
@@ -194,7 +194,7 @@
       "name": "Kit de Protección Completo",
       "description": "Kit completo de protecciones para una experiencia segura.",
       "image": "kit-proteccion.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": [],
       "talle": ["M", "L"],
       "price": 99.99
@@ -214,7 +214,7 @@
       "name": "Jersey de Competición",
       "description": "Jersey de alta calidad para competir.",
       "image": "jersey-competicion.jpg",
-      "category": "Ropa de Motocross",
+      "category": "Ropa",
       "colors": ["Rojo", "Azul", "Negro"],
       "talle": ["S", "M", "L", "XL"],
       "price": 34.99
@@ -224,7 +224,7 @@
       "name": "Gafas de Ventilación",
       "description": "Gafas con sistema de ventilación para evitar empañamiento.",
       "image": "gafas-ventilacion.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Negro", "Blanco", "Azul"],
       "talle": ["Único"],
       "price": 22.99
@@ -242,7 +242,7 @@
     {
       "id": 25,
       "name": "Kit de Mantenimiento",
-      "description": "Kit esencial para el mantenimiento regular de la moto de motocross.",
+      "description": "Kit esencial para el mantenimiento regular de la moto.",
       "image": "kit-mantenimiento.jpg",
       "category": "Equipamiento y Repuestos",
       "colors": [],
@@ -254,7 +254,7 @@
       "name": "Protector de Manos",
       "description": "Protector de manos resistente.",
       "image": "protector-manos.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Negro", "Blanco", "Rojo"],
       "talle": ["Único"],
       "price": 18.99
@@ -274,7 +274,7 @@
       "name": "Gorro",
       "description": "Gorro ligero para protegerte del sol durante tus aventuras.",
       "image": "gorro-motocross.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Negro", "Rojo"],
       "talle": ["Único"],
       "price": 14.99
@@ -291,10 +291,10 @@
     },
     {
       "id": 30,
-      "name": "Mochila de Motocross",
+      "name": "Mochila",
       "description": "Mochila resistente y espaciosa para llevar tus pertenencias durante tus viajes.",
       "image": "mochila-motocross.jpg",
-      "category": "Accesorios de Motocross",
+      "category": "Accesorios",
       "colors": ["Negro", "Verde"],
       "talle": ["Único"],
       "price": 39.99

@@ -8,7 +8,7 @@ const productControllers = require('../controllers/productControllers');
 const multer = require('multer');
 
 // Requerimos el método body de express-validator
-const {body} = require('express-validator');
+const { body } = require('express-validator');
 
 // Requerimos el middleware
 const createProductMiddleware = require('../middlewares/createProductMiddleware');
@@ -17,7 +17,16 @@ const createProductMiddleware = require('../middlewares/createProductMiddleware'
 const router = express.Router();
 
 // Validaciones:
-
+const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
+const productValidations = [
+    body('name').isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
+    body('description').isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
+    body('image').notEmpty().withMessage('Debe agregar una imagen'),
+    body('category').isIn(allowedCategories).withMessage('Categoría inválida'), // Preguntar si se puede hacer un input select.
+    body('colors').notEmpty().withMessage('Debes seleccionar al menos un color'), // Preguntar si se puede hacer un input select.
+    body('talle').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
+    body('price').isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
+];
 
 /*
 Creamos un storage de multer
@@ -60,7 +69,7 @@ router.get('/products/:id/detail', productControllers.getDetail);
 router.get('/products/create', productControllers.getCreate);
 
 // @POST - /
-router.post('/products', createProductMiddleware, upload.single('img'), productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+router.post('/products', createProductMiddleware, productValidations, upload.single('img'), productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
 router.get('/products/:id/edit', productControllers.getEdit);

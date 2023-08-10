@@ -7,3 +7,7 @@ Se ingresó en la página /registerSe ingresó en la página /css/main-register.
  Se ingresó en la página /products
  Se ingresó en la página /products/29/detail
  Se ingresó en la página /images/products/1691678261619-banner.jpg
+ Se ingresó en la página /products/create
+ Se ingresó en la página /products
+ Se ingresó en la página /products/30/detail
+ Se ingresó en la página /images/products/1691685047864-MacBook.jpg
