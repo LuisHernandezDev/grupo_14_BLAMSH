@@ -20,7 +20,7 @@ const modelo = {
     },
 
     createProduct: (bodyData) => {
-        const products = modelo.findAll();
+        const products = modelo.findAll(); // Acá buscamos el array de productos ya existentes
 
         const lastProductId = products[products.length - 1].id; // Acá tomamos el id del último producto. 
 
@@ -30,11 +30,11 @@ const modelo = {
             ...bodyData // Usamos el spread operator de bodyData para hacer una copia exacta de lo que envía el usuario en el navegador
         };
 
-        products.push(newProduct);
+        products.push(newProduct); // Acá le pusheamos el nuevo producto
 
-        const jsonData = JSON.stringify(products); // Convertimos de JS a JSON para que se pueda guardar en la BD.
+        const jsonData = JSON.stringify(products); // Convertimos de JS a JSON para que se pueda guardar en la BD oJSON.
 
-        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); // Guardamos en el JSON. Usando writeFileSync pasando como primer parámetro en donde queremos escribir, segundo parámetro, pasamos la data que queremos guardar y como tercer parámetro el idioma utf-8.
+        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); // Guardamos en el JSON. Usando writeFileSync pasando como primer parámetro la ruta en donde queremos escribir, como segundo parámetro pasamos la data que queremos guardar y como tercer parámetro el idioma utf-8.
 
         return newProduct;
     },

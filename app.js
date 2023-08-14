@@ -5,10 +5,6 @@ const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
 
-// Iniciamos un servidor, y lo guardamos dentro de app
-const app = express();
-
-
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
 
@@ -18,6 +14,8 @@ const productRouter = require('./routes/productRouters');
 
 const logMiddleware = require('./middlewares/logMiddleware');
 
+// Iniciamos un servidor, y lo guardamos dentro de app
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -26,12 +24,12 @@ app.set('views', [
 
 ]);
 
-app.use(logMiddleware);
-
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
 
-// Le decimos a la aplicación que todo lo que llegue desde un formulario, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
+app.use(logMiddleware);
+
+// Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -43,9 +41,9 @@ app.use('/', mainRouter);
 app.use('/', userRouter);
 app.use('/', productRouter);
 
-app.use((req, res) => {
-    res.send ('Error 404 - Not found')
-})
+// app.use((req, res) => {
+//     res.send ('Error 404 - Not found')
+// })
 
 /* 
 Vistas - Son la parte visual, es donde mostramos la info al usuario.

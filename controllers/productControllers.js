@@ -26,7 +26,7 @@ const controller = {
     },
 
     getList: (req, res) => {
-        const products = productModels.findAll(); // Acá queremos tener un listado de todos los productos
+        const products = productModels.findAll(); // Acá queremos tener un listado de todos los productos. // Esta variable products, es traida del modelo que a su vez guarda el archivo json la cual luego se usa en el forEach del ejs para iterar.
 
         res.render('productList', { products });
     },

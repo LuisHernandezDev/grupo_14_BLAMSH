@@ -4,20 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
 </head>
 
 <body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
     <h1>Estas viendo el detalle del producto <%= product.id %>
     </h1>
     <article>
         <h1>
-            <%= product.title %>
+            <%= product.name %>
         </h1>
+        <h3>
+            <%= product.description %>
+        </h3>
+        <h3>
+            <%= product.image %>
+        </h3>
+        <h3>
+            <%= product.category %>
+        </h3>
+        <h3>
+            <%= product.colors.join(', ') %>
+        </h3>
+        <h3>
+            <%= product.talle.join(", ") %>
+        </h3>
         <h3>
             $<%= product.price %>
         </h3>
-<img width="300px" src="/images/products/<%= product.img %>" alt="">
+        <img width="300px" src="/images/products/<%= product.img %>" alt="">
 
         <a href="/products/<%= product.id %>/edit">
             <button>Editar producto</button>
@@ -27,6 +54,9 @@
         </form>
 
     </article>
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
 </body>
 
 </html>

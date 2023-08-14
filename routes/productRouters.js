@@ -68,8 +68,8 @@ router.get('/products/:id/detail', productControllers.getDetail);
 // @GET - /products/create
 router.get('/products/create', productControllers.getCreate);
 
-// @POST - /
-router.post('/products', createProductMiddleware, productValidations, upload.single('img'), productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+// @POST - /products // A donde llegan los productos creados
+router.post('/products', upload.single('img'), createProductMiddleware, productValidations, productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
 router.get('/products/:id/edit', productControllers.getEdit);
