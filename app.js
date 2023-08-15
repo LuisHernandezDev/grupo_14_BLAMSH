@@ -41,9 +41,9 @@ app.use('/', mainRouter);
 app.use('/', userRouter);
 app.use('/', productRouter);
 
-// app.use((req, res) => {
-//     res.send ('Error 404 - Not found')
-// })
+app.use((req, res) => {
+    res.render ('error-404');
+});
 
 /* 
 Vistas - Son la parte visual, es donde mostramos la info al usuario.

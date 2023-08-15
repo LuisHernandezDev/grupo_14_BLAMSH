@@ -420,15 +420,30 @@
         "id": 34,
         "name": "otro gorro",
         "description": "Gorro ligero para protegerte del sol durante tus aventuras.",
+        "image": "img-1692069515027-banner.jpg",
         "category": "Ropa",
         "colors": "Rojo",
         "talle": "S",
         "price": "12"
     },
     {
-        "id": 35
+        "id": 35,
+        "name": "PruebaMiddleware",
+        "description": "Descripción de pruebaDescripción de pruebaDescripción de prueba",
+        "image": "img-1692111842138-img-1692070247968-SamsungGalaxy.jpg",
+        "category": "Ropa",
+        "colors": "Rojo",
+        "talle": "S",
+        "price": "65"
     },
     {
-        "id": 36
+        "id": 36,
+        "name": "PruebaMiddlewareh<ora",
+        "description": "Descripción de pruebaDescripción de pruebaDescripción de prueba",
+        "image": "img-1692112085163-img-1692070247968-SamsungGalaxy.jpg",
+        "category": "Ropa",
+        "colors": "Rojo",
+        "talle": "S",
+        "price": "65"
     }
 ]
