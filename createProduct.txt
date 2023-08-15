@@ -1,0 +1,3 @@
+
+ Se creó un producto al ingresar en /products
+ Se creó un producto al ingresar en /productsa las Tue Aug 15 2023 11:08:05 GMT-0400 (hora estándar de Chile)

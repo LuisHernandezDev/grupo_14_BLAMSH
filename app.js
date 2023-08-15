@@ -1,12 +1,9 @@
 // Requerimos express para para usarlo
 const express = require('express');
+//Requerimos methodOverride para usar put y delete
+const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
-
-// Iniciamos un servidor, y lo guardamos dentro de app
-const app = express();
-
-app.use(express.static('public'));
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -15,6 +12,10 @@ const userRouter = require('./routes/userRouters');
 
 const productRouter = require('./routes/productRouters');
 
+const logMiddleware = require('./middlewares/logMiddleware');
+
+// Iniciamos un servidor, y lo guardamos dentro de app
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -23,18 +24,45 @@ app.set('views', [
 
 ]);
 
+// Usa los recursos estaticos de la carpeta public
+app.use(express.static('public'));
+
+app.use(logMiddleware);
+
+// Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(methodOverride('_method'));
+
 
 // avisar al servido que tiene que usar mainrouter 
 app.use('/', mainRouter);
-
 app.use('/', userRouter);
-
 app.use('/', productRouter);
 
+app.use((req, res) => {
+    res.render ('error-404');
+});
 
-app.listen(process.env.PORT||3000 , () => {
+/* 
+Vistas - Son la parte visual, es donde mostramos la info al usuario.
+Controllers - Son quienes responden a los pedidos, y también pueden renderizar vistas.
+Modelos - Son quienes comunican a los controlles con el archivo JSON o BD. Juntos nos dan funciones para manipular la data del mismo.
+JSON - Es el archivo donde guardamos data para que se mantenga.
+*/
+
+
+app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3000/');
 });
+
+
+
+
+
+
+
 
 // Escuchamos los GET request a "/"
 /* app.get('/', (req, res) => {
