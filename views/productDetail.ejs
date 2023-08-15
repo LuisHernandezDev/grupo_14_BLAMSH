@@ -29,22 +29,21 @@
         <h3>
             <%= product.description %>
         </h3>
-        <h3>
-            <%= product.image %>
+        <h3>          
+            <img width="200px" src="/images/products/<%= product.image %>" alt="">
         </h3>
         <h3>
             <%= product.category %>
         </h3>
         <h3>
-            <%= product.colors.join(', ') %>
+            <%= product.colors %>
         </h3>
         <h3>
-            <%= product.talle.join(", ") %>
+            <%= product.talle %>
         </h3>
         <h3>
             $<%= product.price %>
         </h3>
-        <img width="300px" src="/images/products/<%= product.img %>" alt="">
 
         <a href="/products/<%= product.id %>/edit">
             <button>Editar producto</button>

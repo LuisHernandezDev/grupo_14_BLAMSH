@@ -48,12 +48,19 @@ const controller = {
     postProduct: (req, res) => {
         console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body // body es el objeto que createProduct necesita.
 
+        // Creamos un map para iterar sobre todas las imagenes y que las muestre al cargarlas.
+        // const filenames = req.files.map(file => file.filename);
+
         // (req.file) - Trae la información o detalle de la imagen y también los datos de donde se guardó.
 
         const newProduct = {
-            title: req.body.title,
-            price: req.body.price,
-            img: req.file.filename
+            name: req.body.name,
+            description: req.body.description,
+            image: req.file.filename,
+            category: req.body.category,
+            colors: req.body.colors,
+            talle: req.body.talle.toUpperCase(),
+            price: req.body.price
         }
 
         const createdProduct = productModels.createProduct(newProduct);
@@ -88,8 +95,10 @@ const controller = {
         };
         updatedProduct = {
             ...updatedProduct,
-            ...req.body
+            ...req.body,
         };
+
+        console.log(updatedProduct);
 
         // Otra forma de hacerlo pero el id queda de último.
         /*

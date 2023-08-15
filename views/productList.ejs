@@ -20,8 +20,10 @@
     <header>
         <%-include ('./partials/navbar')%>
     </header>
-    <a href="/products/create">Crear un producto</a>
-    <section>
+    
+    <a style="color: blue; font-size: 30px; text-decoration: underline;" href="/products/create">Crear un producto</a>
+    <section><br>
+        
         <% products.forEach(product=> { %>
             <article>
                 <h1>
@@ -33,14 +35,15 @@
                 <h3>
                     <%= product.image %>
                 </h3>
+                
                 <h3>
                     <%= product.category %>
                 </h3>
                 <h3>
-                    <%= product.colors.join(', ') %>
+                    <%= product.colors %>
                 </h3>
                 <h3>
-                    <%= product.talle.join(", ") %>
+                    <%= product.talle %>
                 </h3>
                 <h3>
                     $<%= product.price %>
@@ -48,7 +51,7 @@
                 <a href="/products/<%= product.id %>/detail">
                     <button>Ver detalle</button>
                 </a>
-            </article>
+            </article><br>
             <% }) %>
     </section>
     <footer>

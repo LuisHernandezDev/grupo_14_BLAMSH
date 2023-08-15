@@ -25,7 +25,6 @@ const modelo = {
         const lastProductId = products[products.length - 1].id; // Acá tomamos el id del último producto. 
 
         const newProduct = {
-
             id: lastProductId + 1, // Y acá le sumamos 1 al último id.
             ...bodyData // Usamos el spread operator de bodyData para hacer una copia exacta de lo que envía el usuario en el navegador
         };

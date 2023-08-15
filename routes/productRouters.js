@@ -42,15 +42,12 @@ const storage = multer.diskStorage({
 
     filename: (req, file, cb) => { // Acá indicamos el nombre con que se guardará el archivo
         console.log(file);
-        cb(null, Date.now() + "-" + file.originalname);
+        cb(null, "img-" + Date.now() + "-" + file.originalname);
     }
 });
 
 const upload = multer({ storage });
 
-
-// solo los principios de las routas y 
-//pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
 
 //Linkeamos el archivo del router con el del controllers
 
@@ -69,7 +66,7 @@ router.get('/products/:id/detail', productControllers.getDetail);
 router.get('/products/create', productControllers.getCreate);
 
 // @POST - /products // A donde llegan los productos creados
-router.post('/products', upload.single('img'), createProductMiddleware, productValidations, productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+router.post('/products', [upload.single('image'), createProductMiddleware, productValidations], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
 router.get('/products/:id/edit', productControllers.getEdit);
