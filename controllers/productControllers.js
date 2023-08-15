@@ -37,7 +37,7 @@ const controller = {
 
         const selectedProduct = productModels.findById(productId); // Acá queremos tener un listado de un solo producto // El id o lo que ingrese el usuario en el navegador, se pasa desde el navegador por parámetro a productId mediante el params, y este a su vez va al Models por medio de la función findById y consulta si el id que también fue pasado por parámetro findById: (id) existe o no.
 
-        res.render('ProductDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
+        res.render('productDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
     },
 
     getCreate: (req, res) => {

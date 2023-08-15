@@ -1209,3 +1209,32 @@
  Se ingresó en la página /images/products/
  Se ingresó en la página /images/products/
  Se ingresó en la página /products/30/detail
+ Se ingresó en la página /session
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /pruebasession
+ Se ingresó en la página /products
+ Se ingresó en la página /products/2/detail
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /products
+ Se ingresó en la página /products
+ Se ingresó en la página /products/2/detail
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /products
+ Se ingresó en la página /products
+ Se ingresó en la página /products/2/detail
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /products/3/detail
+ Se ingresó en la página /images/products/conjunto-motocross.jpg
+ Se ingresó en la página /products/4/detail
+ Se ingresó en la página /images/products/casco-motocross.jpg
+ Se ingresó en la página /products/create
+ Se ingresó en la página /products/2/detail
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /products/create
