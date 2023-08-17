@@ -1620,23 +1620,3 @@
  Se ingresó en la página /products/
  Se ingresó en la página /products/
  Se ingresó en la página /products/
- Se ingresó en la página /
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /carrito
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /product
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /products
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /products/8/detail
- Se ingresó en la página /images/products/
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /products/8/delete?_method=DELETE
- Se ingresó en la página /products
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /products/13/detail
- Se ingresó en la página /images/products/cadena-motocross.jpg
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /favicon.ico
- Se ingresó en la página /editionproduct
- Se ingresó en la página /favicon.ico
