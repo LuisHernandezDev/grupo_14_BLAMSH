@@ -1,3 +1,11 @@
 
  Se creó un producto al ingresar en /products
  Se creó un producto al ingresar en /productsa las Tue Aug 15 2023 11:08:05 GMT-0400 (hora estándar de Chile)
+ Se creó un producto al ingresar en /products a las Wed Aug 16 2023 23:42:56 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:14:37 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:14:58 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:16:09 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:20:30 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:22:47 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:23:14 GMT-0300 (hora estándar de Argentina)
+ Se creó un producto al ingresar en /products a las Thu Aug 17 2023 00:23:44 GMT-0300 (hora estándar de Argentina)
