@@ -63,6 +63,11 @@ body {
 @import url('jquery.mCustomScrollbar.min.css');
 @import url('jquery.bootstrap-touchspin.css');
 
+#tableproducts td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
 /*** 
 
 ====================================================================

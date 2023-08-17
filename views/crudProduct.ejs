@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/css/crud.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,12 +30,12 @@
             <!--Cart Outer-->
             <div class="cart-outer">
                 <div class="table-outer">
-                    <table class="cart-table">
+                    <table id="tableproducts" class="cart-table">
                         <thead class="cart-header">
                             <tr>
                                 <th class="prod-column">Nombre</th>
                                 <th>Descripción</th>
-                                <th>Stock</th>
+                                <!-- <th>Stock</th> -->
                                 <th>Precio</th>
                                 <th>Estado</th>
                                 <th>Categoría</th>
@@ -51,14 +54,16 @@
                                     </div>
                                 </td>
                                 <td> <%= product.description %></td>
-                                <td class="qty"><input class="quantity-spinner" type="text" value="2" name="quantity"></td>
+                                <!-- <td class="qty"><input class="quantity-spinner" type="text" value="2" name="quantity"></td> -->
                                                                <td class="price">$<%= product.price %></td>
                                 <td class="sub-total">Activo</td>
-                                <td class="sub-total">Indumentaria</td>
+                                <td class="sub-total"> <%= product.category %></td>
 
-                                <td class="remove"><a href="#" class="remove-btn"><i class="fa-solid fa-trash-can"></i> </a>
-                                    <a href="#" class="remove-btn"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="#" class="remove-btn"><i class="fa-solid fa-trash-can"></i> </a></td>
+                                <td class="remove">                                   
+                                    <a href="/products/<%= product.id %>/detail" class="remove-btn" title="detalle"><i class="fa-solid fa-bullseye"></i> </a>
+                                    <a href="/products/<%= product.id %>/delete?_method=DELETE" class="remove-btn" title="eliminar"><i class="fa-solid fa-trash-can"></i> </a>
+                                    <a href="/products/<%= product.id %>/edit" class="remove-btn" title="editar"><i class="fa-solid fa-pen-to-square"></i></a>
+                                  
                             </tr>
                             
                             
