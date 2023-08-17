@@ -1859,3 +1859,11 @@
  Se ingresó en la página /favicon.ico
  Se ingresó en la página /products
  Se ingresó en la página /favicon.ico
+ Se ingresó en la página /products
+ Se ingresó en la página /favicon.ico
+ Se ingresó en la página /products/create
+ Se ingresó en la página /favicon.ico
+ Se ingresó en la página /favicon.ico
+ Se ingresó en la página /products/2/detail
+ Se ingresó en la página /images/products/pantalon-motocross.jpg
+ Se ingresó en la página /favicon.ico
