@@ -1624,3 +1624,4 @@
  Se ingresó en la página /users
  Se ingresó en la página /products/31/detail
  Se ingresó en la página /images/products/
+ Se ingresó en la página /products
