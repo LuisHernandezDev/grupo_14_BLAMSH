@@ -59,6 +59,8 @@ router.get('/editionProduct', productControllers.editionProduct);
 
 router.get('/products', productControllers.getList);
 
+router.get('/productsCrud', productControllers.getCrud);
+
 // @GET - /products/:id/detail
 router.get('/products/:id/detail', productControllers.getDetail);
 

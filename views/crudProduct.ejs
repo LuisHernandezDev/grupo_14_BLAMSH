@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
+</head>
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+    <h1>Listado de Productos</h1>
+    <section class="cart-section">
+        <div class="auto-container">
+            
+            <!--Cart Outer-->
+            <div class="cart-outer">
+                <div class="table-outer">
+                    <table class="cart-table">
+                        <thead class="cart-header">
+                            <tr>
+                                <th class="prod-column">Nombre</th>
+                                <th>Descripción</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
+                                <th>Estado</th>
+                                <th>Categoría</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <% products.forEach(product=> { %>
+                            <tr>
+                             
+                                <td class="prod-column">
+                                    <div class="column-box">
+                                        <figure class="prod-thumb"><a href="#"><img src="images/resource/products/thumb-1.jpg" alt=""></a></figure>
+                                        <h3 class="prod-title"> <%= product.name %></h3>
+                                    </div>
+                                </td>
+                                <td> <%= product.description %></td>
+                                <td class="qty"><input class="quantity-spinner" type="text" value="2" name="quantity"></td>
+                                                               <td class="price">$<%= product.price %></td>
+                                <td class="sub-total">Activo</td>
+                                <td class="sub-total">Indumentaria</td>
+
+                                <td class="remove"><a href="#" class="remove-btn"><i class="fa-solid fa-trash-can"></i> </a>
+                                    <a href="#" class="remove-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="#" class="remove-btn"><i class="fa-solid fa-trash-can"></i> </a></td>
+                            </tr>
+                            
+                            
+                            <% }) %>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+               
+                
+                
+                    
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </section>
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+</body>
+
+</html>

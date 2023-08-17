@@ -30,6 +30,11 @@ const controller = {
 
         res.render('productList', { products });
     },
+    getCrud: (req, res) => {
+        const products = productModels.findAll(); // Acá queremos tener un listado de todos los productos. // Esta variable products, es traida del modelo que a su vez guarda el archivo json la cual luego se usa en el forEach del ejs para iterar.
+
+        res.render('crudProduct', { products });
+    },
 
     getDetail: (req, res) => {
 
@@ -37,7 +42,7 @@ const controller = {
 
         const selectedProduct = productModels.findById(productId); // Acá queremos tener un listado de un solo producto // El id o lo que ingrese el usuario en el navegador, se pasa desde el navegador por parámetro a productId mediante el params, y este a su vez va al Models por medio de la función findById y consulta si el id que también fue pasado por parámetro findById: (id) existe o no.
 
-        res.render('ProductDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
+        res.render('productDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
     },
 
     getCreate: (req, res) => {
