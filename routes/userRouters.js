@@ -5,7 +5,8 @@ const router = express.Router();
 
 // Requerimos express-validator, destructurando la función body.
 const { body } = require('express-validator');
-
+// crear una variable para traerel maincontroller 
+const maincontroller = require('../controllers/userControllers');
 // Requerimos multer
 const multer = require('multer');
 
@@ -43,6 +44,8 @@ router.get('/register', userController.register);
 router.post('/register', [upload.single('img'), validations], userController.processRegister);
 
 router.get('/login', userController.login);
+
+router.get('/users', maincontroller.userlist);
 
 
 // traer a  la funcion router
