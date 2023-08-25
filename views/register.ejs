@@ -19,77 +19,51 @@
     <header>
         <%-include ('./partials/navbar')%>
     </header>
-    <main>
-        <section class="main__section-photo">
-            <img src="images/img-register/register__main-background.jpg" alt="none">
-
-        </section>
-
-        <section class="main__section-register">
-            <div class="section-register__grid">
-                <div class="section-register__titulos">
-                    <h2>UNITE A LA COMUNIDAD BLAMSH</h2>
-                    <h3>Empeza a disfrutar de estos beneficios:</h3>
-                </div>
-                <ul>
-                    <li><i class="fa fa-light fa-truck-fast fa-xl" style="color: #a09b9b;"></i>
-                        <p>Consulta en el historial el estado de todos tus pedidos</p>
-                    </li>
-                    <li><i class="fa-sharp fa-solid fa-hand-holding-dollar fa-xl" style="color: #a09b9b;"></i>
-                        <p>Llevate un 10% de descuento adicional en tu proximo pedido</p>
-                    </li>
-                    <li> <i class="fa fa-light fa-gift fa-xl" style="color: #a09b9b;"></i>
-                        <p>Recibí descuentos especiales y enterate de las ultimas novedades: 100% contenido 0% spam</p>
-                    </li>
-                    <li><i class="fa fa-light fa-circle-user fa-xl" style="color: #a09b9b;"></i>
-                        <p> Recordá registrarte con la misma dirección de email que usaste durante tu/s compra/s</p>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="section__form-register">
-
-                <form action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
+    <main style="background-color: white;">
 
 
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido">
+        <form action="/register" method="post" enctype="multipart/form-data">
+
+            <input type="text" id="fullName" name="fullName" placeholder="Nombre"><br>
+
+            <input type="text" id="apellido" name="lastName" placeholder="Apellido"><br>
+
+            <input type="email" id="email" name="email" required placeholder="Correo electronico"><br>
+
+            <div>
+                <label for="profile">Perfil:</label>
+                <select id="profile" name="profile">
+                    <option value="" disabled selected>Selecciona un perfil</option>
+                    <option value="comprador">Comprador</option>
+                    <option value="vendedor">Vendedor</option>
+                </select>
+            </div><br>
+
+            <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono"><br>
+
+            <div><input type="file" name="image" multiple></div><br>
+
+            <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña"><br>
+
+            <input type="password" name="repeat-password" id="repeat-password" placeholder="Repetir contraseña"><br>
 
 
-                    <input type="email" id="email" name="email" required placeholder="Correo electronico">
+            <div>
+                <label for="opcion1">Acepto la Política de Privacidad y los Términos
+                    de Uso de Blamsh.</label>
+                <input type="checkbox" id="opcion1" name="opcion1" value="opcion1">
+            </div><br>
+
+            <div>
+                <label for="opcion2">Acepto recibir comunicaciones de Blamsh</label>
+                <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
+            </div><br>
+
+            <input type="submit" value="Unite a BLAMSH">
+        </form>
 
 
-                    <input type="telefono" name="phone-number" id="telefono" placeholder="Telefono">
-
-                    <div><input type="file" name="img" multiple></div>
-
-                    <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña">
-                    <form action="/register" method="post" class="form-register__form">
-
-                        <input type="repeat-password" name="repeat-password" id="repeat-password"
-                            placeholder="Ingresar nueva contraseña">
-
-                        <div class="form__checkbox-container">
-                            <input type="checkbox" id="opcion1" name="opcion1" value="opcion1" class="form__checkbox">
-                            <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los
-                                Términos
-                                de Uso de Blamsh.
-                            </label>
-
-                        </div>
-                        <div class="form__checkbox-container">
-                            <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
-                            <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de
-                                Blamsh</label>
-                        </div>
-                        <input type="submit" value="Unite a BLAMSH" class="form__enviar">
-                    </form>
-                </form>
-            </div>
-        </section>
     </main>
-
-
 
     <footer>
         <%-include ('./partials/footer')%>
