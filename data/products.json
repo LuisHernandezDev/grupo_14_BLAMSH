@@ -500,15 +500,5 @@
         "colors": "Rojo",
         "talle": "S",
         "price": "165555"
-    },
-    {
-        "id": 43,
-        "name": "Prueba111",
-        "description": "Prueba111Prueba111Prueba111Prueba111Prueba111",
-        "image": "img-1692983733500-banner.jpg",
-        "category": "Indumentaria",
-        "colors": "Rojo",
-        "talle": "S",
-        "price": "23"
     }
 ]

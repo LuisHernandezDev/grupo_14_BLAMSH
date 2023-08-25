@@ -11,7 +11,7 @@ const maincontroller = require('../controllers/userControllers');
 // Requerimos multer
 const multer = require('multer');
 
-const authMiddleware = require ('../middlewares/authMiddleware')
+/*const authMiddleware = require ('../middlewares/authMiddleware')*/
 
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
@@ -46,7 +46,7 @@ const userValidations = [
 
 // solo los principios de las routas y 
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
-router.get('/register', authMiddleware.ckeckAdmin, userController.register);
+router.get('/register', userController.register);
 
 router.post('/register', [upload.single('image'), userValidations], userController.processRegister);
 
