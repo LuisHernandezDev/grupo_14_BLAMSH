@@ -1,5 +1,6 @@
 main {}
 
+
 body {
     margin: 0;
     padding: 0;
@@ -15,9 +16,17 @@ p {
     text-align: end;
 }
 
+.tipocheckbox {
+    display: flex;
+    flex-direction: row;
+
+
+
+}
+
 
 .login-form {
-    width: 80%;
+    width: 60%;
     margin: auto;
     padding: 0;
     border-radius: 5px;
@@ -79,5 +88,6 @@ button:hover {
     button {
         font-size: 100%;
         float: right;
+
     }
 }

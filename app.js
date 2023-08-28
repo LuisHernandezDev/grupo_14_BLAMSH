@@ -5,12 +5,14 @@ const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
 
+
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
 
 const userRouter = require('./routes/userRouters');
 
 const productRouter = require('./routes/productRouters');
+
 
 // const logMiddleware = require('./middlewares/logMiddleware');
 
@@ -42,7 +44,7 @@ app.use('/', userRouter);
 app.use('/', productRouter);
 
 app.use((req, res) => {
-    res.render ('error-404');
+    res.render('error-404');
 });
 
 /* 
