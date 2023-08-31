@@ -5,15 +5,18 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 
 //Requerimos el Modelo para poder trabajar con él.
-const userModels = require('/models/userModels');
+const userModels = require('../models/userModels');
 
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
 
 
     register: (req, res) => {
+
+        const error = req.query.error;
+
         // res.sendFile(path.resolve(__dirname, '../views/register.html'));
-        res.render('register');
+        res.render('register' , {error});
     },
 
     processRegister: (req, res) => {
@@ -22,15 +25,19 @@ const controller = {
             nombre: req.body.nombre,
             Email: req.body.email,
             Password: req.body.password,
-            phone: req.body.phone-number,
+            phone: req.body.phone,
             img: req.body.img,
             };        
 
-            userModels.create (userData)
+            const user = userModels.create (userData);
 
-            res.send ();
+            if (user.error) {
+                res.redirect ('/register?error=' + user.error)
+            } else {
+                res.redirect ('/')
+            }
 
-
+ 
     },
 
     login: (req, res) => {
@@ -42,8 +49,6 @@ const controller = {
         const resultValidation = validationResult(req);
         return res.send(resultValidation);
     }
-
-
 
 
 

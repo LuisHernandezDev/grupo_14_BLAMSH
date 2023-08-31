@@ -147,6 +147,9 @@ form input{
         
     }
    
+    #error {
+
+    }
      
 
 }
@@ -257,9 +260,18 @@ form input{
     .form__checkbox-container label{
         color:black;
         font-size: 12px;
-
-
     }
+
+    p.error {
+        color:  #7014F2;
+        font-size: 0.7rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+}
+
 
 .section__form-register input:nth-of-type(6):hover{
     filter:brightness(1);
