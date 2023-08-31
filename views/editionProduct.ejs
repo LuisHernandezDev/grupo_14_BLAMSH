@@ -27,7 +27,7 @@
         <main>
             
             <section class="product-edit">
-                <form action="post" method="post" class="edit-form">
+                <form action="/products/:id/edit?_method = PUT" method="post" class="edit-form">
                 <h2 class="title">Editar producto</h2>
                 <input class="items" type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required>
                 <input class="items" type="number" name="precio" id="precio" placeholder="Precio de producto" required>
