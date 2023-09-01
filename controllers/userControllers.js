@@ -64,24 +64,7 @@ const controller = {
 
             if (!userInJson) {
                return res.redirect ('/login?error=' + error);
-            };
-           
-
-        const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
-
-            if (validPw) {
-
-                if (req.body.remember === 'on') {
-                    Console.log ('Se quiere mantener la sesión iniciada')
-                } else {
-                    Console.log ('No se quiere mantener la sesión iniciada')
-                }
-                
-                req.session.user = userInJson;
-                res.redirect ('/');
-            } else {
-                res.redirect ('/login?error=' + error);
-         }
+            }
     }
     
 }

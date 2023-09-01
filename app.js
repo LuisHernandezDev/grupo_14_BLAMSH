@@ -4,7 +4,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
-const session = require ('express-session');
+
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -28,12 +28,13 @@ app.set('views', [
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
 
-app.use (session({ secret:'luislilibelabagusmai', resave: false , saveUninitialized: true }))
+
 
 // app.use(logMiddleware);
 
 // Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 
 app.use(methodOverride('_method'));
