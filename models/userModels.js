@@ -2,7 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const router = require('../routes/userRouters');
-const controller = require ('../controllers/userControllers')
+const controller = require ('../controllers/userControllers');
+const bcrypt = require ('bcrypt');
 
 //Requerimos uuid para generar los id de usuarios únicos automaticamente
 const uuid = require ('uuid');
@@ -26,6 +27,9 @@ const model = {
             ... userData
         };
 
+        const hashedPw = bcrypt.hashSync (newUser.password, 12);
+        newUser.password = hashedPw;
+
         users.push (newUser);
         fs.writeFileSync (model.fileRoute, JSON.stringify (users), 'utf-8');
         return newUser;
@@ -41,8 +45,9 @@ const model = {
         return coincidence || null;
         
 
-    }
-    
+    },
+
+ 
 }
 
 module.exports = model;

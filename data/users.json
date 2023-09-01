@@ -8005,5 +8005,19 @@
         "Email": "harveyconnonmaia@hotmail.com",
         "Password": "AS",
         "phone": "01153419178"
+    },
+    {
+        "id": "31689066-1b5b-49e3-ab66-c7d3f1c2a985",
+        "nombre": "Pablo",
+        "email": "Pablo@gmail.com",
+        "password": "$2b$12$ywqE/INGT4rF/OAvxAblueEfI.J85V8Ir8uPNAaPiuhx3graKXBH6",
+        "phone": "46"
+    },
+    {
+        "id": "75412179-f09b-4669-bb67-f6e4bd13231d",
+        "nombre": "Tomas ",
+        "email": "tomas123@gmail.com",
+        "password": "$2b$12$.1jgp/YZxG/Wi8VXU8Ggb.NaBcSUH98.rvoVkK4tJODDdvoKcume6",
+        "phone": "56564"
     }
 ]

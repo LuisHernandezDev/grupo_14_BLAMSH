@@ -4,6 +4,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
+const session = require ('express-session');
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -26,6 +27,8 @@ app.set('views', [
 
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
+
+app.use (session({ secret:'luislilibelabagusmai', resave: false , saveUninitialized: true }))
 
 // app.use(logMiddleware);
 
