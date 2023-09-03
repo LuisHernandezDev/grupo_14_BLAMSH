@@ -1,35 +1,87 @@
-//require path
-const path = require('path');
+const userModel = require('../models/userModels');
+const bcrypt = require('bcrypt');
+
 
 // Requerimos express-validator, destructurando la función validationResult.
-const { validationResult } = require('express-validator');
-//requerir model
-const usersModel = require('../models/usersModels');
+// const { validationResult } = require('express-validator');
+
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
 
-
     register: (req, res) => {
         // res.sendFile(path.resolve(__dirname, '../views/register.html'));
-        res.render('register');
-    },
 
-    processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
-        return res.send(resultValidation);
+        const error = req.query.error
+        res.render('register', { error });
     },
 
     login: (req, res) => {
         // res.sendFile(path.resolve(__dirname, '../views/login.html'));
-        res.render('login');
+        const error = req.query.error
+        res.render('login', { error });
+    },
+
+    processRegister: (req, res) => {
+        const newUser = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            phone: req.body.phone,
+            image: req.file.filename,
+            password: req.body.password,
+        }
+
+        const user = userModel.create(newUser); // Al método create le pasamos por parámetro el objeto de arriba
+
+        if (user.error) {
+            res.redirect('/register/?error=' + user.error);
+            // res.render('register', {error})
+
+        } else {
+            res.redirect('/')
+        }
+
+    },
+
+    processLogin: (req, res) => {
+        // res.sendFile(path.resolve(__dirname, '../views/login.html'));
+        const userInJson = userModel.findByEmail(req.body.email); // Contiene el objeto completo del usuario, no solo el email... Busca el usuario, si lo encuentra, bien!, si no lo encuentra muestra null
+
+        !userInJson ? res.redirect('/login/?error=El mail o la contraseña son incorrectos') : ""; // Chequea si existe usuario con el email
+
+        /*if (!userInJson) { // Si el usuario esta intentando hacer login con un email no registrado. Es decir, que no esté en el JSON */
+        /* return res.redirect('/login/?error=El mail o la contraseña son incorrectos')
+     };*/
+
+        const validatePw = bcrypt.compareSync(req.body.password, userInJson.password); // Validamos si el password es igual, es decir, primer parámetro el password ingresado y el segundo parámetro con el passeword registrado.
+
+
+        if (validatePw) { // Chequea si la clave es válida. // Acá una vez iniciada la sesion, con session se puede acceder desde cualquier lado.
+
+
+            if (req.body.rememberme) { // Si se quiere mantener la sesión iniciada
+                res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 * 24 * 365 }); // Se crea la cookie con fecha de exp de 1 año.
+
+            } else {
+                console.log('No se quiere mantener iniciada');
+            }
+
+            req.session.user = userInJson;
+            res.redirect("/");
+
+        } else {
+            res.redirect('/login/?error=El mail o la contraseña son incorrectos');
+        }
     },
 
 
-    userlist: (req, res) => {
-        const users = usersModel.findAll();
 
-        res.render('userlist', { users });
-    }
+
+    // userlist: (req, res) => {
+    //     const users = userModel.findAll();
+
+    //     res.render('userList', { users });
+    // }
 
 };
 

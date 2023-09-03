@@ -4,6 +4,8 @@ const express = require('express');
 const methodOverride = require('method-override');
 const path = require('path');
 const dotenv = require('dotenv').config();
+const session = require('express-session')
+const cookieParser = require('cookie-parser');
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -13,6 +15,7 @@ const userRouter = require('./routes/userRouters');
 const productRouter = require('./routes/productRouters');
 
 /* const logMiddleware = require('./middlewares/logMiddleware');*/
+const authMiddleware = require('./middlewares/authMiddleware');
 
 // Iniciamos un servidor, y lo guardamos dentro de app
 const app = express();
@@ -24,14 +27,30 @@ app.set('views', [
 
 ]);
 
+app.use(session({ secret: 'shhhhhh!!!', resave: false, saveUninitialized: true }))
+
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
+app.use(authMiddleware.checkIsloggedIn);
 
 /* app.use(logMiddleware);*/
 
 // Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(cookieParser());
+
+app.use((req, res, next) => {
+    if (req.cookies.email) { // Si hay un email guardado en cookies, mediante el modelo, buscamos los datos del usuario guardado en la cookie y lo guardamos en session
+        const userModel = require('./models/userModels');
+
+        const user = userModel.findByEmail(req.cookies.email); // Acá busca en el JSON el usuario con el email guardado en cookie, el objeto entero.
+
+        req.session.user = user;
+    }
+    next(); // Si no hay cookie de email, no se hace nada.
+})
 
 app.use(methodOverride('_method'));
 
@@ -42,7 +61,7 @@ app.use('/', userRouter);
 app.use('/', productRouter);
 
 app.use((req, res) => {
-    res.render ('error-404');
+    res.render('error-404');
 });
 
 /* 

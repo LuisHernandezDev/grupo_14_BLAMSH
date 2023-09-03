@@ -4,9 +4,8 @@
         "firstName": "Liliana",
         "lastName": "Quispe",
         "email": "liliQ@prueba.com",
-        "profile": "vendedor",
         "phone": "111111111",
-        "image": "imagen",
+        "image": "img-1692111842138-img-1692070247968-SamsungGalaxy.jpg",
         "password": "***********"
     },
     {
@@ -14,7 +13,6 @@
         "firstName": "Luis",
         "lastName": "Hernandez",
         "email": "luish@prueba.com",
-        "profile": "comprador",
         "phone": "111111111",
         "image": "imagen",
         "password": "***********"
@@ -24,7 +22,6 @@
         "firstName": "Maia",
         "lastName": "Harvey",
         "email": "maiaH@prueba.com",
-        "profile": "vendedor",
         "phone": "111111111",
         "image": "imagen",
         "password": "***********"
@@ -34,7 +31,6 @@
         "firstName": "Agustin",
         "lastName": "Garcia",
         "email": "agustinG@prueba.com",
-        "profile": "vendedor",
         "phone": "111111111",
         "image": "imagen",
         "password": "***********"
@@ -44,9 +40,62 @@
         "firstName": "Belab",
         "lastName": "Saintejour",
         "email": "belabS@prueba.com",
-        "profile": "vendedor",
         "phone": "111111111",
         "image": "imagen",
         "password": "***********"
+    },
+    {
+        "id": "d89077d4-83e3-4ea3-acb7-791e1f7311dd",
+        "firstName": "Luis",
+        "lastName": "Her",
+        "email": "prueba1@gmail.com",
+        "phone": "23456",
+        "image": "1693689414253_img_img-1692242430938-pantalon.jpg",
+        "password": "$2b$12$io3jDRslmgEAVJAu29AxCeBwcS5i/gBIdE0PHKu06bXUcLHBrEuYC"
+    },
+    {
+        "id": "dafe6bb3-a622-4053-9bf1-a6c95dbf3d21",
+        "firstName": "Isa",
+        "lastName": "Her",
+        "email": "isa@gmail.com",
+        "phone": "2345",
+        "image": "1693710392172_img_banner.jpg",
+        "password": "$2b$12$u7ZXDh7JdUYNMQJ1nVyH2.X/6FMq2Uv/yGOLH03k6yj2VSb6vGH1O"
+    },
+    {
+        "id": "7fda4b20-f4d4-44ed-93c6-3131102e35bb",
+        "firstName": "pepito",
+        "lastName": "Her",
+        "email": "pepito@prueba.com",
+        "phone": "12345",
+        "image": "1693710704869_img_banner.jpg",
+        "password": "$2b$12$PAiHX4aUQJTRDUP66OgzS.soEXSr4dmCt2smmBkEaX/M8Q8cQBxGK"
+    },
+    {
+        "id": "fefd9be2-2f95-4047-8744-1c4c3a85267d",
+        "firstName": "Carlos",
+        "lastName": "Her",
+        "email": "carlos@gmail.com",
+        "phone": "12345",
+        "image": "1693711097201_img_cafetera.jpg",
+        "password": "$2b$12$AEtPMYeSKDg3LuxR03.P7e5aCPzYmlM9hk87XzhHkRyYKbliifnwG"
+    },
+    {
+        "id": "8e5e96ff-024a-423f-9c02-bb3b857a0951",
+        "firstName": "Carlos",
+        "lastName": "Her",
+        "email": "her@gmail.com",
+        "phone": "12345",
+        "image": "1693712079270_img_cafetera.jpg",
+        "password": "$2b$12$LezhaElZ/Nc9SMfOB7WP9Ol7pqw9SMZarmTFMzOuo.RWe9eBLIOS."
+    },
+    {
+        "id": "81bee89f-31df-4c99-bbe5-079422882b69",
+        "firstName": "pepita",
+        "lastName": "Her",
+        "email": "pepita@gmail.com",
+        "phone": "12345",
+        "image": "1693712465109_img_Captura de pantalla 2023-06-22 223409.png",
+        "password": "$2b$12$auSj1YKn9jxxhJFzArLdr.XB5ldgt7TM7podGajfC0id9GngBW96e"
     }
 ]

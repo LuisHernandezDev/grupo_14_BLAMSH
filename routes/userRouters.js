@@ -11,7 +11,7 @@ const maincontroller = require('../controllers/userControllers');
 // Requerimos multer
 const multer = require('multer');
 
-/*const authMiddleware = require ('../middlewares/authMiddleware')*/
+// const authMiddleware = require ('../middlewares/authMiddleware')
 
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
@@ -52,7 +52,9 @@ router.post('/register', [upload.single('image'), userValidations], userControll
 
 router.get('/login', userController.login);
 
-router.get('/users', maincontroller.userlist);
+router.post('/login', userController.processLogin);
+
+// router.get('/users', maincontroller.userlist);
 
 
 // traer a  la funcion router

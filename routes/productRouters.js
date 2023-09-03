@@ -16,16 +16,16 @@ const createProductMiddleware = require('../middlewares/createProductMiddleware'
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
 
-// Validaciones:
+// Validaciones: Es un array de Middleware
 const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
 const productValidations = [
-    body('name').isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
-    body('description').isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
+    body('name').notEmpty().isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
+    body('description').notEmpty().isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
     body('image').notEmpty().withMessage('Debe agregar una imagen'),
-    body('category').isIn(allowedCategories).withMessage('Categoría inválida'), // Preguntar si se puede hacer un input select.
+    body('category').notEmpty().withMessage('Debe escoger la categoría del producto'),
     body('colors').notEmpty().withMessage('Debes seleccionar al menos un color'), // Preguntar si se puede hacer un input select.
     body('talle').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
-    body('price').isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
+    body('price').notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
 ];
 
 /*
