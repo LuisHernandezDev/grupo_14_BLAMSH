@@ -13,6 +13,8 @@ const { body } = require('express-validator');
 // Requerimos el middleware
 const createProductMiddleware = require('../middlewares/createProductMiddleware');
 
+const authMiddleware = require('../middlewares/authMiddleware');
+
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
 
@@ -53,23 +55,23 @@ const upload = multer({ storage });
 
 router.get('/detalleProducto', productControllers.detalleProducto);
 
-router.get('/carrito', productControllers.carrito);
+router.get('/carrito', authMiddleware.authUser, productControllers.carrito);
 
-router.get('/editionProduct', productControllers.editionProduct);
+router.get('/editionProduct', authMiddleware.authUser, authMiddleware.guestUser, productControllers.editionProduct);
 
-router.get('/products', productControllers.getList);
+router.get('/products', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getList);
 
 // @GET - /products/:id/detail
-router.get('/products/:id/detail', productControllers.getDetail);
+router.get('/products/:id/detail', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getDetail);
 
 // @GET - /products/create
-router.get('/products/create', productControllers.getCreate);
+router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getCreate);
 
 // @POST - /products // A donde llegan los productos creados
 router.post('/products', [upload.single('image'), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
-router.get('/products/:id/edit', productControllers.getEdit);
+router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
 
 // @DELETE - /products/:id/delete
 router.delete('/products/:id/delete', productControllers.deleteProduct);

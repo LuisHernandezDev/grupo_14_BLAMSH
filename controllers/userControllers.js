@@ -65,7 +65,7 @@ const controller = {
                 console.log('No se quiere mantener iniciada');
             }
 
-            req.session.user = userInBD;
+            req.session.user = userInBD; // Propiedad generada al loguear al usuario
             res.redirect("/");
 
         } else {
@@ -80,7 +80,6 @@ const controller = {
 
     logout:  (req, res) => {
         req.session.destroy();
-        console.log(req.session);
         return res.redirect('/');
     },
 

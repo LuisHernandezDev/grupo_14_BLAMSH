@@ -54,7 +54,7 @@ router.get('/register', authMiddleware.guestUser, userController.register);
 
 router.post('/register', [upload.single('image'), userValidations], userController.postRegister);
 
-router.get('/login', userController.login);
+router.get('/login', authMiddleware.guestUser, userController.login);
 
 router.post('/login', userController.postLogin);
 
