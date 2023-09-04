@@ -1,3 +1,4 @@
+const model = require('../models/userModels');
 const userModel = require('../models/userModels');
 const bcrypt = require('bcrypt');
 
@@ -21,7 +22,7 @@ const controller = {
         res.render('login', { error });
     },
 
-    processRegister: (req, res) => {
+    postRegister: (req, res) => {
         const newUser = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -35,38 +36,36 @@ const controller = {
 
         if (user.error) {
             res.redirect('/register/?error=' + user.error);
-            // res.render('register', {error})
+            // res.render('register', user.error)
 
         } else {
-            res.redirect('/')
+            res.redirect('/login')
         }
 
     },
 
-    processLogin: (req, res) => {
-        // res.sendFile(path.resolve(__dirname, '../views/login.html'));
-        const userInJson = userModel.findByEmail(req.body.email); // Contiene el objeto completo del usuario, no solo el email... Busca el usuario, si lo encuentra, bien!, si no lo encuentra muestra null
+    postLogin: (req, res) => {
+        const userInBD = userModel.findByEmail(req.body.email); // Contiene el objeto completo del usuario, no solo el email... Busca el usuario, si lo encuentra, bien!, si no lo encuentra muestra null
 
-        !userInJson ? res.redirect('/login/?error=El mail o la contraseña son incorrectos') : ""; // Chequea si existe usuario con el email
+        !userInBD ? res.redirect('/login/?error=Usuario no registrado') : ""; // Chequea si existe usuario con el email
 
-        /*if (!userInJson) { // Si el usuario esta intentando hacer login con un email no registrado. Es decir, que no esté en el JSON */
+        /*if (!userInBD) { // Si el usuario esta intentando hacer login con un email no registrado. Es decir, que no esté en el JSON */
         /* return res.redirect('/login/?error=El mail o la contraseña son incorrectos')
      };*/
 
-        const validatePw = bcrypt.compareSync(req.body.password, userInJson.password); // Validamos si el password es igual, es decir, primer parámetro el password ingresado y el segundo parámetro con el passeword registrado.
+        const validatePw = bcrypt.compareSync(req.body.password, userInBD.password); // Validamos si el password es igual, es decir, primer parámetro el password ingresado y el segundo parámetro con el passeword registrado.
 
 
         if (validatePw) { // Chequea si la clave es válida. // Acá una vez iniciada la sesion, con session se puede acceder desde cualquier lado.
 
-
             if (req.body.rememberme) { // Si se quiere mantener la sesión iniciada
-                res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 * 24 * 365 }); // Se crea la cookie con fecha de exp de 1 año.
+                res.cookie('email', userInBD.email, { maxAge: 1000 * 60 * 60 * 24 * 365 }); // Se crea la cookie con fecha de exp de 1 año.
 
             } else {
                 console.log('No se quiere mantener iniciada');
             }
 
-            req.session.user = userInJson;
+            req.session.user = userInBD;
             res.redirect("/");
 
         } else {
@@ -74,7 +73,16 @@ const controller = {
         }
     },
 
+    profile: (req, res) => {
+        return res.render('userProfile', { user: req.session.user });
 
+    },
+
+    logout:  (req, res) => {
+        req.session.destroy();
+        console.log(req.session);
+        return res.redirect('/');
+    },
 
 
     // userlist: (req, res) => {

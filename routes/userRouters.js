@@ -6,8 +6,12 @@ const userController = require('../controllers/userControllers');
 
 // Requerimos express-validator, destructurando la función body.
 const { body } = require('express-validator');
+
 // crear una variable para traerel maincontroller 
 const maincontroller = require('../controllers/userControllers');
+
+const authMiddleware = require('../middlewares/authMiddleware');
+
 // Requerimos multer
 const multer = require('multer');
 
@@ -46,13 +50,18 @@ const userValidations = [
 
 // solo los principios de las routas y 
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
-router.get('/register', userController.register);
+router.get('/register', authMiddleware.guestUser, userController.register);
 
-router.post('/register', [upload.single('image'), userValidations], userController.processRegister);
+router.post('/register', [upload.single('image'), userValidations], userController.postRegister);
 
 router.get('/login', userController.login);
 
-router.post('/login', userController.processLogin);
+router.post('/login', userController.postLogin);
+
+router.get('/profile', authMiddleware.authUser, userController.profile);
+
+router.get('/logout', userController.logout);
+
 
 // router.get('/users', maincontroller.userlist);
 

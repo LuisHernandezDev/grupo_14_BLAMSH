@@ -27,11 +27,17 @@ app.set('views', [
 
 ]);
 
-app.use(session({ secret: 'shhhhhh!!!', resave: false, saveUninitialized: true }))
-
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
+
+app.use(session({ 
+    secret: 'shhhhhh!!!',
+    resave: false,
+    saveUninitialized: true }))
+
 app.use(authMiddleware.checkIsloggedIn);
+app.use(authMiddleware.isAdmin);
+
 
 /* app.use(logMiddleware);*/
 

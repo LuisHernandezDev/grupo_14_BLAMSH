@@ -1,101 +1,120 @@
 [
-    {
-        "id": 1,
-        "firstName": "Liliana",
-        "lastName": "Quispe",
-        "email": "liliQ@prueba.com",
-        "phone": "111111111",
-        "image": "img-1692111842138-img-1692070247968-SamsungGalaxy.jpg",
-        "password": "***********"
-    },
-    {
-        "id": 1,
-        "firstName": "Luis",
-        "lastName": "Hernandez",
-        "email": "luish@prueba.com",
-        "phone": "111111111",
-        "image": "imagen",
-        "password": "***********"
-    },
-    {
-        "id": 1,
-        "firstName": "Maia",
-        "lastName": "Harvey",
-        "email": "maiaH@prueba.com",
-        "phone": "111111111",
-        "image": "imagen",
-        "password": "***********"
-    },
-    {
-        "id": 1,
-        "firstName": "Agustin",
-        "lastName": "Garcia",
-        "email": "agustinG@prueba.com",
-        "phone": "111111111",
-        "image": "imagen",
-        "password": "***********"
-    },
-    {
-        "id": 1,
-        "firstName": "Belab",
-        "lastName": "Saintejour",
-        "email": "belabS@prueba.com",
-        "phone": "111111111",
-        "image": "imagen",
-        "password": "***********"
-    },
-    {
-        "id": "d89077d4-83e3-4ea3-acb7-791e1f7311dd",
-        "firstName": "Luis",
-        "lastName": "Her",
-        "email": "prueba1@gmail.com",
-        "phone": "23456",
-        "image": "1693689414253_img_img-1692242430938-pantalon.jpg",
-        "password": "$2b$12$io3jDRslmgEAVJAu29AxCeBwcS5i/gBIdE0PHKu06bXUcLHBrEuYC"
-    },
-    {
-        "id": "dafe6bb3-a622-4053-9bf1-a6c95dbf3d21",
-        "firstName": "Isa",
-        "lastName": "Her",
-        "email": "isa@gmail.com",
-        "phone": "2345",
-        "image": "1693710392172_img_banner.jpg",
-        "password": "$2b$12$u7ZXDh7JdUYNMQJ1nVyH2.X/6FMq2Uv/yGOLH03k6yj2VSb6vGH1O"
-    },
-    {
-        "id": "7fda4b20-f4d4-44ed-93c6-3131102e35bb",
-        "firstName": "pepito",
-        "lastName": "Her",
-        "email": "pepito@prueba.com",
-        "phone": "12345",
-        "image": "1693710704869_img_banner.jpg",
-        "password": "$2b$12$PAiHX4aUQJTRDUP66OgzS.soEXSr4dmCt2smmBkEaX/M8Q8cQBxGK"
-    },
-    {
-        "id": "fefd9be2-2f95-4047-8744-1c4c3a85267d",
-        "firstName": "Carlos",
-        "lastName": "Her",
-        "email": "carlos@gmail.com",
-        "phone": "12345",
-        "image": "1693711097201_img_cafetera.jpg",
-        "password": "$2b$12$AEtPMYeSKDg3LuxR03.P7e5aCPzYmlM9hk87XzhHkRyYKbliifnwG"
-    },
-    {
-        "id": "8e5e96ff-024a-423f-9c02-bb3b857a0951",
-        "firstName": "Carlos",
-        "lastName": "Her",
-        "email": "her@gmail.com",
-        "phone": "12345",
-        "image": "1693712079270_img_cafetera.jpg",
-        "password": "$2b$12$LezhaElZ/Nc9SMfOB7WP9Ol7pqw9SMZarmTFMzOuo.RWe9eBLIOS."
-    },
-    {
-        "id": "81bee89f-31df-4c99-bbe5-079422882b69",
-        "firstName": "pepita",
-        "lastName": "Her",
-        "email": "pepita@gmail.com",
-        "phone": "12345",
-        "image": "1693712465109_img_Captura de pantalla 2023-06-22 223409.png",
-        "password": "$2b$12$auSj1YKn9jxxhJFzArLdr.XB5ldgt7TM7podGajfC0id9GngBW96e"
-    }
+ {
+  "id": 1,
+  "firstName": "Liliana",
+  "lastName": "Quispe",
+  "email": "liliQ@prueba.com",
+  "phone": "111111111",
+  "image": "img-1692111842138-img-1692070247968-SamsungGalaxy.jpg",
+  "password": "***********"
+ },
+ {
+  "id": 2,
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "luish@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": 3,
+  "firstName": "Maia",
+  "lastName": "Harvey",
+  "email": "maiaH@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": 4,
+  "firstName": "Agustin",
+  "lastName": "Garcia",
+  "email": "agustinG@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": "dafe6bb3-a622-4053-9bf1-a6c95dbf3d21",
+  "firstName": "Isa",
+  "lastName": "Her",
+  "email": "isa@gmail.com",
+  "phone": "2345",
+  "image": "1693710392172_img_banner.jpg",
+  "password": "$2b$12$u7ZXDh7JdUYNMQJ1nVyH2.X/6FMq2Uv/yGOLH03k6yj2VSb6vGH1O"
+ },
+ {
+  "id": "7fda4b20-f4d4-44ed-93c6-3131102e35bb",
+  "firstName": "pepito",
+  "lastName": "Her",
+  "email": "pepito@prueba.com",
+  "phone": "12345",
+  "image": "1693710704869_img_banner.jpg",
+  "password": "$2b$12$PAiHX4aUQJTRDUP66OgzS.soEXSr4dmCt2smmBkEaX/M8Q8cQBxGK"
+ },
+ {
+  "id": "fefd9be2-2f95-4047-8744-1c4c3a85267d",
+  "firstName": "Carlos",
+  "lastName": "Her",
+  "email": "carlos@gmail.com",
+  "phone": "12345",
+  "image": "1693711097201_img_cafetera.jpg",
+  "password": "$2b$12$AEtPMYeSKDg3LuxR03.P7e5aCPzYmlM9hk87XzhHkRyYKbliifnwG"
+ },
+ {
+  "id": "81bee89f-31df-4c99-bbe5-079422882b69",
+  "firstName": "pepita",
+  "lastName": "Her",
+  "email": "pepita@gmail.com",
+  "phone": "12345",
+  "image": "1693712465109_img_Captura de pantalla 2023-06-22 223409.png",
+  "password": "$2b$12$auSj1YKn9jxxhJFzArLdr.XB5ldgt7TM7podGajfC0id9GngBW96e"
+ },
+ {
+  "id": "63f7b837-2937-4b55-9309-883cebfe1c2c",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "isa1234@gmail.com",
+  "phone": "1234",
+  "image": "1693767895016_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$DoYzjlqjPU0IlFZGFlkVOePcRJDTy3M0TyIX6xxpRBMb2F0SzevIW"
+ },
+ {
+  "id": "e4fc6db5-77bd-4807-9dac-22ab164f472f",
+  "firstName": "pepa",
+  "lastName": "pepa",
+  "email": "pepa@gmail.com",
+  "phone": "1234",
+  "image": "1693772585807_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$i4fAip/77vlb4w5e7jblAugQZS40l07Na1z/GNv7TV5WJ3HRjTMNe"
+ },
+ {
+  "id": "b0dcc11f-5a93-4461-97f4-d1293cf1da87",
+  "firstName": "pepa",
+  "lastName": "pepa",
+  "email": "pepa1@gmail.com",
+  "phone": "1234",
+  "image": "1693772684526_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$BWErjSqgQnXCz02NjGPi8.KYn8gJb2XI4CKaBbxD22M.wfuJ86QbW"
+ },
+ {
+  "id": "2a169b3b-640f-4e58-b2ec-97705f31201d",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "hola123@prueba.com",
+  "phone": "1234",
+  "image": "1693773258674_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$CRO1uZRB38mVD77Hbh9c7epzzDosoV/BMihWSik/XmuoCjp9mH8Be"
+ },
+ {
+  "id": "c3a36631-f0e7-48e9-a753-82188d72588f",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "pepo@gmail.com",
+  "phone": "1234",
+  "password": "$2b$12$UsPl.y568zB.P0t2l7BnvuJ9zqFdLg0Q9iO9LVi/VPL4h5NgBWbvi",
+  "repeat-password": "",
+  "image": "1693780992526_img_Captura de pantalla 2023-07-14 215104.png"
+ }
 ]
