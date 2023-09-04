@@ -12,7 +12,7 @@ const userRouter = require('./routes/userRouters');
 
 const productRouter = require('./routes/productRouters');
 
-const logMiddleware = require('./middlewares/logMiddleware');
+// const logMiddleware = require('./middlewares/logMiddleware');
 
 // Iniciamos un servidor, y lo guardamos dentro de app
 const app = express();
@@ -27,7 +27,7 @@ app.set('views', [
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
 
-app.use(logMiddleware);
+// app.use(logMiddleware);
 
 // Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
 app.use(express.urlencoded({ extended: true }));

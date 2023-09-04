@@ -17,6 +17,11 @@
     <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
 
     <title>BLAMSH</title>
+    <script>
+        function enviar_formulario(){
+            document.getElementById("form").submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -26,7 +31,12 @@
     <h1>Listado de Productos</h1>
     <section class="cart-section">
         <div class="auto-container">
+            <a href="/products/create">
+            <button class="bot-nuevo">
             
+                Nuevo producto
+                  </button>
+                </a>
             <!--Cart Outer-->
             <div class="cart-outer">
                 <div class="table-outer">
@@ -49,7 +59,7 @@
                              
                                 <td class="prod-column">
                                     <div class="column-box">
-                                        <figure class="prod-thumb"><a href="#"><img src="images/resource/products/thumb-1.jpg" alt=""></a></figure>
+                                        <figure class="prod-thumb"><a href="#"> <img  src="/images/products/<%= product.image %>" alt=""></a></figure>
                                         <h3 class="prod-title"> <%= product.name %></h3>
                                     </div>
                                 </td>
@@ -59,9 +69,13 @@
                                 <td class="sub-total">Activo</td>
                                 <td class="sub-total"> <%= product.category %></td>
 
-                                <td class="remove">                                   
+                                <td class="remove">   
+                                  
+                                                            
                                     <a href="/products/<%= product.id %>/detail" class="remove-btn" title="detalle"><i class="fa-solid fa-bullseye"></i> </a>
-                                    <a href="/products/<%= product.id %>/delete?_method=DELETE" class="remove-btn" title="eliminar"><i class="fa-solid fa-trash-can"></i> </a>
+                                    <form id="form"action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                                        <a href="javascript:enviar_formulario()" class="remove-btn"  title="eliminar"><i class="fa-solid fa-trash-can"></i> </a>
+                                    </form>
                                     <a href="/products/<%= product.id %>/edit" class="remove-btn" title="editar"><i class="fa-solid fa-pen-to-square"></i></a>
                                   
                             </tr>

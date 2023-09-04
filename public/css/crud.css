@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.productWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    border: solid 1px black;
+    border-radius: 11px;
+    padding: 10px;
+
+}
+
+.buttonCreate {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCreate button {
+    display: flex;
+    justify-content: center;
+    background-color: #7014F2;
+    border-radius: 11px;
+    padding: 10px 30px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.buttonCreate button:hover {
+    background-color: #8b45ed;
+}
+
+.buttonDetail button {
+    background-color: #4c4753;
+    border-radius: 11px;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.buttonDetail button:hover {
+    background-color: #80788a;
+}
+
+.detail h1,
+.detail h3 {
+    margin-bottom: 5px;
+}
+
+.product {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+@media (min-width: 720px) {
+
+    .product {
+        flex-wrap: wrap;
+
+    }
+
+    .detail {
+        display: flex;
+        width: 48%;
+    }
+
+    .productWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 45%;
+    }
+    
+
+}

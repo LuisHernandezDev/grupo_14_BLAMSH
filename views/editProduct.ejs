@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Editar producto <%= product.id %></h1>
-    <form action="/products/<%= product.id %>/edit?_method=PUT" method="post">
-            
-        <div>
-            <label for="">Nombre del producto</label>
-            <input type="text" value="<%= product.name %>" name="name">
-        </div><br>
-        <div><label for="">Descripción del producto</label>
-            <input type="text" value="<%= product.description %>" name="description">
-        </div><br>
-        <div><input type="file" name="image" multiple></div><br>
-        <div><label for="">Seleccione la categoría</label><br>
-            <select name="category">
-                <option value="Ropa">Ropa</option>
-                <option value="Accesorios">Accesorios</option>
-                <option value="Equipamiento y Repuestos">Equipamiento y Repuestos</option>
-            </select>
-        </div><br>
-        <div>
-            <label for="">Seleccione un color</label><br>
-            <select name="colors">
-                <option value="Rojo">Rojo</option>
-                <option value="Azul">Azul</option>
-                <option value="Negro">Negro</option>
-                <option value="Rosa">Rosa</option>
-                <option value="Verde">Verde</option>
-                <option value="Blanco">Blanco</option>
-                <option value="Amarillo">Amarillo</option>
-                <option value="Azul/Rojo">Azul/Rojo</option>
-                <option value="Verde/Negro">Verde/Negro</option>
-                <option value="Naranja/Azul">Naranja/Azul</option>
-                <option value="Plata">Plata</option>
-                <option value="Transparente">Transparente</option>
-                <option value="Ámbar">Ámbar</option>
-                <option value="Variados">Variados</option>
-            </select>
-        </div><br>
-        <div><label for="">Ingrese la talla</label>
-            <input type="text" value="<%= product.talle %>" name="talle">
-        </div><br>
-        <div><label for="">Ingrese un precio</label>
-            <input type="number" value="<%= product.price %>" name="price">
-        </div><br>
-        <input type="submit" value="Registrar producto">
-    </form>
+</html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/editionProduct.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="/css/footer.css">
+        <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
     
+    
+        <title>Edición de productos</title>
+    </head>
+    <body>
+        <header>
+            <%-include ('./partials/navbar')%>
+        </header>
+    
+
+        <main>
+            
+            <section class="product-edit">
+                <form action="/products" method="post" enctype="multipart/form-data">
+                <h2 class="title">Edición de producto</h2>
+                <input class="items" type="text" name="nombre"  value="<%= product.name %>"  id="nombre" placeholder="Nombre de producto" required>
+                <input class="items" type="number" name="price" value="<%= product.price %>" id="precio" placeholder="Precio de producto" required>
+
+
+                <div><label for="">Seleccione la categoría</label><br>
+                <select name="category">
+                    <option value="Indumentaria">Indumentaria</option>
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Equipamiento y Repuestos">Equipamiento y Repuestos</option>
+                </select>
+                <label for="">Seleccione un color</label><br>
+                <select name="colors">
+                    <option value="Rojo">Rojo</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Blanco">Blanco</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Azul/Rojo">Azul/Rojo</option>
+                    <option value="Verde/Negro">Verde/Negro</option>
+                    <option value="Naranja/Azul">Naranja/Azul</option>
+                    <option value="Plata">Plata</option>
+                    <option value="Transparente">Transparente</option>
+                    <option value="Ámbar">Ámbar</option>
+                    <option value="Variados">Variados</option>
+                </select> <br>
+
+                <input class="items" type="text" name="talle" value="<%= product.talle %>" id="talle" placeholder="Talle producto">
+                <input class="items-desc" type="text" name="description" value="<%= product.description %>" id="description" placeholder="Descripción de producto">
+                <label for="">Seleccione una imagen</label><br>
+                <input class="importar" type="file" name="image" id="importar" value="Importar imagenes">
+                <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
+                </form>
+            </section>     
+            <section class="product-image">
+
+                <img width="200px" src="/images/products/<%= product.image %>" alt="">
+                  
+            </section> 
+
+
+
+    </main>
+
+
+
+
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+
+
 </body>
 
 </html>
