@@ -25,7 +25,7 @@ const middlewares = {
             return next();
 
          } else if (req.session.user){
-            return res.redirect('/profile');
+            return res.redirect('/');
         }
         next()
     },

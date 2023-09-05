@@ -116,5 +116,14 @@
   "password": "$2b$12$UsPl.y568zB.P0t2l7BnvuJ9zqFdLg0Q9iO9LVi/VPL4h5NgBWbvi",
   "repeat-password": "",
   "image": "1693780992526_img_Captura de pantalla 2023-07-14 215104.png"
+ },
+ {
+  "id": "ff7e2f5c-8135-42b6-b4bd-5103aea03457",
+  "firstName": "Maia",
+  "lastName": "Harvey",
+  "email": "maia@gmail.com",
+  "phone": "1234",
+  "image": "1693870586689_img_img-1692069515032-cafetera.jpg",
+  "password": "$2b$12$IhBEvTtT1Ze.WkWJiwnT2.bjU4hty2imGJectjDC/mu2VgbVsz6Ei"
  }
 ]
