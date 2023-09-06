@@ -23,19 +23,25 @@
     <main style="background-color: rgb(77, 91, 131);">
         <div>
             <li>
-                <h2>Hola <%= user.firstName %>
+                <h2>Hola <%= user.firstName + " " + user.lastName %>
                 </h2>
-            </li><br>
+                <br>
             <li>
-                <img width="200px" src="/images/users/<%= user.image %>" alt="">
+                <img width="150px" src="/images/users/<%= user.image %>" alt="">
 
             </li><br>
             <li>
-                <h3>
+                <h3>Correo:
                     <%= user.email %>
                 </h3>
-
             </li>
+            </li>
+            <li>
+                <h3>Teléfono:
+                    <%= user.phone %>
+                </h3>
+            </li>
+
         </div>
 
 

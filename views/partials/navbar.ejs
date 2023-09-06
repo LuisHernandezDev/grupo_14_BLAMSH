@@ -26,23 +26,13 @@
 
 
         <% if (isAdmin) { %>
-            <li>
-                <a href="/profile">
-                    <%= user.firstName %>
-                </a>
-            </li>
+
             <div>
                 <a href="/products"><strong>CRUD </strong><i class="fas fa-edit"></i>
                 </a>
             </div>
 
-            <div>
-                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong> Cerrar sesión</strong></a>
-
-            </div>
-
-
-            <% } else if (user) { %>
+            <% } if (user || isAdmin) { %>
                 <li>
                     <a href="/profile">
                         <%= user.firstName %>
@@ -50,8 +40,8 @@
                 </li>
 
                 <div>
-                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong> Cerrar sesión </strong></a>
-    
+                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong>Cerrar Sesión</strong></a>
+
                 </div>
 
                 <% } else { %>
@@ -61,7 +51,6 @@
                         </a>
                     </div>
                     <% } %>
-
 
     </div>
 
