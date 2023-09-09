@@ -49,42 +49,87 @@
             </div>
 
             <div class="section__form-register">
-                
-                <p style="color: red; font-size: 20px;"><%= error %></p>
+
+
+                <p style="color: red; font-size: 20px;">
+                    <%= locals.error %>
+                </p>
 
                 <form action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
 
 
-                    <input type="text" id="firstName" name="firstName" placeholder="Nombre">
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre"
+                        value="<%= locals.enteredData ? enteredData.firstName : null %>">
 
-                    <input type="text" id="lastName" name="lastName" placeholder="Apellido">
+                    <% if (locals.errors && locals.errors.firstName) { %>
+                        <p style="color: red;">
+                            <%= locals.errors.firstName.msg %>
+                        </p>
+                        <% } %>
 
-                    <input type="email" id="email" name="email" required placeholder="Correo electronico">
+                            <input type="text" id="lastName" name="lastName" placeholder="Apellido"
+                            value="<%= locals.enteredData ? enteredData.lastName : null %>">
 
-                    <input type="tel" name="phone" id="phone" placeholder="Telefono">
+                            <% if (locals.errors && locals.errors.lastName) { %>
+                                <p style="color: red;">
+                                    <%= locals.errors.lastName.msg %>
+                                </p>
+                                <% } %>
 
-                    <div><input type="file" name="image" multiple></div>
+                                    <input type="email" id="email" name="email" placeholder="Correo electronico"
+                                    value="<%= locals.enteredData ? enteredData.email : null %>">
 
-                    <input type="password" name="password" id="password" placeholder="Ingresar contraseña">
+                                    <% if (locals.errors && locals.errors.email) { %>
+                                        <p style="color: red;">
+                                            <%= locals.errors.email.msg %>
+                                        </p>
+                                        <% } %>
 
-                        <input type="repeat-password" name="repeat-password" id="repeat-password"
-                            placeholder="Repetir contraseña">
+                                            <input type="tel" name="phone" id="phone" placeholder="Telefono"
+                                            value="<%= locals.enteredData ? enteredData.phone : null %>">
 
-                        <div class="form__checkbox-container">
-                            <input type="checkbox" id="opcion1" name="opcion1" value="opcion1" class="form__checkbox">
-                            <label class="form_label-checkbox" for="opcion1">Acepto la Política de Privacidad y los
-                                Términos
-                                de Uso de Blamsh.
-                            </label>
+                                            <% if (locals.errors && locals.errors.phone) { %>
+                                                <p style="color: red;">
+                                                    <%= locals.errors.phone.msg %>
+                                                </p>
+                                                <% } %>
 
-                        </div>
-                        <div class="form__checkbox-container">
-                            <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
-                            <label class='form_label-checkbox' id="opcion1">Acepto recibir comunicaciones de
-                                Blamsh</label>
-                        </div>
-                        <input type="submit" value="Unite a BLAMSH" class="form__enviar">
-                    
+                                                    <div><input type="file" name="image"></div>
+
+                                                    <input type="password" name="password" id="password"
+                                                        placeholder="Ingresar contraseña">
+
+                                                    <% if (locals.errors && locals.errors.password) { %>
+                                                        <p style="color: red;">
+                                                            <%= locals.errors.password.msg %>
+                                                        </p>
+                                                        <% } %>
+
+                                                            <div class="form__checkbox-container">
+                                                                <input type="checkbox" id="opcion1" name="opcion1"
+                                                                    value="opcion1" class="form__checkbox">
+                                                                <label class="form_label-checkbox" for="opcion1">Acepto
+                                                                    la Política de Privacidad y los
+                                                                    Términos
+                                                                    de Uso de Blamsh.
+                                                                </label>
+                                                                <% if (locals.errors && locals.errors.password) { %>
+                                                                    <p style="color: red;">
+                                                                        <%= locals.errors.password.msg %>
+                                                                    </p>
+                                                                    <% } %>
+
+                                                            </div>
+                                                            <div class="form__checkbox-container">
+                                                                <input type="checkbox" id="opcion2" name="opcion2"
+                                                                    value="opcion2">
+                                                                <label class='form_label-checkbox' id="opcion1">Acepto
+                                                                    recibir comunicaciones de
+                                                                    Blamsh</label>
+                                                            </div>
+                                                            <input type="submit" value="Unite a BLAMSH"
+                                                                class="form__enviar">
+
                 </form>
             </div>
         </section>

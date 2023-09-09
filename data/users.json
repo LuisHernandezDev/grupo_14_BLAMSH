@@ -125,5 +125,86 @@
   "phone": "1234",
   "image": "1693870586689_img_img-1692069515032-cafetera.jpg",
   "password": "$2b$12$IhBEvTtT1Ze.WkWJiwnT2.bjU4hty2imGJectjDC/mu2VgbVsz6Ei"
+ },
+ {
+  "id": "915e6d4d-4e5f-41c6-96dc-1146bf1182c1",
+  "firstName": "Prueba Multer",
+  "lastName": "Prueba Multer",
+  "email": "multer@gmail.com",
+  "phone": "12345",
+  "image": "1694214982520_img_jersey-motocross.png",
+  "password": "$2b$12$Mkp/F.wDsyeHDm6O.xBMrOBIyS7Nd3cIkCdY3wDQ5vhRrJ2lidxbi"
+ },
+ {
+  "id": "d02cc067-4db5-48d0-9027-4687324089f7",
+  "firstName": "nuevaprueba",
+  "lastName": "nuevaprueba",
+  "email": "nuevaprueba@gmail.com",
+  "phone": "123",
+  "image": "1694216128572_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$24yj1ltVnSvUJMKLOXUs1eB2i6r/r4Mo.7G5J.poc5N5Va0uKGlA2"
+ },
+ {
+  "id": "49d3bedf-fc63-436d-981d-bbde10710e0d",
+  "firstName": "nuevaprueba111",
+  "lastName": "nuevaprueba111",
+  "email": "nuevaprueba1@gmail.com",
+  "phone": "123",
+  "image": "1694216304013_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$EoBGTy5IB.6Xl2htFb.a4.O.v5MTpL0U9SJCoxYZPX6xyla6BcpNy"
+ },
+ {
+  "id": "63f8dd34-68ad-4f1a-887f-9b9757763c6f",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "pepo123@gmail.com",
+  "phone": "1234",
+  "image": "1694220693489_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$7ljRDZzUyX0YIcKEfeDsbeXkya9ihLGHhALlDYq9ieuJn8.5S3xOi"
+ },
+ {
+  "id": "276e3f45-2543-4b02-8520-7313868d9a14",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "pepopi@gmail.com",
+  "phone": "1234",
+  "image": "1694221199056_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$5AgObl7naRMRJCPnwjLHNuaBiXaphb191OcdXtEe7yQGXGHR8mI4e"
+ },
+ {
+  "id": "f3a2fbac-7a82-48bc-a4bb-c78e81162dab",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "pepopipu@gmail.com",
+  "phone": "1234",
+  "image": "1694221318685_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$wvbz9D8t906FfwCjAsQ95uQQ4RtzEOTysMz791MWj5uMvOCrgKYf."
+ },
+ {
+  "id": "fbc1e764-75be-445d-a1a6-cfa152594466",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "1pepo@gmail.com",
+  "phone": "1234",
+  "image": "1694221715392_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$17T4ovrydrPvxEZgJskPY.boQQLCadll2A4ZWkHpOjs5eK7uUFXUq"
+ },
+ {
+  "id": "254ed11a-a7ee-4c27-97d2-d847d71cf11f",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "123pepo@gmail.com",
+  "phone": "1234",
+  "image": "1694221869998_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$6elVE7EZe0mOn2gmo3Y/y.KD6QXxS0xKA7dOreanjEagshBfuxPCK"
+ },
+ {
+  "id": "41a3251e-9492-4d1d-b152-cd0e90a703c1",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "ayuda@gmail.com",
+  "phone": "1234",
+  "image": "1694224838816_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$zIijjy1ODqmrejHzVPBmW.w28zT9gqQMCtLzKBLFAkXZMxx4hLMEu"
  }
 ]

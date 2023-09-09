@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 
 // Requerimos express-validator, destructurando la función validationResult.
-// const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
@@ -23,6 +23,14 @@ const controller = {
     },
 
     postRegister: (req, res) => {
+        const resultUserValidation = validationResult(req);
+
+        if (resultUserValidation.errors.length > 0) {
+            res.render('register', {
+                errors: resultUserValidation.mapped(),
+                enteredData: req.body
+            });
+        }
         const newUser = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -36,7 +44,6 @@ const controller = {
 
         if (user.error) {
             res.redirect('/register/?error=' + user.error);
-            // res.render('register', user.error)
 
         } else {
             res.redirect('/login')
@@ -64,21 +71,21 @@ const controller = {
             } else {
                 console.log('No se quiere mantener iniciada');
             }
-            
+
             req.session.user = userInDB; // Propiedad generada al loguear al usuario
             res.redirect("/");
-            
+
         } else {
             res.redirect('/login/?error=El mail o la contraseña son incorrectos');
         }
     },
-    
+
     profile: (req, res) => {
         return res.render('userProfile', { user: req.session.user });
 
     },
 
-    logout:  (req, res) => {
+    logout: (req, res) => {
         res.clearCookie('email');
         req.session.destroy();
         return res.redirect('/');

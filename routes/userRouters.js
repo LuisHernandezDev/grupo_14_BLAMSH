@@ -1,14 +1,11 @@
 //requirir express
 const express = require('express');
 
-// crear una variable para traerel maincontroller 
-const userController = require('../controllers/userControllers');
-
 // Requerimos express-validator, destructurando la función body.
 const { body } = require('express-validator');
 
-// crear una variable para traerel maincontroller 
-const maincontroller = require('../controllers/userControllers');
+// crear una variable para traer el userController 
+const userController = require('../controllers/userControllers');
 
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -37,13 +34,10 @@ const upload = multer({ storage });
 //Validaciones middleware
 const userValidations = [
     body('firstName').notEmpty().withMessage('Debes escribir un nombre'),
-    body('lastName').notEmpty().withMessage('Debes escribir un nombre'),
-    body('email').notEmpty().withMessage('Debes escribir un email'),
-    body('profile').notEmpty().withMessage('Debes elegir un perfil de usuario'),
+    body('lastName').notEmpty().withMessage('Debes escribir un apellido'),
+    body('email').notEmpty().withMessage('Debes escribir un correo electrónico'),
     body('phone').notEmpty().withMessage('Debes escribir un número de teléfono'),
-    body('image').notEmpty().withMessage('Debe agregar una imagen'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
-    body('repeat-password').notEmpty().withMessage('Debes repetir la misma contraseña'),
     body('opcion1').notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
 ]
 
