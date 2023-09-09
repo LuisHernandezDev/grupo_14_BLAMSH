@@ -3,6 +3,7 @@ const userModel = require('../models/userModels');
 const bcrypt = require('bcrypt');
 
 
+
 // Requerimos express-validator, destructurando la función validationResult.
 const { validationResult } = require('express-validator');
 
@@ -28,7 +29,7 @@ const controller = {
         if (resultUserValidation.errors.length > 0) {
             res.render('register', {
                 errors: resultUserValidation.mapped(),
-                enteredData: req.body
+                bodyData: req.body // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
             });
         }
         const newUser = {

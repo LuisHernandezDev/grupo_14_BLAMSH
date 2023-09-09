@@ -206,5 +206,50 @@
   "phone": "1234",
   "image": "1694224838816_img_Captura de pantalla 2023-05-02 190811.png",
   "password": "$2b$12$zIijjy1ODqmrejHzVPBmW.w28zT9gqQMCtLzKBLFAkXZMxx4hLMEu"
+ },
+ {
+  "id": "4fc4497a-4ff7-4bb5-ba04-78d0743f1c4d",
+  "firstName": "",
+  "lastName": "",
+  "email": "",
+  "phone": "",
+  "image": "1694229933379_img_Libro de Ingresos y Gastos (2) (2).xlsx",
+  "password": "$2b$12$L30JtrFDbDBHULR5Lkp77.tVeeMi2Um55ec60MAKHZvWbmwJwXW3e"
+ },
+ {
+  "id": "678924fb-9469-4110-b8ab-8cfe65853958",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "herca@gmail.com",
+  "phone": "1233",
+  "image": "1694230731059_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$zAFh1vfsM/Gw.Bqfy0AuruenbkRjTHkWQZxdECSSn.f/X8zNbU3yu"
+ },
+ {
+  "id": "ecf1535a-5d1d-40e7-8d36-12c3a1c86a98",
+  "firstName": "Carlos",
+  "lastName": "Ceballos",
+  "email": "ceballos@gmail.com",
+  "phone": "1234",
+  "image": "1694231969826_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$jEkmwsQU/qQUOqcijdsmYuPcUbOY1E2OXwozfmUmQEoKHhzHy954C"
+ },
+ {
+  "id": "8ab41a99-8784-473c-a788-84b36f0e8769",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "123ceballos@gmail.com",
+  "phone": "1234",
+  "image": "1694233188937_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$fFgOulMuHaW//nTOLIL4AO2aV1Noqla8BoVdN65PAqHXUuB1Me0h2"
+ },
+ {
+  "id": "86bf6816-ec0d-4ad6-8028-9c189e2bcc45",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "hola456789@prueba.com",
+  "phone": "1234",
+  "image": "1694233229220_img_Detalle de Ventas Somos Bellas (2)(Recuperado automÃ¡ticamente).xlsx",
+  "password": "$2b$12$gKBzo9irF68Z9tg5BQcw.ewwtMmHqLi/HVWEwIaojwDYQXA.F0JNO"
  }
 ]

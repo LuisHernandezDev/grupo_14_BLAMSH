@@ -1,5 +1,6 @@
 //requirir express
 const express = require('express');
+const path = require('path');
 
 // Requerimos express-validator, destructurando la función body.
 const { body } = require('express-validator');
@@ -35,10 +36,26 @@ const upload = multer({ storage });
 const userValidations = [
     body('firstName').notEmpty().withMessage('Debes escribir un nombre'),
     body('lastName').notEmpty().withMessage('Debes escribir un apellido'),
-    body('email').notEmpty().withMessage('Debes escribir un correo electrónico'),
+    body('email')
+        .notEmpty().withMessage('Debes escribir un correo electrónico').bail() // bail, detiene las validaciones si se ejecuta el primero, sino entonces salta a la segunda validación
+        .isEmail().withMessage("Debes ingresar un formato de correo válido"),
     body('phone').notEmpty().withMessage('Debes escribir un número de teléfono'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
     body('opcion1').notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
+    body('image').custom((value, {req}) =>{
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png'];
+        
+        if (!file) {
+            throw new Error('Debes subir una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions. includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivos permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        return true;
+    })
 ]
 
 
@@ -46,7 +63,7 @@ const userValidations = [
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
 router.get('/register', authMiddleware.guestUser, userController.register);
 
-router.post('/register', [upload.single('image'), userValidations], userController.postRegister);
+router.post('/register', upload.single('image'), userValidations, userController.postRegister);
 
 router.get('/login', authMiddleware.guestUser, userController.login);
 
