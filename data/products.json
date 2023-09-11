@@ -483,48 +483,31 @@
     },
     {
         "id": 41,
-        "name": "Prueba",
-        "description": "PruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPrueba",
-        "image": "img-1692983169475-cafetera.jpg",
+        "name": "Camiseta",
+        "description": "CamisetaOtra",
+        "image": "img-1694307689805-Captura de pantalla 2023-05-02 190811 - copia.png",
         "category": "Accesorios",
-        "colors": "Rosa",
-        "talle": "M",
-        "price": "165555"
+        "colors": "Plata",
+        "talle": "S",
+        "price": "123"
     },
     {
         "id": 42,
-        "name": "Prueba",
-        "description": "PruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPrueba",
-        "image": "img-1692983520767-cafetera.jpg",
+        "name": "Camiseta",
+        "description": "CamisetaOtra",
+        "image": "img-1694307856123-Captura de pantalla 2023-05-03 164747 - copia - copia.png",
         "category": "Indumentaria",
         "colors": "Rojo",
         "talle": "S",
-        "price": "165555"
+        "price": "123"
     },
     {
         "id": 43,
-        "name": "Otra prueba",
-        "description": "Prueba111Prueba111Prueba111Prueba111Prueba111",
-        "image": "img-1692997364620-banner.jpg",
-        "category": "Equipamiento y Repuestos",
-        "colors": "Verde",
-        "talle": "M",
-        "price": "2345"
-    },
-    {
-        "id": 44,
-        "name": "Otra prueba",
-        "description": "HolaHolaHolaHolaHolaHola",
-        "image": "img-1693001942390-banner.jpg",
+        "name": "Camiseta",
+        "description": "Jersey nuevo nuevo nuevo",
+        "category": "Indumentaria",
+        "colors": "Variados",
         "talle": "S",
-        "price": "123"
-    },
-    {
-        "id": 45,
-        "name": "Otra prueba123",
-        "description": "PruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPruebaPrueba",
-        "image": "img-1693009905730-banner.jpg",
-        "talle": "S",
-        "price": "123"
+        "price": "23"
     }
 ]

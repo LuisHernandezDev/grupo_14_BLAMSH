@@ -70,7 +70,7 @@ const controller = {
         const newProduct = {
             name: req.body.name,
             description: req.body.description,
-            image: req.file.filename,
+            image: req.files.filename,
             category: req.body.category,
             colors: req.body.colors,
             talle: req.body.talle.toUpperCase(),

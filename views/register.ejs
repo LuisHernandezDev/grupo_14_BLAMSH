@@ -68,7 +68,7 @@
                         <% } %>
 
                             <input type="text" id="lastName" name="lastName" placeholder="Apellido"
-                            value="<%= locals.bodyData ? bodyData.lastName : null %>">
+                                value="<%= locals.bodyData ? bodyData.lastName : null %>">
 
                             <% if (locals.errors && locals.errors.lastName) { %>
                                 <p style="color: red;">
@@ -77,7 +77,7 @@
                                 <% } %>
 
                                     <input type="email" id="email" name="email" placeholder="Correo electronico"
-                                    value="<%= locals.bodyData ? bodyData.email : null %>">
+                                        value="<%= locals.bodyData ? bodyData.email : null %>">
 
                                     <% if (locals.errors && locals.errors.email) { %>
                                         <p style="color: red;">
@@ -86,22 +86,22 @@
                                         <% } %>
 
                                             <input type="tel" name="phone" id="phone" placeholder="Telefono"
-                                            value="<%= locals.bodyData ? bodyData.phone : null %>">
+                                                value="<%= locals.bodyData ? bodyData.phone : null %>">
 
                                             <% if (locals.errors && locals.errors.phone) { %>
                                                 <p style="color: red;">
                                                     <%= locals.errors.phone.msg %>
                                                 </p>
                                                 <% } %>
-<div>
-                                                    <input type="file" name="image">
-                                                    <% if (locals.errors && locals.errors.image) { %>
-                                                        <p style="color: red;">
-                                                            <%= locals.errors.image.msg %>
-                                                        </p>
-                                                        <% } %>
-                                                   
-                                                        </div>
+                                                    <div>
+                                                        <input type="file" name="image">
+                                                        <% if (locals.errors && locals.errors.image) { %>
+                                                            <p style="color: red;">
+                                                                <%= locals.errors.image.msg %>
+                                                            </p>
+                                                            <% } %>
+
+                                                    </div>
                                                     <input type="password" name="password" id="password"
                                                         placeholder="Ingresar contraseña">
 
@@ -110,7 +110,7 @@
                                                             <%= locals.errors.password.msg %>
                                                         </p>
                                                         <% } %>
-                                                    
+
                                                             <div class="form__checkbox-container">
                                                                 <input type="checkbox" id="opcion1" name="opcion1"
                                                                     value="opcion1" class="form__checkbox">
