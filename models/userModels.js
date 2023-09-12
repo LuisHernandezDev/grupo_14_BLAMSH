@@ -10,8 +10,9 @@ const uuid = require ('uuid');
 
 
 const model = {
+
     fileRoute: path.join(__dirname, '../data/users.json'),
-    
+
     create:(userData) =>{
 
         let users = JSON.parse (fs.readFileSync (model. fileRoute, 'utf-8'));
@@ -33,7 +34,6 @@ const model = {
         users.push (newUser);
         fs.writeFileSync (model.fileRoute, JSON.stringify (users), 'utf-8');
         return newUser;
-        
 
     },
 
@@ -43,7 +43,6 @@ const model = {
         const coincidence = users.find (usuarioActual => usuarioActual.email === email);
 
         return coincidence || null;
-        
 
     },
 

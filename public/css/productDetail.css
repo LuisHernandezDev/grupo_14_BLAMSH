@@ -6,6 +6,10 @@
     box-shadow: 10px 10px 10px #a7a5aa;
 }
 
+.productImage:hover{
+    transform: scale(1.05);
+}
+
 .mainContainer{
     width: 100%;
     display: flex;
@@ -22,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20vh; 
+   
 }
 
 .productId {

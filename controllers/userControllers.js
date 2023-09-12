@@ -12,6 +12,7 @@ const bcrypt = require ('bcrypt');
 
 //Requerimo session para guardar los datos de usuario en el server
 const session = require ('express-session');
+const { log } = require('console');
 
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
@@ -52,19 +53,9 @@ const controller = {
     },
 
     processLogin: (req,res) => {
-        const resultValidation = validationResult(req);
-        const userData = {
-            email: req.body.email,
-            password: req.body.password,
-            }; 
-
-        const userInJson = userModels.findByEmail (req.body.email);
-    
-        const error = ({error: 'El email o contraseña son incorrectos'});
-
-            if (!userInJson) {
-               return res.redirect ('/login?error=' + error);
-            }
+       const userInJson = userModels.findByEmail(req.body.email);
+       console.log (userInJson);
+       res.send ('Login');
     }
     
 }

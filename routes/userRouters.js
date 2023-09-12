@@ -42,9 +42,11 @@ router.get('/register', userController.register);
 
 router.post('/register', [upload.single('img'), validations], userController.processRegister);
 
+router.get('/login', userController.login);
+
 router.post('/login', userController.processLogin);
 
-router.get('/login', userController.login);
+
 
 
 // traer a  la funcion router
