@@ -29,7 +29,7 @@ const controller = {
                         msg: "este email ya se encuentra registrado"
                     }
                 },
-                resultValidation: req
+                resultValidation: req.body
             });
         }
 
@@ -38,7 +38,7 @@ const controller = {
         let modeloUsuarioTocreate = {
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
-            "repeat-password": bcryptjs.hashSync(req.body.password, 10)
+            "repeat-password": bcryptjs.hashSync(req.body.password, 10),
 
             //avatar: req.file.modeloUsuario
 
@@ -46,7 +46,7 @@ const controller = {
         }
         modelousuario.create(modeloUsuarioTocreate);
 
-        return res.send(resultValidation);
+        return res.redirect('./users/login');
     },
 
 
@@ -59,6 +59,10 @@ const controller = {
         res.render('login');
 
 
+
+    },
+    loginProcess: (req, res) => {
+        return res.send(req.body);
 
     },
 

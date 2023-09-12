@@ -18,7 +18,8 @@ p {
 
 .tipocheckbox {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-content: normal;
 
 
 
@@ -67,7 +68,8 @@ button {
 }
 
 .enviar {
-    display: inline-block;
+    display: flex;
+    justify-content: right;
 
 
 }
