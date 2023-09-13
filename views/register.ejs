@@ -58,42 +58,50 @@
                 <form action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
 
 
-                    <input type="text" id="firstName" name="firstName" placeholder="Nombre"
+                    <input type="text" id="firstName" name="firstName" placeholder=  <% if (locals.errors && locals.errors.firstName) { %>
+                            
+                           " <%= locals.errors.firstName.msg %> "
+                      
+                        <% }else{ %>
+                                'Nombre'
+                            <% }%>
                         value="<%= locals.bodyData ? bodyData.firstName : null %>">
 
-                    <% if (locals.errors && locals.errors.firstName) { %>
-                        <p style="color: red;">
-                            <%= locals.errors.firstName.msg %>
-                        </p>
-                        <% } %>
+                   
 
-                            <input type="text" id="lastName" name="lastName" placeholder="Apellido"
+                            <input type="text" id="lastName" name="lastName" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                " <%= locals.errors.lastName.msg %> "
+                           
+                             <% }else{ %>
+                                     'Apellido'
+                                 <% }%>
                             value="<%= locals.bodyData ? bodyData.lastName : null %>">
 
-                            <% if (locals.errors && locals.errors.lastName) { %>
-                                <p style="color: red;">
-                                    <%= locals.errors.lastName.msg %>
-                                </p>
-                                <% } %>
+                            
 
-                                    <input type="email" id="email" name="email" placeholder="Correo electronico"
+                                    <input type="email" id="email" name="email" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                        " <%= locals.errors.email.msg %> "
+                                   
+                                     <% }else{ %>
+                                             'Apellido'
+                                         <% }%>
                                     value="<%= locals.bodyData ? bodyData.email : null %>">
 
-                                    <% if (locals.errors && locals.errors.email) { %>
-                                        <p style="color: red;">
-                                            <%= locals.errors.email.msg %>
-                                        </p>
-                                        <% } %>
+                                  
 
-                                            <input type="tel" name="phone" id="phone" placeholder="Telefono"
+                                            <input type="tel" name="phone" id="phone" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                                " <%= locals.errors.phone.msg %> "
+                                           
+                                             <% }else{ %>
+                                                     'Telefono'
+                                                 <% }%>
                                             value="<%= locals.bodyData ? bodyData.phone : null %>">
 
-                                            <% if (locals.errors && locals.errors.phone) { %>
-                                                <p style="color: red;">
-                                                    <%= locals.errors.phone.msg %>
-                                                </p>
-                                                <% } %>
-<div>
+                                           
+                            <div>
                                                     <input type="file" name="image">
                                                     <% if (locals.errors && locals.errors.image) { %>
                                                         <p style="color: red;">
@@ -103,13 +111,15 @@
                                                    
                                                         </div>
                                                     <input type="password" name="password" id="password"
-                                                        placeholder="Ingresar contraseña">
+                                                        placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                                            " <%= locals.errors.firstName.password %> "
+                                                       
+                                                         <% }else{ %>
+                                                                 'Contraseña'
+                                                             <% }%>>
 
-                                                    <% if (locals.errors && locals.errors.password) { %>
-                                                        <p style="color: red;">
-                                                            <%= locals.errors.password.msg %>
-                                                        </p>
-                                                        <% } %>
+                                                  
                                                     
                                                             <div class="form__checkbox-container">
                                                                 <input type="checkbox" id="opcion1" name="opcion1"
