@@ -16,10 +16,12 @@ p {
     text-align: end;
 }
 
+
 .tipocheckbox {
     display: flex;
-    justify-content: space-between;
-    align-content: normal;
+    justify-content: center;
+    width: 100%;
+
 
 
 
@@ -32,8 +34,6 @@ p {
     padding: 0;
     border-radius: 5px;
 }
-
-
 
 
 
