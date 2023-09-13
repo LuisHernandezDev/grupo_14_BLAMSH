@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main-register.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
+</head>
+
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+
+    <main style="background-color: rgb(77, 91, 131);">
+        <div>
+            <li>
+                <h2>Hola <%= user.firstName + " " + user.lastName %>
+                </h2>
+                <br>
+            <li>
+                <img width="150px" src="/images/users/<%= user.image %>" alt="">
+
+            </li><br>
+            <li>
+                <h3>Correo:
+                    <%= user.email %>
+                </h3>
+            </li>
+            </li>
+            <li>
+                <h3>Teléfono:
+                    <%= user.phone %>
+                </h3>
+            </li>
+
+        </div>
+
+
+    </main>
+
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+    <script src="js/catalog.js"></script>
+</body>
+
+
+</html>

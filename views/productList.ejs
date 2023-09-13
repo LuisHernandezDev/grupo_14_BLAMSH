@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/carrito.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="stylesheet" href="/css/crud2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,47 +31,45 @@
     <section><br>
 
         <% products.forEach(product=> { %>
-            <div class="productWrapper">
-                <article class="">
-                    <div class="product">
-                        <strong>Nombre: </strong>
-                        <%= product.name %>
-                    </div>
-                    <div class="product">
-                        <strong>Descripción: </strong>
-                        <%= product.description %>
-                    </div>
-                    <div class="product">
-                        <strong>Imagen: </strong>
-                        <img width="200px" src="/images/products/<%= product.image %>" alt="">
-                    </div>
 
-                    <div class="product">
-                        <strong>Categoría: </strong>
-                        <%= product.category %>
-                    </div>
-                    <div class="product">
-                        <strong>Color: </strong>
-                        <%= product.colors %>
-                    </div>
-                    <div class="product">
-                        <strong>Talla: </strong>
-                        <%= product.talle %>
-                    </div>
-                    <div class="product">
-                        <strong>Precio: </strong>$<%= product.price %>
-                    </div>
-                    <div class="buttonDetail">
-                        <a href="/products/<%= product.id %>/detail">
-                            <button>Ver detalle</button>
-                        </a>
-                    </div>
+            <article class="productWrapper">
+                <div class="product">
+                    <strong>Nombre: </strong>
+                    <%= product.name %>
+                </div>
+                <div class="product">
+                    <strong>Descripción: </strong>
+                    <%= product.description %>
+                </div>
+                <div class="product">
+                    <strong>Imagen: </strong>
+                    <img width="200px" src="/images/products/<%= product.image %>" alt="">
+                </div>
 
-                </article>
-            </div><br>
+                <div class="product">
+                    <strong>Categoría: </strong>
+                    <%= product.category %>
+                </div>
+                <div class="product">
+                    <strong>Color: </strong>
+                    <%= product.colors %>
+                </div>
+                <div class="product">
+                    <strong>Talla: </strong>
+                    <%= product.talle %>
+                </div>
+                <div class="product">
+                    <strong>Precio: </strong>$<%= product.price %>
+                </div>
+                <div class="buttonDetail">
+                    <a href="/products/<%= product.id %>/detail">
+                        <button>Ver detalle</button>
+                    </a>
+                </div>
+            </article><br>
             <% }) %>
     </section>
-    <footer>
+    <footer class="footer-layout">
         <%-include ('./partials/footer')%>
     </footer>
 </body>

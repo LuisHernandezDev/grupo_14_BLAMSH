@@ -13,19 +13,21 @@ const { body } = require('express-validator');
 // Requerimos el middleware
 const createProductMiddleware = require('../middlewares/createProductMiddleware');
 
+const authMiddleware = require('../middlewares/authMiddleware');
+
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
 
-// Validaciones:
+// Validaciones: Es un array de Middleware
 const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
 const productValidations = [
-    body('name').isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
-    body('description').isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
+    body('name').notEmpty().isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
+    body('description').notEmpty().isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
     body('image').notEmpty().withMessage('Debe agregar una imagen'),
-    body('category').isIn(allowedCategories).withMessage('Categoría inválida'), // Preguntar si se puede hacer un input select.
+    body('category').notEmpty().withMessage('Debe escoger la categoría del producto'),
     body('colors').notEmpty().withMessage('Debes seleccionar al menos un color'), // Preguntar si se puede hacer un input select.
     body('talle').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
-    body('price').isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
+    body('price').notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
 ];
 
 /*
@@ -53,25 +55,25 @@ const upload = multer({ storage });
 
 router.get('/detalleProducto', productControllers.detalleProducto);
 
-router.get('/carrito', productControllers.carrito);
+router.get('/carrito', authMiddleware.authUser, productControllers.carrito);
 
-router.get('/editionProduct', productControllers.editionProduct);
+router.get('/editionProduct', authMiddleware.authUser, authMiddleware.guestUser, productControllers.editionProduct);
 
-router.get('/products', productControllers.getList);
+router.get('/products', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getList);
 
 router.get('/productsCrud', productControllers.getCrud);
 
 // @GET - /products/:id/detail
-router.get('/products/:id/detail', productControllers.getDetail);
+router.get('/products/:id/detail', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getDetail);
 
 // @GET - /products/create
-router.get('/products/create', productControllers.getCreate);
+router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getCreate);
 
 // @POST - /products // A donde llegan los productos creados
 router.post('/products', [upload.single('image'), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
 
 // @GET - /products/:id/edit
-router.get('/products/:id/edit', productControllers.getEdit);
+router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
 
 // @DELETE - /products/:id/delete
 router.delete('/products/:id/delete', productControllers.deleteProduct);

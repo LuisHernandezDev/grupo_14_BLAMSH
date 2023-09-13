@@ -4,6 +4,10 @@ const path = require('path');
 // crear una variable para requerir productModels y poder usar sus funciones en el Controllers
 const productModels = require('../models/productModels');
 
+const { validationResult } = require('express-validator');
+
+const db = require('../database/models')
+
 
 // crear una variable para guadar las routas , es como un objeto que va a contener todas las routas de tu programa.
 const controller = {
@@ -53,11 +57,21 @@ const controller = {
     postProduct: (req, res) => {
         console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body // body es el objeto que createProduct necesita.
 
-        // Creamos un map para iterar sobre todas las imagenes y que las muestre al cargarlas.
-        // const filenames = req.files.map(file => file.filename);
+        /*
+        Creamos un map para iterar sobre todas las imagenes y que las muestre al cargarlas.
+        const filenames = req.files.map(file => file.filename);
+        */
+
+        /* Validaciones 
+        const result = validationResult(req);
+        console.log (result.errors);
+        */
+
+       const errors = validationResult(req); // En el req es donde llegan todos los datos del formulario
+
+
 
         // (req.file) - Trae la información o detalle de la imagen y también los datos de donde se guardó.
-
         const newProduct = {
             name: req.body.name,
             description: req.body.description,

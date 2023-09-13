@@ -1,223 +1,264 @@
 [
-    {
-        "id": 1,
-        "first_name": "Corenda",
-        "last_name": "Slateford",
-        "email": "cslateford0@vkontakte.ru",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "3/24/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 2,
-        "first_name": "Donaugh",
-        "last_name": "Pendell",
-        "email": "dpendell1@tinypic.com",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "9/15/2022",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 3,
-        "first_name": "Marielle",
-        "last_name": "Copcott",
-        "email": "mcopcott2@wufoo.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "3/21/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 4,
-        "first_name": "Victor",
-        "last_name": "Corington",
-        "email": "vcorington3@smh.com.au",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "11/22/2022",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 5,
-        "first_name": "Randie",
-        "last_name": "Foulstone",
-        "email": "rfoulstone4@hud.gov",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "6/6/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 6,
-        "first_name": "Alfy",
-        "last_name": "Pughe",
-        "email": "apughe5@gmpg.org",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "6/27/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 7,
-        "first_name": "Anastasie",
-        "last_name": "Rodolphe",
-        "email": "arodolphe6@zdnet.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "7/9/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 8,
-        "first_name": "Dody",
-        "last_name": "Tidy",
-        "email": "dtidy7@zdnet.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "1/9/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 9,
-        "first_name": "Murial",
-        "last_name": "Androck",
-        "email": "mandrock8@ebay.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "6/1/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 10,
-        "first_name": "Corbett",
-        "last_name": "Greaser",
-        "email": "cgreaser9@virginia.edu",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "5/27/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 11,
-        "first_name": "Ida",
-        "last_name": "Langelay",
-        "email": "ilangelaya@hatena.ne.jp",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "9/25/2022",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 12,
-        "first_name": "Garner",
-        "last_name": "Padkin",
-        "email": "gpadkinb@google.co.uk",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "6/27/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 13,
-        "first_name": "Tades",
-        "last_name": "Dyshart",
-        "email": "tdyshartc@artisteer.com",
-        "password": "***********",
-        "gender": "Male",
-        "ip_address": "214.14.77.25",
-        "birthday_date": "7/6/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 14,
-        "first_name": "Darrick",
-        "last_name": "Stolze",
-        "email": "dstolzed@washington.edu",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "5/10/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 15,
-        "first_name": "Dorthea",
-        "last_name": "Thiolier",
-        "email": "dthioliere@google.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "4/24/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 16,
-        "first_name": "Leann",
-        "last_name": "McCague",
-        "email": "lmccaguef@vkontakte.ru",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "10/25/2022",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 17,
-        "first_name": "Bunni",
-        "last_name": "O'Corhane",
-        "email": "bocorhaneg@geocities.com",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "7/24/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 18,
-        "first_name": "Ethelyn",
-        "last_name": "Moquin",
-        "email": "emoquinh@i2i.jp",
-        "password": "***********",
-        "gender": "Female",
-        "birthday_date": "9/30/2022",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 19,
-        "first_name": "Irving",
-        "last_name": "Landeg",
-        "email": "ilandegi@dyndns.org",
-        "password": "***********",
-        "gender": "Genderqueer",
-        "birthday_date": "3/14/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    },
-    {
-        "id": 20,
-        "first_name": "Wallas",
-        "last_name": "Brettelle",
-        "email": "wbrettellej@chron.com",
-        "password": "***********",
-        "gender": "Male",
-        "birthday_date": "4/14/2023",
-        "phone": "111111111",
-        "image": "imagen"
-    }
+ {
+  "id": 1,
+  "firstName": "Liliana",
+  "lastName": "Quispe",
+  "email": "liliQ@prueba.com",
+  "phone": "111111111",
+  "image": "img-1692111842138-img-1692070247968-SamsungGalaxy.jpg",
+  "password": "***********"
+ },
+ {
+  "id": 2,
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "luish@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": 3,
+  "firstName": "Maia",
+  "lastName": "Harvey",
+  "email": "maiaH@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": 4,
+  "firstName": "Agustin",
+  "lastName": "Garcia",
+  "email": "agustinG@prueba.com",
+  "phone": "111111111",
+  "image": "imagen",
+  "password": "***********"
+ },
+ {
+  "id": "dafe6bb3-a622-4053-9bf1-a6c95dbf3d21",
+  "firstName": "Isa",
+  "lastName": "Her",
+  "email": "isa@gmail.com",
+  "phone": "2345",
+  "image": "1693710392172_img_banner.jpg",
+  "password": "$2b$12$u7ZXDh7JdUYNMQJ1nVyH2.X/6FMq2Uv/yGOLH03k6yj2VSb6vGH1O"
+ },
+ {
+  "id": "7fda4b20-f4d4-44ed-93c6-3131102e35bb",
+  "firstName": "pepito",
+  "lastName": "Her",
+  "email": "pepito@prueba.com",
+  "phone": "12345",
+  "image": "1693710704869_img_banner.jpg",
+  "password": "$2b$12$PAiHX4aUQJTRDUP66OgzS.soEXSr4dmCt2smmBkEaX/M8Q8cQBxGK"
+ },
+ {
+  "id": "fefd9be2-2f95-4047-8744-1c4c3a85267d",
+  "firstName": "Carlos",
+  "lastName": "Her",
+  "email": "carlos@gmail.com",
+  "phone": "12345",
+  "image": "1693711097201_img_cafetera.jpg",
+  "password": "$2b$12$AEtPMYeSKDg3LuxR03.P7e5aCPzYmlM9hk87XzhHkRyYKbliifnwG"
+ },
+ {
+  "id": "81bee89f-31df-4c99-bbe5-079422882b69",
+  "firstName": "pepita",
+  "lastName": "Her",
+  "email": "pepita@gmail.com",
+  "phone": "12345",
+  "image": "1693712465109_img_Captura de pantalla 2023-06-22 223409.png",
+  "password": "$2b$12$auSj1YKn9jxxhJFzArLdr.XB5ldgt7TM7podGajfC0id9GngBW96e"
+ },
+ {
+  "id": "63f7b837-2937-4b55-9309-883cebfe1c2c",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "isa1234@gmail.com",
+  "phone": "1234",
+  "image": "1693767895016_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$DoYzjlqjPU0IlFZGFlkVOePcRJDTy3M0TyIX6xxpRBMb2F0SzevIW"
+ },
+ {
+  "id": "e4fc6db5-77bd-4807-9dac-22ab164f472f",
+  "firstName": "pepa",
+  "lastName": "pepa",
+  "email": "pepa@gmail.com",
+  "phone": "1234",
+  "image": "1693772585807_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$i4fAip/77vlb4w5e7jblAugQZS40l07Na1z/GNv7TV5WJ3HRjTMNe"
+ },
+ {
+  "id": "b0dcc11f-5a93-4461-97f4-d1293cf1da87",
+  "firstName": "pepa",
+  "lastName": "pepa",
+  "email": "pepa1@gmail.com",
+  "phone": "1234",
+  "image": "1693772684526_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$BWErjSqgQnXCz02NjGPi8.KYn8gJb2XI4CKaBbxD22M.wfuJ86QbW"
+ },
+ {
+  "id": "2a169b3b-640f-4e58-b2ec-97705f31201d",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "hola123@prueba.com",
+  "phone": "1234",
+  "image": "1693773258674_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$CRO1uZRB38mVD77Hbh9c7epzzDosoV/BMihWSik/XmuoCjp9mH8Be"
+ },
+ {
+  "id": "c3a36631-f0e7-48e9-a753-82188d72588f",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "pepo@gmail.com",
+  "phone": "1234",
+  "password": "$2b$12$UsPl.y568zB.P0t2l7BnvuJ9zqFdLg0Q9iO9LVi/VPL4h5NgBWbvi",
+  "repeat-password": "",
+  "image": "1693780992526_img_Captura de pantalla 2023-07-14 215104.png"
+ },
+ {
+  "id": "ff7e2f5c-8135-42b6-b4bd-5103aea03457",
+  "firstName": "Maia",
+  "lastName": "Harvey",
+  "email": "maia@gmail.com",
+  "phone": "1234",
+  "image": "1693870586689_img_img-1692069515032-cafetera.jpg",
+  "password": "$2b$12$IhBEvTtT1Ze.WkWJiwnT2.bjU4hty2imGJectjDC/mu2VgbVsz6Ei"
+ },
+ {
+  "id": "915e6d4d-4e5f-41c6-96dc-1146bf1182c1",
+  "firstName": "Prueba Multer",
+  "lastName": "Prueba Multer",
+  "email": "multer@gmail.com",
+  "phone": "12345",
+  "image": "1694214982520_img_jersey-motocross.png",
+  "password": "$2b$12$Mkp/F.wDsyeHDm6O.xBMrOBIyS7Nd3cIkCdY3wDQ5vhRrJ2lidxbi"
+ },
+ {
+  "id": "d02cc067-4db5-48d0-9027-4687324089f7",
+  "firstName": "nuevaprueba",
+  "lastName": "nuevaprueba",
+  "email": "nuevaprueba@gmail.com",
+  "phone": "123",
+  "image": "1694216128572_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$24yj1ltVnSvUJMKLOXUs1eB2i6r/r4Mo.7G5J.poc5N5Va0uKGlA2"
+ },
+ {
+  "id": "49d3bedf-fc63-436d-981d-bbde10710e0d",
+  "firstName": "nuevaprueba111",
+  "lastName": "nuevaprueba111",
+  "email": "nuevaprueba1@gmail.com",
+  "phone": "123",
+  "image": "1694216304013_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$EoBGTy5IB.6Xl2htFb.a4.O.v5MTpL0U9SJCoxYZPX6xyla6BcpNy"
+ },
+ {
+  "id": "63f8dd34-68ad-4f1a-887f-9b9757763c6f",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "pepo123@gmail.com",
+  "phone": "1234",
+  "image": "1694220693489_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$7ljRDZzUyX0YIcKEfeDsbeXkya9ihLGHhALlDYq9ieuJn8.5S3xOi"
+ },
+ {
+  "id": "276e3f45-2543-4b02-8520-7313868d9a14",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "pepopi@gmail.com",
+  "phone": "1234",
+  "image": "1694221199056_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$5AgObl7naRMRJCPnwjLHNuaBiXaphb191OcdXtEe7yQGXGHR8mI4e"
+ },
+ {
+  "id": "f3a2fbac-7a82-48bc-a4bb-c78e81162dab",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "pepopipu@gmail.com",
+  "phone": "1234",
+  "image": "1694221318685_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$wvbz9D8t906FfwCjAsQ95uQQ4RtzEOTysMz791MWj5uMvOCrgKYf."
+ },
+ {
+  "id": "fbc1e764-75be-445d-a1a6-cfa152594466",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "1pepo@gmail.com",
+  "phone": "1234",
+  "image": "1694221715392_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$17T4ovrydrPvxEZgJskPY.boQQLCadll2A4ZWkHpOjs5eK7uUFXUq"
+ },
+ {
+  "id": "254ed11a-a7ee-4c27-97d2-d847d71cf11f",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "123pepo@gmail.com",
+  "phone": "1234",
+  "image": "1694221869998_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$6elVE7EZe0mOn2gmo3Y/y.KD6QXxS0xKA7dOreanjEagshBfuxPCK"
+ },
+ {
+  "id": "41a3251e-9492-4d1d-b152-cd0e90a703c1",
+  "firstName": "",
+  "lastName": "Her",
+  "email": "ayuda@gmail.com",
+  "phone": "1234",
+  "image": "1694224838816_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$zIijjy1ODqmrejHzVPBmW.w28zT9gqQMCtLzKBLFAkXZMxx4hLMEu"
+ },
+ {
+  "id": "4fc4497a-4ff7-4bb5-ba04-78d0743f1c4d",
+  "firstName": "",
+  "lastName": "",
+  "email": "",
+  "phone": "",
+  "image": "1694229933379_img_Libro de Ingresos y Gastos (2) (2).xlsx",
+  "password": "$2b$12$L30JtrFDbDBHULR5Lkp77.tVeeMi2Um55ec60MAKHZvWbmwJwXW3e"
+ },
+ {
+  "id": "678924fb-9469-4110-b8ab-8cfe65853958",
+  "firstName": "Luis",
+  "lastName": "Hernandez",
+  "email": "herca@gmail.com",
+  "phone": "1233",
+  "image": "1694230731059_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$zAFh1vfsM/Gw.Bqfy0AuruenbkRjTHkWQZxdECSSn.f/X8zNbU3yu"
+ },
+ {
+  "id": "ecf1535a-5d1d-40e7-8d36-12c3a1c86a98",
+  "firstName": "Carlos",
+  "lastName": "Ceballos",
+  "email": "ceballos@gmail.com",
+  "phone": "1234",
+  "image": "1694231969826_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$jEkmwsQU/qQUOqcijdsmYuPcUbOY1E2OXwozfmUmQEoKHhzHy954C"
+ },
+ {
+  "id": "8ab41a99-8784-473c-a788-84b36f0e8769",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "123ceballos@gmail.com",
+  "phone": "1234",
+  "image": "1694233188937_img_Captura de pantalla 2023-05-02 190811.png",
+  "password": "$2b$12$fFgOulMuHaW//nTOLIL4AO2aV1Noqla8BoVdN65PAqHXUuB1Me0h2"
+ },
+ {
+  "id": "86bf6816-ec0d-4ad6-8028-9c189e2bcc45",
+  "firstName": "Luis",
+  "lastName": "Her",
+  "email": "hola456789@prueba.com",
+  "phone": "1234",
+  "image": "1694233229220_img_Detalle de Ventas Somos Bellas (2)(Recuperado automÃ¡ticamente).xlsx",
+  "password": "$2b$12$gKBzo9irF68Z9tg5BQcw.ewwtMmHqLi/HVWEwIaojwDYQXA.F0JNO"
+ },
+ {
+  "id": "939d0b20-235a-4b00-8a11-e019bad96b0b",
+  "firstName": "Li",
+  "lastName": "qui",
+  "email": "lilifotis3@gmail.com",
+  "phone": "1562580707",
+  "image": "1694417467894_img_Screenshot from 2023-09-11 03-45-10.png",
+  "password": "$2b$12$Bgi3jHwY6NS2WlCTR03aq.NLvs.f4rblP/QLp3gEQiJet5dCwhBWu"
+ }
 ]

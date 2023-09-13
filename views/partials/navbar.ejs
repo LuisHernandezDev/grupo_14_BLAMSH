@@ -18,14 +18,44 @@
     <div class="nav__opciones">
         <div class="opciones__lupa"><input type="text"><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
                     style="color: #eaeaeb;"></i></a></div>
-        <div class="opciones__carrito"><a href="/carrito"><span>Carrito</span><i
-                    class="fa-sharp fa-solid fa-basket-shopping fa-l" style="color: #eaeaeb;"></i></a></div>
-        <div class="opciones__user"><a href="/login"><span>Iniciar Sesion</span><i
-                    class="fa-regular fa-circle-user fa-l"></i></a></div>
-                    <div>
-                        <a href="/products"><strong>CRUD </strong><i class="fas fa-edit"></i></a>
+        <div class="opciones__carrito">
+            <a href="/carrito"><span>Carrito</span>
+                <i class="fa-sharp fa-solid fa-basket-shopping fa-l" style="color: #eaeaeb;"></i>
+            </a>
+        </div>
+
+
+        <% if (isAdmin) { %>
+
+            <div>
+                <a href="/products"><strong>CRUD </strong><i class="fas fa-edit"></i>
+                </a>
+            </div>
+
+            <% } if (user || isAdmin) { %>
+                <li>
+                    <a href="/profile">
+                        <%= user.firstName %>
+                    </a>
+                </li>
+
+                <div>
+                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong>Cerrar Sesión</strong></a>
+
+                </div>
+
+                <% } else { %>
+                    <div class="opciones__user">
+                        <a href="/register"><span style="font-size: 12px;">ÚNETE A BLAMSH</span>
+                        </a>
                     </div>
-                    
+                    <div class="opciones__user">
+                        <a href="/login"><span style="font-size: 12px;">Iniciar Sesion</span><i
+                                class="fa-regular fa-circle-user fa-l"></i>
+                        </a>
+                    </div>
+                    <% } %>
+
     </div>
 
     <div class="hidden-catalog" id="hidden-catalog">

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="css/main-register.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
+</head>
+
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+    <main style="background-color: white;">
+
+        <p style="color: red;"><%= error %></p>
+
+        <form action="/register" method="post" enctype="multipart/form-data">
+
+            <input type="text" id="firstName" name="firstName" placeholder="Nombre"><br>
+
+            <input type="text" id="lastName" name="lastName" placeholder="Apellido"><br>
+
+            <input type="email" id="email" name="email" placeholder="Correo electronico"><br>
+
+            <input type="number" name="phone" id="phone" placeholder="Telefono"><br>
+
+            <div><input type="file" name="image" multiple></div><br>
+
+            <input type="password" name="password" id="contraseña" placeholder="Ingresar contraseña"><br>
+
+            <input type="password" name="repeat-password" id="repeat-password" placeholder="Repetir contraseña"><br>
+
+
+            <div>
+                <label for="opcion1">Acepto la Política de Privacidad y los Términos
+                    de Uso de Blamsh.</label>
+                <input type="checkbox" id="opcion1" name="opcion1" value="opcion1">
+            </div><br>
+
+            <div>
+                <label for="opcion2">Acepto recibir comunicaciones de Blamsh</label>
+                <input type="checkbox" id="opcion2" name="opcion2" value="opcion2">
+            </div><br>
+
+            <input type="submit" value="Unite a BLAMSH">
+        </form>
+
+
+    </main>
+
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+    <script src="js/catalog.js"></script>
+</body>
+
+
+</html>
