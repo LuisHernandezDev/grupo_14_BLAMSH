@@ -29,8 +29,8 @@
         <%-include ('./partials/navbar')%>
     </header>
     <h1>Listado de Productos</h1>
-    <section class="cart-section">
-        <div class="auto-container">
+    <section class="cart-section" >
+        <div class="auto-container" >
             <a href="/products/create">
             <button class="bot-nuevo">
             
@@ -40,10 +40,11 @@
             <!--Cart Outer-->
             <div class="cart-outer">
                 <div class="table-outer">
-                    <table id="tableproducts" class="cart-table">
+                    <table id="tableproducts" class="cart-table" style="table-layout: fixed; width: 100%">
                         <thead class="cart-header">
                             <tr>
                                 <th class="prod-column">Nombre</th>
+                                <th>&nbsp;</th>
                                 <th>Descripción</th>
                                 <!-- <th>Stock</th> -->
                                 <th>Precio</th>
@@ -57,13 +58,13 @@
                             <% products.forEach(product=> { %>
                             <tr>
                              
-                                <td class="prod-column">
+                                <td colspan="2" class="prod-column">
                                     <div class="column-box">
                                         <figure class="prod-thumb"><a href="#"> <img  src="/images/products/<%= product.image %>" alt=""></a></figure>
-                                        <h3 class="prod-title"> <%= product.name %></h3>
+                                        <h3 class="prod-title" style="word-wrap: break-word"> <%= product.name %></h3>
                                     </div>
                                 </td>
-                                <td> <%= product.description %></td>
+                                <td style="word-wrap: break-word"> <%= product.description %></td>
                                 <!-- <td class="qty"><input class="quantity-spinner" type="text" value="2" name="quantity"></td> -->
                                                                <td class="price">$<%= product.price %></td>
                                 <td class="sub-total">Activo</td>
@@ -101,6 +102,78 @@
     <footer>
         <%-include ('./partials/footer')%>
     </footer>
+</body>
+
+</html> <a href="/products/create">
+    <button class="bot-nuevo">
+    
+        Nuevo producto
+          </button>
+        </a>
+    <!--Cart Outer-->
+    <div class="cart-outer">
+        <div class="table-outer">
+            <table id="tableproducts" class="cart-table">
+                <thead class="cart-header">
+                    <tr>
+                        <th class="prod-column">Nombre</th>
+                        <th>Descripción</th>
+                        <!-- <th>Stock</th> -->
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Categoría</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <% products.forEach(product=> { %>
+                    <tr>
+                     
+                        <td class="prod-column">
+                            <div class="column-box">
+                                <figure class="prod-thumb"><a href="#"> <img  src="/images/products/<%= product.image %>" alt=""></a></figure>
+                                <h3 class="prod-title"> <%= product.name %></h3>
+                            </div>
+                        </td>
+                        <td> <%= product.description %></td>
+                        <!-- <td class="qty"><input class="quantity-spinner" type="text" value="2" name="quantity"></td> -->
+                                                       <td class="price">$<%= product.price %></td>
+                        <td class="sub-total">Activo</td>
+                        <td class="sub-total"> <%= product.category %></td>
+
+                        <td class="remove">   
+                          
+                                                    
+                            <a href="/products/<%= product.id %>/detail" class="remove-btn" title="detalle"><i class="fa-solid fa-bullseye"></i> </a>
+                            <form id="form"action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                                <a href="javascript:enviar_formulario()" class="remove-btn"  title="eliminar"><i class="fa-solid fa-trash-can"></i> </a>
+                            </form>
+                            <a href="/products/<%= product.id %>/edit" class="remove-btn" title="editar"><i class="fa-solid fa-pen-to-square"></i></a>
+                          
+                    </tr>
+                    
+                    
+                    <% }) %>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+       
+        
+        
+            
+        </div>
+        
+        
+    </div>
+    
+</div>
+</section>
+<footer>
+<%-include ('./partials/footer')%>
+</footer>
 </body>
 
 </html>

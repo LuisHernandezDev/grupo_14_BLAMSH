@@ -389,8 +389,7 @@ img{
 
 .cart-table tbody tr .prod-column .column-box .prod-thumb{
 	position:absolute;
-	width:70px;
-	border:1px solid #f0f0f0;
+	width:70px;	
 	left:0px;
 	top:0px;	
 }
