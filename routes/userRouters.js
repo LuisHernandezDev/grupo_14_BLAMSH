@@ -6,7 +6,8 @@ const path = require('path');
 const { body } = require('express-validator');
 
 // crear una variable para traer el userController 
-const userController = require('../controllers/userControllers');
+// const userController = require('../controllers/userControllers');
+const userDbController = require('../controllers/userControllersbd')
 
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -61,17 +62,25 @@ const userValidations = [
 
 // solo los principios de las routas y 
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
-router.get('/register', authMiddleware.guestUser, userController.register);
 
-router.post('/register', upload.single('image'), userValidations, userController.postRegister);
+// router.get('/register', authMiddleware.guestUser, userController.register);
+router.get('/register', authMiddleware.guestUser, userDbController.register);
 
-router.get('/login', authMiddleware.guestUser, userController.login);
+// router.post('/register', upload.single('image'), userValidations, userController.postRegister);
+router.post('/register', upload.single('image'), userValidations, userDbController.postRegister);
 
-router.post('/login', userController.postLogin);
 
-router.get('/profile', authMiddleware.authUser, userController.profile);
+// router.get('/login', authMiddleware.guestUser, userController.login);
+router.get('/login', authMiddleware.guestUser, userDbController.login);
 
-router.get('/logout', userController.logout);
+
+// router.post('/login', userController.postLogin);
+router.post('/login', userDbController.postLogin);
+
+
+router.get('/profile', authMiddleware.authUser, userDbController.profile);
+
+router.get('/logout', userDbController.logout);
 
 
 // router.get('/users', maincontroller.userlist);
