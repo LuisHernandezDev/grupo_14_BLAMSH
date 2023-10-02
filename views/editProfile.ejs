@@ -20,33 +20,24 @@
         <%-include ('./partials/navbar')%>
     </header>
 
-    <main style="background-color: rgb(77, 91, 131);">
-        <div>
-            <li>
-                <h2>Hola <%= user.firstName + " " + user.lastName %>
-                </h2>
-                <br>
-            <li>
-                <img width="150px" src="/images/users/<%= user.image %>" alt="">
+    <main style="background-color: rgb(143, 163, 219);">
+    
+<form action="/profile/edit?_method=PUT" method="post" enctype="multipart/form-data">
+   <label for="">Nombre</label>
+    <input type="text" name="firstName" value="<%= user.firstName %>" required>
 
-            </li><br>
-            <li>
-                <h3>Correo:
-                    <%= user.email %>
-                </h3>
-            </li>
-            </li>
-            <li>
-                <h3>Teléfono:
-                    <%= user.phone %>
-                </h3>
-            </li><br>
+    <label for="">Apellido</label>
+    <input type="text" name="lastName" value="<%= user.lastName %>" required>
 
-            <a href="/profile/edit">
-                <button>Editar perfil</button>
-            </a>
+    <label for="">Imagen de perfil</label>
+    <input type="file" name="image" required>
 
-        </div>
+    <label for="">Teléfono</label>
+    <input type="text" name="phone" value="<%= user.phone %>" required><br>
+
+    <button type="submit">Guardar Cambios</button>
+</form>
+
 
 
     </main>

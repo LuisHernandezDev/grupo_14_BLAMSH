@@ -116,9 +116,50 @@ const userController = {
     },
 
     profile: (req, res) => {
-        return res.render('userProfile', { user: req.session.user });
+        const user = req.session.user;
+        return res.render('userProfile', { user });
 
     },
+
+
+    editProfile: async (req, res) => {
+        const user = req.session.user;
+        res.render('editProfile', { user })
+
+    },
+
+    updateProfile: async (req, res) => {
+        // Para actualizar la contraseña, se debe hacer una ruta aparte solo para la contraseña.
+
+        try {
+
+            const updatedUser = {
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                phone: req.body.phone,
+                rol_id: req.body.rol_id,
+                image: req.file.filename
+
+            };
+
+            await db.User.update(updatedUser, {
+                where: {
+                    id: req.session.user.id
+                }
+            });
+
+            // Antes de redireccionar al perfil, consultamos a la BD para obtener los datos actualizados y mostrarlos en la vista del perfil
+            req.session.user = await db.User.findByPk(req.session.user.id);
+
+            res.redirect('/profile')
+
+        } catch (error) {
+            console.error(error);
+        }
+
+    },
+
+
 
     logout: (req, res) => {
         res.clearCookie('email');
