@@ -85,33 +85,34 @@ const userController = {
                     email: req.body.email
                 }
             });
-    
-            !userInDB ? res.redirect('/login/?error=Usuario no registrado') : ""; // Chequea si existe usuario con el email
-    
+            if (!userInDB) {
+                return res.render('login', { error: 'Usuario no registrado' });
+            };
+
             const validatePw = bcrypt.compareSync(req.body.password, userInDB.password);
-    
+
             if (validatePw) { // Chequea si la clave es válida. // Acá una vez iniciada la sesion, con session se puede acceder desde cualquier lado.
-    
+
                 if (req.body.rememberme) { // Si se quiere mantener la sesión iniciada
                     res.cookie('email', userInDB.email, { maxAge: 1000 * 60 * 24 }); // Se crea la cookie con fecha de exp.
-    
+
                 } else {
                     console.log('El usuario no se quiere mantener la sesión iniciada');
                 }
-    
+
                 req.session.user = userInDB; // Propiedad generada al loguear al usuario
                 res.redirect("/");
-    
+
             } else {
-                res.redirect('/login/?error=El mail o la contraseña son incorrectos');
+                res.render('login', { error: 'El mail o la contraseña son incorrectos' });
             }
-            
+
         } catch (error) {
             console.error(error);
             res.redirect('/login/?error=Error interno, vuelva mas tarde');
         }
 
-        
+
     },
 
     profile: (req, res) => {

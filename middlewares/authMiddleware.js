@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const userModel = require('../models/userModels');
+const userController = require('../controllers/userControllersbd')
 
 
 const middlewares = {
@@ -8,7 +9,7 @@ const middlewares = {
 
     isAdmin: (req, res, next) => {
         const user = req.session.user;
-        const isAdmin = user && user.email === 'pepo@gmail.com'; // Middleware local. Verificamos si el usuario es administrador
+        const isAdmin = user && user.rol_id === parseInt(process.env.ADMIN_ROLE_ID); // Middleware local. Verificamos si el usuario es administrador
         res.locals.isAdmin = isAdmin; // Pasamos la variable a res.locals para que esté disponible en la vista
         next();
     },
@@ -21,7 +22,7 @@ const middlewares = {
     },
 
     guestUser: (req, res, next) => { // Si la sesión esta iniciada, redirecciona a profile y no permitas ir a register
-        if (req.session.user && req.session.user.email === 'pepo@gmail.com') {
+        if (req.session.user && req.session.user.rol_id === parseInt(process.env.ADMIN_ROLE_ID)) {
             return next();
 
          } else if (req.session.user){
