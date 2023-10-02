@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         nameRol: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: process.env.CUSTOMER_ROLE_NAME
 
         },
 

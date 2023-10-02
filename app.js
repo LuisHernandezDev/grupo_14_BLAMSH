@@ -9,13 +9,12 @@ const cookieParser = require('cookie-parser');
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
-
 const userRouter = require('./routes/userRouters');
-
 const productRouter = require('./routes/productRouters');
 
 /* const logMiddleware = require('./middlewares/logMiddleware');*/
 const authMiddleware = require('./middlewares/authMiddleware');
+const db = require('./database/models');
 
 // Iniciamos un servidor, y lo guardamos dentro de app
 const app = express();
@@ -47,13 +46,25 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.use((req, res, next) => {
+app.use( async (req, res, next) => {
     if (req.cookies.email) { // Si hay un email guardado en cookies, mediante el modelo, buscamos los datos del usuario guardado en la cookie y lo guardamos en session
-        const userModel = require('./models/userModels');
 
-        const user = userModel.findByEmail(req.cookies.email); // Acá busca en el JSON el usuario con el email guardado en cookie, el objeto entero.
+        try {
 
-        req.session.user = user;
+            const user = await db.User.findOne({
+                where: {
+                    email: req.cookies.email
+                }
+            });
+
+            if (user) {
+                req.session.user = user;
+            }
+            
+        } catch (error) {
+            console.error(error);
+        }
+
     }
     next(); // Si no hay cookie de email, no se hace nada.
 })
