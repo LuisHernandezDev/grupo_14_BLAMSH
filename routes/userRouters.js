@@ -86,6 +86,7 @@ router.put('/profile/edit', authMiddleware.authUser, upload.single('image'), use
 
 router.get('/logout', userDbController.logout);
 
+
 // router.get('/users', maincontroller.userlist);
 
 

@@ -16,7 +16,10 @@
     </div>
 
     <div class="nav__opciones">
-        <div class="opciones__lupa"><input type="text"><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
+        <div class="opciones__lupa"><form action="/products/search" method="GET">
+            <input type="text" name="query" placeholder="Buscar por nombre">
+            <button type="submit">Buscar</button>
+          </form><a href=""><i class="fa-solid fa-magnifying-glass fa-l"
                     style="color: #eaeaeb;"></i></a></div>
         <div class="opciones__carrito">
             <a href="/carrito"><span>Carrito</span>

@@ -165,10 +165,9 @@ const userController = {
         res.clearCookie('email');
         req.session.destroy();
         return res.redirect('/');
-    },
+    }
 
-
-
+    
 }
 
 module.exports = userController;

@@ -78,5 +78,8 @@ router.delete('/products/:id/delete', productControllers.deleteProduct);
 
 router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
 
+
+router.get('/products/search', productControllers.searchProducts);
+
 // traer a  la funcion router
 module.exports = router;

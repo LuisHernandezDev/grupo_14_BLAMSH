@@ -3,6 +3,8 @@ const path = require('path');
 
 // crear una variable para requerir productModels y poder usar sus funciones en el Controllers
 const productModels = require('../models/productModels');
+const { Op } = require('sequelize');
+
 
 const { validationResult } = require('express-validator');
 
@@ -124,7 +126,29 @@ const controller = {
         productModels.updateProduct(updatedProduct);
 
         res.redirect('/products/' + updatedProduct.id + '/detail');
-    }
+    },
+
+
+    searchProducts:  (req, res) => {
+        
+          const query = req.query.query; // Obtener el término de búsqueda desde la URL
+      
+          // Realizar la búsqueda en la base de datos
+          const products = productModels.findAll({
+            where: {
+              name: {
+                [Op.like]: `%${query}%` // Búsqueda con coincidencia parcial y sin distinción entre mayúsculas y minúsculas
+              }
+            }
+          });
+      
+          res.render('products/searchResults', { products, query });
+      
+          console.error(error);
+          res.status(500).json({ message: 'Error al buscar productos.' });
+        }
+
+    
 
 };
 
