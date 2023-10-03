@@ -48,16 +48,13 @@
 
                 <div class="product">
                     <strong>Categoría: </strong>
-                    <%= product.category %>
+                    <%= product.category.category %>
                 </div>
-                <div class="product">
-                    <strong>Color: </strong>
-                    <%= product.colors %>
-                </div>
-                <div class="product">
-                    <strong>Talla: </strong>
-                    <%= product.talle %>
-                </div>
+            </div>
+            <div class="product">
+                <strong>Tallas: </strong>
+                <%= product.sizes.size %>
+            </div>
                 <div class="product">
                     <strong>Precio: </strong>$<%= product.price %>
                 </div>

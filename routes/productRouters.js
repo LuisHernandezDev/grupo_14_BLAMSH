@@ -3,6 +3,8 @@ const express = require('express');
 
 // crear una variable para traerel maincontroller 
 const productControllers = require('../controllers/productControllers');
+const productControllersdb = require('../controllers/productControllersdb');
+
 
 //Requerimos Multer
 const multer = require('multer');
@@ -53,30 +55,43 @@ const upload = multer({ storage });
 
 //Linkeamos el archivo del router con el del controllers
 
-router.get('/detalleProducto', productControllers.detalleProducto);
+// router.get('/detalleProducto', productControllers.detalleProducto);
+router.get('/detalleProducto', productControllersdb.detalleProducto);
 
-router.get('/carrito', authMiddleware.authUser, productControllers.carrito);
+// router.get('/carrito', authMiddleware.authUser, productControllers.carrito);
+router.get('/carrito', authMiddleware.authUser, productControllersdb.carrito);
 
-router.get('/editionProduct', authMiddleware.authUser, authMiddleware.guestUser, productControllers.editionProduct);
+// router.get('/editionProduct', authMiddleware.authUser, authMiddleware.guestUser, productControllers.editionProduct);
+router.get('/editionProduct', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.editionProduct);
 
-router.get('/products', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getList);
+// router.get('/products', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getList);
+router.get('/products', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getList);
+
 
 // @GET - /products/:id/detail
-router.get('/products/:id/detail', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getDetail);
+// router.get('/products/:id/detail', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getDetail);
+router.get('/products/:id/detail', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getDetail);
+
 
 // @GET - /products/create
-router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getCreate);
+// router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getCreate);
+router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getCreate);
 
 // @POST - /products // A donde llegan los productos creados
-router.post('/products', [upload.array('image', 2), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+// router.post('/products', [upload.array('image', 2), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
+router.post('/products', [upload.single('image'), productValidations, createProductMiddleware], productControllersdb.postProduct); 
 
 // @GET - /products/:id/edit
-router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
+// router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
+router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getEdit);
+
+// router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
+router.put('/products/:id/edit', productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
+
 
 // @DELETE - /products/:id/delete
 router.delete('/products/:id/delete', productControllers.deleteProduct);
 
-router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
 
 
 router.get('/products/search', productControllers.searchProducts);

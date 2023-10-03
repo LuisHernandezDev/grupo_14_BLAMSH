@@ -29,44 +29,37 @@
             
             <section class="product-edit">
                 <form action="/products" method="post" enctype="multipart/form-data">
-                <h2 class="title">Alta de producto</h2>
-                <input class="items" type="text" name="name" id="name" placeholder="Nombre de producto" required>
-                <input class="items" type="number" name="price" id="precio" placeholder="Precio de producto" required>
-
-
-                <div><label for="">Seleccione la categoría</label><br>
-                <select name="category">
-                    <option value="" disabled selected>Seleccione la categoría</option>
-                    <option value="Indumentaria">Indumentaria</option>
-                    <option value="Accesorios">Accesorios</option>
-                    <option value="Equipamiento y Repuestos">Equipamiento y Repuestos</option>
-                </select><br><br>
-                <label for="">Seleccione un color</label><br>
-                <select name="colors">
-                    <option value="" disabled selected>Seleccione un color</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Azul">Azul</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Rosa">Rosa</option>
-                    <option value="Verde">Verde</option>
-                    <option value="Blanco">Blanco</option>
-                    <option value="Amarillo">Amarillo</option>
-                    <option value="Azul/Rojo">Azul/Rojo</option>
-                    <option value="Verde/Negro">Verde/Negro</option>
-                    <option value="Naranja/Azul">Naranja/Azul</option>
-                    <option value="Plata">Plata</option>
-                    <option value="Transparente">Transparente</option>
-                    <option value="Ámbar">Ámbar</option>
-                    <option value="Variados">Variados</option>
-                </select><br><br>
-
-                <input class="items" type="text" name="talle" id="talle" placeholder="Talle producto">
-                <input class="items-desc" type="text" name="description" id="description" placeholder="Descripción de producto">
-                <label for="">Seleccione una imagen</label><br>
-                <input class="importar" type="file" multiple name="image" id="importar" value="Importar imagenes">
-                <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
+                  <h2 class="title">Alta de producto</h2>
+                  <input class="items" type="text" name="name" id="name" placeholder="Nombre de producto" required>
+                  <input class="items" type="number" name="price" id="precio" placeholder="Precio de producto" required>
+              
+                  <div>
+                    <label for="">Seleccione la categoría</label><br>
+                    <select name="category">
+                      <option value="" disabled selected>Seleccione la categoría</option>
+                      <option value="Indumentaria">Indumentaria</option>
+                      <option value="Accesorios">Accesorios</option>
+                      <option value="Equipamiento y Repuestos">Equipamiento y Repuestos</option>
+                    </select>
+                  </div>
+              
+                  <div>
+                    <label for="">Seleccione una talla</label><br>
+                    <select name="size">
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+              
+                  <input class="items-desc" type="text" name="description" id="description" placeholder="Descripción de producto">
+                  <label for="">Seleccione una imagen</label><br>
+                  <input class="importar" type="file" multiple name="image" id="importar" value="Importar imágenes">
+                  <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
                 </form>
-            </section>     
+              </section>
+                  
             <section class="product-image">
                 <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
                 <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto">  

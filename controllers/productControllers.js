@@ -15,41 +15,41 @@ const db = require('../database/models')
 const controller = {
 
 
-    detalleProducto: (req, res) => {
-        // res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
-        res.render('detalleProducto');
-    },
+    // detalleProducto: (req, res) => {
+    //     // res.sendFile(path.resolve(__dirname, '../views/detalleProducto.html'));
+    //     res.render('detalleProducto');
+    // },
 
-    carrito: (req, res) => {
-        // res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
-        res.render('carrito');
-    },
+    // carrito: (req, res) => {
+    //     // res.sendFile(path.resolve(__dirname, '../views/carrito.html'));
+    //     res.render('carrito');
+    // },
 
 
-    editionProduct: (req, res) => {
-        // res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));
-        res.render('editionProduct');
-    },
+    // editionProduct: (req, res) => {
+    //     // res.sendFile(path.resolve(__dirname, '../views/editionProduct.html'));
+    //     res.render('editionProduct');
+    // },
 
-    getList: (req, res) => {
-        const products = productModels.findAll(); // Acá queremos tener un listado de todos los productos. // Esta variable products, es traida del modelo que a su vez guarda el archivo json la cual luego se usa en el forEach del ejs para iterar.
+    // getList: (req, res) => {
+    //     const products = productModels.findAll(); // Acá queremos tener un listado de todos los productos. // Esta variable products, es traida del modelo que a su vez guarda el archivo json la cual luego se usa en el forEach del ejs para iterar.
 
-        res.render('productList', { products });
-    },
+    //     res.render('productList', { products });
+    // },
 
-    getDetail: (req, res) => {
+    // getDetail: (req, res) => {
 
-        const productId = req.params.id; // Se crea una variable con el valor req.params.id para saber el detalle del id buscado en el navegador.
+    //     const productId = req.params.id; // Se crea una variable con el valor req.params.id para saber el detalle del id buscado en el navegador.
 
-        const selectedProduct = productModels.findById(productId); // Acá queremos tener un listado de un solo producto // El id o lo que ingrese el usuario en el navegador, se pasa desde el navegador por parámetro a productId mediante el params, y este a su vez va al Models por medio de la función findById y consulta si el id que también fue pasado por parámetro findById: (id) existe o no.
+    //     const selectedProduct = productModels.findById(productId); // Acá queremos tener un listado de un solo producto // El id o lo que ingrese el usuario en el navegador, se pasa desde el navegador por parámetro a productId mediante el params, y este a su vez va al Models por medio de la función findById y consulta si el id que también fue pasado por parámetro findById: (id) existe o no.
 
-        res.render('productDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
-    },
+    //     res.render('productDetail', { product: selectedProduct }); // Acá renderizamos la vista del detalle del producto seleccionado y le pasamos el ejs (product) y que reciba el producto seleccionado (selectedProduct).
+    // },
 
-    getCreate: (req, res) => {
-        res.render('createProduct'); // Acá creamos el producto
+    // getCreate: (req, res) => {
+    //     res.render('createProduct'); // Acá creamos el producto
 
-    },
+    // },
 
     postProduct: (req, res) => {
         console.log(req.body);  // Toda la data que el usuario ingresó en el navegador, lo vamos a acceder desde req.body // body es el objeto que createProduct necesita.
@@ -69,20 +69,20 @@ const controller = {
 
 
         // (req.file) - Trae la información o detalle de la imagen y también los datos de donde se guardó.
-        const newProduct = {
-            name: req.body.name,
-            description: req.body.description,
-            image: req.files.filename,
-            category: req.body.category,
-            colors: req.body.colors,
-            talle: req.body.talle.toUpperCase(),
-            price: req.body.price
-        }
+        // const newProduct = {
+        //     name: req.body.name,
+        //     description: req.body.description,
+        //     image: req.files.filename,
+        //     category: req.body.category,
+        //     colors: req.body.colors,
+        //     talle: req.body.talle.toUpperCase(),
+        //     price: req.body.price
+        // }
 
-        const createdProduct = productModels.createProduct(newProduct);
+        // const createdProduct = productModels.createProduct(newProduct);
 
-        console.log('El nuevo producto tiene como id: ' + createdProduct.id);
-        res.redirect('/products/' + createdProduct.id + '/detail');
+        // console.log('El nuevo producto tiene como id: ' + createdProduct.id);
+        // res.redirect('/products/' + createdProduct.id + '/detail');
 
         // Desde los POST no renderizamos vistas, solo redireccionamos.
         // res.redirect('/products'); 
@@ -90,12 +90,12 @@ const controller = {
         // Para que se ejecute esta linea de código, se tiene que ejecutar este controller (postProduct) Para que se ejecute dicho controllers, se tiene que ejecutar su ruta, y para que se ejecute la ruta, el usuario tiene que hacer un post request a /products "router.post('/products', productControllers.postProduct);"
     },
 
-    getEdit: (req, res) => {
-        const product = productModels.findById(Number(req.params.id));
+    // getEdit: (req, res) => {
+    //     const product = productModels.findById(Number(req.params.id));
 
-        res.render('editProduct', { product });
+    //     res.render('editProduct', { product });
 
-    },
+    // },
 
     deleteProduct: (req, res) => {
         productModels.destroy(Number(req.params.id));
@@ -103,30 +103,30 @@ const controller = {
         res.redirect('/products');
     },
 
-    updateProduct: (req, res) => {
+    // updateProduct: (req, res) => {
 
-        // Una forma de hacerlo pero que el id quede de primero.
-        let updatedProduct = {
-            id: Number(req.params.id),
-        };
-        updatedProduct = {
-            ...updatedProduct,
-            ...req.body,
-        };
+    //     // Una forma de hacerlo pero que el id quede de primero.
+    //     let updatedProduct = {
+    //         id: Number(req.params.id),
+    //     };
+    //     updatedProduct = {
+    //         ...updatedProduct,
+    //         ...req.body,
+    //     };
 
-        console.log(updatedProduct);
+    //     console.log(updatedProduct);
 
-        // Otra forma de hacerlo pero el id queda de último.
-        /*
-        const updatedProduct = req.body; // Lo que el usuario ingrese en el formulaio, llegará acá mediante el body
+    //     // Otra forma de hacerlo pero el id queda de último.
+    //     /*
+    //     const updatedProduct = req.body; // Lo que el usuario ingrese en el formulaio, llegará acá mediante el body
 
-        updatedProduct.id = Number(req.params.id); // Acá agregamos el id a lo que el usuario envia pero queda de último.
-        */
+    //     updatedProduct.id = Number(req.params.id); // Acá agregamos el id a lo que el usuario envia pero queda de último.
+    //     */
 
-        productModels.updateProduct(updatedProduct);
+    //     productModels.updateProduct(updatedProduct);
 
-        res.redirect('/products/' + updatedProduct.id + '/detail');
-    },
+    //     res.redirect('/products/' + updatedProduct.id + '/detail');
+    // },
 
 
     searchProducts:  (req, res) => {
