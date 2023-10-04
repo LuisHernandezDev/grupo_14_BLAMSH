@@ -90,7 +90,9 @@ router.put('/products/:id/edit', productControllersdb.updateProduct); // Acá ta
 
 
 // @DELETE - /products/:id/delete
-router.delete('/products/:id/delete', productControllers.deleteProduct);
+// router.delete('/products/:id/delete', productControllers.deleteProduct);
+router.delete('/products/:id/delete', productControllersdb.deleteProduct);
+
 
 
 

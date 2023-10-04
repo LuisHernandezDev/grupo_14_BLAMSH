@@ -3,7 +3,7 @@ const path = require('path');
 const { Op } = require('sequelize');
 
 const { validationResult } = require('express-validator');
-const { log } = require("console");
+const { log, error } = require("console");
 
 const productController = {
 
@@ -135,6 +135,34 @@ const productController = {
         }
     },
 
+    deleteProduct: async (req, res) => {
+        const productId = req.params.id;
+         try {
+            const product = await db.Product.findByPk(productId, {
+                include: "category",
+                nest: true
+            });
+
+            if (!product) {
+                res.send('El producto no existe')
+                return error;
+            };
+
+            await db.Product.destroy({
+                where: {
+                    id: productId
+                },
+                force: true
+
+            });
+
+            res.redirect('/products');
+            
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
 
 }
 
