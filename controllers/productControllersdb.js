@@ -62,14 +62,30 @@ const productController = {
         try {
             const categoryName = req.body.category; // Obtenemos el nombre de la categoría desde el formulario
 
-            // Busca la categoría en la tabla de categorías o crea una nueva si no existe
-            let category = await db.Category.findOne({ where: { category: categoryName } });
+            // Buscamos la categoría en la tabla de categorías o crea una nueva si no existe
+            let category = await db.Category.findOne({
+                where: {
+                    category: categoryName
+                }
+            });
 
             if (!category) {
-                category = await db.Category.create({ category: categoryName });
+                category = await db.Category.create({category: categoryName });
             }
 
-            // Crea el producto utilizando el nombre de la categoría
+            // Hacemos lo mismo con la talla
+            const sizeNumber = req.body.size
+
+            let size = await db.Size.findOne({
+                where: {
+                    size: sizeNumber
+                }
+            })
+
+            if (!size) {
+                size = await db.Size.create({size: sizeNumber})
+            }
+
             const newProduct = {
                 name: req.body.name,
                 description: req.body.description,
@@ -79,13 +95,9 @@ const productController = {
                 category_id: category.id // Utiliza el ID de la categoría
             };
 
-            const createdProduct = await db.Product.create(newProduct, {
-                raw: true,
-                include: 'sizes',
-                nest: true
-            });
+            const createdProduct = await db.Product.create(newProduct);
 
-            res.redirect('/products/' + createdProduct.id + '/detail');
+            res.redirect(`/products/${createdProduct.id}/detail`);
 
         } catch (error) {
             console.error(error);
@@ -137,7 +149,7 @@ const productController = {
 
     deleteProduct: async (req, res) => {
         const productId = req.params.id;
-         try {
+        try {
             const product = await db.Product.findByPk(productId, {
                 include: "category",
                 nest: true
@@ -157,7 +169,7 @@ const productController = {
             });
 
             res.redirect('/products');
-            
+
         } catch (error) {
             console.error(error);
         }

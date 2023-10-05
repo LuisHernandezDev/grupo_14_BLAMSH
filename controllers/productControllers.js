@@ -97,11 +97,11 @@ const controller = {
 
     // },
 
-    deleteProduct: (req, res) => {
-        productModels.destroy(Number(req.params.id));
+    // deleteProduct: (req, res) => {
+    //     productModels.destroy(Number(req.params.id));
 
-        res.redirect('/products');
-    },
+    //     res.redirect('/products');
+    // },
 
     // updateProduct: (req, res) => {
 
