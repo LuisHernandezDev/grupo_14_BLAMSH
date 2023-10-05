@@ -103,30 +103,30 @@ const controller = {
     //     res.redirect('/products');
     // },
 
-    // updateProduct: (req, res) => {
+    updateProduct: (req, res) => {
 
-    //     // Una forma de hacerlo pero que el id quede de primero.
-    //     let updatedProduct = {
-    //         id: Number(req.params.id),
-    //     };
-    //     updatedProduct = {
-    //         ...updatedProduct,
-    //         ...req.body,
-    //     };
+        // Una forma de hacerlo pero que el id quede de primero.
+        let updatedProduct = {
+            id: Number(req.params.id),
+        };
+        updatedProduct = {
+            ...updatedProduct,
+            ...req.body,
+        };
 
-    //     console.log(updatedProduct);
+        console.log(updatedProduct);
 
-    //     // Otra forma de hacerlo pero el id queda de último.
-    //     /*
-    //     const updatedProduct = req.body; // Lo que el usuario ingrese en el formulaio, llegará acá mediante el body
+        // Otra forma de hacerlo pero el id queda de último.
+        /*
+        const updatedProduct = req.body; // Lo que el usuario ingrese en el formulaio, llegará acá mediante el body
 
-    //     updatedProduct.id = Number(req.params.id); // Acá agregamos el id a lo que el usuario envia pero queda de último.
-    //     */
+        updatedProduct.id = Number(req.params.id); // Acá agregamos el id a lo que el usuario envia pero queda de último.
+        */
 
-    //     productModels.updateProduct(updatedProduct);
+        productModels.updateProduct(updatedProduct);
 
-    //     res.redirect('/products/' + updatedProduct.id + '/detail');
-    // },
+        res.redirect('/products/' + updatedProduct.id + '/detail');
+    },
 
 
     searchProducts:  (req, res) => {

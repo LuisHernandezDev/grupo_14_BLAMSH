@@ -41,7 +41,7 @@ const productController = {
         try {
             const product = await db.Product.findByPk(productId, {
                 raw: true,
-                include: ['category', 'sizes'],
+                include: ["category", "sizes"],
                 nest: true
             });
 
@@ -70,7 +70,7 @@ const productController = {
             });
 
             if (!category) {
-                category = await db.Category.create({category: categoryName });
+                category = await db.Category.create({ category: categoryName });
             }
 
             // Hacemos lo mismo con la talla
@@ -83,7 +83,7 @@ const productController = {
             })
 
             if (!size) {
-                size = await db.Size.create({size: sizeNumber})
+                size = await db.Size.create({ size: sizeNumber })
             }
 
             const newProduct = {
@@ -96,6 +96,9 @@ const productController = {
             };
 
             const createdProduct = await db.Product.create(newProduct);
+
+            await createdProduct.addSize(size);
+            console.log(createdProduct);
 
             res.redirect(`/products/${createdProduct.id}/detail`);
 
@@ -113,7 +116,9 @@ const productController = {
 
             const categorys = await db.Category.findAll()
 
-            res.render('editProduct', { product, categorys });
+            const sizes = await db.Size.findAll()
+
+            res.render('editProduct', { product, categorys, sizes });
 
         } catch (error) {
             console.error(error);
