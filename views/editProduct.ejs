@@ -43,16 +43,19 @@
                         </select>
                 </div>
                    <br>
+
+                   <div>
+                    <label for="">Seleccione una talla</label><br>
+                    <select name="size">
+                        <% sizes.forEach(size => { %>
+                            <option value="<%= size.id %>" <% if (size.id == product.sizes[0].id) { %>selected<% } %>>
+                                <%= size.size %>
+                            </option>
+                        <% }); %>
+                    </select>
+                </div>
                 
-                <div>
-                        <label for="">Seleccione una talla</label><br>
-                        <select name="size" multiple>
-                            <option value="S" <%= (product.size == 'S') ? 'selected' : '' %>>S</option>
-                            <option value="M" <%= (product.size == 'M') ? 'selected' : '' %>>M</option>
-                            <option value="L" <%= (product.size == 'L') ? 'selected' : '' %>>L</option>
-                            <option value="XL" <%= (product.size == 'XL') ? 'selected' : '' %>>XL</option>
-                          </select>
-                </div><br>
+                <br>
 
                 <input class="items-desc" type="text" name="description" value="<%= product.description %>" id="description" placeholder="Descripción de producto">
                 <label for="">Seleccione una imagen</label><br>

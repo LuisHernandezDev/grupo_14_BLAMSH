@@ -112,11 +112,14 @@ const productController = {
 
         try {
 
-            const product = await db.Product.findByPk(req.params.id);
+            const product = await db.Product.findByPk(req.params.id, {
+                include: "sizes",
+                nest: true
+            });
 
-            const categorys = await db.Category.findAll()
-
-            const sizes = await db.Size.findAll()
+            const categorys = await db.Category.findAll();
+            
+            const sizes = await db.Size.findAll();
 
             res.render('editProduct', { product, categorys, sizes });
 
@@ -128,14 +131,14 @@ const productController = {
 
 
     updateProduct: async (req, res) => {
-        try {          
+        try {
 
             const updatedProduct = {
                 name: req.body.name,
                 description: req.body.description,
                 image: req.file.filename,
                 price: req.body.price,
-                size: req.body.size,
+                id_size: req.body.id_size,
                 category_id: req.body.category_id
             };
 
