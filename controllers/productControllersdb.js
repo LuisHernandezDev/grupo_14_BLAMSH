@@ -128,7 +128,7 @@ const productController = {
 
 
     updateProduct: async (req, res) => {
-        try {
+        try {          
 
             const updatedProduct = {
                 name: req.body.name,
@@ -136,7 +136,7 @@ const productController = {
                 image: req.file.filename,
                 price: req.body.price,
                 size: req.body.size,
-                category_id: category.id
+                category_id: req.body.category_id
             };
 
             await db.Product.update(updatedProduct, {
