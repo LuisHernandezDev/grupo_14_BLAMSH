@@ -159,7 +159,7 @@ const productController = {
         const productId = req.params.id;
         try {
             const product = await db.Product.findByPk(productId, {
-                include: "category",
+                include: ["category", "sizes"],
                 nest: true
             });
 

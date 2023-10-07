@@ -21,10 +21,13 @@
     <header>
         <%-include ('./partials/navbar')%>
     </header>
-
+    
     <h2 class= "productId"> Producto <%= product.id %></h2>
  
     <main class="mainContainer">
+        <a href="/products">
+            <button class="back"><i class="fa-solid fa-arrow-left"></i></button>
+        </a>
         <section class = "articleDetail">
         
             <h2 class="ProductName"><%= product.name %></h2>

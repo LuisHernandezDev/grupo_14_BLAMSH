@@ -78,3 +78,20 @@ h5.productCategory , .productColor , .productSize, .productPrice, .productDescri
 }
 
 
+.back {
+    margin-bottom: 15px;
+    width: 50px;
+    border:#00f59b;
+    background-color: #7014F2;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: 0.5;
+}
+
+.back:hover{
+    font-weight: bold;
+    box-shadow: 0 0 10px #7014F2;
+    
+}
