@@ -3,77 +3,85 @@
 
 </html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/editionProduct.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="/css/footer.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
-    
-    
-        <title>Edición de productos</title>
-    </head>
-    <body>
-        <header>
-            <%-include ('./partials/navbar')%>
-        </header>
-    
 
-        <main>
-            
-            <section class="product-edit">
-                <form action="/products/<%= product.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/editionProduct.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+    <title>Edición de productos</title>
+</head>
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+
+
+    <main>
+        
+        <section class="product-edit">
+            <a href="/products/<%= product.id %>/detail">
+                <button class="back"><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            <form action="/products/<%= product.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
                 <h2 class="title">Edición de producto</h2>
-                <input class="items" type="text" name="name"  value="<%= product.name %>"  id="name" placeholder="Nombre de producto" required>
-                <input class="items" type="number" name="price" value="<%= product.price %>" id="precio" placeholder="Precio de producto" required>
+                <input class="items" type="text" name="name" value="<%= product.name %>" id="name"
+                    placeholder="Nombre de producto" required>
+                <input class="items" type="number" name="price" value="<%= product.price %>" id="precio"
+                    placeholder="Precio de producto" required>
 
                 <div>
-                      <label for="">Seleccione la categoría</label><br>
-                        <select name="category_id">
-                            <% categorys.forEach(category=> { %>
-                                <option value="<%= category.id %>" <% if (category.id == product.category_id) { %>selected<% } %>>
-                                        <%= category.category %>
-                                </option>
-                                <% }) %>
-                        </select>
-                </div>
-                   <br>
-
-                   <div>
-                    <label for="">Seleccione una talla</label><br>
-                    <select name="size">
-                        <% sizes.forEach(size => { %>
-                            <option value="<%= size.id %>" <% if (size.id == product.sizes[0].id) { %>selected<% } %>>
-                                <%= size.size %>
+                    <label for="">Seleccione la categoría</label><br>
+                    <select name="category_id">
+                        <% categorys.forEach(category=> { %>
+                            <option value="<%= category.id %>" <% if (category.id==product.category_id) { %>selected<% }
+                                    %>>
+                                    <%= category.category %>
                             </option>
-                        <% }); %>
+                            <% }) %>
                     </select>
                 </div>
-                
                 <br>
 
-                <input class="items-desc" type="text" name="description" value="<%= product.description %>" id="description" placeholder="Descripción de producto">
+                <div>
+                    <label for="">Seleccione una talla</label><br>
+                    <select name="size">
+                        <% sizes.forEach(size=> { %>
+                            <option value="<%= size.id %>" <% if (size.id==product.sizes[0].id) { %>selected<% } %>>
+                                    <%= size.size %>
+                            </option>
+                            <% }); %>
+                    </select>
+                </div>
+
+                <br>
+
+                <input class="items-desc" type="text" name="description" value="<%= product.description %>"
+                    id="description" placeholder="Descripción de producto">
                 <label for="">Seleccione una imagen</label><br>
                 <input class="importar" type="file" multiple name="image" id="importar" value="Importar imagenes">
                 <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
-                </form>
-            </section>     
-            <section class="product-image">
+            </form>
+        </section>
+        <section class="product-image">
 
-                <img width="200px" src="/images/products/<%= product.image %>" alt="">
-                  
-            </section> 
+            <img width="200px" src="/images/products/<%= product.image %>" alt="">
+
+        </section>
     </main>
 
 
 
 
-    <footer class = 'footer-layout'>
+    <footer class='footer-layout'>
         <%-include ('./partials/footer')%>
     </footer>
 
