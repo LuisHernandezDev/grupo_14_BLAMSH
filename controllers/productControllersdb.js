@@ -118,7 +118,7 @@ const productController = {
             });
 
             const categorys = await db.Category.findAll();
-            
+
             const sizes = await db.Size.findAll();
 
             res.render('editProduct', { product, categorys, sizes });
@@ -131,6 +131,7 @@ const productController = {
 
 
     updateProduct: async (req, res) => {
+
         try {
 
             const updatedProduct = {
@@ -138,8 +139,11 @@ const productController = {
                 description: req.body.description,
                 image: req.file.filename,
                 price: req.body.price,
-                id_size: req.body.id_size,
                 category_id: req.body.category_id
+            };
+
+            const updatedSize = {
+                id_size: req.body.id_size
             };
 
             await db.Product.update(updatedProduct, {
@@ -147,12 +151,21 @@ const productController = {
                     id: req.params.id
                 }
             });
+            console.log(updatedProduct);
+
+            await db.ProductSize.update(updatedSize, {
+                where: {
+                    id_product: req.params.id
+                }
+            });
+            console.log(updatedSize);
 
             res.redirect(`/products/${req.params.id}/detail`);
 
         } catch (error) {
             console.error(error);
         }
+
     },
 
     deleteProduct: async (req, res) => {
@@ -182,7 +195,30 @@ const productController = {
             console.error(error);
         }
 
+    },
+
+
+    searchProducts: async (req, res) => {
+
+        const query = req.query.query; // Obtenemos lo buscado desde la URL
+
+        try {
+            const products = await db.Product.findAll({
+                where: {
+                    name: {
+                        [Op.like]: `%${query}%`
+                    }
+                }
+            });
+
+            res.render('searchProduct', { products, query });
+
+        } catch (error) {
+            res.send("Producto no encontrado")
+        }
+
     }
+
 
 }
 

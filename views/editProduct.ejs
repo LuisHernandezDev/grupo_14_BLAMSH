@@ -54,7 +54,7 @@
 
                 <div>
                     <label for="">Seleccione una talla</label><br>
-                    <select name="size" multiple>
+                    <select name="id_size">
                         <% sizes.forEach(size => { %>
                             <option value="<%= size.id %>" 
                                 <% if (product.sizes && product.sizes.some(productSize => productSize.id == size.id)) { %>selected<% } %>>

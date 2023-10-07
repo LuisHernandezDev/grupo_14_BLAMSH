@@ -129,24 +129,24 @@ const controller = {
     },
 
 
-    searchProducts:  (req, res) => {
+    // searchProducts:  (req, res) => {
         
-          const query = req.query.query; // Obtener el término de búsqueda desde la URL
+    //       const query = req.query.query; // Obtener el término de búsqueda desde la URL
       
-          // Realizar la búsqueda en la base de datos
-          const products = productModels.findAll({
-            where: {
-              name: {
-                [Op.like]: `%${query}%` // Búsqueda con coincidencia parcial y sin distinción entre mayúsculas y minúsculas
-              }
-            }
-          });
+    //       // Realizar la búsqueda en la base de datos
+    //       const products = productModels.findAll({
+    //         where: {
+    //           name: {
+    //             [Op.like]: `%${query}%` // Búsqueda con coincidencia parcial y sin distinción entre mayúsculas y minúsculas
+    //           }
+    //         }
+    //       });
       
-          res.render('products/searchResults', { products, query });
+    //       res.render('products/searchResults', { products, query });
       
-          console.error(error);
-          res.status(500).json({ message: 'Error al buscar productos.' });
-        }
+    //       console.error(error);
+    //       res.status(500).json({ message: 'Error al buscar productos.' });
+    //     }
 
     
 
