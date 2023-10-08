@@ -171,23 +171,20 @@ const productController = {
     deleteProduct: async (req, res) => {
         const productId = req.params.id;
         try {
-            const product = await db.Product.findByPk(productId, {
-                include: ["category", "sizes"],
-                nest: true
-            });
+            const product = await db.Product.findByPk(productId);
 
             if (!product) {
                 res.send('El producto no existe')
                 return error;
             };
 
-            await db.Product.destroy({
+            await db.ProductSize.destroy({
                 where: {
-                    id: productId
-                },
-                force: true
-
+                    id_product: productId
+                }
             });
+
+            product.destroy();
 
             res.redirect('/products');
 
@@ -211,12 +208,16 @@ const productController = {
                 }
             });
 
-            res.render('searchProduct', { products, query });
+            if (products.length == 0) {
+                res.send("Producto no encontrado");
+
+            } else {
+                res.render('searchProduct', { products, query });
+            }
 
         } catch (error) {
-            res.send("Producto no encontrado")
+            console.log(error);
         }
-
     }
 
 

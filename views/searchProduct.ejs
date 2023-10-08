@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/carrito.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="/css/footer.css">
-        <link rel="stylesheet" href="/css/crud.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
-    
-        <title>Buscar productos</title>
-    </head>
 
-        <header>
-            <%-include ('./partials/navbar')%>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>Buscar productos</title>
+</head>
+
+<header>
+    <%-include ('./partials/navbar')%>
+</header>
+
 <body><br>
-    <form action="/products/search" method="get">
-        <input type="text" name="query" placeholder="Buscar por nombre...">
-        <button type="submit">Buscar</button>
-      </form><br>
-      
-      <% if (query) { %>
+
+    <div>
         <h2>Resultados para "<%= query %>"</h2>
-      <% } %>
-      
-      <ul>
-        <% products.forEach(product => { %>
-            <a href="/products/<%= product.id %>/detail"><li><%= product.name %></li></a>          
-          <img width="200px" src="/images/products/<%= product.image %>" alt="">
 
-        <% }); %>
-      </ul>
+        <ul>
+            <% products.forEach(product=> { %>
+                <a href="/detalleProducto">
+                    <li>
+                        <%= product.name %>
+                    </li>
+                    <li>
+                        Descripción: <%= product.description %>
+                    </li>
+                </a>
+                <img width="200px" src="/images/products/<%= product.image %>" alt="">
 
-      <footer class="footer-layout">
+                <% }); %>
+        </ul>
+    </div>
+    <footer class="footer-layout">
         <%-include ('./partials/footer')%>
     </footer>
 
 </body>
+
 </html>

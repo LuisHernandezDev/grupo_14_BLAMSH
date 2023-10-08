@@ -57,12 +57,15 @@
                     <select name="id_size">
                         <% sizes.forEach(size => { %>
                             <option value="<%= size.id %>" 
-                                <% if (product.sizes && product.sizes.some(productSize => productSize.id == size.id)) { %>selected<% } %>>
+                                <% if (product.sizes && product.sizes.map(productSize => productSize.id).includes(size.id)) { %>selected<% } %>>
                                 <%= size.size %>
                             </option>
                         <% }); %>
                     </select>
                 </div>
+
+
+
                 
 
 
