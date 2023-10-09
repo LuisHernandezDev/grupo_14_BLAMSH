@@ -45,7 +45,7 @@ const userValidations = [
     body('opcion1').notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
     body('image').custom((value, {req}) =>{
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png'];
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
         
         if (!file) {
             throw new Error('Debes subir una imagen');

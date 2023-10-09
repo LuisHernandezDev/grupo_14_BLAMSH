@@ -49,7 +49,7 @@ const userController = {
         try {
             const hashPassword = bcrypt.hashSync(req.body.password, 10);
 
-            // const pathImage = path.join(__dirname, "./public/images/users", req.file.filename);
+            // const pathImage = path.join(__dirname, "./public/images/users", req.file.filename); // Crea la ruta completa donde se guarda la img
 
             const newUser = {
                 identification: req.body.identification,
@@ -67,12 +67,12 @@ const userController = {
 
             res.redirect('/login')
 
-        } catch (error) {
-            console.error(error)
             if (user.error) {
                 res.redirect('/register/?error=' + user.error);
 
             }
+        } catch (error) {
+            console.error(error)
         }
 
     },

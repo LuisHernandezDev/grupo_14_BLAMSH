@@ -21,7 +21,7 @@ section {
     border-radius: 11px;
     padding: 10px;
     margin-top: 20px;
-    background-color: rgb(66, 63, 63);
+    background-color: rgb(144, 140, 140);
     -webkit-box-shadow: 3px 3px 9px 4px rgba(145, 94, 145, 1);
     -moz-box-shadow: 3px 3px 9px 4px rgba(145, 94, 145, 1);
     box-shadow: 3px 3px 9px 4px rgba(145, 94, 145, 1);
@@ -31,6 +31,7 @@ section {
 
 .item {
     margin-bottom: 10px;
+    color: black;
 }
 
 
@@ -49,6 +50,7 @@ section {
         transition: 0.5s;
         background-color: #5e5d58;
         transform: scale(1.05);
+        font-weight: bold;
     }
 
 }

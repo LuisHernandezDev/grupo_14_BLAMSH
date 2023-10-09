@@ -1,5 +1,6 @@
 //requirir express
 const express = require('express');
+const path = require('path')
 
 // crear una variable para traerel maincontroller 
 const productControllers = require('../controllers/productControllers');
@@ -20,23 +21,11 @@ const authMiddleware = require('../middlewares/authMiddleware');
 //guardar la ejcucion de la funcionalidad de router en express
 const router = express.Router();
 
-// Validaciones: Es un array de Middleware
-const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
-const productValidations = [
-    body('name').notEmpty().isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
-    body('description').notEmpty().isLength({ min: 10 }).withMessage('El nombre debe tener al menos 10 caracteres'),
-    body('image').notEmpty().withMessage('Debe agregar una imagen'),
-    body('category').notEmpty().withMessage('Debe escoger la categoría del producto'),
-    body('colors').notEmpty().withMessage('Debes seleccionar al menos un color'), // Preguntar si se puede hacer un input select.
-    body('talle').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
-    body('price').notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0')
-];
-
 /*
 Creamos un storage de multer
 Seteamos el destination y el filename (dónde se guarda la img y con que nombre).
 Inicializamos multer, pasándole el storage que creamos.
-Pasamos este multer como segundo parámetro al router.post
+Pasamos este multer como segundo parámetro al router.post o .put
 */
 
 const storage = multer.diskStorage({
@@ -47,10 +36,43 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => { // Acá indicamos el nombre con que se guardará el archivo
         console.log(file);
         cb(null, "img-" + Date.now() + "-" + file.originalname);
+        // cb(null, `img-${Date.now}-${file.filename}`)
     }
 });
 
 const upload = multer({ storage });
+
+// Validaciones: Es un array de Middleware
+const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
+const productValidations = [
+    body('name')
+    .notEmpty().withMessage('Debes ingresar el nombre del producto').bail()
+    .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
+    body('description')
+    .notEmpty().withMessage('Debes ingresar la descripción del producto').bail()
+    .isLength({ min: 10 }).withMessage('La descripción debe tener al menos 10 caracteres'),
+    body('price')
+    .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
+    .notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0'),
+    body('category').notEmpty().withMessage('Debes escoger la categoría del producto'),
+    body('size').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
+    body('image').custom((value, {req}) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png'];
+        
+        if (!file) {
+            throw new Error('Debes agregar una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions. includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivos permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        return true;
+    })
+
+];
+
 
 
 //Linkeamos el archivo del router con el del controllers

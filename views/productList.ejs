@@ -35,14 +35,13 @@
             <article class="productWrapper">
                 <div class="product">
                     <strong>Nombre: </strong>
-                    <%= product.name %>
+                    <%= product.name.toUpperCase() %>
                 </div>
                 <div class="product">
                     <strong>Descripción: </strong>
                     <%= product.description %>
                 </div>
                 <div class="product">
-                    <strong>Imagen: </strong>
                     <img width="200px" src="/images/products/<%= product.image %>" alt="">
                 </div>
 

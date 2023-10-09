@@ -59,6 +59,17 @@ const productController = {
     },
 
     postProduct: async (req, res) => {
+
+        const resultProductValidation = validationResult(req);
+        // res.send(resultProductValidation)
+
+        if (resultProductValidation.errors.length > 0) {
+            res.render('createProduct', {
+                errors: resultProductValidation.mapped(), // mapped envia los errores a la vista como un objeto
+                bodyData: req.body // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
+            });
+        };
+
         try {
             const categoryName = req.body.category; // Obtenemos el nombre de la categoría desde el formulario
 
