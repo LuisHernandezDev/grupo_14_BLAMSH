@@ -41,7 +41,7 @@ const userController = {
         if (emailUsed) {
             return res.render('register', {
                 error: 'El correo electrónico ya está en uso',
-                bodyData: req.body, // Acá mantenemos los datos que el usuario ingresó en el formulario
+                bodyData: req.body // Acá mantenemos los datos que el usuario ingresó en el formulario
             });
 
         }

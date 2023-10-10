@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 
 const { validationResult } = require('express-validator');
 const { log, error } = require("console");
+const { query } = require("express");
 
 const productController = {
 
@@ -208,13 +209,13 @@ const productController = {
 
     searchProducts: async (req, res) => {
 
-        const query = req.query.query; // Obtenemos lo buscado desde la URL
-
+        const search = req.query.query; // Obtenemos lo buscado desde la URL
+        console.log(req.query);
         try {
             const products = await db.Product.findAll({
                 where: {
                     name: {
-                        [Op.like]: `%${query}%`
+                        [Op.like]: `%${search}%`
                     }
                 }
             });
@@ -223,7 +224,7 @@ const productController = {
                 res.send("Producto no encontrado");
 
             } else {
-                res.render('searchProduct', { products, query });
+                res.render('searchProduct', { products, search });
             }
 
         } catch (error) {

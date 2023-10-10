@@ -58,122 +58,93 @@
                 <form action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
 
 
-                    <input type="text" id="firstName" name="firstName" placeholder=<% if (locals.errors &&
-                        locals.errors.firstName) { %>
-
-                    " <%= locals.errors.firstName.msg %> "
-
+                    <input type="text" id="firstName" name="firstName" placeholder=  <% if (locals.errors && locals.errors.firstName) { %>
+                            
+                           " <%= locals.errors.firstName.msg %> "
+                      
                         <% }else{ %>
-                            'Nombre'
+                                'Nombre'
                             <% }%>
-                                value="<%= locals.bodyData ? bodyData.firstName : null %>">
+                        value="<%= locals.bodyData ? bodyData.firstName : null %>">
 
-                                    <input type="text" id="lastName" name="lastName" placeholder=<% if (locals.errors &&
-                                        locals.errors.firstName) { %>
+                   
 
-                                    " <%= locals.errors.lastName.msg %> "
+                            <input type="text" id="lastName" name="lastName" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                " <%= locals.errors.lastName.msg %> "
+                           
+                             <% }else{ %>
+                                     'Apellido'
+                                 <% }%>
+                            value="<%= locals.bodyData ? bodyData.lastName : null %>">
 
-                                        <% }else{ %>
-                                            'Apellido'
-                                            <% }%>
-                                                value="<%= locals.bodyData ? bodyData.lastName : null %>">
+                            
 
-                                                    <input type="email" id="email" name="email" placeholder=<% if
-                                                        (locals.errors && locals.errors.firstName) { %>
+                                    <input type="email" id="email" name="email" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                        " <%= locals.errors.email.msg %> "
+                                   
+                                     <% }else{ %>
+                                             'Email'
+                                         <% }%>
+                                    value="<%= locals.bodyData ? bodyData.email : null %>">
 
-                                                    " <%= locals.errors.email.msg %> "
+                                  
 
-                                                        <% }else{ %>
-                                                            'Email'
-                                                            <% }%>
-                                                                value="<%= locals.bodyData ? bodyData.email : null %>">
+                                            <input type="tel" name="phone" id="phone" placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                                " <%= locals.errors.phone.msg %> "
+                                           
+                                             <% }else{ %>
+                                                     'Telefono'
+                                                 <% }%>
+                                            value="<%= locals.bodyData ? bodyData.phone : null %>">
 
-                                                                    <input type="tel" name="phone" id="phone"
-                                                                        placeholder=<% if (locals.errors &&
-                                                                        locals.errors.firstName) { %>
+                                           
+                            <div>
+                                                    <input type="file" name="image">
+                                                    <% if (locals.errors && locals.errors.image) { %>
+                                                        <p style="color: red;">
+                                                            <%= locals.errors.image.msg %>
+                                                        </p>
+                                                        <% } %>
+                                                   
+                                                        </div>
+                                                    <input type="password" name="password" id="password"
+                                                        placeholder=<% if (locals.errors && locals.errors.firstName) { %>
+                            
+                                                            " <%= locals.errors.firstName.password %> "
+                                                       
+                                                         <% }else{ %>
+                                                                 'Contraseña'
+                                                             <% }%>>
 
-                                                                    " <%= locals.errors.phone.msg %> "
+                                                  
+                                                    
+                                                            <div class="form__checkbox-container">
+                                                                <input type="checkbox" id="opcion1" name="opcion1"
+                                                                    value="opcion1" class="form__checkbox">
+                                                                <label class="form_label-checkbox" for="opcion1">Acepto
+                                                                    la Política de Privacidad y los
+                                                                    Términos
+                                                                    de Uso de Blamsh.
+                                                                </label>
+                                                                <% if (locals.errors && locals.errors.opcion1) { %>
+                                                                    <p style="color: red;">
+                                                                        <%= locals.errors.opcion1.msg %>
+                                                                    </p>
+                                                                    <% } %>
 
-                                                                        <% }else{ %>
-                                                                            'Telefono'
-                                                                            <% }%>
-                                                                                value="<%= locals.bodyData ?
-                                                                                    bodyData.phone : null %>">
-
-
-                                                                                    <div>
-                                                                                        <input type="file" name="image">
-                                                                                        <% if (locals.errors &&
-                                                                                            locals.errors.image) { %>
-                                                                                            <p style="color: red;">
-                                                                                                <%= locals.errors.image.msg
-                                                                                                    %>
-                                                                                            </p>
-                                                                                            <% } %>
-
-                                                                                    </div>
-                                                                                    <input type="password"
-                                                                                        name="password" id="password"
-                                                                                        placeholder=<% if (locals.errors
-                                                                                        && locals.errors.password) { %>
-
-                                                                                    " <%=
-                                                                                        locals.errors.password.msg
-                                                                                        %> "
-
-                                                                                        <% }else{ %>
-                                                                                            'Contraseña'
-                                                                                            <% }%>>
-
-
-
-                                                                                                <div
-                                                                                                    class="form__checkbox-container">
-                                                                                                    <input
-                                                                                                        type="checkbox"
-                                                                                                        id="opcion1"
-                                                                                                        name="opcion1"
-                                                                                                        value="opcion1"
-                                                                                                        class="form__checkbox">
-                                                                                                    <label
-                                                                                                        class="form_label-checkbox"
-                                                                                                        for="opcion1">Acepto
-                                                                                                        la Política de
-                                                                                                        Privacidad y los
-                                                                                                        Términos
-                                                                                                        de Uso de
-                                                                                                        Blamsh.
-                                                                                                    </label>
-                                                                                                    <% if (locals.errors
-                                                                                                        &&
-                                                                                                        locals.errors.opcion1)
-                                                                                                        { %>
-                                                                                                        <p
-                                                                                                            style="color: red;">
-                                                                                                            <%= locals.errors.opcion1.msg
-                                                                                                                %>
-                                                                                                        </p>
-                                                                                                        <% } %>
-
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="form__checkbox-container">
-                                                                                                    <input
-                                                                                                        type="checkbox"
-                                                                                                        id="opcion2"
-                                                                                                        name="opcion2"
-                                                                                                        value="opcion2">
-                                                                                                    <label
-                                                                                                        class='form_label-checkbox'
-                                                                                                        id="opcion1">Acepto
-                                                                                                        recibir
-                                                                                                        comunicaciones
-                                                                                                        de
-                                                                                                        Blamsh</label>
-                                                                                                </div>
-                                                                                                <input type="submit"
-                                                                                                    value="Unite a BLAMSH"
-                                                                                                    class="form__enviar">
+                                                            </div>
+                                                            <div class="form__checkbox-container">
+                                                                <input type="checkbox" id="opcion2" name="opcion2"
+                                                                    value="opcion2">
+                                                                <label class='form_label-checkbox' id="opcion1">Acepto
+                                                                    recibir comunicaciones de
+                                                                    Blamsh</label>
+                                                            </div>
+                                                            <input type="submit" value="Unite a BLAMSH"
+                                                                class="form__enviar">
 
                 </form>
             </div>

@@ -25,7 +25,7 @@
 <body><br>
 
     <div>
-        <h2>Resultados para "<%= query %>"</h2>
+        <h2>Resultados para "<%= search %>"</h2>
     </div>
 
     <section>
@@ -35,7 +35,7 @@
                 <div>
                     <a href="/detalleProducto">
                         <div class="item">
-                            <%= product.name %>
+                            <%= product.name.toUpperCase() %>
                         </div>
                         <div class="item">
                             Descripción: <%= product.description %>

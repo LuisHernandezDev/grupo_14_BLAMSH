@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const userModel = require('../models/userModels');
-const userController = require('../controllers/userControllersbd')
+const userController = require('../controllers/userControllersdb')
 
 
 const middlewares = {

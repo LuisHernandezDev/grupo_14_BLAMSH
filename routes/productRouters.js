@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path')
 
 // crear una variable para traerel maincontroller 
-const productControllers = require('../controllers/productControllers');
+// const productControllers = require('../controllers/productControllers');
 const productControllersdb = require('../controllers/productControllersdb');
 
 
@@ -47,10 +47,10 @@ const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
 const productValidations = [
     body('name')
     .notEmpty().withMessage('Debes ingresar el nombre del producto').bail()
-    .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
+    .isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
     body('description')
     .notEmpty().withMessage('Debes ingresar la descripción del producto').bail()
-    .isLength({ min: 10 }).withMessage('La descripción debe tener al menos 10 caracteres'),
+    .isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
     body('price')
     .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
     .notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0'),
@@ -58,7 +58,7 @@ const productValidations = [
     body('size').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
     body('image').custom((value, {req}) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png'];
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
         
         if (!file) {
             throw new Error('Debes agregar una imagen');

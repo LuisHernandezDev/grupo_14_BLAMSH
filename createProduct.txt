@@ -286,3 +286,4 @@
  Se creó un producto al ingresar en /products a las Sun Oct 08 2023 21:00:58 GMT-0300 (hora de verano de Chile)
  Se creó un producto al ingresar en /products a las Sun Oct 08 2023 21:01:05 GMT-0300 (hora de verano de Chile)
  Se creó un producto al ingresar en /products a las Sun Oct 08 2023 21:03:36 GMT-0300 (hora de verano de Chile)
+ Se creó un producto al ingresar en /products a las Tue Oct 10 2023 12:11:55 GMT-0300 (hora de verano de Chile)
