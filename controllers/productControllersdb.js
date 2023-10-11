@@ -23,12 +23,15 @@ const productController = {
     getList: async (req, res) => {
 
         try {
+
+            const sizes = await db.Size.findAll()
+
             const products = await db.Product.findAll({
                 include: ['category', 'sizes'],
                 nest: true
             });
 
-            res.render('productList', { products });
+            res.render('productList', { products, sizes });
 
         } catch (error) {
             console.error(error);
@@ -39,13 +42,15 @@ const productController = {
         const productId = req.params.id; // Se crea una variable con el valor req.params.id para saber el detalle del id buscado en el navegador.
 
         try {
+
+            const sizes = await db.Size.findAll()
+
             const product = await db.Product.findByPk(productId, {
-                raw: true,
                 include: ["category", "sizes"],
                 nest: true
             });
 
-            res.render('productDetail', { product });
+            res.render('productDetail', { product, sizes });
 
         } catch (error) {
             console.error(error);
