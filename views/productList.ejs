@@ -51,9 +51,11 @@
                 </div>
                 </div>
                 <div class="product">
-                    <strong>Tallas: </strong>
-                    <%= product.sizes.size %>
+                    <strong>Tallas: <% product.sizes.forEach(size => { %>
+                        <%= size.size%>
+                       <% }) %> </strong>
                 </div>
+
                 <div class="product">
                     <strong>Precio: </strong>$<%= product.price %>
                 </div>

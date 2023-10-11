@@ -70,16 +70,14 @@
                   <div>
                     <label for="">Seleccione una talla</label><br>
                     <select name="size" multiple>
-              
-                      <% sizes.forEach(size => { %>
+                       <% sizes.forEach(size => { %>
                        <% if (locals.bodyData && locals.bodyData.size == size.id) { %>
                         <option value= "<%= size.id %>" selected ><%= size.size %></option>
                         
                        <% } else { %>
                         <option value= "<%= size.id %>"><%= size.size %></option>
                       <% } %>
-                      <% }) %>
-              
+                      <% }) %>              
                     </select>
                     <% if (locals.errors && errors.size) { %>
                       <div class="msg-error" style="color: red;">                       
