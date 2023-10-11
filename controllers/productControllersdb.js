@@ -24,7 +24,6 @@ const productController = {
 
         try {
             const products = await db.Product.findAll({
-                raw: true,
                 include: ['category', 'sizes'],
                 nest: true
             });
@@ -54,8 +53,10 @@ const productController = {
 
     },
 
-    getCreate: (req, res) => {
-        res.render('createProduct');
+    getCreate: async (req, res) => {
+        const sizes = await db.Size.findAll()
+
+        res.render('createProduct', {sizes});
 
     },
 
@@ -85,33 +86,39 @@ const productController = {
                 category = await db.Category.create({ category: categoryName });
             }
 
-            // Hacemos lo mismo con la talla
-            const sizeNumber = req.body.size
+            // // Hacemos lo mismo con la talla
+            // const sizeNumber = req.body.size
 
-            let size = await db.Size.findOne({
-                where: {
-                    size: sizeNumber
-                }
-            })
+            // let size = await db.Size.findOne({
+            //     where: {
+            //         size: sizeNumber
+            //     }
+            // })
 
-            if (!size) {
-                size = await db.Size.create({ size: sizeNumber })
-            }
+            // if (!size) {
+            //     size = await db.Size.create({ size: sizeNumber })
+            // }
 
             const newProduct = {
                 name: req.body.name,
                 description: req.body.description,
                 image: req.file.filename,
                 price: req.body.price,
-                size: req.body.size,
                 category_id: category.id // Utiliza el ID de la categoría
             };
 
             const createdProduct = await db.Product.create(newProduct);
 
-            await createdProduct.addSize(size);
-            console.log(createdProduct);
+            const productSizes = req.body.size.map(currentSize => ({
+                id_product: createdProduct.dataValues.id,
+                id_size: currentSize
+            }))
 
+           await db.ProductSize.bulkCreate(productSizes)
+
+            // await createdProduct.addSize(size);
+            console.log(createdProduct);
+            console.log(req.body);
             res.redirect(`/products/${createdProduct.id}/detail`);
 
         } catch (error) {

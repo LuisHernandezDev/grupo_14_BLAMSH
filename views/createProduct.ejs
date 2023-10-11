@@ -69,12 +69,17 @@
               
                   <div>
                     <label for="">Seleccione una talla</label><br>
-                    <select name="size">
-                      <option value="" disabled selected>Seleccione una talla</option>
-                      <option value="S" <%= locals.bodyData && locals.bodyData.size == 'S' ? 'selected' : null %>>S</option>
-                      <option value="M" <%= locals.bodyData && locals.bodyData.size == 'M' ? 'selected' : null %>>M</option>
-                      <option value="L" <%= locals.bodyData && locals.bodyData.size == 'L' ? 'selected' : null %>>L</option>
-                      <option value="XL" <%= locals.bodyData && locals.bodyData.size == 'XL' ? 'selected' : null %>>XL</option>
+                    <select name="size" multiple>
+              
+                      <% sizes.forEach(size => { %>
+                       <% if (locals.bodyData && locals.bodyData.size == size.id) { %>
+                        <option value= "<%= size.id %>" selected ><%= size.size %></option>
+                        
+                       <% } else { %>
+                        <option value= "<%= size.id %>"><%= size.size %></option>
+                      <% } %>
+                      <% }) %>
+              
                     </select>
                     <% if (locals.errors && errors.size) { %>
                       <div class="msg-error" style="color: red;">                       
