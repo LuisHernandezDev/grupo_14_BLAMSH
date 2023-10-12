@@ -22,16 +22,19 @@ div h3 {
 
 }
 
+img {
+    width: 300px;
+    border-radius: 10px;
+}
+
 .container-profile {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
     border: solid 1px black;
     border-radius: 11px;
-    padding: 30px;
+    padding: 50px;
     margin-top: 20px;
     background-color: rgb(134, 131, 131);
 }
@@ -44,7 +47,7 @@ div h3 {
 .buttonEdit button {
     background-color: #504e50;
     border-radius: 11px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     color:rgb(247, 244, 244);
     font-size: 16px;
     font-weight: bold;
