@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/main-register.css">
+    <link rel="stylesheet" href="/css/userProfile.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/footer.css">
     <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
@@ -20,14 +21,14 @@
         <%-include ('./partials/navbar')%>
     </header>
 
-    <main style="background-color: rgb(77, 91, 131);">
-        <div>
+    <main>
+        <div class="container-profile">
             <li>
-                <h2>Hola <%= user.firstName + " " + user.lastName %>
+                <h2>¡Hola! <%= user.firstName + " " + user.lastName %>
                 </h2>
-                <br>
+            </li><br>
             <li>
-                <img width="150px" src="/images/users/<%= user.image %>" alt="">
+                <img src="/images/users/<%= user.image %>" alt="">
 
             </li><br>
             <li>
@@ -35,17 +36,17 @@
                     <%= user.email %>
                 </h3>
             </li>
-            </li>
+
             <li>
                 <h3>Teléfono:
                     <%= user.phone %>
                 </h3>
-            </li><br>
-
-            <a href="/profile/edit">
-                <button>Editar perfil</button>
-            </a>
-
+            </li>
+            <div>
+                <a class="buttonEdit" href="/profile/edit">
+                    <button>Editar perfil</button>
+                </a>
+            </div>
         </div>
 
 
