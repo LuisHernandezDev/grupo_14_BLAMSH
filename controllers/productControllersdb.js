@@ -181,12 +181,12 @@ const productController = {
                 }
             });
 
-            const productSizes = req.body.id_size.map(sizeId => ({ // Asociamos las nuevas tallas seleccionadas con el producto
+            const productSizes = Array.from(req.body.id_size).map(sizeId => ({ // Asociamos las nuevas tallas seleccionadas con el producto
                 id_product: req.params.id,
                 id_size: sizeId
             }));
-            await db.ProductSize.bulkCreate(productSizes);
 
+            await db.ProductSize.bulkCreate(productSizes);
 
             // await db.ProductSize.update(updatedSize, {
             //     where: {
