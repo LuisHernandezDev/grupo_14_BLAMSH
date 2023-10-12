@@ -16,22 +16,25 @@ const productController = {
         res.render('carrito');
     },
 
-    editionProduct: (req, res) => {
-        res.render('editionProduct');
+    editionProduct: async (req, res) => {
+
+        const sizes = await db.Size.findAll()
+
+        res.render('editionProduct', { sizes });
+
     },
 
     getList: async (req, res) => {
 
         try {
 
-            const sizes = await db.Size.findAll()
-
             const products = await db.Product.findAll({
                 include: ['category', 'sizes'],
                 nest: true
             });
+            console.log(products.sizes);
 
-            res.render('productList', { products, sizes });
+            res.render('productList', { products });
 
         } catch (error) {
             console.error(error);
@@ -43,14 +46,12 @@ const productController = {
 
         try {
 
-            const sizes = await db.Size.findAll()
-
             const product = await db.Product.findByPk(productId, {
                 include: ["category", "sizes"],
                 nest: true
             });
 
-            res.render('productDetail', { product, sizes });
+            res.render('productDetail', { product });
 
         } catch (error) {
             console.error(error);
@@ -61,7 +62,7 @@ const productController = {
     getCreate: async (req, res) => {
         const sizes = await db.Size.findAll()
 
-        res.render('createProduct', {sizes});
+        res.render('createProduct', { sizes });
 
     },
 
@@ -115,11 +116,11 @@ const productController = {
             const createdProduct = await db.Product.create(newProduct);
 
             const productSizes = req.body.size.map(currentSize => ({
-                id_product: createdProduct.dataValues.id,
-                id_size: currentSize
+                id_product: createdProduct.dataValues.id, // id del producto recién creado
+                id_size: currentSize // id de la talla seleccionada
             }))
 
-           await db.ProductSize.bulkCreate(productSizes)
+            await db.ProductSize.bulkCreate(productSizes) // bulkCreate permite insertar múltiples registros en una tabla
 
             // await createdProduct.addSize(size);
             console.log(createdProduct);
@@ -166,10 +167,6 @@ const productController = {
                 category_id: req.body.category_id
             };
 
-            const updatedSize = {
-                id_size: req.body.id_size
-            };
-
             await db.Product.update(updatedProduct, {
                 where: {
                     id: req.params.id
@@ -177,12 +174,26 @@ const productController = {
             });
             console.log(updatedProduct);
 
-            await db.ProductSize.update(updatedSize, {
+            // Eliminamos las tallas antiguas asociadas al producto desde la tabla ProductSize que es donde se guarda el id de la talla asociada al id del producto
+            await db.ProductSize.destroy({
                 where: {
                     id_product: req.params.id
                 }
             });
-            console.log(updatedSize);
+
+            const productSizes = req.body.id_size.map(sizeId => ({ // Asociamos las nuevas tallas seleccionadas con el producto
+                id_product: req.params.id,
+                id_size: sizeId
+            }));
+            await db.ProductSize.bulkCreate(productSizes);
+
+
+            // await db.ProductSize.update(updatedSize, {
+            //     where: {
+            //         id_product: req.params.id
+            //     }
+            // });
+            // console.log(updatedSize);
 
             res.redirect(`/products/${req.params.id}/detail`);
 
