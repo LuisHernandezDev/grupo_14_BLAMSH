@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+
+    background-color: rgb(47, 48, 49);
+}
+
+div h2 {
+    color: white
+
+}
+
+div h3 {    
+    color: white
+
+}
+
+.container-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid 1px black;
+    border-radius: 11px;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: rgb(134, 131, 131);
+}
+
+.container-profile li {
+    margin-bottom: 15px;
+
+}
+
+.buttonEdit button {
+    background-color: #504e50;
+    border-radius: 11px;
+    padding: 5px 10px;
+    color:rgb(247, 244, 244);
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.buttonEdit button:hover {
+    background-color: #511ca0;
+    color: white;
+}
+
+
+@media (min-width: 720px) {
+
+    .container-profile {
+        margin-left: 40%;
+        margin-bottom: 400px;
+
+    }
+
+
+
+}
