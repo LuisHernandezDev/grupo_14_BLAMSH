@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main-register.css">
+    <link rel="stylesheet" href="/css/editProfile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
+</head>
+
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+
+    <main>
+
+        <form class="form-edit" action="/profile/edit?_method=PUT" method="post" enctype="multipart/form-data">
+            <section class="container-edit-profile">
+                <div>
+                    <label for="">Nombre</label>
+                    <input type="text" name="firstName" value="<%= user.firstName %>" required>
+                </div>
+                <div>
+                    <label for="">Apellido</label>
+                    <input type="text" name="lastName" value="<%= user.lastName %>" required>
+                </div>
+                <div>
+                    <label for="">Imagen de perfil</label>
+                    <input type="file" name="image" required>
+                </div>
+                <div>
+                    <label for="">Teléfono</label>
+                    <input type="text" name="phone" value="<%= user.phone %>" required><br>
+                </div>
+                <div>
+                    <button class="button-save" type="submit">Guardar Cambios</button>
+                </div>
+            </section>
+        </form>
+
+
+
+    </main>
+
+    <footer>
+        <%-include ('./partials/footer')%>
+    </footer>
+    <script src="js/catalog.js"></script>
+</body>
+
+
+</html>

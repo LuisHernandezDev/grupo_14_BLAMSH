@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/carrito.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,39 +21,49 @@
     <header>
         <%-include ('./partials/navbar')%>
     </header>
-    <h1> Producto <%= product.id %>
-    </h1>
-    <article>
-        <h1>
-            <%= product.name %>
-        </h1>
-        <h3>
-            <%= product.description %>
-        </h3>
-        <h3>          
-            <img width="200px" src="/images/products/<%= product.image %>" alt="">
-        </h3>
-        <h3>
-            <%= product.category %>
-        </h3>
-        <h3>
-            <%= product.colors %>
-        </h3>
-        <h3>
-            <%= product.talle %>
-        </h3>
-        <h3>
-            $<%= product.price %>
-        </h3>
-
-        <a href="/products/<%= product.id %>/edit">
-            <button>Editar producto</button>
+    
+    <h2 class= "productId"> Producto <%= product.id %></h2>
+ 
+    <main class="mainContainer">
+        <a href="/products">
+            <button class="back"><i class="fa-solid fa-arrow-left"></i></button>
         </a>
-        <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
-            <input type="submit" value="Eliminar producto">
-        </form>
+        <section class = "articleDetail">
+        
+            <h2 class="ProductName"><%= product.name %></h2>
+            
+            <h4 class="productDescription"><%= product.description %></h4>
+            
+            <div id="imagen" class="productImage">          
+                <img width="200px" src="/images/products/<%= product.image %>" alt="Imagen del producto">
+            </div>
 
-    </article>
+            <article class="productItems">
+
+                <h5 class="productCategory"> Categoría: <%= product.category.category %></h5>
+
+                <h5 class="productSize" > Talle: <% product.sizes.forEach(size => { %>
+                    <%= size.size%>
+                   <% }) %></h5>
+            
+                <h5 class="productPrice" >Precio: $<%= product.price %></h5>
+
+                <a href="/products/<%= product.id %>/edit">
+                    <button class="editButton">Editar producto</button>
+                </a>
+                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                    <input class="submitButton"  type="submit" value="Eliminar producto">
+                </form>
+                <a href="/products">
+                    <button class="editButton">Volver al listado</button>
+                </a>
+
+            </article>
+        </section>
+    </main>
+
+    <h2 class="productId2"> Detalle</h2>
+
     <footer>
         <%-include ('./partials/footer')%>
     </footer>

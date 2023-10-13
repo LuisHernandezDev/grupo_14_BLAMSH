@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+
+    background-color: rgb(47, 48, 49);
+}
+
+
+.container-edit-profile {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+.container-edit-profile label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.container-edit-profile input[type="text"],
+.container-edit-profile input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container-edit-profile input[type="file"] {
+    border: none;
+}
+
+.container-edit-profile button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.button-save:hover {
+    background-color: #0056b3;
+}
+
+button input[type="submit"] {
+    align-items: center;
+}
+
+
+
+
+
+@media (min-width: 720px) {
+
+    .form-edit {
+        margin-left: 40%;
+        margin-bottom: 400px;
+
+    }
+
+
+
+}

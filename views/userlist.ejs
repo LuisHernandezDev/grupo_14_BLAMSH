@@ -4,44 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>BLAMSH</title>
 </head>
 
 <body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+    <main style="background-color: rgb(116, 110, 110);">
 
-    <% users.forEach(users=> { %>
-        <div class=usuario>
-            <h1>
-                <%= users.id %>
-            </h1>
-            <h1>
-                <%= users.first_name %>
-            </h1>
-            <h1>
-                <%= users.last_name %>
-            </h1>
-            <h1>
-                <%= users.email%>
-            </h1>
-            <h1>
-                <%= users.password%>
-            </h1>
-            <h1>
-                <%= users.gender%>
-            </h1>
-            <h1>
-                <%= users.birthday_date%>
-            </h1>
-            <h1>
-                <%=users.phone%>
-            </h1>
-            <h1>
-                <%=users.image%>
-            </h1>
+    <div>
+        <a href="/register">
+            <button>Registrarse</button>
+        </a>
+    </div>
 
-        </div>
-        <% }) %>
+    <section><br>
 
+        <% users.forEach(user=> { %>
+
+                <div>
+                    <%= user.firstName + " " + user.lastName %>
+                </div>
+
+                <div>
+                    <strong>Email: </strong>
+                    <%= user.email %>
+                </div>
+
+                <div>
+                    <strong>Perfil del usuario: </strong>
+                    <%= user.profile %>
+                </div>
+
+                <div>
+                    <strong>Teléfono: </strong>
+                    <%= user.phone %>
+                </div>
+
+                <div>
+                    <strong>Imagen: </strong>
+                    <img width="200px" src="./images/users/<%= user.image %>" alt="">
+                </div>
+
+
+                <div>
+                    <a href="/products/<%= user.id %>/detail">
+                        <button>Ver detalle</button>
+                    </a>
+                </div><br>
+            <% }) %>
+    </section>
+
+</main>
+    <footer class="footer-layout">
+        <%-include ('./partials/footer')%>
+    </footer>
 </body>
+
 
 </html>

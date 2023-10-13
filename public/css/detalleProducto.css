@@ -170,9 +170,8 @@ img {
 }
 
 
-
 .input-group:hover,
-.input-group input:hover {
+.input-group input:hover, .my-input:hover {
     background-color: #98bc72;
 }
 

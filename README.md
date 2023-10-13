@@ -1,4 +1,8 @@
 # Blamsh
+## Usuario administrador
+Si creamos un nuevo usuario y queremos que sea administrador debemos hacer un upadate 
+en la tabla users el campo rol_id con el valor ##2
+
 ## _¿Qué productos o servicios brindará nuestro sitio?_
 
 Hola! somos BLAMSH,  una pagina que ofrece una amplia variedad de productos y servicios relacionados con el motocross, como:
