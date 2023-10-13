@@ -34,16 +34,16 @@
                 <form action="/products" method="post" enctype="multipart/form-data">
                   <h2 class="title">Alta de producto</h2>
                   <input class="items" type="text" name="name" id="name" placeholder="Nombre de producto"
-                  value="<%= locals.bodyData ? bodyData.name : null %>">
-                  <% if (locals.errors && errors.name) { %>
+                  value="<%= locals.bodyData ? locals.bodyData.name : null %>">
+                  <% if (locals.errors && locals.errors.name) { %>
                     <div class="msg-error" style="color: red;">
                    <%= errors.name.msg %>
                    </div>
                   <% } %>
 
                   <input class="items-desc" type="text" name="description" id="description" placeholder="Descripción de producto"
-                  value="<%= locals.bodyData ? bodyData.description : null %>">
-                  <% if (locals.errors && errors.description) { %>
+                  value="<%= locals.bodyData ? locals.bodyData.description : null %>">
+                  <% if (locals.errors && locals.errors.description) { %>
                     <div class="msg-error" style="color: red;">
                    <%= errors.description.msg %>
                    </div>
@@ -60,7 +60,7 @@
                       <option value="Equipamiento y Repuestos"
                       <%= locals.bodyData && locals.bodyData.category == 'Equipamiento y Repuestos' ? 'selected' : null %>>Equipamiento y Repuestos</option>
                     </select>
-                    <% if (locals.errors && errors.category) { %>
+                    <% if (locals.errors && locals.errors.category) { %>
                       <div class="msg-error" style="color: red;">
                      <%= errors.category.msg %>
                      </div>
@@ -70,6 +70,7 @@
                   <div>
                     <label for="">Seleccione una talla</label><br>
                     <select name="size" multiple>
+                      <% if (locals.sizes) { %>
                        <% sizes.forEach(size => { %>
                        <% if (locals.bodyData && locals.bodyData.size == size.id) { %>
                         <option value= "<%= size.id %>" selected ><%= size.size %></option>
@@ -77,7 +78,8 @@
                        <% } else { %>
                         <option value= "<%= size.id %>"><%= size.size %></option>
                       <% } %>
-                      <% }) %>              
+                      <% }) %> 
+                      <% } %>             
                     </select>
                     <% if (locals.errors && errors.size) { %>
                       <div class="msg-error" style="color: red;">                       
@@ -87,8 +89,8 @@
                   </div><br>
 
                   <input class="items" type="number" name="price" id="precio" placeholder="Precio de producto"
-                  value="<%= locals.bodyData ? bodyData.price : null %>">
-                  <% if (locals.errors && errors.price) { %>
+                  value="<%= locals.bodyData ? locals.bodyData.price : null %>">
+                  <% if (locals.errors && locals.errors.price) { %>
                     <div class="msg-error" style="color: red;">                      
                    <%= errors.price.msg %>
                    </div>
@@ -96,7 +98,7 @@
               
                   <label for="">Seleccione una imagen</label><br>
                   <input class="importar" type="file" multiple name="image" id="importar" value="importar imagenes">
-                  <% if (locals.errors && errors.image) { %>
+                  <% if (locals.errors && locals.errors.image) { %>
                     <div class="msg-error" style="color: red;">
                    <%= errors.image.msg %>
                    </div>

@@ -43,7 +43,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Validaciones: Es un array de Middleware
-const allowedCategories = ["Ropa", "Accesorios", "Equipamiento y Repuestos"];
 const productValidations = [
     body('name')
     .notEmpty().withMessage('Debes ingresar el nombre del producto').bail()

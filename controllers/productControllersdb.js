@@ -74,8 +74,10 @@ const productController = {
         if (resultProductValidation.errors.length > 0) {
             res.render('createProduct', {
                 errors: resultProductValidation.mapped(), // mapped envia los errores a la vista como un objeto
-                bodyData: req.body // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
+                bodyData: req.body, // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
+                sizes: await db.Size.findAll() // Hay que pasar de nuevo size en caso de haber errores para que las tallas sigan apareciendo en la vista
             });
+            return
         };
 
         try {
@@ -115,7 +117,7 @@ const productController = {
 
             const createdProduct = await db.Product.create(newProduct);
 
-            const productSizes = req.body.size.map(currentSize => ({
+            const productSizes = Array.from(req.body.size).map(currentSize => ({
                 id_product: createdProduct.dataValues.id, // id del producto recién creado
                 id_size: currentSize // id de la talla seleccionada
             }))
