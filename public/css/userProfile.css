@@ -10,7 +10,13 @@
 main {
 
     background-color: rgb(47, 48, 49);
+    background-image: url("/images/profile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
+
 
 div h2 {
     color: white
@@ -35,8 +41,10 @@ img {
     border: solid 1px black;
     border-radius: 11px;
     padding: 50px;
-    margin-top: 20px;
-    background-color: rgb(134, 131, 131);
+    margin-top: 5%;
+    background-color: rgb(134, 131, 131, 0.8);
+        max-width: 400px;
+
 }
 
 .container-profile li {

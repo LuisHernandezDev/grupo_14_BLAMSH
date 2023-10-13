@@ -12,6 +12,19 @@ main {
     background-color: rgb(47, 48, 49);
 }
 
+.back {
+    text-align: left;
+}
+
+.back button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 0 auto;
+}
+
 
 .container-edit-profile {
     max-width: 400px;
@@ -62,8 +75,6 @@ main {
 button input[type="submit"] {
     align-items: center;
 }
-
-
 
 
 

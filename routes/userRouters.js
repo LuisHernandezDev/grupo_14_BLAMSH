@@ -85,7 +85,7 @@ router.get('/profile', authMiddleware.authUser, userDbController.profile);
 
 router.get('/profile/edit', authMiddleware.authUser, userDbController.editProfile);
 
-router.put('/profile/edit', authMiddleware.authUser, upload.single('image'), userDbController.updateProfile);
+router.put('/profile/edit', upload.single('image'), authMiddleware.authUser, userDbController.updateProfile);
 
 router.get('/logout', userDbController.logout);
 

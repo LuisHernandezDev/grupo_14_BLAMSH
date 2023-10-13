@@ -24,7 +24,13 @@
     <main>
 
         <form class="form-edit" action="/profile/edit?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="back">
+                <button type="button" onclick="window.location.href='/profile'">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
             <section class="container-edit-profile">
+
                 <div>
                     <label for="">Nombre</label>
                     <input type="text" name="firstName" value="<%= user.firstName %>" required>
@@ -35,7 +41,7 @@
                 </div>
                 <div>
                     <label for="">Imagen de perfil</label>
-                    <input type="file" name="image" required>
+                    <input type="file" name="image">
                 </div>
                 <div>
                     <label for="">Teléfono</label>
