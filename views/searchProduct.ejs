@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+    <title>Buscar productos</title>
+</head>
+
+<header>
+    <%-include ('./partials/navbar')%>
+</header>
+
+<body><br>
+
+    <div>
+        <h2>Resultados para "<%= search %>"</h2>
+    </div>
+
+    <section>
+
+        <% products.forEach(product=> { %>
+            <article class="search">
+                <div>
+                    <a href="/detalleProducto">
+                        <div class="item">
+                            <%= product.name.toUpperCase() %>
+                        </div>
+                        <div class="item">
+                            Descripción: <%= product.description %>
+                        </div>
+                        <div class="item">
+                            Precio: <%= product.price %>
+                        </div>
+                        <img lass="item" width="200px" src="/images/products/<%= product.image %>" alt="">
+                    </a>
+                </div>
+
+            </article>
+            <% }); %>
+
+    </section>
+
+    <footer class="footer-layout">
+        <%-include ('./partials/footer')%>
+    </footer>
+</body>
+
+</html>

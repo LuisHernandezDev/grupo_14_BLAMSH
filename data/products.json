@@ -446,7 +446,7 @@
     {
         "id": 37,
         "name": "Jersey",
-        "description": "Jersey de alta calidad para competir.",
+        "description": "Campera",
         "image": "img-1692242169068-jersey1.jpg",
         "category": "Indumentaria",
         "colors": "Verde",
@@ -480,5 +480,34 @@
         "colors": "Rojo",
         "talle": "M",
         "price": "15000"
+    },
+    {
+        "id": 41,
+        "name": "Camiseta",
+        "description": "CamisetaOtra",
+        "image": "img-1694307689805-Captura de pantalla 2023-05-02 190811 - copia.png",
+        "category": "Accesorios",
+        "colors": "Plata",
+        "talle": "S",
+        "price": "123"
+    },
+    {
+        "id": 42,
+        "name": "Camiseta",
+        "description": "CamisetaOtra",
+        "image": "img-1694307856123-Captura de pantalla 2023-05-03 164747 - copia - copia.png",
+        "category": "Indumentaria",
+        "colors": "Rojo",
+        "talle": "S",
+        "price": "123"
+    },
+    {
+        "id": 43,
+        "name": "Camiseta",
+        "description": "Jersey nuevo nuevo nuevo",
+        "category": "Indumentaria",
+        "colors": "Variados",
+        "talle": "S",
+        "price": "23"
     }
 ]

@@ -78,3 +78,22 @@ Disminuir la falta de reuniones daily o en su defecto cada 3 días, ya que esto 
 ## _Dejar de hacer_
 <p align="justify">- Evitar subestimar la importancia de las weekly o semi-weekly. Aprovechar estas reuniones como oportunidades valiosas para la comunicación y el alineamiento del equipo.
 - Dejar de postergar la actualización de tareas en Trello. Mantener un registro claro del progreso para evitar confusiones y retrasos.
+
+
+
+# Retrospectiva Sprint 4:
+
+# Retrospectiva Sprint 5:
+1. ## _Comenzar a hacer_
+- <p align="justify"> Ejercer un uso más consistente y efectivo de Trello para lograr gestionar las tareas y hacer un seguimiento del progreso del proyecto. - Dividir las tareas y mantener actualizado el tablero para poder saber el estado del trabajo (pendiente o realizado) . -Priorizar las tareas pendientes del sprint anterior. - Identificar posibles problemas mediante pruebas de forma anticipada y continua durante el desarrollo para asegurar la calidad del proyecto antes de la entrega del sprint.
+
+2. ## _Hacer más_
+- <p align="justify">llevar a cabo seguimientos frecuentes de las tareas en Trello para evitar retrasos y asegurar que todas las tareas estén en curso según lo planificado. - Estar comprometidos con los plazos establecidos para la entrega de tareas y trabajar en equipo para cumplir con los objetivos del sprint. - Programar weekly o semi-weekly de manera más regular. Hacer reuniones en tiempo y forma para mantener a todos los miembros del equipo al tanto de los avances y desafíos.
+3. ## _Continuar haciendo_
+- <p align="justify"> Sostener un ambiente de trabajo motivado y positivo en el equipo. Identificar los logros alcanzados durante el sprint y Celébralos. - Hacer de  GitHub un uso más efectivo para mantener un registro claro del progreso mediante commits regulares y descriptivos. - Mantener la colaboración y la comunicación abiertas entre los miembros del equipo. Apoyarse mutuamente para resolver problemas y mejorar la productividad compartiendo conocimientos adquiridos durante la clase y el desarrollo del proyecto. Definir plazos realistas y trabajar de manera proactiva para completar las tareas a tiempo
+
+4. ## _Hacer menos_
+- <p align="justify"> Intentar no dejar las tareas al último momento.  - Disminuir la falta de seguimiento y actualización en Trello. No desmotivarse si surgió algún inconveniente con el funcionamiento del proyecto.
+
+5. ## _Dejar de hacer_
+- <p align="justify"> Dejar de subestimar la importancia de las weekly o semi-weekly. Usar estas reuniones como oportunidades valiosas para la comunicación y el alineamiento del equipo. - No postergar la actualización de tareas en Trello, y mantener un registro claro del progreso para evitar confusiones y retrasos.

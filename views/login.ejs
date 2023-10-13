@@ -19,22 +19,17 @@
     <%-include ('./partials/navbar')%>
   </header>
 
-  <main>
+  <main><br><br><br><br><br><br>
     <div class="container">
-      <form action="/login" method="post" class="login-form">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+      <p style="color: red;"><%= error %></p>
+      <form class="login-form" action="/login" method="post">
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required> <br>
-        <p class="error" ><%= error %></p>
+        <input type="email" id="email" name="email" placeholder="Correo">
+        <input type="password" id="password" name="password" placeholder="Contraseña">
+        <label for="">Mantener sesión iniciada</label><input type="checkbox" name="rememberme">
+        <br>
 
-        <label for="checkbox">Mantener sesión iniciada:</label>
-        <input type="checkbox" name="remember">
-
-        <u><a href="#"> ¿Has olvidado Tu contraseña?</a></u><br>
-
-
+        <u><a href="#"> ¿Has olvidado Tu contraceña?</a></u><br>
         <button class="enviar" type="submit">Enviar</button>
         <br>
 
