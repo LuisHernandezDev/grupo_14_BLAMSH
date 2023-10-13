@@ -1,1 +1,0 @@
-const funcionesAsync = require('./funciones');
