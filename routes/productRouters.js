@@ -107,7 +107,7 @@ router.post('/products', [upload.single('image'), productValidations, createProd
 router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getEdit);
 
 // router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
-router.put('/products/:id/edit', upload.single('image'), productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
+router.put('/products/:id/edit', [upload.single('image'), productValidations], productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
 
 
 // @DELETE - /products/:id/delete

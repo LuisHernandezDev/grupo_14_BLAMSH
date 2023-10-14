@@ -159,6 +159,20 @@ const productController = {
 
     updateProduct: async (req, res) => {
 
+        const resultEditProductValidation = validationResult(req);
+        // res.send(resultProductValidation)
+
+        if (resultEditProductValidation.errors.length > 0) {
+            res.render('editProduct', {
+                errors: resultEditProductValidation.mapped(), // mapped envia los errores a la vista como un objeto
+                bodyData: req.body, // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
+                categorys: await db.Category.findAll(),
+                product: await db.Product.findAll(),
+                sizes: await db.Size.findAll() // Hay que pasar de nuevo size en caso de haber errores para que las tallas sigan apareciendo en la vista
+            });
+            return
+        };        
+
         try {
 
             const updatedProduct = {

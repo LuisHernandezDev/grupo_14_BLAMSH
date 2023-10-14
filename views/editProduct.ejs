@@ -34,49 +34,77 @@
             <form action="/products/<%= product.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
                 <h2 class="title">Edición de producto</h2>
 
-                <input class="items" type="text" name="name" value="<%= product.name %>" id="name"
-                    placeholder="Nombre de producto" required>
+                <input class="items" type="text" name="name" id="name"
+                value="<%= locals.bodyData ? locals.bodyData.name : product.name %>" placeholder="Nombre de producto">
+                  <% if (locals.errors && locals.errors.name) { %>
+                    <div class="msg-error" style="color: red;">
+                   <%= errors.name.msg %>
+                   </div>
+                  <% } %>              
 
-                    <input class="items-desc" type="text" name="description" value="<%= product.description %>"
+                    <input class="items-desc" type="text" name="description"
+                    value="<%= locals.bodyData ? locals.bodyData.description : product.description %>"
                     id="description" placeholder="Descripción de producto">
+                    <% if (locals.errors && locals.errors.description) { %>
+                        <div class="msg-error" style="color: red;">
+                       <%= errors.description.msg %>
+                       </div>
+                      <% } %> 
                 
                 <div>
                     <label for="">Seleccione la categoría</label><br>
                     <select name="category_id">
                         <% categorys.forEach(category=> { %>
-                            <option value="<%= category.id %>" <% if (category.id==product.category_id) { %>selected<% }
-                                    %>>
-                                    <%= category.category %>
+                            <option value="<%= category.id %>" <% if (category.id==product.category_id) { %>selected<% }%>>
+                        <%= category.category %>
                             </option>
-                            <% }) %>
+                        <% }) %>
                     </select>
+                    
                 </div>
                 <br>
-
 
                 <div>
                     <label for="">Seleccione una talla</label><br>
                     <select name="id_size" multiple>
-                        <% sizes.forEach(size => { %>
+                        <% if (Array.isArray(product.sizes)) { %>
+                          <% sizes.forEach(size => { %>
                             <option value="<%= size.id %>" <%= product.sizes.some(productSize => productSize.id === size.id) ? 'selected' : '' %>>
-                                <%= size.size %>
+                              <%= size.size %>
                             </option>
-                        <% }); %>
-                    </select>
+                          <% }); %>
+                        <% } else { %>
+                          <% sizes.forEach(size => { %>
+                            <option value="<%= size.id %>"><%= size.size %></option>
+                          <% }); %>
+                        <% } %>
+                      </select>
+                      
                 </div><br>
 
-                <input class="items" type="number" name="price" value="<%= product.price %>" id="precio"
-                placeholder="Precio de producto" required>
+                <input class="items" type="number" name="price"
+                value="<%= locals.bodyData ? locals.bodyData.price : product.price %>" id="precio"
+                placeholder="Precio de producto">
+                <% if (locals.errors && locals.errors.price) { %>
+                    <div class="msg-error" style="color: red;">
+                   <%= errors.price.msg %>
+                   </div>
+                  <% } %> 
 
                 <label for="">Seleccione una imagen</label><br>
                 <input class="importar" type="file" multiple name="image" id="importar" value="Importar imagenes">
-                <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
+                <% if (locals.errors && locals.errors.image) { %>
+                    <div class="msg-error" style="color: red;">
+                        <%= errors.image.msg %>
+                    </div>
+                    <% } %>
+                    <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
             </form>
         </section>
         <section class="product-image">
 
             <img width="200px" src="/images/products/<%= product.image %>" alt="">
-
+           
         </section>
     </main>
 
