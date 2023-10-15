@@ -30,6 +30,7 @@ const userController = {
                 errors: resultUserValidation.mapped(),
                 bodyData: req.body // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
             });
+            return
         };
 
         const emailUsed = await db.User.findOne({

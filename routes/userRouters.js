@@ -35,18 +35,26 @@ const upload = multer({ storage });
 
 //Validaciones middleware
 const userValidations = [
-    body('firstName').notEmpty().withMessage('Debes escribir un nombre').bail()
-    .isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
-    body('lastName').notEmpty().withMessage('Debes escribir un apellido').bail()
-    .isLength({ min: 2 }).withMessage('El apellido debe tener al menos 2 caracteres'),
+    body('firstName')
+    .notEmpty().withMessage('Debes escribir un nombre').bail()
+    .isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres').bail()
+    .isAlpha().withMessage('El campo nombre debe contener solo letras'),
+    body('lastName')
+    .notEmpty().withMessage('Debes escribir un apellido').bail()
+    .isLength({ min: 2 }).withMessage('El apellido debe tener al menos 2 caracteres').bail()
+    .isAlpha().withMessage('El campo apellido debe contener solo letras'),
     body('email')
         .notEmpty().withMessage('Debes escribir un correo electrónico').bail() // bail, detiene las validaciones si se ejecuta el primero, sino entonces salta a la segunda validación
         .isEmail().withMessage("Debes ingresar un formato de correo válido"),
-    body('phone').notEmpty().withMessage('Debes escribir un número de teléfono'),
-    body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail()
+    body('phone')
+    .notEmpty().withMessage('Debes escribir un número de teléfono'),
+    body('password')
+    .notEmpty().withMessage('Debes ingresar una contraseña').bail()
     .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    body('opcion1').notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
-    body('image').custom((value, {req}) =>{
+    body('opcion1')
+    .notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
+    body('image')
+    .custom((value, {req}) =>{
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
         
