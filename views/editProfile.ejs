@@ -33,19 +33,43 @@
 
                 <div>
                     <label for="">Nombre</label>
-                    <input type="text" name="firstName" value="<%= user.firstName %>" required>
+                    <input type="text" name="firstName"
+                        value="<%= locals.bodyData ? locals.bodyData.firstName : user.firstName %>">
+                    <% if (locals.errors && locals.errors.firstName) { %>
+                        <p style="color: red;">
+                            <%= locals.errors.firstName.msg %>
+                        </p>
+                        <% } %>
+
                 </div>
                 <div>
                     <label for="">Apellido</label>
-                    <input type="text" name="lastName" value="<%= user.lastName %>" required>
+                    <input type="text" name="lastName"
+                        value="<%= locals.bodyData ? locals.bodyData.lastName : user.lastName %>">
+                    <% if (locals.errors && locals.errors.lastName) { %>
+                        <p style="color: red;">
+                            <%= locals.errors.lastName.msg %>
+                        </p>
+                        <% } %>
                 </div>
                 <div>
                     <label for="">Imagen de perfil</label>
                     <input type="file" name="image">
+                    <% if (locals.errors && locals.errors.image) { %>
+                        <p style="color: red;">
+                            <%= locals.errors.image.msg %>
+                        </p>
+                        <% } %>
                 </div>
                 <div>
                     <label for="">Teléfono</label>
-                    <input type="text" name="phone" value="<%= user.phone %>" required><br>
+                    <input type="text" name="phone"
+                    value="<%= locals.bodyData ? locals.bodyData.phone : user.phone %>">
+                    <% if (locals.errors && locals.errors.phone) { %>
+                        <p style="color: red;">
+                            <%= locals.errors.phone.msg %>
+                        </p>
+                        <% } %>
                 </div>
                 <div>
                     <button class="button-save" type="submit">Guardar Cambios</button>

@@ -132,13 +132,22 @@ const userController = {
     updateProfile: async (req, res) => {
         // Para actualizar la contraseña, se debe hacer una ruta aparte solo para la contraseña.
 
+        const resultUserProfileValidation = validationResult(req);
+
+        if (resultUserProfileValidation.errors.length > 0) {
+            res.render('editProfile', {
+                errors: resultUserProfileValidation.mapped(),
+                bodyData: req.body // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
+            });
+            return
+        };
+        
         try {
 
             const updatedUser = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 phone: req.body.phone,
-                rol_id: req.body.rol_id,
                 image: req.file.filename
 
             };
