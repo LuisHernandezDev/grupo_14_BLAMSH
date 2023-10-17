@@ -51,7 +51,7 @@ const userValidations = [
     body('password')
     .notEmpty().withMessage('Debes ingresar una contraseña').bail()
     .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres').bail()
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i").withMessage('La contraseña debe tener al menos un caracter especiales'),
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,12}$/, "i").withMessage('La contraseña debe tener al menos un caracter especiales'),
     body('opcion1')
     .notEmpty().withMessage('Debes aceptar las políticas de privacidad y los términos'),
     body('image')

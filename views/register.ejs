@@ -55,12 +55,17 @@
                     <%= locals.error %>
                 </p>
 
-                <form action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
+                <div class="errors">
+                    
+                </div>
+
+
+                <form id="register-form" action="/register" method="post" class="form-register__form" enctype="multipart/form-data">
 
 
                     <input type="text" id="firstName" name="firstName" placeholder="Nombre"
                         value="<%= locals.bodyData ? bodyData.firstName : null %>">
-
+                        <p id="error-firstName"></p>
                     <% if (locals.errors && locals.errors.firstName) { %>
                         <p style="color: red;">
                             <%= locals.errors.firstName.msg %>
@@ -71,7 +76,7 @@
 
                             <input type="text" id="lastName" name="lastName" placeholder="Apellido"
                                 value="<%= locals.bodyData ? bodyData.lastName : null %>">
-
+                                <p id="error-lastName"></p>
                             <% if (locals.errors && locals.errors.lastName) { %>
                                 <p style="color: red;">
                                     <%= locals.errors.lastName.msg %>
@@ -82,7 +87,7 @@
 
                                     <input type="email" id="email" name="email" placeholder="Correo electronico"
                                         value="<%= locals.bodyData ? bodyData.email : null %>">
-
+                                        <p id="error-email"></p>
                                     <% if (locals.errors && locals.errors.email) { %>
                                         <p style="color: red;">
                                             <%= locals.errors.email.msg %>
@@ -93,7 +98,7 @@
 
                                             <input type="tel" name="phone" id="phone" placeholder="Telefono"
                                                 value="<%= locals.bodyData ? bodyData.phone : null %>">
-
+                                                <p id="error-phone"></p>
                                             <% if (locals.errors && locals.errors.phone) { %>
                                                 <p style="color: red;">
                                                     <%= locals.errors.phone.msg %>
@@ -102,7 +107,8 @@
 
 
                                                     <div>
-                                                        <input type="file" name="image">
+                                                        <input id="image" type="file" name="image">
+                                                        <p id="error-image"></p>
                                                         <% if (locals.errors && locals.errors.image) { %>
                                                             <p style="color: red;">
                                                                 <%= locals.errors.image.msg %>
@@ -110,16 +116,17 @@
                                                             <% } %>
 
                                                     </div>
+                                                 
                                                     <input type="password" name="password" id="password"
                                                         placeholder="Ingresar contraseña">
-
+                                                        <span><input type="checkbox" id="ver-pw"></span>
+                                                        <p id="error-password"></p>
                                                     <% if (locals.errors && locals.errors.password) { %>
                                                         <p style="color: red;">
                                                             <%= locals.errors.password.msg %>
                                                         </p>
                                                         <% } %>
-
-
+                                                    
 
                                                             <div class="form__checkbox-container">
                                                                 <input type="checkbox" id="opcion1" name="opcion1"
@@ -129,6 +136,7 @@
                                                                     Términos
                                                                     de Uso de Blamsh.
                                                                 </label>
+                                                                <p id="error-checkbox"></p>
                                                                 <% if (locals.errors && locals.errors.opcion1) { %>
                                                                     <p style="color: red;">
                                                                         <%= locals.errors.opcion1.msg %>
@@ -157,6 +165,7 @@
         <%-include ('./partials/footer')%>
     </footer>
     <script src="js/catalog.js"></script>
+    <script src="js/validator.js"></script>
 </body>
 
 

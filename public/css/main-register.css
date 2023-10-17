@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 
+#error-firstName, #error-lastName, #error-email, #error-phone, #error-image, #error-password, #error-checkbox {
+    color: #900C3F !important;
+}
+
+span #ver-pw {
+    display: flex;
+    justify-content: left;
+}
+
 style {
     display: inline;
 }       

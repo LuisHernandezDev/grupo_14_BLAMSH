@@ -130,7 +130,6 @@ const userController = {
     },
 
     updateProfile: async (req, res) => {
-        // Para actualizar la contraseña, se debe hacer una ruta aparte solo para la contraseña.
 
         const resultUserProfileValidation = validationResult(req);
 
@@ -144,10 +143,14 @@ const userController = {
         
         try {
 
+            // const hashPassword = bcrypt.hashSync(req.body.password, 10);
+
             const updatedUser = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 phone: req.body.phone,
+                rol_id: req.body.rol_id,
+                // password: hashPassword,
                 image: req.file.filename
 
             };
