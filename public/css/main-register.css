@@ -10,6 +10,24 @@ span #ver-pw {
     justify-content: left;
 }
 
+
+.join-eyes-pw {
+    display: flex;
+    width: 100%;
+    position: relative; /*Permite a los elementos dentro de él posicionarse de manera relativa con respecto a él*/
+}
+
+
+.join-eyes-pw i.fa-regular {
+    position: absolute; /*Posiciona el ícono absolutamente dentro del contenedor*/
+    top: 27%; /* Para que quede al medio del input*/
+    right: 10px; /* Ajusta la posición del ícono a la derecha */
+    cursor: pointer;
+    /* transform: translateY(-50%); */
+}
+
+
+
 style {
     display: inline;
 }       
@@ -36,7 +54,7 @@ form input{
         background-size: 400px 950px;
         align-items: center;
         flex-direction: column;
-        height: 900px;
+        height: 1500px;
         color: rgb(40, 38, 32);
        
     }
@@ -180,7 +198,7 @@ form input{
     }
     .main__section-register{
         width:50%;
-        height: auto;
+        height: 100%;
         flex-wrap: wrap; 
        flex-direction: column;
         padding-top:0px;  

@@ -2,6 +2,24 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
 
     const formulario = document.querySelector('#register-form');
 
+    const inputPassword = document.querySelector('#password');
+    const eyes = document.querySelector('#eye-open-close');
+    let checkeado = false;
+
+    eyes.addEventListener('click', e => {
+        checkeado = !checkeado;
+        console.log('ckeck click ' + checkeado);
+        if (checkeado) {
+            inputPassword.type = 'text';
+            eyes.classList.remove('fa-eye-slash'); // Icono de FontAwesome que representa un ojo cerrado. Oculta la contraseña
+            eyes.classList.add('fa-eye'); // Icono de FontAwesome que representa un ojo abierto. Muestra la contraseña
+        } else {
+            inputPassword.type = 'password';
+            eyes.classList.remove('fa-eye'); // Muestra la contraseña
+            eyes.classList.add('fa-eye-slash'); // Oculta la contraseña
+        }
+    })
+
     formulario.addEventListener('submit', (e) => {
 
         const errors = [];
@@ -87,19 +105,6 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
             errorPassword.textContent = "";
         }
 
-
-        // const checkbox = document.querySelector('#ver-pw');
-        // let checkeado = false;
-
-        // checkbox.addEventListener('click', e => {
-        //     checkeado = !checkeado;
-        //     console.log('ckeck click ' + checkeado);
-        //     if (checkeado) {
-        //         inputPassword.type = 'text'; 
-        //     } else {
-        //         inputPassword.type = 'password';
-        //     }
-        // })
 
 
         const inputOpcion1 = document.querySelector('#opcion1');

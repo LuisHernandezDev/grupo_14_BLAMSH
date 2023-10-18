@@ -167,7 +167,7 @@ const productController = {
                 errors: resultEditProductValidation.mapped(), // mapped envia los errores a la vista como un objeto
                 bodyData: req.body, // Lo usaremos para capturar en el value de la vista, la información que ingresó el usuario y mantenerla.
                 categorys: await db.Category.findAll(),
-                product: await db.Product.findAll(),
+                product: await db.Product.findByPk(req.params.id),
                 sizes: await db.Size.findAll() // Hay que pasar de nuevo size en caso de haber errores para que las tallas sigan apareciendo en la vista
             });
             return
