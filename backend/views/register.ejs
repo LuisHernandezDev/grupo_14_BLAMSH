@@ -119,12 +119,12 @@
                                                     <input type="password" name="password" id="password"
                                                         placeholder="Ingresar contraseña">
                                                         <i class="fa-regular fa-eye-slash" id="eye-open-close"></i>
-                                                        <% if (locals.errors && locals.errors.password) { %>
-                                                            <p style="color: red;">
-                                                                <%= locals.errors.password.msg %>
-                                                            </p>
-                                                            <% } %>
-                                                        </div>
+                                                    </div>
+                                                    <% if (locals.errors && locals.errors.password) { %>
+                                                        <p style="color: red;">
+                                                            <%= locals.errors.password.msg %>
+                                                        </p>
+                                                        <% } %>
                                                         <p id="error-password"></p>
                                                     
 
@@ -136,12 +136,12 @@
                                                                     Términos
                                                                     de Uso de Blamsh.
                                                                 </label>
+                                                            </div>
                                                                 <% if (locals.errors && locals.errors.opcion1) { %>
                                                                     <p style="color: red;">
                                                                         <%= locals.errors.opcion1.msg %>
                                                                     </p>
                                                                     <% } %>
-                                                                </div>
                                                                 <p id="error-checkbox"></p>
 
                                                             <div class="form__checkbox-container">
@@ -165,7 +165,7 @@
         <%-include ('./partials/footer')%>
     </footer>
     <script src="js/catalog.js"></script>
-    <script src="js/validator.js"></script>
+    <script src="js/registerValidator.js"></script>
 </body>
 
 
