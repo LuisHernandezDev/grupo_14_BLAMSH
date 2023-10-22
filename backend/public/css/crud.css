@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+#error-name-product, #error-description-product, #error-category-product, #error-size-product, #error-price-product, #error-image-product {
+    color: #900C3F !important;
+}
+
 section {
     display: flex;
     flex-wrap: wrap;

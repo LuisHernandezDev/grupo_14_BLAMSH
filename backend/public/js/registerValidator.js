@@ -3,20 +3,20 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
     const formulario = document.querySelector('#register-form');
 
     const inputPassword = document.querySelector('#password');
-    const eyes = document.querySelector('#eye-open-close');
+    const eye = document.querySelector('#eye-open-close');
     let checkeado = false;
 
-    eyes.addEventListener('click', e => {
+    eye.addEventListener('click', e => {
         checkeado = !checkeado;
         console.log('ckeck click ' + checkeado);
         if (checkeado) {
             inputPassword.type = 'text';
-            eyes.classList.remove('fa-eye-slash'); // Icono de FontAwesome que representa un ojo cerrado. Oculta la contraseña
-            eyes.classList.add('fa-eye'); // Icono de FontAwesome que representa un ojo abierto. Muestra la contraseña
+            eye.classList.remove('fa-eye-slash'); // Icono de FontAwesome que representa un ojo cerrado. Oculta la contraseña
+            eye.classList.add('fa-eye'); // Icono de FontAwesome que representa un ojo abierto. Muestra la contraseña
         } else {
             inputPassword.type = 'password';
-            eyes.classList.remove('fa-eye'); // Muestra la contraseña
-            eyes.classList.add('fa-eye-slash'); // Oculta la contraseña
+            eye.classList.remove('fa-eye'); // Muestra la contraseña
+            eye.classList.add('fa-eye-slash'); // Oculta la contraseña
         }
     })
 
@@ -26,14 +26,20 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
 
         const inputFirstName = document.querySelector('#firstName');
         const errorFirstName = document.querySelector('#error-firstName')
+        const regExpName = /^[A-Za-z]+$/;
 
         if (inputFirstName.value == "") {
             errors.push("Debes escribir un nombre")
             errorFirstName.textContent = "Debes escribir un nombre"
-        } else if (inputFirstName.value.length < 3) {
+        } else if (inputFirstName.value.length < 2) {
             errors.push("El nombre debe tener al menos 2 caracteres")
             errorFirstName.textContent = "El nombre debe tener al menos 2 caracteres"
-        } else {
+        }
+        else if (!regExpName.test(inputFirstName.value)) {
+            errors.push('El campo nombre debe tener solo letras')
+            errorFirstName.textContent = 'El campo nombre debe tener solo letras';
+        }
+        else {
             errorFirstName.textContent = ""; // Limpiamos el error para que desaparezca si se escribe lo correcto en el campo
         }
 
@@ -57,7 +63,7 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
         if (inputEmail.value == "") {
             errors.push("Debes escribir un correo electrónico")
             errorEmail.textContent = "Debes escribir un correo electrónico"
-        } else if (!validEmail.test(inputEmail.value)) { // Sí el email no coincide con el formato de expresión regular
+        } else if (!validEmail.test(inputEmail.value)) { // Sí el email no coincide con el formato de expresión regular (.test devuelve true o false)
             errors.push("Debes ingresar un formato de correo válido")
             errorEmail.textContent = "Debes ingresar un formato de correo válido"
         } else {
@@ -81,7 +87,7 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
         if (inputImage.value == "") {
             errors.push("Debes subir una imagen")
             errorImage.textContent = "Debes subir una imagen"
-        } else if (!allowedExt.exec(inputImage.value)) {
+        } else if (!allowedExt.exec(inputImage.value)) { // .exec es un metodo de Reg.Exp que busca una coincidencia, si no encuentra devuelve null.
             errors.push("Las extensiones de archivos permitidas son .jpg, .jpeg, .png, .gif")
             errorImage.textContent = "Las extensiones de archivos permitidas son .jpg, .jpeg, .png, .gif"
         } else {
@@ -104,8 +110,6 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
         } else {
             errorPassword.textContent = "";
         }
-
-
 
         const inputOpcion1 = document.querySelector('#opcion1');
         const errorCheckbox = document.querySelector('#error-checkbox')
