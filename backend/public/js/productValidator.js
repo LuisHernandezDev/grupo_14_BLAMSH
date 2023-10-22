@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    const formulario = document.querySelector('#create-form');
+    const formulario = document.querySelector('#form');
 
     formulario.addEventListener('submit', (e) => {
        
@@ -26,7 +26,6 @@ window.addEventListener('load', () => {
         if (inputDescriptionProduct.value == "") {
             errors.push('Debes ingresar la descripción del producto!!!');
             errorDescriptionProduct.textContent = 'Debes ingresar la descripción del producto!!!';
-            console.log(inputDescriptionProduct);
         } else if (inputDescriptionProduct.value.length < 20) {
             errors.push('La descripción debe tener al menos 20 caracteres!!!');
             errorDescriptionProduct.textContent = 'La descripción debe tener al menos 20 caracteres!!!';

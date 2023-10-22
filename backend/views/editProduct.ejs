@@ -30,20 +30,21 @@
             <a href="/products/<%= product.id %>/detail">
                 <button class="back"><i class="fa-solid fa-arrow-left"></i></button>
             </a>
-            <form action="/products/<%= product.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
+            <form id="form" action="/products/<%= product.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
                 <h2 class="title">Edición de producto</h2>
 
                 <input class="items" type="text" name="name" id="name"
                 value="<%= locals.bodyData ? locals.bodyData.name : product.name %>" placeholder="Nombre de producto">
+                <p id="error-name-product"></p>
                   <% if (locals.errors && locals.errors.name) { %>
                     <div class="msg-error" style="color: red;">
                    <%= errors.name.msg %>
                    </div>
                   <% } %>              
 
-                    <input class="items-desc" type="text" name="description"
-                    value="<%= locals.bodyData ? locals.bodyData.description : product.description %>"
-                    id="description" placeholder="Descripción de producto">
+                    <input class="items-desc" type="text" name="description" id="description"
+                    value="<%= locals.bodyData ? locals.bodyData.description : product.description %>" placeholder="Descripción de producto">
+                    <p id="error-description-product"></p>
                     <% if (locals.errors && locals.errors.description) { %>
                         <div class="msg-error" style="color: red;">
                        <%= errors.description.msg %>
@@ -52,20 +53,20 @@
                 
                 <div>
                     <label for="">Seleccione la categoría</label><br>
-                    <select name="category_id">
+                    <select id="category" name="category_id">
                         <% categorys.forEach(category=> { %>
                             <option value="<%= category.id %>" <% if (category.id==product.category_id) { %>selected<% }%>>
                         <%= category.category %>
                             </option>
                         <% }) %>
                     </select>
-                    
+                    <p id="error-category-product"></p>
                 </div>
                 <br>
 
                 <div>
                     <label for="">Seleccione una talla</label><br>
-                    <select name="id_size" multiple>
+                    <select id="size" name="id_size" multiple>
                         <% if (Array.isArray(product.sizes)) { %>
                           <% sizes.forEach(size => { %>
                             <option value="<%= size.id %>" <%= product.sizes.some(productSize => productSize.id === size.id) ? 'selected' : '' %>>
@@ -78,12 +79,12 @@
                           <% }); %>
                         <% } %>
                       </select>
-                      
+                      <p id="error-size-product"></p>
                 </div><br>
 
-                <input class="items" type="number" name="price"
-                value="<%= locals.bodyData ? locals.bodyData.price : product.price %>" id="precio"
-                placeholder="Precio de producto">
+                <input class="items" type="number" name="price" id="price"
+                value="<%= locals.bodyData ? locals.bodyData.price : product.price %>" placeholder="Precio de producto">
+                <p id="error-price-product"></p>
                 <% if (locals.errors && locals.errors.price) { %>
                     <div class="msg-error" style="color: red;">
                    <%= errors.price.msg %>
@@ -91,13 +92,14 @@
                   <% } %> 
 
                 <label for="">Seleccione una imagen</label><br>
-                <input class="importar" type="file" multiple name="image" id="importar" value="Importar imagenes">
+                <input class="importar" type="file" name="image" id="image" value="Importar imagenes" multiple>
+                <p id="error-image-product"></p>
                 <% if (locals.errors && locals.errors.image) { %>
                     <div class="msg-error" style="color: red;">
                         <%= errors.image.msg %>
                     </div>
                     <% } %>
-                    <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
+                    <input type="submit" class="button" name="publicar" id="publicar" value="Publicar">
             </form>
         </section>
         <section class="product-image">
@@ -113,6 +115,8 @@
     <footer class='footer-layout'>
         <%-include ('./partials/footer')%>
     </footer>
+
+    <script src="js/productValidator.js"></script>
 
 </body>
 
