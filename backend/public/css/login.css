@@ -1,13 +1,5 @@
 main {}
 
-/* .background-register {
-
-    background-color: white;
-    padding: 6px;
-    color: black;
-    font-size: 12px;
-} */
-
 
 body {
     margin: 0;
@@ -15,24 +7,41 @@ body {
 }
 
 .enviar {
-    display: block;
-    justify-items: right;
+    display: flex;
+    justify-items: end;
 }
 
 p {
     display: block;
-    text-align: end;
+    text-align: center;
+}
+
+.login-form p {
+    text-emphasis: center;
+
+}
+
+.errors {
+    color: red
+}
+
+.tipocheckbox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+
+
 }
 
 
 .login-form {
-    width: 80%;
+    width: 60%;
     margin: auto;
     padding: 0;
     border-radius: 5px;
 }
-
-
 
 
 
@@ -47,7 +56,7 @@ label {
 }
 
 input {
-    width: 90%;
+    width: 70%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -67,7 +76,8 @@ button {
 }
 
 .enviar {
-    display: inline-block;
+    display: flex;
+    justify-content: right;
 
 
 }
@@ -88,5 +98,6 @@ button:hover {
     button {
         font-size: 100%;
         float: right;
+
     }
 }
