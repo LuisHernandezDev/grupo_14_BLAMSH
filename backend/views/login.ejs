@@ -24,15 +24,15 @@
       <p style="color: red;">
         <%= error %>
       </p>
-      <form class="login-form" action="/login" method="post">
+      <form id='formLogin'class="login-form" action="/login" method="post">
         <label for="email">Correo electronico </label>
         <span></span>
         <input type="email" name="email" id="email" placeholder="Correo@Correo.com">
-        <p class="errors"></p>
+        <p id="error" class="errors"></p>
         <label for="password">Contraseña</label>
         <span></span>
         <input type="password" name="password" id="password">
-        <p class="errors"></p>
+        <p id="error" class="errors"></p>
         <br>
         <div>
           <label class="input__checkbox">
