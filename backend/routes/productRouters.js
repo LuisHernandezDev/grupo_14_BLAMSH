@@ -53,8 +53,8 @@ const productValidations = [
     body('price')
     .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
     .notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0'),
-    body('category').notEmpty().withMessage('Debes escoger la categoría del producto'),
-    body('size').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
+    body('category_id').notEmpty().withMessage('Debes escoger la categoría del producto'),
+    body('id_size').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
     body('image').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
@@ -100,14 +100,14 @@ router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser
 
 // @POST - /products // A donde llegan los productos creados
 // router.post('/products', [upload.array('image', 2), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
-router.post('/products', upload.single('image'), productValidations, createProductMiddleware, productControllersdb.postProduct); 
+router.post('/products', [upload.single('image'), productValidations], createProductMiddleware, productControllersdb.postProduct); 
 
 // @GET - /products/:id/edit
 // router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
 router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getEdit);
 
 // router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
-router.put('/products/:id/edit', upload.single('image'), productValidations, productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
+router.put('/products/:id/edit', [upload.single('image'), productValidations], productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
 
 
 // @DELETE - /products/:id/delete

@@ -72,6 +72,34 @@ const userValidations = [
 ]
 
 
+const userProfileValidations = [
+    body('firstName')
+    .notEmpty().withMessage('Debes escribir un nombre').bail()
+    .isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres').bail()
+    .isAlpha().withMessage('El campo nombre debe contener solo letras'),
+    body('lastName')
+    .notEmpty().withMessage('Debes escribir un apellido').bail()
+    .isLength({ min: 2 }).withMessage('El apellido debe tener al menos 2 caracteres').bail()
+    .isAlpha().withMessage('El campo apellido debe contener solo letras'),
+    body('phone')
+    .notEmpty().withMessage('Debes escribir un número de teléfono'),
+    body('image')
+    .custom((value, {req}) =>{
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+        
+        if (!file) {
+            throw new Error('Debes subir una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions. includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivos permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        return true;
+    })
+]
+
 // solo los principios de las routas y 
 //pasar como segunda variable el maincontroller. ("el nombre de la funcion ")
 
@@ -79,7 +107,7 @@ const userValidations = [
 router.get('/register', authMiddleware.guestUser, userDbController.register);
 
 // router.post('/register', upload.single('image'), userValidations, userController.postRegister);
-router.post('/register', upload.single('image'), userValidations, userDbController.postRegister);
+router.post('/register', [upload.single('image'), userValidations], userDbController.postRegister);
 
 
 // router.get('/login', authMiddleware.guestUser, userController.login);
@@ -94,7 +122,7 @@ router.get('/profile', authMiddleware.authUser, userDbController.profile);
 
 router.get('/profile/edit', authMiddleware.authUser, userDbController.editProfile);
 
-router.put('/profile/edit', upload.single('image'), userValidations, authMiddleware.authUser, userDbController.updateProfile);
+router.put('/profile/edit', [upload.single('image'), userProfileValidations], authMiddleware.authUser, userDbController.updateProfile);
 
 router.get('/logout', userDbController.logout);
 
