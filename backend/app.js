@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/mainRouters');
 const userRouter = require('./routes/userRouters');
 const productRouter = require('./routes/productRouters');
+const apiUsersRouter = require('./routes/api/apiUsersRouters');
 
 /* const logMiddleware = require('./middlewares/logMiddleware');*/
 const authMiddleware = require('./middlewares/authMiddleware');
@@ -76,6 +77,7 @@ app.use(methodOverride('_method'));
 app.use('/', mainRouter);
 app.use('/', userRouter);
 app.use('/', productRouter);
+app.use('/', apiUsersRouter);
 
 app.use((req, res) => {
     res.render('error-404');
@@ -89,8 +91,8 @@ JSON - Es el archivo donde guardamos data para que se mantenga.
 */
 
 
-app.listen(process.env.PORT || 3001, () => {
-    console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3001/');
+app.listen(process.env.PORT || 3011, () => {
+    console.log('Servidor escuchando en el puerto' + ' ' + process.env.PORT + ' http://localhost:3011/');
 });
 
 
