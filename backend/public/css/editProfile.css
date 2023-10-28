@@ -22,8 +22,10 @@ main {
     cursor: pointer;
     font-size: 24px;
     color: #007bff;
-    margin-bottom: 0 auto;
+    margin-top: 10%;
 }
+
+
 
 
 .container-edit-profile {
@@ -82,10 +84,11 @@ button input[type="submit"] {
 
     .form-edit {
         margin-left: 40%;
-        margin-bottom: 400px;
+        margin-bottom: 1000px;
+        
 
     }
 
 
-
+  
 }
