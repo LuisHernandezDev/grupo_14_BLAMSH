@@ -12,6 +12,7 @@ const mainRouter = require('./routes/mainRouters');
 const userRouter = require('./routes/userRouters');
 const productRouter = require('./routes/productRouters');
 const apiUsersRouter = require('./routes/api/apiUsersRouters');
+const apiProductsRouter = require('./routes/api/apiProductsRouters');
 
 /* const logMiddleware = require('./middlewares/logMiddleware');*/
 const authMiddleware = require('./middlewares/authMiddleware');
@@ -78,6 +79,7 @@ app.use('/', mainRouter);
 app.use('/', userRouter);
 app.use('/', productRouter);
 app.use('/', apiUsersRouter);
+app.use('/', apiProductsRouter);
 
 app.use((req, res) => {
     res.render('error-404');

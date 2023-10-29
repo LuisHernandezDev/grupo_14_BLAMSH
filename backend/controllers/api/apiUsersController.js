@@ -4,27 +4,36 @@ const { use } = require('../../routes/mainRouters')
 
 
 
-const apiUserControllers = {
-    
+const apiUserController = {
+
     getListUser: async (req, res) => {
-        
+
+
         try {
             const users = await db.User.findAll({
-                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation'] }
-            })
+                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation', 'image'] }
+            });
+
+            let statusCode = 200;
+            statusCode = users.length > 0 ? statusCode : 204;
+
+            const urlUserDetail = users.map(user => ({
+                ...user.dataValues, // dataValues es una propiedad de sequelize que contiene el objeto con todos los detalles de las columnas de una BD. Copiamos todos los atributos del usuario, es decir, todos los campos.
+                userDetail: `${process.env.BASE_URL}/api/users/${user.id}/detail` // URL para obtener el detalle del usuario
+            }));
 
             const response = {
-                users: users,
+                users: urlUserDetail,
                 meta: {
-                    status: 201,
+                    status: statusCode,
                     count: users.length,
                     url: req.originalUrl
                 }
             }
-            res.json(response)
+            res.status(statusCode).json(response)
 
         } catch (error) {
-            console.error(error)
+            res.status(500).json({ error: 'Error 500' })
         }
     },
 
@@ -36,17 +45,14 @@ const apiUserControllers = {
                 attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation'] }
             })
 
-            const baseUrl = 'http://localhost:3011/images/users/';
+            user.image = process.env.URL_IMAGE_USERS + user.image;
 
-            user.image = baseUrl + user.image;
-            
             const response = {
                 user: user,
                 meta: {
                     status: 201,
                     count: user.length,
                     url: req.originalUrl
-
                 }
             }
 
@@ -64,15 +70,21 @@ const apiUserControllers = {
         try {
 
             const searchByName = await db.User.findAll({
-                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation'] },
+                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation', 'image'] },
                 where: {
                     firstName: {
                         [Op.like]: `%${req.query.firstName}%`
                     }
                 }
             })
+
+            const urlUserDetail = searchByName.map(user => ({
+                ...user.dataValues, // dataValues es una propiedad de sequelize que contiene el objeto con todos los detalles de las columnas de una BD. Copiamos todos los atributos del usuario, es decir, todos los campos.
+                userDetail: `${process.env.BASE_URL}/api/users/${user.id}/detail` // URL para obtener el detalle del usuario
+            }));
+
             const response = {
-                data: searchByName,
+                data: urlUserDetail,
                 meta: {
                     status: 201,
                     count: searchByName.length,
@@ -92,4 +104,4 @@ const apiUserControllers = {
 
 }
 
-module.exports = apiUserControllers;
+module.exports = apiUserController;

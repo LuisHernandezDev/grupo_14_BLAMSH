@@ -232,7 +232,8 @@ const productController = {
             await db.ProductSize.destroy({
                 where: {
                     id_product: productId
-                }
+                },
+                // force: true
             });
 
             product.destroy();
