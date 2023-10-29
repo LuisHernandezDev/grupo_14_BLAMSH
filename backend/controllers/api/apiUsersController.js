@@ -10,8 +10,16 @@ const apiUserController = {
 
 
         try {
+
+            const page = Number(req.query.page) || 1;
+            const limit = 10;
+            const offset = (page -1) * limit;
+
+
             const users = await db.User.findAll({
-                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation', 'image'] }
+                attributes: { exclude: ['password', 'identification', 'rol_id', 'phone', 'date_creation', 'image'] },
+                limit: limit,
+                offset: offset
             });
 
             let statusCode = 200;
@@ -22,12 +30,26 @@ const apiUserController = {
                 userDetail: `${process.env.BASE_URL}/api/users/${user.id}/detail` // URL para obtener el detalle del usuario
             }));
 
+            // 1.- Primero buscamos los registros y los contamos.
+            // 2.- Obtenemos el total de los registros
+            // 3.- Dividimos el total de los registros entre el limit y lo redondeamos hacia arriba
+
+            const quantity = await db.User.findAndCountAll(); // Buscar y contar todos. Obtenemos la cantidad total de registros en la tabla de productos
+
+            const totalQuantity = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
+            console.log(quantity.count);
+
+            const totalPages = Math.ceil(totalQuantity / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
+
             const response = {
+                totalQuantity: totalQuantity,
+                quantityForPage: users.length,
                 users: urlUserDetail,
                 meta: {
                     status: statusCode,
-                    count: users.length,
-                    url: req.originalUrl
+                    url: req.originalUrl,
+                    nextPage: page < totalPages ? `${process.env.BASE_URL}/api/users?page=${page + 1}` : null,
+                    previousPage: page > 1 ? `${process.env.BASE_URL}/api/users?page=${page - 1}` : null,
                 }
             }
             res.status(statusCode).json(response)
