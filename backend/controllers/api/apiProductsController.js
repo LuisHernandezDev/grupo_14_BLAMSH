@@ -8,9 +8,15 @@ const apiProductsController = {
 
         try {
 
+            const page = Number(req.query.page) || 1; // Obtenemos el número de página por query y lo convertimos a number
+            const limit = 10; // Número de registros que se van a mostrar por página
+            const offset = (page - 1) * limit; // Formula para calcular el número de registros que se van a saltar. 
+
             const products = await db.Product.findAll({
                 attributes: { exclude: ['category_id', 'image', 'price'] },
-                include: ['category']
+                include: ['category'],
+                limit: limit,
+                offset: offset
             });
 
             let statusCode = 200;
@@ -28,13 +34,25 @@ const apiProductsController = {
                 productDetail: `${process.env.BASE_URL}/api/products/${product.id}/detail` // URL para obtener el detalle del usuario
             }));
 
+            const quantity = await db.Product.findAndCountAll(); // Buscar y contar todos. Obtenemos la cantidad total de registros en la tabla de productos
+
+            const totalQuantity = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
+            console.log(quantity.count);
+
+            const totalPages = Math.ceil(totalQuantity / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
+
             const response = {
-                count: products.length,
-                countByCategory: countByCategory,
+                totalQuantity: totalQuantity,
+                quantityForPage: products.length,
+                countByCategory: {
+                    countByCategory
+                },
                 products: urlUserDetail,
                 meta: {
                     status: statusCode,
                     url: req.originalUrl,
+                    nextPage: page < totalPages ? `${process.env.BASE_URL}/api/products?page=${page + 1}` : null,
+                    previousPage: page > 1 ? `${process.env.BASE_URL}/api/products?page=${page - 1}` : null,
                 }
             }
 
