@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const { Op } = require('sequelize')
 
 
 const apiProductsController = {
@@ -56,12 +57,48 @@ const apiProductsController = {
             product.image = process.env.URL_IMAGE_PRODUCTS + product.image;
 
             res.json(product)
-            
+
         } catch (error) {
             res.status(500).json({ error: 'Error 500' })
         }
 
+    },
 
+    getDetailByName: async (req, res) => {
+
+        try {
+            const searchByName = await db.Product.findAll({
+                where: {
+                    name: {
+                        [Op.like]: `%${req.query.name}%`
+                    }
+                }
+            });
+
+            let statusCode = 200;
+            statusCode = searchByName.length > 0 ? statusCode : 204;
+
+            const urlProductDetail = searchByName.map(product => ({
+                ...product.dataValues, // dataValues es una propiedad de sequelize que contiene el objeto con todos los detalles de las columnas de una BD. Copiamos todos los atributos del usuario, es decir, todos los campos.
+                productDetail: `${process.env.BASE_URL}/api/products/${product.id}/detail` // URL para obtener el detalle del usuario
+            }));
+            console.log(urlProductDetail);
+
+            const response = {
+                data: urlProductDetail,
+                meta: {
+                    status: statusCode,
+                    count: searchByName.length,
+                    url: req.originalUrl,
+                    query: req.query
+
+                }
+            }
+            res.status(statusCode).json(response)
+
+        } catch (error) {
+            res.status(500).json({ error: 'Error 500' })
+        }
     }
 
 }
