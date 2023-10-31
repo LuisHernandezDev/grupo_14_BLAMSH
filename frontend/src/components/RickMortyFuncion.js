@@ -56,7 +56,7 @@ function RickMortyFuncion() {
         <div>
             <h1>Soy el componente Rick and Morty Función</h1>
 
-            <ul>{personajes.length == 0 && <p>Cargando...</p>}
+            <ul>{personajes.length === 0 && <p>Cargando...</p>}
                 {personajes.map((personaje, i) => {
                     return (
                         <li key={i}>
