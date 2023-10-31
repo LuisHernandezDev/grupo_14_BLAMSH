@@ -26,9 +26,11 @@ const apiUserController = {
             statusCode = users.length > 0 ? statusCode : 204;
 
             const urlUserDetail = users.map(user => ({
-                ...user.dataValues, // dataValues es una propiedad de sequelize que contiene el objeto con todos los detalles de las columnas de una BD. Copiamos todos los atributos del usuario, es decir, todos los campos.
+                ...user.dataValues, // dataValues es una propiedad de sequelize que contiene el objeto con todos los detalles de las columnas de una BD, es decir, trae un objeto por cada usuario. Copiamos todos los atributos del usuario, es decir, todos los campos.
                 userDetail: `${process.env.BASE_URL}/api/users/${user.id}/detail` // URL para obtener el detalle del usuario
             }));
+
+            console.log(users); // Acá fue donde vimos la propiedad dataValues
 
             // 1.- Primero buscamos los registros y los contamos.
             // 2.- Obtenemos el total de los registros
