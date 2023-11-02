@@ -1,5 +1,17 @@
 .App {
   text-align: center;
+
+}
+
+.in-line {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+
+}
+
+.in-line a {
+  margin-right: 15px;
 }
 
 .home {
@@ -38,6 +50,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

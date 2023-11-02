@@ -72,6 +72,35 @@ const productValidations = [
 
 ];
 
+const editProductValidations = [
+    body('name')
+    .notEmpty().withMessage('Debes ingresar el nombre del producto').bail()
+    .isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
+    body('description')
+    .notEmpty().withMessage('Debes ingresar la descripción del producto').bail()
+    .isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
+    body('price')
+    .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
+    .notEmpty().isFloat({ min: 0.01 }).withMessage('El precio debe ser mayor a 0'),
+    body('category_id').notEmpty().withMessage('Debes escoger la categoría del producto'),
+    body('id_size').notEmpty().withMessage('Debes seleccionar al menos una talla'), // Preguntar si se puede hacer un input select.
+    body('image').custom((value, {req}) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+        
+        if (!file) {
+            throw new Error('Debes agregar una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions. includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivos permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        return true;
+    })
+
+];
+
 
 
 //Linkeamos el archivo del router con el del controllers
@@ -100,14 +129,14 @@ router.get('/products/create', authMiddleware.authUser, authMiddleware.guestUser
 
 // @POST - /products // A donde llegan los productos creados
 // router.post('/products', [upload.array('image', 2), productValidations, createProductMiddleware], productControllers.postProduct); // Acá le indicamos a multer que la imagen esta subida en el body.name ya que el name del input debe coincidir con lo pasado como parámetro del single.
-router.post('/products', upload.single('image'), productValidations, createProductMiddleware, productControllersdb.postProduct); 
+router.post('/products', [upload.single('image'), productValidations], createProductMiddleware, productControllersdb.postProduct); 
 
 // @GET - /products/:id/edit
 // router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllers.getEdit);
 router.get('/products/:id/edit', authMiddleware.authUser, authMiddleware.guestUser, productControllersdb.getEdit);
 
 // router.put('/products/:id/edit', productControllers.updateProduct); // Acá también se puede utilizar la variable upload
-router.put('/products/:id/edit', upload.single('image'), productValidations, productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
+router.put('/products/:id/edit', [upload.single('image'), editProductValidations], productControllersdb.updateProduct); // Acá también se puede utilizar la variable upload
 
 
 // @DELETE - /products/:id/delete
