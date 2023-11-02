@@ -4,11 +4,15 @@ function FrutasVersionFuncion() {
     const [listadoDeFrutas, setListadoDeFrutas] = useState(["Manzana", "Naranja", "Pera"]);
 
     const agregarFruta = event => {
-        event.preventDefault();
+        event.preventDefault(); // Usamos preventDefault para que el formulario no refrezque la pantalla y no se envíe el formulario.
         let nuevaFruta = event.target.nuevaFruta.value;
-        setListadoDeFrutas([
-            ...listadoDeFrutas, nuevaFruta
-        ]);
+
+        if (nuevaFruta.length > 0) { // Si el campo es mayor a 0 entonces sí agrega la fruta, es decir, si no esta vacío.
+            setListadoDeFrutas([
+                ...listadoDeFrutas,
+                nuevaFruta
+            ]);
+        }
         event.target.nuevaFruta.value = "";
     }
 

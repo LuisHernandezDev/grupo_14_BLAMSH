@@ -1,0 +1,42 @@
+.r-y-m {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px; /* Espacio entre elementos */
+    transition: transform 0.5s;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+
+h3,
+h4 {
+    margin: 0 auto;
+}
+
+img {
+    margin-top: 30px;
+}
+
+
+li {
+    background-color: rgb(171, 172, 173);
+    justify-content: center;
+    text-align: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+li:hover {
+    background-color: rgb(76, 76, 78);
+    transform: scale(1.1);
+    color: white;
+}
