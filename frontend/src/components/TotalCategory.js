@@ -13,11 +13,11 @@ function TotalCategory() {
             const categoryProperties = Object.keys(countByCategory)
             const total = categoryProperties.length
             setCategories(total)
-            console.log(data);            
+            console.log(data);
         }
         categoriesData();
     }, []);
-
+    
     return (
         <div>
             <h1>Total de categorías</h1>

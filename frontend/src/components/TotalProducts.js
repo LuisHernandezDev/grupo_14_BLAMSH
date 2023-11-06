@@ -10,7 +10,7 @@ function TotalProducts() {
             try {
                 const response = await fetch("http://localhost:3011/api/products")
                 const data = await response.json()
-                setProducts(data.totalQuantity);
+                setProducts(data.count);
                 console.log(data);
             } catch (error) {
                 console.log(error);

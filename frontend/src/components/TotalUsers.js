@@ -10,8 +10,8 @@ function TotalUsers() {
             try {
                 const response = await fetch("http://localhost:3011/api/users");
                 const data = await response.json()
-                setUsers(data.totalQuantity)
-                console.log(data.totalQuantity);
+                setUsers(data.count)
+                console.log(data.count);
             } catch (error) {
                 console.log(error);
             }
