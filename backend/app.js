@@ -6,6 +6,7 @@ const path = require('path');
 const dotenv = require('dotenv').config();
 const session = require('express-session')
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 //require mainrouter 
 const mainRouter = require('./routes/mainRouters');
@@ -30,23 +31,23 @@ app.set('views', [
 
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
+app.use(cors({ origin: 'http://localhost:3001' }));
 
 app.use(session({ 
     secret: 'shhhhhh!!!',
     resave: false,
     saveUninitialized: true }))
-
-app.use(authMiddleware.checkIsloggedIn);
-app.use(authMiddleware.isAdmin);
-
-
-/* app.use(logMiddleware);*/
-
-// Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.use(cookieParser());
+    
+    app.use(authMiddleware.checkIsloggedIn);
+    app.use(authMiddleware.isAdmin);
+        
+    /* app.use(logMiddleware);*/
+    
+    // Le decimos a la aplicación que todo lo que llegue desde un formulario vía post, queremos capturarlo en objeto literal y a su vez convertirlo en JSON si se quiere. 
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
+    
+    app.use(cookieParser());
 
 app.use( async (req, res, next) => {
     if (req.cookies.email) { // Si hay un email guardado en cookies, mediante el modelo, buscamos los datos del usuario guardado en la cookie y lo guardamos en session

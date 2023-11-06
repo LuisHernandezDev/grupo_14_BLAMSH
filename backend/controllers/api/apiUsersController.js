@@ -38,13 +38,13 @@ const apiUserController = {
 
             const quantity = await db.User.findAndCountAll(); // Buscar y contar todos. Obtenemos la cantidad total de registros en la tabla de productos
 
-            const totalQuantity = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
+            const count = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
             console.log(quantity.count);
 
-            const totalPages = Math.ceil(totalQuantity / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
+            const totalPages = Math.ceil(count / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
 
             const response = {
-                totalQuantity: totalQuantity,
+                count: count,
                 quantityForPage: users.length,
                 users: urlUserDetail,
                 meta: {

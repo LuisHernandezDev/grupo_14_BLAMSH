@@ -13,7 +13,7 @@ const apiProductsController = {
             const offset = (page - 1) * limit; // Formula para calcular el número de registros que se van a saltar. 
 
             const products = await db.Product.findAll({
-                attributes: { exclude: ['category_id', 'image', 'price'] },
+                attributes: { exclude: ['category_id', 'image'] },
                 include: ['category'],
                 limit: limit,
                 offset: offset
@@ -24,9 +24,10 @@ const apiProductsController = {
 
             const countByCategory = {};
 
+            // Cuantos productos hay en cada categoría
             products.forEach(product => {
-                const categoryName = product.category.category;
-                countByCategory[categoryName] = (countByCategory[categoryName] || 0) + 1; // Se debe inicializar countByCategory[categoryName] en 0 antes de incrementarlo, de lo contrario dará null
+                const categoryName = product.category.category; // Accedemos al nombre de la categoria y la guardamos en una variable
+                countByCategory[categoryName] = (countByCategory[categoryName] || 0) + 1; // Actualizamos el objeto countByCategory para saber el número de productos por categoría. Validamos si existe un valor para dicha categoria. Se debe inicializar countByCategory[categoryName] en 0 antes de incrementarlo, de lo contrario dará null
             });
 
             const urlUserDetail = products.map(product => ({
@@ -36,13 +37,13 @@ const apiProductsController = {
 
             const quantity = await db.Product.findAndCountAll(); // Buscar y contar todos. Obtenemos la cantidad total de registros en la tabla de productos
 
-            const totalQuantity = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
+            const count = quantity.count; // count es una propiedad de findAndCountAll que devuelve el número total de registros que coinciden con la consulta
             console.log(quantity.count);
 
-            const totalPages = Math.ceil(totalQuantity / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
+            const totalPages = Math.ceil(count / limit); // Dividimos la cantidad total de registros por el número de registros que se van a mostrar por página... La función Math.ceil redondea hacia arriba. Asegura tener suficientes páginas para mostrar todos los registros.
 
             const response = {
-                totalQuantity: totalQuantity,
+                count: count,
                 quantityForPage: products.length,
                 countByCategory: {
                     countByCategory
