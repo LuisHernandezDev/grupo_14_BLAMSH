@@ -31,7 +31,7 @@ app.set('views', [
 
 // Usa los recursos estaticos de la carpeta public
 app.use(express.static('public'));
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors());
 
 app.use(session({ 
     secret: 'shhhhhh!!!',

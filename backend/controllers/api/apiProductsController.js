@@ -118,7 +118,26 @@ const apiProductsController = {
         } catch (error) {
             res.status(500).json({ error: 'Error 500' })
         }
+    },
+
+    getLastProduct: async (req, res) => {
+    
+        try {
+            const lastProduct = await db.Product.findAll({
+                limit: 1,
+                order: [['id', 'DESC']]
+
+            })
+
+            lastProduct[0].image = process.env.URL_IMAGE_PRODUCTS + lastProduct[0].image;
+
+            res.json(lastProduct)
+        } catch (error) {
+            res.status(500).json({ error: 'Error 500' })
+        }
     }
+
+
 
 }
 
