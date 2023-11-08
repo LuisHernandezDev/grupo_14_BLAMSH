@@ -45,9 +45,7 @@ const apiProductsController = {
             const response = {
                 count: count,
                 quantityForPage: products.length,
-                countByCategory: {
-                    countByCategory
-                },
+                countByCategory,
                 products: urlUserDetail,
                 meta: {
                     status: statusCode,
