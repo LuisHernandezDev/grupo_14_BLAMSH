@@ -123,6 +123,23 @@ const apiUserController = {
         } catch (error) {
             console.error(error)
         }
+    },
+
+    getLastUser: async (req, res) => {
+        try {
+            const lastUser = await db.User.findAll({
+                attributes: {exclude: ['password', 'rol_id']},
+                limit: 1,
+                order: [['id', 'DESC']]
+            });
+
+            lastUser[0].image = process.env.URL_IMAGE_USERS + lastUser[0].image
+
+            res.json(lastUser)
+            
+        } catch (error) {
+            res.status(500).json({ error: 'Error 500' })
+        }
     }
 
 
