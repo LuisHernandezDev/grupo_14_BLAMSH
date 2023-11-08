@@ -8,7 +8,7 @@ function LastProductDetail() {
 
         async function lastProductDetailData() {
             try {
-                const response = await fetch("http://localhost:3011/api/products/list")
+                const response = await fetch("http://localhost:3011/api/products/last")
                 const data = await response.json()
                 setLastProductDetail(data[0])
                 console.log(data);
@@ -22,10 +22,10 @@ function LastProductDetail() {
 
     return (
         <div>
-            <h2>Detalle de último producto creado</h2>
+            <h2>Último producto creado</h2>
             {lastProductDetail.length === 0 ? <p>Cargando...</p> : ''}
             <div>
-                <p>Nombre: {lastProductDetail.name}</p>
+                <p>Producto: {lastProductDetail.name}</p>
                 <p>Descripción: {lastProductDetail.description}</p>
                 <p>Precio: {lastProductDetail.price}</p>
                 <img className='img-product-detail' src={lastProductDetail.image} alt="" />

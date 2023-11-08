@@ -1,5 +1,6 @@
 import './App.css';
 import LastProductDetail from './components/LastProductDetail';
+import LastUserDetail from './components/LastUserDetail';
 import TotalCategory from './components/TotalCategory';
 import TotalCategoryCU from './components/TotalCategoryCU';
 // import Error404 from './components/Error404';
@@ -17,8 +18,11 @@ function App() {
         <div className='result'><TotalUsers /></div>
         <div className='result'><TotalCategory /></div>
       </div>
-        <LastProductDetail/>
-        <TotalCategoryCU/>
+      <div className='detail-last-product-user'>
+        <div className='detail-last'><LastProductDetail/></div>
+        <div className='detail-last'><LastUserDetail/></div>
+        </div>
+        <div><TotalCategoryCU/></div>
     </>
   )
 }

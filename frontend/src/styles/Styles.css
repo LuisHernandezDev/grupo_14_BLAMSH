@@ -35,3 +35,30 @@ body {
   .img-product-detail {
     width: 250px;
   }
+
+  .detail-last-product-user {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .detail-last {
+    flex: 1;
+    padding: 15px 20px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  .detail-last h2 {
+    font-size: 16px;
+    
+  }
+  
+  .detail-last p {
+    font-size: 16px;
+    text-transform: initial;
+     /* Ajusta el espacio entre líneas */
+  }
