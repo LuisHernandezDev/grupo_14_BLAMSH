@@ -1,9 +1,7 @@
 import './App.css';
+import LastProductDetail from './components/LastProductDetail';
 import TotalCategory from './components/TotalCategory';
-// import Home from './components/Home';
-// import Contador from './components/Contador'
-// import RickMortyFuncion from './components/RickMortyFuncion';
-// import FrutasVersionFuncion from './components/FrutasVersionFuncion';
+import TotalCategoryCU from './components/TotalCategoryCU';
 // import Error404 from './components/Error404';
 // import { Link, Route, Routes } from 'react-router-dom'
 import TotalProducts from './components/TotalProducts'
@@ -12,31 +10,16 @@ import TotalUsers from './components/TotalUsers';
 
 function App() {
   return (
-    // <div className="App">
-    //   {/* <header className="App-header"> */}
-    //   <header>
-    //     <div className='in-line'>
-    //       <Link to="/">Home</Link>
-    //       <Link to="/contador">Contador</Link>
-    //       <Link to="/rickMortyFuncion">RickMortyFuncion</Link>
-    //       <Link to="/frutasVersionFuncion">FrutasVersionFuncion</Link>
-    //     </div>
-    //     <hr />
-    //     <Routes>
-    //       <Route path='/' exact Component={Home} />
-    //       <Route path="/Contador" element={<Contador valorInicial={0} />} />
-    //       <Route path='/RickMortyFuncion' Component={RickMortyFuncion} />
-    //       <Route path='/FrutasVersionFuncion' Component={FrutasVersionFuncion} />
-    //       <Route element={Error404} />
-    //     </Routes>
-        
-    //   </header>
-    // </div>
-    <div>
-<TotalProducts/>
-<TotalUsers/>
-<TotalCategory/>
-    </div>
+    <>
+      <h1>BLAMSH Dashboard</h1>
+      <div className='totales'>
+        <div className='result'><TotalProducts /></div>
+        <div className='result'><TotalUsers /></div>
+        <div className='result'><TotalCategory /></div>
+      </div>
+        <LastProductDetail/>
+        <TotalCategoryCU/>
+    </>
   )
 }
 

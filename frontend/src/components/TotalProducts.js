@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/Styles.css'
 
 function TotalProducts() {
-    const [products, setProducts] = useState([])
+    const [totalProducts, setTotalProducts] = useState([])
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -10,7 +11,7 @@ function TotalProducts() {
             try {
                 const response = await fetch("http://localhost:3011/api/products")
                 const data = await response.json()
-                setProducts(data.count);
+                setTotalProducts(data);
                 console.log(data);
             } catch (error) {
                 console.log(error);
@@ -23,8 +24,8 @@ function TotalProducts() {
     return(
         <div>
             <h1>Total de productos</h1>
-            {products.length === 0 ? <p>Cargando...</p> : ''}
-            {products}
+            {totalProducts.length === 0 ? <p>Cargando...</p> : ''}
+           <p> {totalProducts.count}</p>
            
         </div>
     )

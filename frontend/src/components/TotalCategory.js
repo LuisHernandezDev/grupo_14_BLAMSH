@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import '../styles/Styles.css'
 
 function TotalCategory() {
-    const [categories, setCategories] = useState([]);
+    const [totalCategories, setTotalCategories] = useState([]);
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -12,17 +13,17 @@ function TotalCategory() {
             const countByCategory = data.countByCategory.countByCategory
             const categoryProperties = Object.keys(countByCategory)
             const total = categoryProperties.length
-            setCategories(total)
+            setTotalCategories(total)
             console.log(data);
         }
         categoriesData();
     }, []);
-    
+
     return (
         <div>
             <h1>Total de categorías</h1>
-            {categories.length === 0 ? <p>Cargando...</p> : null}
-            {categories}
+            {totalCategories.length === 0 ? <p>Cargando...</p> : null}
+            <p>{totalCategories}</p>
         </div>
     )
 }

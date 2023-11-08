@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/Styles.css'
+
 
 function TotalUsers() {
-    const [users, setUsers] = useState([]);
+    const [totalUsers, setTotalUsers] = useState([]);
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -10,7 +12,7 @@ function TotalUsers() {
             try {
                 const response = await fetch("http://localhost:3011/api/users");
                 const data = await response.json()
-                setUsers(data.count)
+                setTotalUsers(data.count)
                 console.log(data.count);
             } catch (error) {
                 console.log(error);
@@ -23,8 +25,8 @@ function TotalUsers() {
     return (
         <div>
             <h1>Total de usuarios</h1>
-            {users.length === 0 ? <p>Cargando...</p> : null}
-            {users}
+            {totalUsers.length === 0 ? <p>Cargando...</p> : null}
+            <p>{totalUsers}</p>
         </div>
 
     )

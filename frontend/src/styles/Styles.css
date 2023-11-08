@@ -1,0 +1,37 @@
+body {
+    background-color: royalblue;
+}
+
+.totales {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .result {
+    flex: 1;
+    padding: 15px 20px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  /* .result:last-child { Quita el margen a la derecha del ultimo elemento
+    margin-right: 0;
+  } */
+
+  .result h1 {
+    font-size: 11px;
+    line-height: 0.3
+  }
+  
+  .result p {
+    font-size: 20px;
+    line-height: 0.3 /* Ajusta el espacio entre líneas */
+  }
+
+  .img-product-detail {
+    width: 250px;
+  }
