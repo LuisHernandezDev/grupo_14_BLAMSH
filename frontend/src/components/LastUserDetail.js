@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/Styles.css'
 
 function LastUserDetail() {
     const [lastUserDetail, setLastUserDetail] = useState([]);

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/Styles.css'
 
-function LastProductDetail() {
+function LastProductCreate() {
     const [lastProductDetail, setLastProductDetail] = useState([]);
 
     useEffect(() => {
         console.log('Se montó el componente');
 
-        async function lastProductDetailData() {
+        async function lastProductCreateData() {
             try {
                 const response = await fetch("http://localhost:3011/api/products/last")
                 const data = await response.json()
@@ -16,7 +17,7 @@ function LastProductDetail() {
                 console.log(error);
             }
         }
-        lastProductDetailData();
+        lastProductCreateData();
 
     }, []);
 
@@ -27,7 +28,7 @@ function LastProductDetail() {
             <div>
                 <p>Producto: {lastProductDetail.name}</p>
                 <p>Descripción: {lastProductDetail.description}</p>
-                <p>Precio: {lastProductDetail.price}</p>
+                <p>Precio: {'$' + lastProductDetail.price}</p>
                 <img className='img-product-detail' src={lastProductDetail.image} alt="" />
             </div>
         </div>
@@ -35,4 +36,4 @@ function LastProductDetail() {
 
 }
 
-export default LastProductDetail;
+export default LastProductCreate;

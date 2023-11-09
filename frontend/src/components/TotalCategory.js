@@ -8,13 +8,18 @@ function TotalCategory() {
         console.log('Se montó el componente');
 
         async function categoriesData() {
-            const response = await fetch("http://localhost:3011/api/products");
-            const data =await response.json()
-            const countByCategory = data.countByCategory
-            const categoryProperties = Object.keys(countByCategory)
-            const total = categoryProperties.length
-            setTotalCategories(total)
-            console.log(data);
+            try {
+                const response = await fetch("http://localhost:3011/api/products");
+                const data =await response.json()
+                const countByCategory = data.countByCategory
+                const categoryProperties = Object.keys(countByCategory)
+                const total = categoryProperties.length
+                setTotalCategories(total)
+                console.log(data);
+                
+            } catch (error) {
+                console.log(error);
+            }
         }
         categoriesData();
     }, []);

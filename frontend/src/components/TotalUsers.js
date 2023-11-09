@@ -14,10 +14,10 @@ function TotalUsers() {
                 const data = await response.json()
                 setTotalUsers(data.count)
                 console.log(data.count);
+                
             } catch (error) {
                 console.log(error);
             }
-
         }
         usersData();
     }, []);

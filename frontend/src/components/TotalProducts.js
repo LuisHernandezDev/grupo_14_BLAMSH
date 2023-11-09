@@ -13,6 +13,7 @@ function TotalProducts() {
                 const data = await response.json()
                 setTotalProducts(data);
                 console.log(data);
+                
             } catch (error) {
                 console.log(error);
             }
@@ -28,20 +29,7 @@ function TotalProducts() {
            <p> {totalProducts.count}</p>
            
         </div>
-    )
-    
+    )    
 }
-        //  <ul>
-        //  {products.length === 0 ? <p>Cargando...</p> : ''}
-        //      {Array.from(products).map((product, i) => {
-        //          return(
-        //              <li key={i}>
-        //                  <p>{product.name}</p>
-        //                  <p>{product.description}</p>
-        //                  <p>{product.price}</p>
-        //              </li>
-        //          )
-        //      })}
-        //  </ul>
  
 export default TotalProducts;
