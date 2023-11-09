@@ -4,7 +4,7 @@ const { Op } = require('sequelize')
 
 const apiProductsController = {
 
-    getListProduct: async (req, res) => {
+    getListProductPaginated: async (req, res) => {
 
         try {
 
@@ -119,7 +119,7 @@ const apiProductsController = {
     },
 
     getLastProduct: async (req, res) => {
-    
+
         try {
             const lastProduct = await db.Product.findAll({
                 limit: 1,
@@ -133,6 +133,23 @@ const apiProductsController = {
         } catch (error) {
             res.status(500).json({ error: 'Error 500' })
         }
+    },
+
+    getListProduct: async (req, res) => {
+        try {
+            const productsList = await db.Product.findAll({
+                exclude: ['id', 'category_id']
+            })
+            
+            productsList.forEach(product => {
+                product.image = process.env.URL_IMAGE_PRODUCTS + product.image
+            })
+
+            res.json(productsList)
+        } catch (error) {
+            res.status(500).json({ error: 'Error 500' })
+        }
+
     }
 
 
