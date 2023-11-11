@@ -70,8 +70,11 @@ body {
 }
 
 .products-list {
-  display: inline-block;
-
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  
 }
 
 .categories-CU {
@@ -85,15 +88,13 @@ body {
 
 .product-item {
   background-color: rgb(119, 160, 241);
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  display: inline-block;
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
-  align-items: center;
   text-align:center;
-  max-width: 350px;
-  
+  width: 30%;
 }
 
 .img-product-detail {
@@ -101,10 +102,4 @@ body {
   max-height: 50%;
   object-fit: contain;
   /* Controla cómo se ajusta la imagen */
-}
-
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-
 }
