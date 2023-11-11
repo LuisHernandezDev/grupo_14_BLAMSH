@@ -29,6 +29,9 @@ function LastProductCreate() {
                 <p>Producto: {lastProductDetail.name}</p>
                 <p>Descripción: {lastProductDetail.description}</p>
                 <p>Precio: {'$' + lastProductDetail.price}</p>
+                <p>Tallas: {lastProductDetail.sizes && lastProductDetail.sizes.length > 0 ?
+                lastProductDetail.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
+                </p>
                 <img className='img-product-detail' src={lastProductDetail.image} alt="" />
             </div>
         </div>

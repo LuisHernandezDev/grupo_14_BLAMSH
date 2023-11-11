@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 function ProductsList() {
     const [productsList, setProductsList] = useState([])
+    const [totalProducts, setTotalProducts] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalProducts, setTotalProducts] = useState(0);
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -45,8 +45,6 @@ function ProductsList() {
 
     }, []);
 
-
-
     return (
         <div>
             <h1>Listado de productos</h1>
@@ -55,9 +53,13 @@ function ProductsList() {
                 {productsList.map((product, i) => {
                     return (
                         <li key={i} className="product-item">
+                            <p>{product.id}</p>
                             <h3>{product.name}</h3>
                             <h3>{product.description}</h3>
                             <h3>{'$' + product.price}</h3>
+                            <p>Tallas: {product.sizes && product.sizes.length > 0
+                                ? product.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
+                            </p>
                             <img className='img-product-detail' src={product.image} alt="" />
                         </li>
                     )
