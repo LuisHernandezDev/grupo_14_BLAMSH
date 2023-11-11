@@ -137,8 +137,11 @@ const apiProductsController = {
 
     getListProduct: async (req, res) => {
         try {
+            const page = req.query.page || 1;
             const productsList = await db.Product.findAll({
-                exclude: ['id', 'category_id']
+                exclude: ['id', 'category_id'],
+                limit: 5,
+                offset: (page - 1) * 5
             })
             
             productsList.forEach(product => {
@@ -149,11 +152,7 @@ const apiProductsController = {
         } catch (error) {
             res.status(500).json({ error: 'Error 500' })
         }
-
     }
-
-
-
 }
 
 module.exports = apiProductsController;

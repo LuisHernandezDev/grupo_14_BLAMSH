@@ -14,6 +14,7 @@ router.get('/api/products/detail', apiProductsController.getDetailByName);
 
 router.get('/api/products/last', apiProductsController.getLastProduct);
 
+// Pasar por query /api/products/list?page=2
 router.get('/api/products/list', apiProductsController.getListProduct);
 
 
