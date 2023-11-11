@@ -122,6 +122,7 @@ const apiProductsController = {
 
         try {
             const lastProduct = await db.Product.findAll({
+                include: ['category', 'sizes'],
                 limit: 1,
                 order: [['id', 'DESC']]
 
@@ -139,9 +140,10 @@ const apiProductsController = {
         try {
             const page = req.query.page || 1;
             const productsList = await db.Product.findAll({
+                include: ['category', 'sizes'],
                 exclude: ['id', 'category_id'],
                 limit: 5,
-                offset: (page - 1) * 5
+                offset: (page - 1) * 5 // Formula para calcular el número de registros que se van a saltar. 
             })
             
             productsList.forEach(product => {
