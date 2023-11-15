@@ -36,55 +36,14 @@
 
         <section class="main__prendas">
             <ul>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="img">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/detalleProducto">
-                        <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="">
-                        <p>Lorem ipsum</p>
-                    </a>
-                </li>
-
+                <% products.slice(0, 8).forEach(product => { %>
+                    <li>
+                        <a href="/detalleProducto">
+                            <img src="/images/products/<%= product.image %>" alt="" />
+                            <p><%= product.name %></p>
+                        </a>
+                    </li>
+                <% }) %>
             </ul>
         </section>
 
@@ -94,58 +53,16 @@
 
         <h2 class='main__subtitulo-ventas'>TOP VENTAS</h2>
 
-        <section class="main__top-ventas">
+        <section class="main__prendas">
             <ul>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main__top-ventas-camisa.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main_top-ventas-campera-mujer.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src=" images/img-main/top_ventas/main__top-ventas-casco.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main__top-ventas-camisa.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main_top-ventas-campera-mujer.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main__top-ventas-casco.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main__top-ventas-camisa.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="images/img-main/top_ventas/main_top-ventas-campera-mujer.jpg" alt="">
-                        <p>Test</p>
-                    </a>
-
-                </li>
-
+                <% products.slice(8, 16).forEach(product => { %>
+                    <li>
+                        <a href="/detalleProducto">
+                            <img src="/images/products/<%= product.image %>" alt="" />
+                            <p><%= product.name %></p>
+                        </a>
+                    </li>
+                <% }) %>
             </ul>
         </section>
 
