@@ -34,6 +34,19 @@ body{
     font-size: 12px;
 } */
 
+.main__prendas ul li p {
+text-transform: uppercase;
+color: white;
+font-weight: bold;
+}
+
+.main__prendas ul li p span {
+    color: rgb(24, 171, 224);
+    font-weight: bold;
+    font-size: 20px;
+    }
+
+
 p,a{
     color: whitesmoke;
     
