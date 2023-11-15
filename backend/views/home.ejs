@@ -36,7 +36,7 @@
 
         <section class="main__prendas">
             <ul>
-                <% products.slice(0, 8).forEach(product => { %>
+                <% products.forEach(product => { %>
                     <li>
                         <a href="/detalleProducto">
                             <img src="/images/products/<%= product.image %>" alt="" />
@@ -55,7 +55,7 @@
 
         <section class="main__prendas">
             <ul>
-                <% products.slice(8, 16).forEach(product => { %>
+                <% products.slice(0, 8).forEach(product => { %>
                     <li>
                         <a href="/detalleProducto">
                             <img src="/images/products/<%= product.image %>" alt="" />
