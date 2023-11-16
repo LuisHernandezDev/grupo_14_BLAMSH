@@ -39,7 +39,7 @@
             <ul>
                 <% products.slice(7, 19).forEach(product=> { %>
                     <li>
-                        <a href="/detalleProducto">
+                        <a href="/detalleProducto/<%= product.id %>/detail">
                             <img src="/images/products/<%= product.image %>" alt="" />
                             <p>
                                 <%= product.name %>
@@ -60,7 +60,7 @@
             <ul>
                 <% products.slice(0, 8).forEach(product=> { %>
                     <li>
-                        <a href="/detalleProducto">
+                        <a href="/detalleProducto/<%= product.id %>/detail">
                             <img src="/images/products/<%= product.image %>" alt="" />
                             <p>
                                 <%= product.name %> <span>$<%= product.price %></span>

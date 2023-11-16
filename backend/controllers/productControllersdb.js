@@ -8,8 +8,10 @@ const { query } = require("express");
 
 const productController = {
 
-    detalleProducto: (req, res) => {
-        res.render('detalleProducto');
+    detalleProducto: async (req, res) => {
+        const product = await db.Product.findByPk(req.params.id)
+        
+        res.render('detalleProducto', {product});
     },
 
     carrito: (req, res) => {

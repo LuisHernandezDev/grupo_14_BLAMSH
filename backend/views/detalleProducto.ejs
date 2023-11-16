@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -29,7 +30,7 @@
                 <section class="contenedor-carrusel">
                     <div class="carrusel" id="carrusel-1">
                         <article class="item" id="item-1">
-                            <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
+                            <img src="/images/products/<%= product.image %>" alt="jersey1">
                         </article>
                         <div class="flechas">
                             <a href="#carrusel-4">
@@ -43,7 +44,7 @@
 
                     <div class="carrusel" id="carrusel-2">
                         <article class="item" id="item-2">
-                            <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="jersey2">
+                            <img src="/images/products/<%= product.image %>" alt="jersey2">
                         </article>
                         <div class="flechas">
                             <a href="#carrusel-1">
@@ -57,7 +58,7 @@
 
                     <div class="carrusel" id="carrusel-3">
                         <article class="item" id="item-3">
-                            <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="pantalon">
+                            <img src="/images/products/<%= product.image %>" alt="pantalon">
                         </article>
                         <div class="flechas">
                             <a href="#carrusel-2">
@@ -71,7 +72,7 @@
 
                     <div class="carrusel" id="carrusel-4">
                         <article class="item" id="item-4">
-                            <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="moto">
+                            <img src="/images/products/<%= product.image %>" alt="moto">
                         </article>
                         <div class="flechas">
                             <a href="#carrusel-3">
@@ -94,14 +95,14 @@
                 <div class="contenedor-detalle">
                     <div class="titulo-precio">
                         <div>
-                            <p class="titulo">TRAJE MTC</p>
+                            <p class="titulo"><%= product.name %></p>
                         </div>
                         <div>
-                            <p class="precio">$Precio</p>
+                            <p class="precio">$<%= product.price %></p>
                         </div>
                     </div>
                     <div class="descripcion-producto">
-                        <h6><strong>TRAJE DE MANGA LARGA MOTOCROSS HOMBRE</strong></h6>
+                        <h6><strong><%= product.description %></strong></h6>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo
                             sint
                             animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
@@ -114,18 +115,23 @@
                             <p>Elige tu talla</p>
                         </div>
                         <div>
-                            <a href="images/guiaMedidas.png">Guía de medidas</a>
+                            <a href="<%= '/images/guiaMedidas.png' %>">Guía de medidas</a>
                         </div>
                     </div>
                     <div class="tallas">
-                        <ul>
-                            <li><a href="#">S</a></li>
-                            <li><a href="#">M</a></li>
-                            <li><a href="#">L</a></li>
-                            <li><a href="#">XL</a></li>
-                            <li><a href="#">XXL</a></li>
-                        </ul>
-                    </div>
+                        <input type="checkbox" id="tallaS" class="tallas-checkbox">
+                        <label for="tallaS">S</label>
+                      
+                        <input type="checkbox" id="tallaM" class="tallas-checkbox">
+                        <label for="tallaM">M</label>
+                      
+                        <input type="checkbox" id="tallaL" class="tallas-checkbox">
+                        <label for="tallaL">L</label>
+                      
+                        <input type="checkbox" id="tallaXL" class="tallas-checkbox">
+                        <label for="tallaXL">XL</label>
+                      </div>
+                      <br>
                     <div>
                         <form action="">
                             <div class="input-group">
@@ -154,19 +160,19 @@
             <div class="contenedor-720-img">
                 <div class="img-superior">
                     <div class="imgmin-720">
-                        <img src="images/img-main/prendas/main__prenda--campera.jpg" alt="jersey1">
+                        <img src="/images/products/<%= product.image %>" alt="jersey1">
                     </div>
                     <div class="imgmin-720">
-                        <img src="images/img-main/prendas/main__prenda--camisa.jpg" alt="jersey2">
+                        <img src="/images/products/<%= product.image %>" alt="jersey2">
                     </div>
                 </div>
 
                 <div class="img-inferior">
                     <div class="imgmin-720">
-                        <img src="images/img-main/prendas/main__prenda--remera.jpg" alt="pantalon">
+                        <img src="/images/products/<%= product.image %>" alt="pantalon">
                     </div class="min-720">
                     <div class="imgmin-720">
-                        <img src="images/img-main/prendas/main__prendas-borcegos.jpg" alt="moto">
+                        <img src="/images/products/<%= product.image %>" alt="moto">
                     </div>
                 </div>
             </div>
@@ -175,39 +181,41 @@
                 <div class="detalle-720">
                     <div class="titulo-precio">
                         <div>
-                            <p class="titulo">TRAJE MTC</p>
+                            <p class="titulo"><%= product.name %></p>
                         </div>
                         <div>
-                            <p class="precio">$Precio</p>
+                            <p class="precio">$<%= product.price %></p>
                         </div>
                     </div>
 
                     <div class="descripcion-producto">
-                        <h6><strong>TRAJE DE MANGA LARGA MOTOCROSS HOMBRE</strong></h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus quo
-                            sint
-                            animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
-                            accusantium,
-                            amet
-                            voluptate tempora molestiae.</p>
+                        <h6><strong><%= product.description %></strong></h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus doloribus
+                            sint animi sapiente totam sed. Maiores, voluptates ut dolore eius explicabo cum ipsum,
+                            accusantium, amet oluptate tempora molestiae.</p>
                     </div>
                     <div class="talla-medidas">
                         <div>
                             <p>Elige tu talla</p>
                         </div>
                         <div>
-                            <a href="images/guiaMedidas.png">Guía de medidas</a>
+                            <a href="<%= '/images/guiaMedidas.png' %>">Guía de medidas</a>
                         </div>
                     </div>
                     <div class="tallas">
-                        <ul>
-                            <li><a href="#">S</a></li>
-                            <li><a href="#">M</a></li>
-                            <li><a href="#">L</a></li>
-                            <li><a href="#">XL</a></li>
-                            <li><a href="#">XXL</a></li>
-                        </ul>
-                    </div>
+                        <input type="checkbox" id="tallaS" class="tallas-checkbox">
+                        <label for="tallaS">S</label>
+                      
+                        <input type="checkbox" id="tallaM" class="tallas-checkbox">
+                        <label for="tallaM">M</label>
+                      
+                        <input type="checkbox" id="tallaL" class="tallas-checkbox">
+                        <label for="tallaL">L</label>
+                      
+                        <input type="checkbox" id="tallaXL" class="tallas-checkbox">
+                        <label for="tallaXL">XL</label>
+                      </div>
+                      <br>
                     <div>
                         <form action="">
                             <div class="input-group">
@@ -218,8 +226,7 @@
                     </div>
                 </div><br>
                 <div class="mas-detalles-720">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit.</p><br>
+                    <p>Blanditiis temporibus doloribus sint animi sapiente totam sed. Maiores.</p><br>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><br>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
@@ -243,9 +250,6 @@
                         Nostrum, possimus. Sequi unde doloremque odio sit? Quos, corporis? Consectetur beatae asperiores
                         cupiditate suscipit corporis quia ea atque perspiciatis repellendus omnis! Explicabo, ratione!
                         Officiis ipsum velit nihil quia ad vel?
-                        Necessitatibus officia animi itaque modi deserunt perspiciatis, velit saepe vero, atque quia
-                        mollitia repellendus laudantium praesentium esse quidem aperiam dicta provident optio asperiores
-                        eaque aliquid suscipit odit ducimus. Aliquid, id?
                     </p>
                 </div>
 
@@ -257,6 +261,7 @@
                         </div>
                     </div>
                 </form>
+                <br>
 
             </div>
         </div>
@@ -264,7 +269,7 @@
 
     <script src="js/catalog.js"></script>
 
-    <footer class = 'footer-layout'>
+    <footer class='footer-layout'>
         <%-include ('./partials/footer')%>
     </footer>
 </body>
