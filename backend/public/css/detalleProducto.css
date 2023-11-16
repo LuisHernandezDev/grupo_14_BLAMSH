@@ -128,10 +128,6 @@ img {
 }
 
 
-
-
-
-
 .tallas {
     display: flex;
     justify-content: space-around;
@@ -160,14 +156,33 @@ img {
     color: white;
 }
 
+.tallas-mobil {
+    display: flex;
+    justify-content: space-around;
+}
 
+.tallas-mobil input[type="checkbox"] {
+    display: none; /* Oculta el checkbox por defecto */
+}
 
+.tallas-mobil input[type="checkbox"]:checked + label { /* Selecciona el label que sigue inmediatamente después del check que esta marcado*/
+    background-color: rgb(91, 88, 88);
+    color: white;
+}
 
+.tallas-mobil label {
+    padding: 7px 15px;
+    background-color: rgb(246, 240, 240);
+    cursor: pointer;   
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
 
-
-
-
-
+.tallas-mobil label:hover {
+    background-color: rgb(91, 88, 88);
+    color: white;
+}
 
 .input-group label {
     display: flex;
@@ -373,8 +388,5 @@ textarea:hover {
     .opinion {
         display: block;
     }
-
-
-
 
 }
