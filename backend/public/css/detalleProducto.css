@@ -259,6 +259,7 @@ textarea:hover {
         display: flex;
         flex-direction: column;
         width: 22vw;
+        height: 25vw;
         display: block;
         padding: 5px;
     }
