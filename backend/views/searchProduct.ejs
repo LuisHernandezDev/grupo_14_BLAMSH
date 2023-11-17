@@ -33,7 +33,7 @@
         <% products.forEach(product=> { %>
             <article class="search">
                 <div>
-                    <a href="/detalleProducto">
+                    <a href="/detalleProducto/<%= product.id %>/detail">
                         <div class="item">
                             <%= product.name.toUpperCase() %>
                         </div>
