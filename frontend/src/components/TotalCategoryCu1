@@ -1,12 +1,11 @@
+          
 import React, { useEffect, useState } from 'react';
 
 import StatBox from './StatBox';
 
-
 import { tokens } from "../styles/theme";
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import TrafficIcon from "@mui/icons-material/Traffic";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
 function TotalCategoryCU() {
     const theme = useTheme();
@@ -36,36 +35,12 @@ function TotalCategoryCU() {
 
     return (
         <Box
-
-        gridRow="span 2"
+        gridColumn="span 3"
         backgroundColor={colors.primary[400]}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
-        <Box
-          mt="25px"
-          p="0 30px"
-          display="flex "
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box>
-            <Typography
-              variant="h5"
-              fontWeight="600"
-              color={colors.grey[100]}
-            >
-            
-            </Typography>
-            <Typography
-              variant="h3"
-              fontWeight="bold"
-              color={colors.greenAccent[500]}
-            >
-             Lista de categorías
-            </Typography>
-          </Box>
-         
-        </Box>
-        <Box height="250px" m="-20px 0 0 0">
         <StatBox
           title= {Object.keys(totalProductsCU).length === 0 ? <p>Cargando...</p> : 
           Object.keys(totalProductsCU).map((categories, i) => {
@@ -79,10 +54,12 @@ function TotalCategoryCU() {
           subtitle="Total de Categorías"
           progress="0.80"
           increase="+43%"
-         
+          icon={
+            <TrafficIcon
+              sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+            />
+          }
         />
-       
-        </Box>
       </Box>
 
         

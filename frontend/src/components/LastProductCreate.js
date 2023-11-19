@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Styles.css'
+import { tokens } from "../styles/theme";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import TrafficIcon from "@mui/icons-material/Traffic";
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
 function LastProductCreate() {
     const [lastProductDetail, setLastProductDetail] = useState([]);
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -22,19 +28,54 @@ function LastProductCreate() {
     }, []);
 
     return (
-        <div>
-            <h2>Último producto creado</h2>
-            {lastProductDetail.length === 0 ? <p>Cargando...</p> : ''}
-            <div>
-                <p>Producto: {lastProductDetail.name}</p>
-                <p>Descripción: {lastProductDetail.description}</p>
-                <p>Precio: {'$' + lastProductDetail.price}</p>
-                <p>Tallas: {lastProductDetail.sizes && lastProductDetail.sizes.length > 0 ?
-                lastProductDetail.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
-                </p>
-                <img className='img-product-detail' src={lastProductDetail.image} alt="" />
-            </div>
-        </div>
+        <Box
+
+        gridRow="span 2"
+        backgroundColor={colors.primary[400]}
+      >
+        <Box
+          mt="25px"
+          p="0 30px"
+          display="flex "
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Box>
+            <Typography
+              variant="h5"
+              fontWeight="600"
+              color={colors.grey[100]}
+            >
+              Último producto creado
+            </Typography>
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color={colors.greenAccent[500]}
+            >
+              {lastProductDetail.name}
+            </Typography>
+          </Box>
+          <Box>
+            <IconButton>
+              <DownloadOutlinedIcon
+                sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+              />
+            </IconButton>
+          </Box>
+        </Box>
+        <Box height="250px" m="-20px 0 0 0">
+        <Typography
+              variant="h5"
+              fontWeight="600"
+              color={colors.grey[100]}
+            >
+        {lastProductDetail.description}
+             
+            </Typography>
+        </Box>
+      </Box>
+
     )
 
 }

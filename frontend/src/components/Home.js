@@ -4,9 +4,10 @@ import LastProductDetail from './LastProductDetail';
 import TotalProducts from './TotalProducts';
 import TotalUsers from './TotalUsers';
 import TotalCategory from './TotalCategory';
-
-
+import LastProductCreate from './LastProductCreate';
 import TotalCategoryCU from './TotalCategoryCU';
+
+
 import StatBox from './StatBox';
 
 import { tokens } from "../styles/theme";
@@ -94,89 +95,10 @@ function Home() {
       </Grid>
 
       <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
-        <Box
-
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $59,342.32
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box height="250px" m="-20px 0 0 0">
-
-          </Box>
-        </Box>
-
+        <LastProductCreate/>
       </Grid>
       <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-        <Box
-
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $59,342.32
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box height="250px" m="-20px 0 0 0">
-
-          </Box>
-        </Box>
+      <TotalCategoryCU/>
       </Grid>
       <Grid item xs={12} >
         <TableContainer component={Paper}>
