@@ -57,9 +57,7 @@ function ProductsList() {
                             <h3>{product.name}</h3>
                             <h3>{product.description}</h3>
                             <h3>{'$' + product.price}</h3>
-                            <p>Tallas: {product.sizes && product.sizes.length > 0
-                                ? product.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
-                            </p>
+                            <p>Tallas: {product.sizes.map((size) => size.size).join(', ')}</p>
                             <img className='img-product-detail' src={product.image} alt="" />
                         </li>
                     )
