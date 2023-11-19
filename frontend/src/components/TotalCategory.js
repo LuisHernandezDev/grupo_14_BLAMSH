@@ -16,7 +16,7 @@ function TotalCategory() {
         async function categoriesData() {
             const response = await fetch("http://localhost:3011/api/products");
             const data =await response.json()
-            const countByCategory = data.countByCategory.countByCategory
+            const countByCategory = data.countByCategory
             const categoryProperties = Object.keys(countByCategory)
             const total = categoryProperties.length
             setTotalCategories(total)
