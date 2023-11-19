@@ -82,77 +82,20 @@ function Home() {
 
     <Grid container spacing={3}>
       <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-        <Box
-                 gridColumn="span 3"
-
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title={totalProducts.length === 0 ? <p>Cargando</p> : totalProducts.count}
-
-            subtitle="Total de productos"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
+        <TotalProducts />
       </Grid>
       <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
 
-        <Box
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title={totalProducts.length === 0 ? <p>Cargando</p> : totalProducts.count}
 
-            subtitle="Total de productos"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
+        <TotalUsers />
       </Grid>
       <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-
-        <Box
-          
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title={totalProducts.length === 0 ? <p>Cargando</p> : totalProducts.count}
-
-            subtitle="Total de productos"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
+      <TotalCategory/>
       </Grid>
-    
-        <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
+
+      <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
         <Box
-          
+
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -192,10 +135,10 @@ function Home() {
           </Box>
         </Box>
 
-        </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+      </Grid>
+      <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
         <Box
-          
+
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -234,39 +177,39 @@ function Home() {
 
           </Box>
         </Box>
-        </Grid>
-          <Grid item xs={12} >
-          <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-            
+      </Grid>
+      <Grid item xs={12} >
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Dessert (100g serving)</StyledTableCell>
+                <StyledTableCell align="right">Calories</StyledTableCell>
+                <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
+                <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
+                <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <StyledTableRow key={row.name}>
+                  <StyledTableCell component="th" scope="row">
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">{row.calories}</StyledTableCell>
+                  <StyledTableCell align="right">{row.fat}</StyledTableCell>
+                  <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                  <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
 
-          </Grid>
 
       </Grid>
+
+    </Grid>
 
 
   )
