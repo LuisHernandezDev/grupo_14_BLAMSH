@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { tokens } from "../styles/theme";
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import StatBox from './StatBox';
+import { Box, Typography, useTheme } from "@mui/material";
+import CardMedia from '@mui/material/CardMedia';
+
 
 function LastProductCreate() {
     const [lastProductDetail, setLastProductDetail] = useState([]);
@@ -108,14 +107,8 @@ function LastProductCreate() {
                     <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
                         {lastProductDetail.price}
                     </Typography>
-                    <Typography
-                        variant="h5"
-                        fontStyle="italic"
-                        sx={{ color: colors.greenAccent[600] }}
-                    >
 
-                    </Typography>
-                 
+
                 </Box>
 
 
@@ -123,17 +116,20 @@ function LastProductCreate() {
 
             <Box width="100%" m="0 30px">
 
-                <Box display="flex" justifyContent="space-between" mt="2px">
-                   
-                    <img className='img-product-detail' src={lastProductDetail.image} alt="" />
+                <Box display="flex" justifyContent="space-between" mt="2px" maxWidth={345}>
+                    <CardMedia
+                        component="img"
+                        alt="Descripción de la imagen"
+                        height="140"
+                        image={lastProductDetail.image}
+                    />
+
                 </Box>
 
 
             </Box>
 
-            <Box height="250px" m="-20px 0 0 0">
 
-            </Box>
         </Box >
 
 

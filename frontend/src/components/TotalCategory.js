@@ -37,8 +37,7 @@ function TotalCategory() {
           title= {totalCategories.length === 0 ? <p>Cargando...</p> : totalCategories}
           
           subtitle="Total de Categorías"
-          progress="0.80"
-          increase="+43%"
+          progress="0.80"       
           icon={
             <TrafficIcon
               sx={{ color: colors.greenAccent[600], fontSize: "26px" }}

@@ -70,17 +70,11 @@ function TotalCategoryCU() {
                         })}
 
 
-                    subtitle="Total de Categorías"
-                    progress="0.80"
-                    increase="+43%"
-
                 />
 
             </Box>
 
-            <Box height="250px" m="-20px 0 0 0">
-
-            </Box>
+            
         </Box>
 
 
