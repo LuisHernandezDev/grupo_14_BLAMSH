@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Styles.css'
+import { tokens } from "../styles/theme";
+import { Box, Typography, useTheme } from "@mui/material";
+import CardMedia from '@mui/material/CardMedia';
+
 
 function LastProductCreate() {
     const [lastProductDetail, setLastProductDetail] = useState([]);
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+
 
     useEffect(() => {
         console.log('Se montó el componente');
@@ -22,19 +28,112 @@ function LastProductCreate() {
     }, []);
 
     return (
-        <div>
-            <h2>Último producto creado</h2>
-            {lastProductDetail.length === 0 ? <p>Cargando...</p> : ''}
-            <div>
-                <p>Producto: {lastProductDetail.name}</p>
-                <p>Descripción: {lastProductDetail.description}</p>
-                <p>Precio: {'$' + lastProductDetail.price}</p>
-                <p>Tallas: {lastProductDetail.sizes && lastProductDetail.sizes.length > 0 ?
-                lastProductDetail.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
-                </p>
-                <img className='img-product-detail' src={lastProductDetail.image} alt="" />
-            </div>
-        </div>
+        <Box
+
+            gridRow="span 2"
+            backgroundColor={colors.primary[400]}
+        >
+            <Box
+                mt="25px"
+                p="0 30px"
+                display="flex "
+                justifyContent="space-between"
+                alignItems="center"
+            >
+                <Box>
+
+                    <Typography
+                        variant="h3"
+                        fontWeight="bold"
+                        color={colors.greenAccent[500]}
+                    >
+                        Ultimo producto Creado
+                    </Typography>
+                </Box>
+                <Box>
+
+                    <Typography
+                        variant="h3"
+                        fontWeight="bold"
+                        color={colors.greenAccent[500]}
+                    >
+                        {lastProductDetail.name}
+
+                    </Typography>
+                </Box>
+
+
+
+
+            </Box>
+            <Box width="100%" m="0 30px">
+
+                <Box display="flex" justifyContent="space-between" mt="2px">
+                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
+                        {lastProductDetail.name}
+                    </Typography>
+                    <Typography
+                        variant="h5"
+                        fontStyle="italic"
+                        sx={{ color: colors.greenAccent[600] }}
+                    >
+
+                    </Typography>
+                </Box>
+
+
+            </Box>
+            <Box width="100%" m="0 30px">
+
+                <Box display="flex" justifyContent="space-between" mt="2px">
+                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
+                        {lastProductDetail.description}
+                    </Typography>
+                    <Typography
+                        variant="h5"
+                        fontStyle="italic"
+                        sx={{ color: colors.greenAccent[600] }}
+                    >
+
+                    </Typography>
+                </Box>
+
+
+            </Box>
+
+            <Box width="100%" m="0 30px">
+
+                <Box display="flex" justifyContent="space-between" mt="2px">
+                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
+                        {lastProductDetail.price}
+                    </Typography>
+
+
+                </Box>
+
+
+            </Box>
+
+            <Box width="100%" m="0 30px">
+
+                <Box display="flex" justifyContent="space-between" mt="2px" maxWidth={345}>
+                    <CardMedia
+                        component="img"
+                        alt="Descripción de la imagen"
+                        height="140"
+                        image={lastProductDetail.image}
+                    />
+
+                </Box>
+
+
+            </Box>
+
+
+        </Box >
+
+
+
     )
 
 }
