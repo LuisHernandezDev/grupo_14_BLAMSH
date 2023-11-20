@@ -30,14 +30,22 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
+                <th>Rol</th>
+                <th>Acción</th>
             </tr>
         </thead>
         <tbody>
             <% users.forEach(user => { %>
                 <tr>
-                    <td><%= user.firstName %></td>
-                    <td><%= user.lastName %></td>
+                    <td class="mayus"><%= user.firstName %></td>
+                    <td class="mayus"><%= user.lastName %></td>
                     <td><%= user.email %></td>
+                    <td><%= user.rol_id %></td>
+                    <td>
+                        <form action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
+                            <input type="submit" value="Eliminar usuario">
+                        </form>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>

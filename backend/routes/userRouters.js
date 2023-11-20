@@ -128,8 +128,7 @@ router.get('/logout', userDbController.logout);
 
 router.get('/users/list', authMiddleware.authUser, authMiddleware.guestUser, userDbController.getUsersList)
 
-
-// router.get('/users', maincontroller.userlist);
+router.delete('/users/:id/delete', userDbController.deleteUser);
 
 
 // traer a  la funcion router

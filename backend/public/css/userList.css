@@ -7,7 +7,7 @@ main h1 {
 }
 
 table {
-    width: 60%;
+    width: 50%;
     margin: 20px auto;
     border-collapse: collapse;
     overflow-x: auto;
@@ -17,4 +17,32 @@ th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+}
+
+th {
+    font-size: 20px;
+}
+
+.mayus {
+    text-transform:capitalize;
+}
+
+
+form {
+    display: inline-block;
+    margin: 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 3px;
 }
