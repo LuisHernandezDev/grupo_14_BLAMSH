@@ -44,7 +44,7 @@
                     <td><%= user.email %></td>
                     <td><%= user.rol_id %></td>
                         <td>
-                            <form action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
+                            <form id="delete-user" action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
                                 <input type="submit" value="Eliminar usuario">
                             </form>
                     </td>
@@ -57,6 +57,7 @@
     <footer class="footer-layout">
         <%-include ('./partials/footer')%>
     </footer>
+    <script src="/js/confirmDeleteUser.js"></script>
 </body>
 
 
