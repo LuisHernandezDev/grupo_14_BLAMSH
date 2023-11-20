@@ -172,6 +172,18 @@ const userController = {
 
     },
 
+    getUsersList: async (req, res) => {
+
+        try {
+            const users = await db.User.findAll()
+    
+            res.render('userList', {users})
+            
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
 
 
     logout: (req, res) => {

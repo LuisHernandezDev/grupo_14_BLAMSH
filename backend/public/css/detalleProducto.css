@@ -92,7 +92,9 @@ img {
 
 .titulo {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    color: white;
+    text-transform: uppercase;
 }
 
 
@@ -109,7 +111,8 @@ img {
 }
 
 .descripcion-producto h6 {
-    font-size: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 
@@ -119,35 +122,67 @@ img {
 
 }
 
-.tallas ul {
-    padding: 0;
-    justify-content: space-around;
-    display: flex;
-
-}
-
 .talla-medidas a {
     color: white;
     text-decoration: underline;
 }
 
 
-.tallas li {
-    display: inline;
+.tallas {
+    display: flex;
+    justify-content: space-around;
 }
 
-
-.tallas ul a {
-    color: white;
-    border: 1px solid rgb(91, 88, 88);
-    padding: 6px 20px;
-
+.tallas input[type="checkbox"] {
+    display: none; /* Oculta el checkbox por defecto */
 }
 
-.tallas a:hover {
+.tallas input[type="checkbox"]:checked + label { /* Selecciona el label que sigue inmediatamente después del check que esta marcado*/
     background-color: rgb(91, 88, 88);
+    color: white;
 }
 
+.tallas label {
+    padding: 7px 15px;
+    background-color: rgb(246, 240, 240);
+    cursor: pointer;   
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tallas label:hover {
+    background-color: rgb(91, 88, 88);
+    color: white;
+}
+
+.tallas-mobil {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tallas-mobil input[type="checkbox"] {
+    display: none; /* Oculta el checkbox por defecto */
+}
+
+.tallas-mobil input[type="checkbox"]:checked + label { /* Selecciona el label que sigue inmediatamente después del check que esta marcado*/
+    background-color: rgb(91, 88, 88);
+    color: white;
+}
+
+.tallas-mobil label {
+    padding: 7px 15px;
+    background-color: rgb(246, 240, 240);
+    cursor: pointer;   
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tallas-mobil label:hover {
+    background-color: rgb(91, 88, 88);
+    color: white;
+}
 
 .input-group label {
     display: flex;
@@ -204,6 +239,11 @@ img {
     display: none;
 }
 
+textarea:hover {
+    border: 2px solid white !important;
+    background-color: rgb(151, 211, 164) !important;
+}
+
 
 
 @media (min-width: 720px) {
@@ -219,13 +259,14 @@ img {
         display: flex;
         flex-direction: column;
         width: 22vw;
+        height: 25vw;
         display: block;
         padding: 5px;
     }
 
 
     .imgmin-720:hover {
-        filter: brightness(0.6);
+        transform: scale(1.1);
         transition: 1s;
     }
 
@@ -348,8 +389,5 @@ img {
     .opinion {
         display: block;
     }
-
-
-
 
 }

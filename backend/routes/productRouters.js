@@ -106,7 +106,7 @@ const editProductValidations = [
 //Linkeamos el archivo del router con el del controllers
 
 // router.get('/detalleProducto', productControllers.detalleProducto);
-router.get('/detalleProducto', productControllersdb.detalleProducto);
+router.get('/detalleProducto/:id/detail', productControllersdb.detalleProducto);
 
 // router.get('/carrito', authMiddleware.authUser, productControllers.carrito);
 router.get('/carrito', authMiddleware.authUser, productControllersdb.carrito);

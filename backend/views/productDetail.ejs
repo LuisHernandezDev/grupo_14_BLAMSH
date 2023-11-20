@@ -51,7 +51,7 @@
                 <a href="/products/<%= product.id %>/edit">
                     <button class="editButton">Editar producto</button>
                 </a>
-                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                <form id="delete-product" action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
                     <input class="submitButton"  type="submit" value="Eliminar producto">
                 </form>
                 <a href="/products">
@@ -67,6 +67,7 @@
     <footer>
         <%-include ('./partials/footer')%>
     </footer>
+    <script src="/js/confirmDeleteProduct.js"></script>
 </body>
 
 </html>

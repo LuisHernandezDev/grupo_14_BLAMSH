@@ -1,45 +1,31 @@
-import './App.css';
-import Home from './components/Home';
-import Contador from './components/Contador'
-import RickMortyFuncion from './components/RickMortyFuncion';
-import FrutasVersionFuncion from './components/FrutasVersionFuncion';
-import Error404 from './components/Error404';
-import { Link, Route, Routes } from 'react-router-dom'
+import LastProductCreate from './components/LastProductCreate';
+import LastUserDetail from './components/LastUserDetail';
+import TotalCategory from './components/TotalCategory';
+import TotalCategoryCU from './components/TotalCategoryCU';
+import ProductsList from './components/ProductsList';
+// import Error404 from './components/Error404';
+// import { Link, Route, Routes } from 'react-router-dom'
+import TotalProducts from './components/TotalProducts'
+import TotalUsers from './components/TotalUsers';
 
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header"> */}
-      <header>
-        <div className='in-line'>
-          <Link to="/">Home</Link>
-          <Link to="/contador">Contador</Link>
-          <Link to="/rickMortyFuncion">RickMortyFuncion</Link>
-          <Link to="/frutasVersionFuncion">FrutasVersionFuncion</Link>
+    <>
+      <h1 className='title'>BLAMSH Dashboard</h1>
+      <div className='totales'>
+        <div className='result'><TotalProducts /></div>
+        <div className='result'><TotalUsers /></div>
+        <div className='result'><TotalCategory /></div>
+      </div>
+      <div className='detail-last-product-user'>
+        <div className='detail-last'><LastProductCreate/></div>
+        <div className='detail-last'><LastUserDetail/></div>
         </div>
-        <hr />
-        <Routes>
-          <Route path='/' exact Component={Home} />
-          <Route path="/Contador" element={<Contador valorInicial={0} />} />
-          <Route path='/RickMortyFuncion' Component={RickMortyFuncion} />
-          <Route path='/FrutasVersionFuncion' Component={FrutasVersionFuncion} />
-          <Route element={Error404} />
-        </Routes>
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
+        <div><TotalCategoryCU/></div>        
+        <div className='result'><ProductsList/></div>
+        
+    </>
   )
 }
 

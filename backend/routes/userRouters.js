@@ -126,6 +126,8 @@ router.put('/profile/edit', [upload.single('image'), userProfileValidations], au
 
 router.get('/logout', userDbController.logout);
 
+router.get('/users/list', authMiddleware.authUser, authMiddleware.guestUser, userDbController.getUsersList)
+
 
 // router.get('/users', maincontroller.userlist);
 
