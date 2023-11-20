@@ -135,7 +135,7 @@ li, a, p, .form-option, .form-input, .form-submit{
     }
 
     .form-submit{
-        background-color: rgb(24, 24, 217);
+        background-color: rgb(24, 24, 217) !important;
         height: 50px;
         border:none;
         font-size: 20px;

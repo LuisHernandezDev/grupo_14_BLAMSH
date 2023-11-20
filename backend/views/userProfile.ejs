@@ -23,33 +23,40 @@
 
     <main>
         <div class="container-profile">
-            <li>
-                <h2>¡Hola! <%= user.firstName + " " + user.lastName %>
-                </h2>
-            </li>
-            <li>
-                <img src="/images/users/<%= user.image %>" alt="">
 
-            </li>
-            <li>
-                <h3>Correo:
-                    <%= user.email %>
-                </h3>
-            </li>
+            <% if (isAdmin) { %>
 
-            <li>
-                <h3>Teléfono:
-                    <%= user.phone %>
-                </h3>
-            </li>
-            <div>
-                <a class="buttonEdit" href="/profile/edit">
-                    <button>Editar perfil</button>
-                </a>
-            </div>
+                <div class="button-container">
+                    <a class="ver-admin" href="/products"><button>CRUD de productos</button></a>
+                    <a class="ver-admin" href="/users/list"><button>Listado de usuarios</button></a>
+                </div>
+                <% } %>
+
+                    <li>
+                        <h2>¡Hola! <%= user.firstName + " " + user.lastName %>
+                        </h2>
+                    </li>
+                    <li>
+                        <img src="/images/users/<%= user.image %>" alt="">
+
+                    </li>
+                    <li>
+                        <h3>Correo:
+                            <%= user.email %>
+                        </h3>
+                    </li>
+
+                    <li>
+                        <h3>Teléfono:
+                            <%= user.phone %>
+                        </h3>
+                    </li>
+                    <div>
+                        <a class="buttonEdit" href="/profile/edit">
+                            <button>Editar mi perfil</button>
+                        </a>
+                    </div>
         </div>
-
-
     </main>
 
     <footer>
