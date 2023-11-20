@@ -30,10 +30,10 @@ import {
               <MenuIcon />
             </IconButton>
             <Typography
-              variant="h6"
+              variant="h3"
               sx={{ flexGrow: 1 }}
             >
-              News
+              Blamsh
             </Typography>
   
             <Box sx={{ display: { xs: "none", sm: "block" } }}>

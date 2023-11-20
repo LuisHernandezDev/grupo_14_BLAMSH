@@ -3,11 +3,7 @@ import StatBox from './StatBox';
 
 import { tokens } from "../styles/theme";
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import EmailIcon from "@mui/icons-material/Email";
+import GroupIcon from '@mui/icons-material/Group';
 
 
 
@@ -42,14 +38,13 @@ function TotalUsers() {
         justifyContent="center"
         mt={2}
         pt={3}
+        pb={3}
       >
         <StatBox
            title={totalUsers===0 ? <p>cargando</p>:totalUsers}
           subtitle="Total de usuarios"
-          progress="0.50"
-          increase="+21%"
           icon={
-            <PointOfSaleIcon
+            <GroupIcon
               sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
             />
           }

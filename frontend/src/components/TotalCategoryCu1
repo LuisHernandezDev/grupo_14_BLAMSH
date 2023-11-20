@@ -5,7 +5,7 @@ import StatBox from './StatBox';
 
 import { tokens } from "../styles/theme";
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import TrafficIcon from "@mui/icons-material/Traffic";
+import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 
 function TotalCategoryCU() {
     const theme = useTheme();
@@ -55,7 +55,7 @@ function TotalCategoryCU() {
           progress="0.80"
           increase="+43%"
           icon={
-            <TrafficIcon
+            <StyleRoundedIcon
               sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
             />
           }

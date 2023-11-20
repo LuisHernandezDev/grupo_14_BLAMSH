@@ -3,7 +3,7 @@ import StatBox from './StatBox';
 
 import { tokens } from "../styles/theme";
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import TrafficIcon from "@mui/icons-material/Traffic";
+import StyleRoundedIcon from '@mui/icons-material/StyleRounded';
 
 function TotalCategory() {
     const [totalCategories, setTotalCategories] = useState([]);
@@ -34,6 +34,7 @@ function TotalCategory() {
         justifyContent="center"
         mt={2}
         pt={3}
+        pb={3}
       >
         <StatBox
           title= {totalCategories.length === 0 ? <p>Cargando...</p> : totalCategories}
@@ -41,7 +42,7 @@ function TotalCategory() {
           subtitle="Total de Categorías"
           progress="0.80"       
           icon={
-            <TrafficIcon
+            <StyleRoundedIcon
               sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
             />
           }

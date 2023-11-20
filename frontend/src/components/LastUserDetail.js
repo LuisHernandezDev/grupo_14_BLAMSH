@@ -31,6 +31,7 @@ function LastUserDetail() {
 
         gridRow="span 2"
         backgroundColor={colors.primary[400]}
+        
     >
         <Box
             mt="25px"
