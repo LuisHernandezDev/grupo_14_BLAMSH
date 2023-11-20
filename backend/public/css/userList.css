@@ -8,6 +8,7 @@ main h1 {
 
 table {
     width: 50%;
+    max-width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
     overflow-x: auto;
@@ -45,4 +46,20 @@ input[type="submit"] {
     margin: 0;
     cursor: pointer;
     border-radius: 3px;
+}
+
+@media (min-width: 720px) {
+    th, td {
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 }
