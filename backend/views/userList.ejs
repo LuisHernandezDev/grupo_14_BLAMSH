@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/userList.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,55 +20,44 @@
     <header>
         <%-include ('./partials/navbar')%>
     </header>
-    <main style="background-color: rgb(116, 110, 110);">
+    <main>
 
-    <div>
-        <a href="/register">
-            <button>Registrarse</button>
-        </a>
-    </div>
+        <h1>Listado de Usuarios</h1>
 
-    <section><br>
-
-        <% users.forEach(user=> { %>
-
-                <div>
-                    <%= user.firstName + " " + user.lastName %>
-                </div>
-
-                <div>
-                    <strong>Email: </strong>
-                    <%= user.email %>
-                </div>
-
-                <div>
-                    <strong>Perfil del usuario: </strong>
-                    <%= user.profile %>
-                </div>
-
-                <div>
-                    <strong>Teléfono: </strong>
-                    <%= user.phone %>
-                </div>
-
-                <div>
-                    <strong>Imagen: </strong>
-                    <img width="200px" src="./images/users/<%= user.image %>" alt="">
-                </div>
-
-
-                <div>
-                    <a href="/products/<%= user.id %>/detail">
-                        <button>Ver detalle</button>
-                    </a>
-                </div><br>
-            <% }) %>
-    </section>
+        <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td class="mayus"><%= user.firstName %></td>
+                    <td class="mayus"><%= user.lastName %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.rol_id %></td>
+                        <td>
+                            <form id="delete-user" action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
+                                <input type="submit" value="Eliminar usuario">
+                            </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table><br>
 
 </main>
     <footer class="footer-layout">
         <%-include ('./partials/footer')%>
     </footer>
+    <script src="/js/confirmDeleteUser.js"></script>
 </body>
 
 

@@ -140,7 +140,7 @@ const userController = {
             });
             return
         };
-        
+
         try {
 
             // const hashPassword = bcrypt.hashSync(req.body.password, 10);
@@ -172,6 +172,37 @@ const userController = {
 
     },
 
+    getUsersList: async (req, res) => {
+
+        try {
+            const users = await db.User.findAll()
+
+            res.render('userList', { users })
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    deleteUser: async (req, res) => {
+
+        try {
+            const user = await db.User.findByPk(req.params.id);
+
+            if (!user) {
+                res.send('El usuario no existe')
+                return error;
+            };
+
+            user.destroy()
+
+            res.redirect('/users/list')
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
 
 
     logout: (req, res) => {
@@ -180,7 +211,7 @@ const userController = {
         return res.redirect('/');
     }
 
-    
+
 }
 
 module.exports = userController;

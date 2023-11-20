@@ -1,5 +1,9 @@
 let userEmail = document.querySelector("[name=email]")
-let userPassword = document.querySelector("[name=password]")
+let userPassword = document.querySelector("[name=password]");
+let formLogin=document.querySelector('#formLogin');
+let inputs=Array.from(formLogin.querySelectorAll('input'));
+
+
 const validateEmailformat = e => {
     const field = e.target;
     const fieldValue = e.target.value;
@@ -42,3 +46,13 @@ userEmail.addEventListener("input", validateEmailformat)
 
 userEmail.addEventListener('blur', Fieldvalidate);
 userPassword.addEventListener('blur', Fieldvalidate);
+
+formLogin.addEventListener('submit', e=>{
+    inputs.forEach(inputActual=>{
+        if(inputActual.value.length==0){
+            e.preventDefault();
+            inputActual.nextElementSibling.innerText="El campo es obligatorio"
+        }
+    })
+    
+});

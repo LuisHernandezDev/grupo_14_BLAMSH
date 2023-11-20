@@ -20,12 +20,10 @@ main {
 
 div h2 {
     color: white
-
 }
 
-div h3 {    
+div h3 {
     color: white
-
 }
 
 img {
@@ -40,10 +38,10 @@ img {
     flex-direction: column;
     border: solid 1px black;
     border-radius: 11px;
-    padding: 50px;
+    padding: 30px;
     margin-top: 5%;
     background-color: rgb(134, 131, 131, 0.8);
-        max-width: 400px;
+    max-width: 400px;
 
 }
 
@@ -56,7 +54,7 @@ img {
     background-color: #504e50;
     border-radius: 11px;
     padding: 10px 10px;
-    color:rgb(247, 244, 244);
+    color: rgb(247, 244, 244);
     font-size: 16px;
     font-weight: bold;
     transition: 0.2s;
@@ -65,6 +63,25 @@ img {
 .buttonEdit button:hover {
     background-color: #511ca0;
     color: white;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.ver-admin button {
+    background: #0b5394;
+    background: linear-gradient(#0b5394, #073763);
+    border-radius: 11px;
+    width: 180px;
+    height: 50px;
+    color: #ffffff;
+    display: inline-block;
+    font: 18px/50px "Calibri", sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px #0b5394;
 }
 
 
