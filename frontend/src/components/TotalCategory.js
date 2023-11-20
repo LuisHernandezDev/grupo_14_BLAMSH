@@ -32,6 +32,8 @@ function TotalCategory() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        mt={2}
+        pt={3}
       >
         <StatBox
           title= {totalCategories.length === 0 ? <p>Cargando...</p> : totalCategories}

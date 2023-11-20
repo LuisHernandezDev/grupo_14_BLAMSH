@@ -40,6 +40,8 @@ function TotalUsers() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        mt={2}
+        pt={3}
       >
         <StatBox
            title={totalUsers===0 ? <p>cargando</p>:totalUsers}

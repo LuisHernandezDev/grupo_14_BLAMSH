@@ -42,6 +42,8 @@ function TotalProducts() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        mt={2}
+        pt={3}
       >
         <StatBox
           title= {totalProducts.length===0 ? <p>Cargando</p>: totalProducts.count}

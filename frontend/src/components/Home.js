@@ -20,7 +20,7 @@ function Home() {
     return (
 
         <Grid container spacing={3}>
-            <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} >
                 <TotalProducts />
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
