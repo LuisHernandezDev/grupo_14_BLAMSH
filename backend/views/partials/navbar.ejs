@@ -16,9 +16,11 @@
     </div>
 
     <div class="nav__opciones">
-        <div class="opciones__lupa"><form action="/products/search" method="GET">
-            <input type="text" name="query" placeholder="Buscar por nombre...">
-          </form><a href=""><i class="fa-solid fa-magnifying-glass fa-l"style="color: #eaeaeb;"></i></a></div>
+        <div class="opciones__lupa">
+            <form action="/products/search" method="GET">
+                <input type="text" name="query" placeholder="Buscar por nombre...">
+            </form><a href=""><i class="fa-solid fa-magnifying-glass fa-l" style="color: #eaeaeb;"></i></a>
+        </div>
         <div class="opciones__carrito">
             <a href="/carrito"><span>Carrito</span>
                 <i class="fa-sharp fa-solid fa-basket-shopping fa-l" style="color: #eaeaeb;"></i>
@@ -26,35 +28,39 @@
         </div>
 
 
-        <% if (isAdmin) { %>
+        <!-- <a href="/products"><strong>CRUD </strong><i class="fas fa-edit"></i>
+        </a> -->
 
-            <div>
-                <a href="/products"><strong>CRUD </strong><i class="fas fa-edit"></i>
-                </a>
+        <% if (isAdmin || user) { %>
+            <div id="menu">
+                <ul>
+                    <li><a href="/profile">Perfil</a></li>
+                    <% if (isAdmin) { %>
+                        <li><a href="/products">CRUD de productos</a></li>
+                        <li><a href="/users/list">Listado de usuarios</a></li>
+                        <% } %>
+                </ul>
             </div>
-
-            <% } if (user || isAdmin) { %>
+            <div id="user-menu">
                 <li>
-                    <a href="/profile">
+                    <a id="profile" class="profile" href="#">
                         <%= user.firstName %>
                     </a>
                 </li>
-
-                <div>
-                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong>Cerrar Sesión</strong></a>
-
+            </div>
+            <div>
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><strong>Cerrar Sesión</strong></a>
+            </div>
+            <% } else { %>
+                <div class="opciones__user">
+                    <a href="/register">
+                        <span style="font-size: 12px;" class="background-register">ÚNETE A BLAMSH</span>
+                    </a>
                 </div>
-
-                <% } else { %>
-                    <div class="opciones__user">
-                        <a href="/register"><span style="font-size: 12px;" class="background-register">ÚNETE A BLAMSH</span>
-                        </a>
-                    </div>
-                    <div class="opciones__user">
-                        <a href="/login"><i class="fa-regular fa-circle-user fa-l"></i> Iniciar Sesion
-                        </a>
-                    </div>
-                    <% } %>
+                <div class="opciones__user">
+                    <a href="/login"><i class="fa-regular fa-circle-user fa-l"></i> Iniciar Sesión</a>
+                </div>
+                <% } %>
 
     </div>
 

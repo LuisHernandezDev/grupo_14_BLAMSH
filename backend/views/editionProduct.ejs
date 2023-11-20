@@ -3,45 +3,49 @@
 
 </html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/editionProduct.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
-    
-    
-        <title>Creación - Edición productos</title>
-    </head>
-    <body>
-        <header>
-            <%-include ('./partials/navbar')%>
-        </header>
-    
 
-        <main>
-            
-            <section class="product-edit">
-                <form action="post" method="post" class="edit-form">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/editionProduct.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/465082cc2e.js" crossorigin="anonymous"></script>
+
+
+    <title>Creación - Edición productos</title>
+</head>
+
+<body>
+    <header>
+        <%-include ('./partials/navbar')%>
+    </header>
+
+
+    <main>
+
+        <section class="product-edit">
+            <form action="post" method="post" class="edit-form">
                 <h2 class="title">Editar producto</h2>
                 <input class="items" type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required>
                 <input class="items" type="number" name="precio" id="precio" placeholder="Precio de producto" required>
                 <input class="items" type="text" name="categoria" id="categoria" placeholder="Categoria de producto">
                 <input class="items" type="text" name="talle" id="talle" placeholder="Talle producto">
-                <input class="items-desc" type="text" name="descripcion" id="descripcion" placeholder="Descripción de producto">
+                <input class="items-desc" type="text" name="descripcion" id="descripcion"
+                    placeholder="Descripción de producto">
                 <input class="importar" type="file" name="importar" id="importar" value="Importar imagenes">
                 <a href="#"><input class="button" type="submit" name="publicar" id="publicar" value="Publicar"></a>
-                </form>
-            </section>     
-            <section class="product-image">
-                <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
-                <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto">  
-            </section> 
+            </form>
+        </section>
+        <section class="product-image">
+            <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto"> <br>
+            <input class="items-img" type="image" name="imagen" id="imagen" placeholder="Imagen de producto">
+        </section>
 
 
 
@@ -49,10 +53,12 @@
 
 
 
-    <footer class = 'footer-layout'>
+    <footer class='footer-layout'>
         <%-include ('./partials/footer')%>
     </footer>
 
+    <script src="/js/catalog.js"></script>
+    <script src="/js/menu.js"></script>
 
 </body>
 
