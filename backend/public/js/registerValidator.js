@@ -96,7 +96,7 @@ window.addEventListener('load', () => { // El evento load espera que todos los r
 
         const inputPassword = document.querySelector('#password');
         const errorPassword = document.querySelector('#error-password')
-        const validatePw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+        const validatePw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!?@#$%^&*()_+-]).{8,}$/;
 
         if (inputPassword.value == "") {
             errors.push("'Debes ingresar una contraseña")
