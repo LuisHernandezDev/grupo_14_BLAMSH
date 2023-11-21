@@ -44,7 +44,7 @@
                     <td><%= user.email %></td>
                     <td><%= user.rol_id %></td>
                         <td>
-                            <form id="delete-user" action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
+                            <form class="delete-user-form" action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
                                 <input type="submit" value="Eliminar usuario">
                             </form>
                     </td>

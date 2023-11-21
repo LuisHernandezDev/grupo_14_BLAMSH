@@ -1,23 +1,21 @@
 window.addEventListener('load', () => {
-    const confirmDeleteUser = document.querySelector('#delete-user');
+    const confirmDeleteProduct = document.querySelectorAll('.delete-user-form');
 
-    if (confirmDeleteUser) {
-        confirmDeleteUser.addEventListener('submit', async (e) => {
+    confirmDeleteProduct.forEach(user => {
+        user.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const confirmed = confirm('Estás seguro que deseas eliminar el usuario?');
+            const confirmed = confirm('¿Estás seguro que deseas eliminar el usuario?');
 
             if (confirmed) {
-
                 try {
-                    await confirmDeleteUser.submit();
+                    await user.submit();
                     alert('Usuario eliminado con éxito');
-
                 } catch (error) {
                     console.error('Error al eliminar el usuario:', error);
                     alert('Error al eliminar el usuario');
                 }
             }
         });
-    }
+    });
 });
