@@ -47,7 +47,9 @@ p {
 
 .img-log {
     width: 100%;
-    height: 500px;
+    height: 600px;
+    object-fit: cover; /* Se ajusta la imagen al ancho del contenedor manteniendo el aspecto original*/
+    border-radius: 10px;
 }
 
 label {
