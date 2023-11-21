@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
-    const confirmDeleteProduct = document.querySelectorAll('.delete-user-form');
+    const confirmDeleteUser = document.querySelectorAll('.delete-user-form');
 
-    confirmDeleteProduct.forEach(user => {
+    confirmDeleteUser.forEach(user => {
         user.addEventListener('submit', async (e) => {
             e.preventDefault();
 
