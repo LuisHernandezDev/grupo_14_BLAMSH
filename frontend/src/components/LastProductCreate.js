@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { tokens } from "../styles/theme";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme, ImageList, ImageListItem } from "@mui/material";
 import CardMedia from '@mui/material/CardMedia';
+
+
+import StatBox from './StatBox';
+
 
 
 function LastProductCreate() {
@@ -30,108 +34,42 @@ function LastProductCreate() {
     return (
         <Box
 
-            gridRow="span 2"
             backgroundColor={colors.primary[400]}
+
+            alignItems="center"
+            justifyContent="center"
+            mt={2}
+            pt={3}
+            pl={3}
+            pb={3}
         >
-            <Box
-                mt="25px"
-                p="0 30px"
-                display="flex "
-                justifyContent="space-between"
-                alignItems="center"
-            >
-                <Box>
+            <Box pb={2}>
 
-                    <Typography
-                        variant="h3"
-                        fontWeight="bold"
-                        color={colors.greenAccent[500]}
-                    >
-                        Ultimo producto Creado
-                    </Typography>
-                </Box>
-                <Box>
-
-                    <Typography
-                        variant="h3"
-                        fontWeight="bold"
-                        color={colors.greenAccent[500]}
-                    >
-                        {lastProductDetail.name}
-
-                    </Typography>
-                </Box>
-
-
-
+                <Typography
+                    variant="h3"
+                    fontWeight="bold"
+                    color={colors.greenAccent[500]}
+                >
+                    Ultimo producto Creado
+                </Typography>
+            </Box>
+            <Typography variant="h5">Producto: {lastProductDetail.name}</Typography>
+            <Typography variant="h5"
+            >Descripción: {lastProductDetail.description}</Typography>
+            <Typography variant="h5">Precio: {'$' + lastProductDetail.price}</Typography>
+            <Typography variant="h5">Tallas: {lastProductDetail.sizes && lastProductDetail.sizes.length > 0
+                ? lastProductDetail.sizes.map((size) => size.size).join(', ') : 'Talla no especificada'}
+            </Typography>
+            <Box display="flex" justifyContent="center" mt={2} maxWidth={345}>
+                <CardMedia
+                    component="img"
+                    alt="Descripción de la imagen"
+                    height="140"
+                    image={lastProductDetail.image}
+                />
 
             </Box>
-            <Box width="100%" m="0 30px">
-
-                <Box display="flex" justifyContent="space-between" mt="2px">
-                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                        {lastProductDetail.name}
-                    </Typography>
-                    <Typography
-                        variant="h5"
-                        fontStyle="italic"
-                        sx={{ color: colors.greenAccent[600] }}
-                    >
-
-                    </Typography>
-                </Box>
-
-
-            </Box>
-            <Box width="100%" m="0 30px">
-
-                <Box display="flex" justifyContent="space-between" mt="2px">
-                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                        {lastProductDetail.description}
-                    </Typography>
-                    <Typography
-                        variant="h5"
-                        fontStyle="italic"
-                        sx={{ color: colors.greenAccent[600] }}
-                    >
-
-                    </Typography>
-                </Box>
-
-
-            </Box>
-
-            <Box width="100%" m="0 30px">
-
-                <Box display="flex" justifyContent="space-between" mt="2px">
-                    <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                        {lastProductDetail.price}
-                    </Typography>
-
-
-                </Box>
-
-
-            </Box>
-
-            <Box width="100%" m="0 30px">
-
-                <Box display="flex" justifyContent="space-between" mt="2px" maxWidth={345}>
-                    <CardMedia
-                        component="img"
-                        alt="Descripción de la imagen"
-                        height="140"
-                        image={lastProductDetail.image}
-                    />
-
-                </Box>
-
-
-            </Box>
-
-
-        </Box >
-
+        </Box>
 
 
     )

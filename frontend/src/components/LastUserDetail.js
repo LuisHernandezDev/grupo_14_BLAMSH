@@ -29,125 +29,40 @@ function LastUserDetail() {
     return (
         <Box
 
-        gridRow="span 2"
-        backgroundColor={colors.primary[400]}
-        
-    >
-        <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
+            backgroundColor={colors.primary[400]}
+
             alignItems="center"
+            justifyContent="center"
+            mt={2}
+            pt={3}
+            pl={3}
+            pb={3}
         >
-            <Box>
+            <Box pb={2}>
 
                 <Typography
                     variant="h3"
                     fontWeight="bold"
                     color={colors.greenAccent[500]}
                 >
-                    Último usuario registrado
+                    Ultimo  usuario registrado
                 </Typography>
             </Box>
-            <Box>
+            <Typography variant="h5">Nombre: {lastUserDetail.firstName}</Typography>
+            <Typography variant="h5">Mail: {lastUserDetail.email}</Typography>
+            <Typography variant="h5">Fecha de Creación: {lastUserDetail.date_creation}</Typography>
 
-                <Typography
-                    variant="h3"
-                    fontWeight="bold"
-                    color={colors.greenAccent[500]}
-                >
-                    {lastUserDetail.firstName}
+            <Box display="flex" justifyContent="center" mt="37px" maxWidth={345}>
+                <CardMedia
+                    component="img"
+                    alt="Descripción de la imagen"
+                    height="140"
+                    image={lastUserDetail.image}
+                />
 
-                </Typography>
             </Box>
-
-
-
-
-        </Box>
-        <Box width="100%" m="0 30px">
-
-            <Box display="flex" justifyContent="space-between" mt="2px">
-                <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                    {lastUserDetail.lastName}
-                </Typography>
-                <Typography
-                    variant="h5"
-                    fontStyle="italic"
-                    sx={{ color: colors.greenAccent[600] }}
-                >
-
-                </Typography>
-            </Box>
-
-
-        </Box>
-        <Box width="100%" m="0 30px">
-
-            <Box display="flex" justifyContent="space-between" mt="2px">
-                <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                    {lastUserDetail.email}
-                </Typography>
-                <Typography
-                    variant="h5"
-                    fontStyle="italic"
-                    sx={{ color: colors.greenAccent[600] }}
-                >
-
-                </Typography>
-            </Box>
-
-
         </Box>
 
-        <Box width="100%" m="0 30px">
-
-            <Box display="flex" justifyContent="space-between" mt="2px">
-                <Typography variant="h5" sx={{ color: colors.greenAccent[500] }}>
-                    {lastUserDetail.date_creation}
-                </Typography>
-              
-            </Box>
-
-
-        </Box>
-     
-
-        <Box width="100%" m="0 30px">
-
-            <Box display="flex" justifyContent="space-between" mt="2px" maxWidth={345}>
-            <CardMedia
-                        component="img"
-                        alt="Descripción de la imagen"
-                        height="140"
-                        image={lastUserDetail.image}
-                    />
-               
-           
-            </Box>
-
-
-        </Box>
-
-      
-    </Box >
-
-
-
-        /*
-        <div>
-            <h2>Último usuario registrado</h2>
-            {lastUserDetail.length === 0 ? <p>Cargando...</p> : ''}
-            <div>
-                <p>Nombre: {lastUserDetail.firstName}</p>
-                <p>Apellido: {lastUserDetail.lastName}</p>
-                <p>Email: {lastUserDetail.email}</p>
-                <p>Fecha de creación: {lastUserDetail.date_creation}</p>
-                <img className='img-product-detail' src={lastUserDetail.image} alt="" />
-            </div>
-        </div>
-        */
     )
 
 }

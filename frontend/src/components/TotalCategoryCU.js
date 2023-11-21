@@ -35,48 +35,40 @@ function TotalCategoryCU() {
     }, []);
 
     return (
+
         <Box
-
-            gridRow="span 2"
+            height="200px"
             backgroundColor={colors.primary[400]}
+
+            alignItems="center"
+            justifyContent="center"
+            mt={2}
+            pt={3}
+            pl={3}
+            pb={3}
         >
-            <Box
-                mt="25px"
-                p="0 30px"
-                display="flex "
-                justifyContent="space-between"
-                alignItems="center"
-            >
-                <Box>
-                   
-                    <Typography
-                        variant="h3"
-                        fontWeight="bold"
-                        color={colors.greenAccent[500]}
-                    >
-                        Lista de categorías
-                    </Typography>
-                </Box>
+            <Box pb={2}>
 
+                <Typography
+                    variant="h3"
+                    fontWeight="bold"
+                    color={colors.greenAccent[500]}
+                >
+                    Lista de Categorías
+                </Typography>
             </Box>
-            <Box height="250px" m="-20px 0 0 0">
-                <StatBox
-                    title={Object.keys(totalProductsCU).length === 0 ? <p>Cargando...</p> :
-                        Object.keys(totalProductsCU).map((categories, i) => {
-                            return (
-                                <p key={i}>{categories}: {totalProductsCU[categories]}</p>
-                            )
+            {Object.keys(totalProductsCU).length === 0 ? <p>Cargando...</p> :
+                Object.keys(totalProductsCU).map((categories, i) => {
+                    return (
+                        <Typography variant="h4"
+                            fontWeight="bold"
+                            sx={{ color: colors.grey[100] }}>{categories}: {totalProductsCU[categories]}</Typography>
+                    )
 
-                        })}
+                })}
 
 
-                />
-
-            </Box>
-
-            
         </Box>
-
 
 
 
